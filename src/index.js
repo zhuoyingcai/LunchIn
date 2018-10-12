@@ -1,12 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import "typeface-roboto";
+import * as firebase from "firebase";
+import AOS from "aos";
+import "../node_modules/aos/dist/aos.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+AOS.init();
+var config = {
+  apiKey: "AIzaSyAiW-TzPFXngSQchx5IEJq1hjLB7kLFkN4",
+  authDomain: "lunchin-9fe27.firebaseapp.com",
+  databaseURL: "https://lunchin-9fe27.firebaseio.com",
+  projectId: "lunchin-9fe27",
+  storageBucket: "lunchin-9fe27.appspot.com",
+  messagingSenderId: "214952763354"
+};
+firebase.initializeApp(config);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
+ReactDOM.render(<App />, document.getElementById("root"));
 serviceWorker.unregister();
