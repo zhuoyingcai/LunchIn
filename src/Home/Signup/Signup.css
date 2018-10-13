@@ -1,0 +1,22 @@
+.signup-page {
+  padding: 5% 20%;
+  padding-bottom: 0 !important;
+}
+.signup-title-bar {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+.push-down {
+  margin-top: 10px !important;
+}
+@media only screen and (max-width: 650px) {
+  .signup-page {
+    padding: 5% 10px;
+    padding-bottom: 0 !important;
+  }
+  h1 {
+    font-size: 30px !important;
+  }
+}

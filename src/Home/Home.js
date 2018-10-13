@@ -110,9 +110,7 @@ class Home extends Component {
                   variant="raised"
                   className="push-down"
                   onClick={() => {
-                    if (this.props.userType === "user") {
-                      this.props.history.push(`/user/home`);
-                    }
+                    this.props.history.push(`/user/home`);
                   }}
                 >
                   <Next style={{ marginRight: "10px" }} />
@@ -137,7 +135,7 @@ class Home extends Component {
                   disabled={this.state.processing}
                   className="username"
                   id="username"
-                  label="Username"
+                  label="E-mail"
                   value={this.state.username}
                   onChange={this.handleChange("username")}
                   fullWidth
