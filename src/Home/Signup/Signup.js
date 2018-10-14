@@ -24,7 +24,6 @@ const validation = {
   valid: 1,
 }
 
-
 export default class Signup extends Component {
   constructor(props) {
     super(props);
@@ -53,7 +52,7 @@ export default class Signup extends Component {
   };
   validate(type) {
     if (type === "createUser") {
-      if (!this.state.name || !this.state.email || !this.state.password) {
+      if (this.state.name === "" || this.state.email === ""|| this.state.password === "") {
         return validation.invalid;
       }
     }
@@ -87,14 +86,7 @@ export default class Signup extends Component {
             step1complete: false
           });
         })
-
     }
-    //  else if(isValid === validation.err_pwd_length) {
-    //   this.setState({
-    //     notify: true,
-    //     notifyMsg: "Password must at least 6 characters."
-    //   });
-    // }
     else {
       this.setState({
         notify: true,
@@ -124,14 +116,6 @@ export default class Signup extends Component {
               step2complete: true
             });
           },
-          // err => {
-          //   this.setState({
-          //     notify: true,
-          //     notifyMsg: err.message,
-          //     processing: false
-          //   });
-          //   return;
-          // }
         )
         .catch((error) => {
           this.setState({
@@ -141,14 +125,7 @@ export default class Signup extends Component {
             step2complete: false
           });
         })
-
     }
-    //  else if (isValid === validation.err_pwd_length) {
-    //   this.setState({
-    //     notify: true,
-    //     notifyMsg: "Password must at least 6 characters."
-    //   });
-    // }
     else {
       this.setState({
         notify: true,
