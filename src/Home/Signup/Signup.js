@@ -19,6 +19,13 @@ import Done from "@material-ui/icons/CheckCircle";
 import { Link } from "react-router-dom";
 import * as firebase from "firebase";
 
+const validation = {
+  invalid: 0,
+  valid: 1,
+  err_pwd_length: 2,
+}
+
+
 export default class Signup extends Component {
   constructor(props) {
     super(props);
@@ -47,26 +54,18 @@ export default class Signup extends Component {
   };
   validate(type) {
     if (type === "createUser") {
-      if (this.state.name === "") {
-        return false;
+      if (!this.state.name || !this.state.email || !this.state.password) {
+        return validation.invalid;
       }
-      if (this.state.email === "") {
-        return false;
+      if (this.state.password.length < 6) {
+        return validation.err_pwd_length;
       }
-      if (this.state.password === "") {
-        return false;
-      }
-      if (this.state.password === "") {
-        return false;
-      }
-      return true;
     }
-    if (type === "finalizeUser") {
-      return true;
-    }
+    return validation.valid;
   }
   createUser() {
-    if (this.validate("createUser") === true) {
+    const isValid = this.validate("createUser");
+    if (isValid === validation.valid) {
       this.setState({
         processing: true
       });
@@ -91,7 +90,13 @@ export default class Signup extends Component {
             });
           }
         );
-    } else {
+    } else if(isValid === validation.err_pwd_length) {
+      this.setState({
+        notify: true,
+        notifyMsg: "Password must at least 6 characters."
+      });
+    }
+    else {
       this.setState({
         notify: true,
         notifyMsg: "Looks like you're missing stuff."
@@ -99,7 +104,8 @@ export default class Signup extends Component {
     }
   }
   finalizeUserUpdate() {
-    if (this.validate("finalizeUser") === true) {
+    const isValid = this.validate("finalizeUser");
+    if (isValid=== validation.valid) {
       this.setState({
         processing: true
       });
@@ -128,7 +134,13 @@ export default class Signup extends Component {
             return;
           }
         );
-    } else {
+    } else if(isValid === validation.err_pwd_length) {
+      this.setState({
+        notify: true,
+        notifyMsg: "Password must at least 6 characters."
+      });
+    }
+     else {
       this.setState({
         notify: true,
         notifyMsg: "Looks like you're missing stuff.",
