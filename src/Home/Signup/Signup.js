@@ -22,7 +22,6 @@ import * as firebase from "firebase";
 const validation = {
   invalid: 0,
   valid: 1,
-  err_pwd_length: 2,
 }
 
 
@@ -57,9 +56,6 @@ export default class Signup extends Component {
       if (!this.state.name || !this.state.email || !this.state.password) {
         return validation.invalid;
       }
-      if (this.state.password.length < 6) {
-        return validation.err_pwd_length;
-      }
     }
     return validation.valid;
   }
@@ -82,20 +78,23 @@ export default class Signup extends Component {
             processing: false,
             step1complete: true
           }),
-          err => {
-            this.setState({
-              notify: true,
-              notifyMsg: err.message,
-              processing: false
-            });
-          }
-        );
-    } else if(isValid === validation.err_pwd_length) {
-      this.setState({
-        notify: true,
-        notifyMsg: "Password must at least 6 characters."
-      });
+        )
+        .catch((error) => {
+          this.setState({
+            notify: true,
+            notifyMsg: error.message,
+            processing: false,
+            step1complete: false
+          });
+        })
+
     }
+    //  else if(isValid === validation.err_pwd_length) {
+    //   this.setState({
+    //     notify: true,
+    //     notifyMsg: "Password must at least 6 characters."
+    //   });
+    // }
     else {
       this.setState({
         notify: true,
@@ -105,7 +104,7 @@ export default class Signup extends Component {
   }
   finalizeUserUpdate() {
     const isValid = this.validate("finalizeUser");
-    if (isValid=== validation.valid) {
+    if (isValid === validation.valid) {
       this.setState({
         processing: true
       });
@@ -125,22 +124,32 @@ export default class Signup extends Component {
               step2complete: true
             });
           },
-          err => {
-            this.setState({
-              notify: true,
-              notifyMsg: err.message,
-              processing: false
-            });
-            return;
-          }
-        );
-    } else if(isValid === validation.err_pwd_length) {
-      this.setState({
-        notify: true,
-        notifyMsg: "Password must at least 6 characters."
-      });
+          // err => {
+          //   this.setState({
+          //     notify: true,
+          //     notifyMsg: err.message,
+          //     processing: false
+          //   });
+          //   return;
+          // }
+        )
+        .catch((error) => {
+          this.setState({
+            notify: true,
+            notifyMsg: error.message,
+            processing: false,
+            step2complete: false
+          });
+        })
+
     }
-     else {
+    //  else if (isValid === validation.err_pwd_length) {
+    //   this.setState({
+    //     notify: true,
+    //     notifyMsg: "Password must at least 6 characters."
+    //   });
+    // }
+    else {
       this.setState({
         notify: true,
         notifyMsg: "Looks like you're missing stuff.",
