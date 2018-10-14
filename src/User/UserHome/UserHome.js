@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./UserHome.css";
+import Review from "./Review/Review";
 import * as firebase from "firebase";
 import { Typography, Divider, Button } from "@material-ui/core";
 import Logout from "@material-ui/icons/ExitToApp";
@@ -54,6 +55,7 @@ class UserHome extends Component {
           </Typography>
         </div>
         <Divider />
+        <Review term="Pizza" location="New York, NY"/>
       </div>
     );
   }
