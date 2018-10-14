@@ -78,11 +78,11 @@ export default class Signup extends Component {
             firebase.auth().currentUser.updateProfile({
               displayName: this.state.name
             });
+            this.setState({
+              processing: false,
+              step1complete: true
+            });
           },
-          this.setState({
-            processing: false,
-            step1complete: true
-          }),
           err => {
             this.setState({
               notify: true,
