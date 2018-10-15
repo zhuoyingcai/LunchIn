@@ -3,6 +3,7 @@ import "./UserHome.css";
 import * as firebase from "firebase";
 import { Typography, Divider, Button } from "@material-ui/core";
 import Logout from "@material-ui/icons/ExitToApp";
+import UserInputFoodChoices from './UserInputFoodChoices/UserInputFoodChoices.js';
 
 class UserHome extends Component {
   constructor(props) {
@@ -54,6 +55,7 @@ class UserHome extends Component {
           </Typography>
         </div>
         <Divider />
+        <UserInputFoodChoices userUID={this.state.user.userUID}/>
       </div>
     );
   }
