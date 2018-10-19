@@ -1,8 +1,13 @@
 // import express from 'express';
 const express = require('express');
-
+const router = require('./routes/routes');
 const app = express();
-const port = 4567;
+const server_port = 5000;
+const cilent_port = 3000;
 
-app.get('/api', (req, res) => res.send('Hello World!'))
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+// app.get('/api', (req, res) => res.status(200).send('Hello World!'));
+app.use(router);
+
+var server = app.listen(server_port, () => console.log(`Express app listening on port ${server_port}!`));
+
+module.exports = server;

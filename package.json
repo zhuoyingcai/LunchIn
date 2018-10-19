@@ -10,6 +10,7 @@
     "express": "^4.16.4",
     "firebase": "^5.5.4",
     "history": "^4.7.2",
+    "mocha": "^5.2.0",
     "morgan": "^1.9.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -18,9 +19,9 @@
     "typeface-roboto": "0.0.54"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server/server.js & react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "mocha server/test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -31,5 +32,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "supertest": "^3.3.0"
+  }
 }
