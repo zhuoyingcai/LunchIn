@@ -1,5 +1,6 @@
 var assert = require('assert');
 var request = require('supertest');
+
 describe('Loading Express...', function() {
   var server;
   beforeEach(() => server = require('./../server'));
