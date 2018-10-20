@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect, Route } from "react-router-dom";
 import UserHome from "./UserHome/UserHome.js";
+import GoogleM from "../Map/googleMaps.js";
 
 class UserRoutes extends Component {
   render() {
@@ -18,6 +19,7 @@ class UserRoutes extends Component {
           path={`${this.props.match.path}/home`}
           component={UserHome}
         />
+      <GoogleM/>
       </div>
     );
   }
