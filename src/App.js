@@ -4,7 +4,7 @@ import createHistory from "history/createBrowserHistory";
 import UserRoutes from "./User/UserRoutes.js";
 import Home from "./Home/Home.js";
 import Signup from "./Home/Signup/Signup.js";
-import * as firebase from "firebase";
+import { firebase } from "./Config";
 
 class App extends Component {
   constructor(props) {
