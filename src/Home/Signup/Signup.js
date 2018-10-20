@@ -17,7 +17,7 @@ import Hidden from "@material-ui/icons/VisibilityOff";
 import Next from "@material-ui/icons/PlayCircleFilled";
 import Done from "@material-ui/icons/CheckCircle";
 import { Link } from "react-router-dom";
-import * as firebase from "firebase";
+import { firebase } from "../../Config";
 
 const validation = {
   invalid: 0,

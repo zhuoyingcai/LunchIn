@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./UserHome.css";
-import * as firebase from "firebase";
+import { firebase } from "../../Config";
 import { Typography, Divider, Button } from "@material-ui/core";
 import Logout from "@material-ui/icons/ExitToApp";
 import UserInputFoodChoices from './UserInputFoodChoices/UserInputFoodChoices.js';
