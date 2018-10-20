@@ -4,6 +4,7 @@ import { firebase } from "../../Config";
 import { Typography, Divider, Button } from "@material-ui/core";
 import Logout from "@material-ui/icons/ExitToApp";
 import UserInputFoodChoices from './UserInputFoodChoices/UserInputFoodChoices.js';
+import GoogleM from "../../Map/googleMaps.js";
 
 class UserHome extends Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class UserHome extends Component {
         </div>
         <Divider />
         <UserInputFoodChoices userUID={this.state.user.userUID}/>
+        <GoogleM/>
       </div>
     );
   }

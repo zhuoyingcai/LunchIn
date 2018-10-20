@@ -67,7 +67,7 @@ const MapComponent = compose(
                       location: refs.map.getCenter(),
                       radius: '450',
                       keyword: 'pizza',
-                      name: 'pizza',
+                      name: 'Pizza',
                       type: 'restaurant',
                     };
                 service.nearbySearch(request, (results, status) => {

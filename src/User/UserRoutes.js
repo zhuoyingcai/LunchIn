@@ -19,7 +19,6 @@ class UserRoutes extends Component {
           path={`${this.props.match.path}/home`}
           component={UserHome}
         />
-      <GoogleM/>
       </div>
     );
   }
