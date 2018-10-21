@@ -25,6 +25,8 @@ const MapComponent = compose(
     withState('selectedPlace', 'updateSelectedPlace', null),
     withHandlers((props) => {
             console.log(props.food);
+            console.log(props.address);
+            
             const refs = {
                 map: undefined,
                 searchBox: undefined,
@@ -123,11 +125,13 @@ export default class GoogleMapComponent extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            randomFoodName: ''
+            randomFoodName: '',
+            addressName: ''
         };
     }
     componentDidMount() {
         this.fetchInitialData();
+        this.fetchInitialData2();
     }
     fetchInitialData() {
         firebase.auth().onAuthStateChanged(user => {
@@ -144,11 +148,26 @@ export default class GoogleMapComponent extends React.PureComponent {
             }
         });
     }
+    fetchInitialData2() {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                firebase.database().ref(`Users/${user.uid}/address`).once("value", (snapshot) => {
+                    if (snapshot.val() != null) {
+                        this.setState({
+                            addressName: this.state.addressName.concat(snapshot.val())
+                        })
+                    }
+                }, (error) => {
+                    console.log("Error: " + error.code);
+                })
+            }
+        });
+    }
 
     render() {
         return (
           <div>
-              <MapComponent food={this.state.randomFoodName}/>
+              <MapComponent food={this.state.randomFoodName} address={this.state.addressName}/>
           </div>
         )
     }

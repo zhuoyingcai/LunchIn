@@ -10,6 +10,7 @@
     "history": "^4.7.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-geocode": "^0.1.2",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
