@@ -50,11 +50,9 @@ class UserInputFoodChoices extends Component {
         });
     }
     handleInputChange(e) {
-        if (e.target.value) {
-            this.setState({
-                [e.target.name]: e.target.value
-            })
-        }
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
     handleSubmit(e) {
         e.preventDefault();
@@ -131,6 +129,7 @@ class UserInputFoodChoices extends Component {
                         color="primary"
                         className="input-button"
                         onClick={this.handleSubmit}
+                        disabled={!this.state.inputFoodName}
                     >
                         Add Food
                         </Button>
