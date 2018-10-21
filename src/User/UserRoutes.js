@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect, Route } from "react-router-dom";
 import UserHome from "./UserHome/UserHome.js";
+import UserProfile from './UserHome/UserProfile/UserProfile.js';
 
 class UserRoutes extends Component {
   render() {
@@ -17,6 +18,19 @@ class UserRoutes extends Component {
           exact
           path={`${this.props.match.path}/home`}
           component={UserHome}
+        />
+
+        <Route
+          exact
+          path={this.props.match.path}
+          render={() => {
+            return <Redirect to="/user/profile" />;
+          }}
+        />
+        <Route
+          exact
+          path={`${this.props.match.path}/profile`}
+          component={UserProfile}
         />
       </div>
     );
