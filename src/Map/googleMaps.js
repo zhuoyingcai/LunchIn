@@ -3,6 +3,7 @@
 import React from "react"
 import { compose, withProps, withHandlers, withState } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from "react-google-maps";
+import { firebase } from "../Config";
 import { Link } from 'react-router-dom';
 import './map.css';
 
@@ -101,7 +102,8 @@ const MapComponent = compose(
 
                 <input
                   type="text"
-                  placeholder="Search Pizza To Find The One"
+                  placeholder="Food"
+                  value={props.food}
                   style={{
                     boxSizing: `border-box`,
                     border: `1px solid transparent`,
@@ -141,10 +143,35 @@ const MapComponent = compose(
 })
 
 export default class GoogleMapComponent extends React.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            randomFoodName: ''
+        };
+    }
+    componentDidMount() {
+        this.fetchInitialData();
+    }
+    fetchInitialData() {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                firebase.database().ref(`Users/${user.uid}/foodSelected`).once("value", (snapshot) => {
+                    if (snapshot.val() != null) {
+                        this.setState({
+                            randomFoodName: this.state.randomFoodName.concat(snapshot.val())
+                        })
+                    }
+                }, (error) => {
+                    console.log("Error: " + error.code);
+                })
+            }
+        });
+    }
+
     render() {
         return (
           <div>
-              <MapComponent />
+              <MapComponent food={this.state.randomFoodName}/>
           </div>
         )
     }

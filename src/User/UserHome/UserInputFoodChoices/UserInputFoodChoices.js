@@ -15,6 +15,7 @@ import {
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css"
 import { firebase } from "../../../Config";
+import GoogleM from "../../../Map/googleMaps.js";
 
 class UserInputFoodChoices extends Component {
     constructor(props) {
@@ -183,6 +184,7 @@ class UserInputFoodChoices extends Component {
                     {this.state.randomFoodName !== '' ? (
                         <div>
                             Your Food is: {this.state.randomFoodName}
+                            <GoogleM food={this.state.randomFoodName}/>
                         </div>
                     ) : null}
                 </CardContent>

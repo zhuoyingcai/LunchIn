@@ -38,6 +38,7 @@ class UserHome extends Component {
     this.fireBaseListener && this.fireBaseListener();
     this.authListener = undefined;
   }
+
   render() {
     return (
       <div style={{ padding: "50px 200px" }}>
@@ -57,7 +58,8 @@ class UserHome extends Component {
         </div>
         <Divider />
         <UserInputFoodChoices userUID={this.state.user.userUID}/>
-        <GoogleM/>
+
+        {/* <GoogleM userUID={this.state.user.userUID}/> */}
       </div>
     );
   }
