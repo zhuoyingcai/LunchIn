@@ -8,6 +8,8 @@ import UserInputFoodChoices from './UserInputFoodChoices/UserInputFoodChoices.js
 class UserHome extends Component {
   constructor(props) {
     super(props);
+    console.log('hello world user home');
+    fetch('/api/yelp').then(response => response.json()).then(data => console.log(data)).catch(e => console.log('Yelp doesnt work', e));
     this.state = {
       user: {
         userUID: "",
