@@ -12,7 +12,7 @@ const _ = require("lodash");
 
 const MapComponent = compose(
     withProps({
-        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDTt1Jc5WrfPTz4_Q3jE0A3pG-lcnB5cbk&v=3.exp&libraries=geometry,drawing,places",
+        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCTwzWuq9ff9eVO8s8rjpsIZef5fiABHPg&v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: '600px', width: '600px' }} />,
         containerElement: <div style={{ height: '400px' }} />,
         mapElement: <div style={{ height: '600px', width: '600px' }} />,
@@ -23,7 +23,8 @@ const MapComponent = compose(
     withState('places', 'updatePlaces', ''),
     withState('center', '', ''),
     withState('selectedPlace', 'updateSelectedPlace', null),
-    withHandlers(() => {
+    withHandlers((props) => {
+            console.log(props.food);
             const refs = {
                 map: undefined,
                 searchBox: undefined,
@@ -67,8 +68,8 @@ const MapComponent = compose(
                     const request = {
                       location: refs.map.getCenter(),
                       radius: '450',
-                      keyword: 'pizza',
-                      name: 'Pizza',
+                      keyword: props.food,
+                      name: props.food,
                       type: 'restaurant',
                     };
                 service.nearbySearch(request, (results, status) => {
@@ -88,37 +89,13 @@ const MapComponent = compose(
 
 )((props) => {
     return (
+
       <div>
         <GoogleMap
               onTilesLoaded={props.fetchPlaces}
               ref={props.onMapMounted}
               defaultZoom={14}
               defaultCenter={{ lat: 40.758896, lng: -73.985130 }} >
-
-              <SearchBox
-                ref={props.onSearchBoxMounted}
-                controlPosition={google.maps.ControlPosition.TOP_LEFT}
-                onPlacesChanged={props.onPlacesChanged} >
-
-                <input
-                  type="text"
-                  placeholder="Food"
-                  value={props.food}
-                  style={{
-                    boxSizing: `border-box`,
-                    border: `1px solid transparent`,
-                    width: `240px`,
-                    height: `32px`,
-                    marginTop: `27px`,
-                    padding: `0 12px`,
-                    borderRadius: `3px`,
-                    boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-                    fontSize: `14px`,
-                    outline: `none`,
-                    textOverflow: `ellipses`,
-                  }} />
-
-            </SearchBox>
 
             {props.places && props.places.map((place, i) =>
                 <Marker
