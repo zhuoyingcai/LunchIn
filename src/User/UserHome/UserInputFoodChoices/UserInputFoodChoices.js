@@ -23,7 +23,6 @@ class UserInputFoodChoices extends Component {
         this.state = {
             inputFoodName: '',
             foodNames: [],
-            addressName: '',
             randomFoodName: '',
             processing: false,
             notify: false,
@@ -51,7 +50,6 @@ class UserInputFoodChoices extends Component {
             }
         });
     }
-
     handleInputChange(e) {
         if (e.target.value) {
             this.setState({
