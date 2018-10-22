@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import yelp from 'yelp-fusion';
 import "./Review.css";
-// const clientID = 'H_7NXPInp_41ZuEroRrm0w';
-const yelpApiKey = 'whkFooEOGksI2QwFSlH384Ms_QthKYxnr6mhtM2KQdbKyh5AroW28JH_bS0N7Jzk3xhl0qwD4v61vnSiyrqAqvwxqjh_A-QovSzYq-bjDKyo3j5QhyMQXh7sEPzAW3Yx';
 
 /*
   This component requires two properties: term, location
@@ -19,20 +16,13 @@ class Review extends Component{
   }
 
   getReviews(){
-    let client = yelp.client(yelpApiKey);
-    client.search({
-      // term: this.props.term,
-      // location: this.props.location
-      term:'Four Barrel Coffee',
-      location: 'san francisco, ca'
-    }).then(response => {
-      console.log(response);
-      this.setState({
-        businesses: response.jsonBody.businesses
-      });
-    }).catch(e => {
-      console.log(e);
-    });
+		fetch(`/api/yelp?term=${this.props.term}&location=${this.props.location}`)
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+				this.setState({businesses: data.jsonBody.businesses});
+			})
+			.catch(e => console.log(e));
   }
 
   renderReview(review){
