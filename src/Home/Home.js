@@ -17,7 +17,7 @@ import Visible from "@material-ui/icons/Visibility";
 import Hidden from "@material-ui/icons/VisibilityOff";
 import Next from "@material-ui/icons/CheckCircle";
 import Signout from "@material-ui/icons/Cancel";
-import * as firebase from "firebase";
+import { firebase } from "../Config";
 
 class Home extends Component {
   constructor(props) {

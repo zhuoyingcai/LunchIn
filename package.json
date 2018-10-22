@@ -7,8 +7,10 @@
     "@material-ui/icons": "^3.0.1",
     "ajv": "^6.5.4",
     "aos": "^2.3.4",
+    "express": "^4.16.4",
     "firebase": "^5.5.4",
     "history": "^4.7.2",
+    "morgan": "^1.9.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-router-dom": "^4.3.1",
@@ -17,9 +19,9 @@
     "yelp-fusion": "^2.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "nodemon server/server.js & react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "./test/mocha_tests.sh & react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,5 +44,13 @@
   "bugs": {
     "url": "https://github.com/CSC59939/LunchIn/issues"
   },
-  "homepage": "https://github.com/CSC59939/LunchIn#readme"
+  "homepage": "https://github.com/CSC59939/LunchIn#readme",
+  "proxy": "http://localhost:5000/",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "supertest": "^3.3.0"
+  }
 }
