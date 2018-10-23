@@ -58,9 +58,9 @@ class UserHome extends Component {
           </Typography>
         </div>
         <Divider />
-        <Review term="Pizza" location="New York, NY"/>
         <UserInputFoodChoices userUID={this.state.user.userUID}/>
-      </div>
+				<Review term="Pizza" location="New York, NY" />
+			</div>
     );
   }
 }

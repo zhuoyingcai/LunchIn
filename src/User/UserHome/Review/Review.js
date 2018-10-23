@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 import "./Review.css";
 
 /*
@@ -19,7 +24,6 @@ class Review extends Component{
 		fetch(`/api/yelp?term=${this.props.term}&location=${this.props.location}`)
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				this.setState({businesses: data.jsonBody.businesses});
 			})
 			.catch(e => console.log(e));
@@ -27,14 +31,25 @@ class Review extends Component{
 
   renderReview(review){
     return (
-      <div className="review" key={review.id}>
-        {/*console.log(review)*/}
-        <div className="review-name">{review.name}</div>
-        <div className="review-price">Price: {review.price}</div>
-        <div className="review-rating">Rating: {review.rating}</div>
-        <div className="review-review_count">Count: {review.review_count}</div>
-        <div><img src={review.image_url} className="review-img"></img></div>
-      </div>
+      <Card className="review-card">
+        <CardActionArea>
+          <CardMedia
+            className="review-card-media"
+            image={review.image_url}
+            title={review.image_url}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {review.name}
+            </Typography>
+            <Typography component="p">
+              Price: {review.price} <br/>
+              Rating: {review.rating} <br/>
+              Review Counts: {review.review_count}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     );
   }
 
@@ -44,7 +59,8 @@ class Review extends Component{
         { this.props.term
           ? (
               <div className="selected-food">
-                We have selected the following food: {this.props.term}
+                Testing Review Cards for Google Maps for later <br />
+                Food Selected: {this.props.term}
               </div>
             )
           : (

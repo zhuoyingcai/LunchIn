@@ -1,8 +1,7 @@
-.review{
-  padding: 1%;
+.review-card{
+  max-width: 345px,
 }
-
-.review-img{
+.review-card-media{
   width: 200px;
   height: 150px;
 }
