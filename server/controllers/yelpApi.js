@@ -8,7 +8,7 @@ const yelpApiKey = 'whkFooEOGksI2QwFSlH384Ms_QthKYxnr6mhtM2KQdbKyh5AroW28JH_bS0N
 **/
 function hasValidYelpParams(query, res){
 	if(!query.term || !query.location){
-		res.send(400).send({ errorMsg: 'Required Yelp parameters are not found.'});
+		res.status(400).json({ errorMsg: 'Required Yelp parameters are not found.'});
 		return false;
 	}
 	return true;
@@ -18,8 +18,8 @@ function consumeYelpSearch(req, res){
 	if(hasValidYelpParams(req.query, res)){
 		let client = yelp.client(yelpApiKey);
 		client.search(req.query)
-					.then(response => res.status(200).send(response))
-					.catch(e => res.status(400).send(e));
+					.then(response => res.status(200).json(response))
+					.catch(e => res.status(400).json({errorMsg: e}));
 	}
 }
 exports.getApi = (req, res) => consumeYelpSearch(req, res);
