@@ -115,7 +115,7 @@ class UserInputFoodChoices extends Component {
   }
   render() {
     return (
-      <Card className="input-paper">
+      <Card className="input-paper" data-aos="zoom-in-up">
         <CardHeader title="Please enter your food choices:" />
         <CardContent>
           <Snackbar
@@ -140,8 +140,8 @@ class UserInputFoodChoices extends Component {
           />
           <Button
             style={{
-              marginTop: 30,
-              marginBottom: 15
+              marginTop: 10,
+              marginBottom: 5
             }}
             variant="raised"
             color="primary"
@@ -168,12 +168,12 @@ class UserInputFoodChoices extends Component {
                         {food}
                       </TableCell>
                       <TableCell>
-                        <Button className="table-button" color="primary">
+                        <Button className="table-btn" color="primary">
                           Edit
                         </Button>
                       </TableCell>
                       <TableCell>
-                        <Button className="table-button" color="secondary">
+                        <Button className="table-btn" color="secondary">
                           Delete
                         </Button>
                       </TableCell>

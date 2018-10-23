@@ -7,12 +7,11 @@
 .input-button {
   width: 30%;
 }
-.table-button {
-  margin-right: 5%;
+.table-btn {
+  right: 8%;
 }
 
 .random-food-section {
   display: flex;
-  flex-direction: row;
-  justify-content: center !important;
+  flex-direction: column;
 }
