@@ -23,7 +23,11 @@ class UserInputFoodChoices extends Component {
         this.state = {
             inputFoodName: '',
             foodNames: [],
+            reloads: 0,
+            keyVal: "first",
             randomFoodName: '',
+            lastRandomFood: 'nothing',
+            addressName: '',
             processing: false,
             notify: false,
             notifyMsg: '',
@@ -34,6 +38,7 @@ class UserInputFoodChoices extends Component {
     }
     componentDidMount() {
         this.fetchInitialData();
+        this.fetchInitialData2();
     }
     fetchInitialData() {
         firebase.auth().onAuthStateChanged(user => {
@@ -42,6 +47,21 @@ class UserInputFoodChoices extends Component {
                     if (snapshot.val() != null) {
                         this.setState({
                             foodNames: this.state.foodNames.concat(snapshot.val())
+                        })
+                    }
+                }, (error) => {
+                    console.log("Error: " + error.code);
+                })
+            }
+        });
+    }
+    fetchInitialData2() {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                firebase.database().ref(`Users/${user.uid}/address`).once("value", (snapshot) => {
+                    if (snapshot.val() != null) {
+                        this.setState({
+                            addressName: this.state.addressName.concat(snapshot.val())
                         })
                     }
                 }, (error) => {
@@ -83,9 +103,11 @@ class UserInputFoodChoices extends Component {
         e.preventDefault();
         const rand = this.state.foodNames[Math.floor(Math.random() * this.state.foodNames.length)];
         this.setState({
+            lastRandomFood: this.state.randomFoodName,
             randomFoodName: rand,
             processing: true
         })
+        
         const foodSelectedRef = firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/foodSelected`)
         foodSelectedRef.set(rand)
             .then(() => {
@@ -98,6 +120,29 @@ class UserInputFoodChoices extends Component {
                     processing: false,
                 });
             })
+    }
+    renderMaps() { 
+        if (this.state.randomFoodName !== this.state.lastRandomFood) {
+            if(this.state.reloads % 2 == 0 && this.state.reloads > 0) {
+                this.state.reloads++;
+                this.state.keyVal = "first";
+                // return (
+                //     <GoogleM food={this.state.randomFoodName} address={this.state.addressName} key={this.state.keyVal}/>
+                // );
+            } else {
+                this.state.reloads++;
+                this.state.keyVal = "second";
+                // If the food isn't the same as last time, show the new food
+                return (
+                    <GoogleM food={this.state.randomFoodName} address={this.state.addressName} key={this.state.keyVal}/>
+                );
+            }
+        } else {
+            // If the food is the same as last time, no need to update
+            return (
+                <GoogleM food={this.state.randomFoodName} address={this.state.addressName} key={this.state.keyVal}/>
+            );
+        }
     }
     render() {
         return (
@@ -184,7 +229,7 @@ class UserInputFoodChoices extends Component {
                     {this.state.randomFoodName !== '' ? (
                         <div>
                             Your Food is: {this.state.randomFoodName}
-                            <GoogleM/>
+                            {this.renderMaps()}
                         </div>
                     ) : null}
                 </CardContent>
