@@ -183,18 +183,20 @@ class UserInputFoodChoices extends Component {
               </Table>
             </Paper>
           ) : null}
-          <Button
-            style={{
-              marginTop: 10,
-              marginBottom: 5
-            }}
-            variant="raised"
-            color="secondary"
-            className="input-button"
-            onClick={this.handleRandomFood}
-          >
-            Generate Random Food
-          </Button>
+          {this.state.foodNames.length > 0 ? (
+            <Button
+              style={{
+                marginTop: 10,
+                marginBottom: 5
+              }}
+              variant="raised"
+              color="secondary"
+              className="input-button"
+              onClick={this.handleRandomFood}
+            >
+              Generate Random Food
+            </Button>
+          ) : null}
           <div className="random-food-section">
             {this.state.randomFoodName !== "" ? (
               <Typography variant="subtitle1">
