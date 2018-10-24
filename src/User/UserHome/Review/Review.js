@@ -5,23 +5,55 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import "./Review.css";
-
+import { firebase } from "../../../Config";
 /*
   This component requires two properties: term, location
 */
 class Review extends Component{
   constructor(props){
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
     this.renderReview = this.renderReview.bind(this);
     this.getReviews = this.getReviews.bind(this);
-    this.getReviews();
   }
-
+  componentDidMount(){
+    firebase.auth().onAuthStateChanged(user => {
+      if(user){
+        // Get user address
+        firebase
+          .database()
+          .ref(`Users/${user.uid}/address`)
+          .once(
+            "value",
+            snapshot => {
+              if(snapshot.val() != null){
+                this.setState({
+                  address: snapshot.val()
+                });
+              };
+            },
+            error => {
+              console.log("Error: " + error.code);
+            }
+          );
+        // Made a handler for food selected.
+        this.foodSelectedRef = firebase
+          .database()
+          .ref(`Users/${user.uid}/foodSelected`);
+        this.foodSelectedRef.on('value', snapshot =>{
+          if(snapshot.val() != null){
+            this.setState({
+              foodSelected: snapshot.val()
+            });
+            this.getReviews();
+          }
+        });
+      }
+    });
+  }
   getReviews(){
-		fetch(`/api/yelp?term=${this.props.term}&location=${this.props.location}`)
+    console.log(this.state.foodSelected, this.state.location);
+		fetch(`/api/yelp?term=${this.state.foodSelected}&location=${this.props.address}`)
 			.then(response => response.json())
 			.then(data => {
 				this.setState({businesses: data.jsonBody.businesses});
@@ -31,7 +63,7 @@ class Review extends Component{
 
   renderReview(review){
     return (
-      <Card className="review-card">
+      <Card className="review-card" key={review.name}>
         <CardActionArea>
           <CardMedia
             className="review-card-media"
@@ -56,17 +88,6 @@ class Review extends Component{
   render(){
     return (
       <div className="review-list">
-        { this.props.term
-          ? (
-              <div className="selected-food">
-                Testing Review Cards for Google Maps for later <br />
-                Food Selected: {this.props.term}
-              </div>
-            )
-          : (
-              <div className="error">"Unable to pick a lunch..."</div>
-            )
-        }
         { this.state.businesses
           ? (this.state.businesses.map(this.renderReview))
           : ("")
