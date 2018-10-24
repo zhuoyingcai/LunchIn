@@ -1,7 +1,7 @@
 // var assert = require('assert');
 var request = require('supertest');
 
-describe('Morgan: Testing If Each Express Routes Responds', function() {
+describe('Morgan: Testing If Each Express Routes Responds', () => {
   var server;
   beforeEach(() => server = require('./../server'));
   afterEach(() => server.close());
@@ -12,7 +12,7 @@ describe('Morgan: Testing If Each Express Routes Responds', function() {
   it('Respond to GET /api/yelp', done => {
   	request(server)
 		.get('/api/yelp')
-		.expect(200)
+		.expect(400)
 		.expect('Content-Type', /json/)
 		.end((err, res) => err ? done(err) : done());
   });
@@ -20,10 +20,11 @@ describe('Morgan: Testing If Each Express Routes Responds', function() {
   it('Responds to POST /api/yelp', done => { 
   	request(server)
 		.post('/api/yelp')
-		.expect(200)
+		.expect(400)
 		.expect('Content-Type', /json/)
 		.end((err, res) => res ? done(err) : done());
 	});
 
   
 });
+
