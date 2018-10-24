@@ -12,7 +12,9 @@ import { firebase } from "../../../Config";
 class Review extends Component{
   constructor(props){
     super(props);
-    this.state = {};
+    this.state = {
+      term: this.props.term
+    };
     this.renderReview = this.renderReview.bind(this);
     this.getReviews = this.getReviews.bind(this);
   }
@@ -36,24 +38,21 @@ class Review extends Component{
               console.log("Error: " + error.code);
             }
           );
-        // Made a handler for food selected.
-        this.foodSelectedRef = firebase
-          .database()
-          .ref(`Users/${user.uid}/foodSelected`);
-        this.foodSelectedRef.on('value', snapshot =>{
-          if(snapshot.val() != null){
-            this.setState({
-              foodSelected: snapshot.val()
-            });
-            this.getReviews();
-          }
-        });
       }
     });
   }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ term: nextProps.term });
+    this.getReviews();
+  }
+
   getReviews(){
-    console.log(this.state.foodSelected, this.state.location);
-		fetch(`/api/yelp?term=${this.state.foodSelected}&location=${this.state.address}`)
+    console.log(this.props.term, this.state.address);
+    if(!this.state.term || this.state.term === ""){
+      return;
+    }
+		fetch(`/api/yelp?term=${this.props.term}&location=${this.state.address}`)
 			.then(response => response.json())
 			.then(data => {
 				this.setState({businesses: data.jsonBody.businesses});

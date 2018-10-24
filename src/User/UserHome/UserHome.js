@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./UserHome.css";
-import Review from "./Review/Review";
 import { firebase } from "../../Config";
 import { Typography, Divider, Button } from "@material-ui/core";
 import Logout from "@material-ui/icons/ExitToApp";
@@ -9,8 +8,6 @@ import UserInputFoodChoices from './UserInputFoodChoices/UserInputFoodChoices.js
 class UserHome extends Component {
   constructor(props) {
     super(props);
-    console.log('hello world user home');
-    fetch('/api/yelp').then(response => response.json()).then(data => console.log(data)).catch(e => console.log('Yelp doesnt work', e));
     this.state = {
       user: {
         userUID: "",
@@ -59,7 +56,6 @@ class UserHome extends Component {
         </div>
         <Divider />
         <UserInputFoodChoices userUID={this.state.user.userUID}/>
-				<Review term="Pizza" location="New York, NY" />
 			</div>
     );
   }

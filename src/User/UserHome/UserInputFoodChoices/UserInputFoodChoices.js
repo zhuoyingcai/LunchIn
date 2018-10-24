@@ -17,6 +17,7 @@ import {
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
+import Review from "../Review/Review";
 
 class UserInputFoodChoices extends Component {
   constructor(props) {
@@ -199,6 +200,7 @@ class UserInputFoodChoices extends Component {
             {this.state.randomFoodName !== "" ? (
               <Typography variant="subtitle1">
                 The food selected is: <Chip label={this.state.randomFoodName} />
+                <Review term={this.state.randomFoodName} />
               </Typography>
             ) : null}
           </div>
