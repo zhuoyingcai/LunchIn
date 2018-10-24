@@ -53,7 +53,7 @@ class Review extends Component{
   }
   getReviews(){
     console.log(this.state.foodSelected, this.state.location);
-		fetch(`/api/yelp?term=${this.state.foodSelected}&location=${this.props.address}`)
+		fetch(`/api/yelp?term=${this.state.foodSelected}&location=${this.state.address}`)
 			.then(response => response.json())
 			.then(data => {
 				this.setState({businesses: data.jsonBody.businesses});
