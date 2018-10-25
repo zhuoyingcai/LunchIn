@@ -66,7 +66,7 @@ class UserHome extends Component {
         </div>
         <Divider />
         <UserInputFoodChoices userUID={this.state.user.userUID}/>
-      </div>
+			</div>
     );
   }
 }

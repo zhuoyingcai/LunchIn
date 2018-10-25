@@ -1,8 +1,17 @@
 .input-paper {
-    margin-top: 100px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 25px !important;
 }
 
 .input-button {
-    width: 50%;
+  width: 30%;
+}
+.table-btn {
+  right: 8%;
+}
+
+.random-food-section {
+  display: flex;
+  flex-direction: column;
 }
