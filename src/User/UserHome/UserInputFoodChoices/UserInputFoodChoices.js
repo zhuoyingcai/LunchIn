@@ -28,7 +28,9 @@ class UserInputFoodChoices extends Component {
       randomFoodName: "",
       processing: false,
       notify: false,
-      notifyMsg: ""
+      notifyMsg: "",
+      businesses: [],
+      address: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -56,6 +58,22 @@ class UserInputFoodChoices extends Component {
               console.log("Error: " + error.code);
             }
           );
+        firebase
+          .database()
+          .ref(`Users/${user.uid}/address`)
+          .once(
+            "value",
+            snapshot => {
+              if (snapshot.val() != null) {
+                this.setState({
+                  address: snapshot.val()
+                });
+              }
+            },
+            error => {
+              console.log("Error: " + error.code);
+            }
+          );
       }
     });
   }
@@ -63,6 +81,20 @@ class UserInputFoodChoices extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+  }
+  componentDidUpdate(prevProps, prevState) {
+    
+    if (prevState.randomFoodName !== this.state.randomFoodName) {
+      console.log(this.state.address)
+      this.setState({businesses: []})
+      fetch(`/api/yelp?term=${this.state.randomFoodName}&location=${this.state.address}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.jsonBody.businesses)
+          this.setState({ businesses: data.jsonBody.businesses });
+        })
+        .catch(e => console.log(e));
+    }
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -114,6 +146,7 @@ class UserInputFoodChoices extends Component {
         });
       });
   }
+
   render() {
     return (
       <Card className="input-paper" data-aos="zoom-in-up">
@@ -199,10 +232,10 @@ class UserInputFoodChoices extends Component {
             </Button>
           ) : null}
           <div className="random-food-section">
-            {this.state.randomFoodName !== "" ? (
+            {this.state.randomFoodName ? (
               <Typography variant="subtitle1">
                 The food selected is: <Chip label={this.state.randomFoodName} />
-                <Review term={this.state.randomFoodName} />
+                <Review businesses={this.state.businesses} />
               </Typography>
             ) : null}
           </div>
