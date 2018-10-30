@@ -1,5 +1,5 @@
 .signup-page {
-  padding: 5% 20%;
+  padding: 3% 20%;
   padding-bottom: 0 !important;
 }
 .signup-title-bar {
@@ -10,6 +10,9 @@
 }
 .push-down {
   margin-top: 10px !important;
+}
+.signup-page-content {
+  border-radius: 25px !important;
 }
 @media only screen and (max-width: 650px) {
   .signup-page {

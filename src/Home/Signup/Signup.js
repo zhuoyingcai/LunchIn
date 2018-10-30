@@ -21,8 +21,8 @@ import { firebase } from "../../Config";
 
 const validation = {
   invalid: 0,
-  valid: 1,
-}
+  valid: 1
+};
 
 export default class Signup extends Component {
   constructor(props) {
@@ -52,7 +52,11 @@ export default class Signup extends Component {
   };
   validate(type) {
     if (type === "createUser") {
-      if (this.state.name === "" || this.state.email === ""|| this.state.password === "") {
+      if (
+        this.state.name === "" ||
+        this.state.email === "" ||
+        this.state.password === ""
+      ) {
         return validation.invalid;
       }
     }
@@ -80,18 +84,17 @@ export default class Signup extends Component {
           this.setState({
             processing: false,
             step1complete: true
-          }),
+          })
         )
-        .catch((error) => {
+        .catch(error => {
           this.setState({
             notify: true,
             notifyMsg: error.message,
             processing: false,
             step1complete: false
           });
-        })
-    }
-    else {
+        });
+    } else {
       this.setState({
         notify: true,
         notifyMsg: "Looks like you're missing stuff."
@@ -113,24 +116,21 @@ export default class Signup extends Component {
         .database()
         .ref(`Users/${firebase.auth().currentUser.uid}/`)
         .set(setData)
-        .then(
-          () => {
-            this.setState({
-              processing: false,
-              step2complete: true
-            });
-          },
-        )
-        .catch((error) => {
+        .then(() => {
+          this.setState({
+            processing: false,
+            step2complete: true
+          });
+        })
+        .catch(error => {
           this.setState({
             notify: true,
             notifyMsg: error.message,
             processing: false,
             step2complete: false
           });
-        })
-    }
-    else {
+        });
+    } else {
       this.setState({
         notify: true,
         notifyMsg: "Looks like you're missing stuff.",
@@ -156,8 +156,12 @@ export default class Signup extends Component {
           </Typography>
         </div>
         <Divider />
-        <div className="signup-page-content">
-          <Card style={{ marginTop: "10px" }} data-aos="slide-up">
+        <div>
+          <Card
+            className="signup-page-content"
+            style={{ marginTop: "10px" }}
+            data-aos="slide-up"
+          >
             <CardHeader
               title="Essentials"
               subheader="What we need to get started"
@@ -174,22 +178,22 @@ export default class Signup extends Component {
                 disabled={this.state.step1complete || this.state.processing}
               />
               <TextField
-                onChange={this.handleChange("address")}
-                id="address"
-                label="Full Address"
-                required
-                value={this.state.address}
-                fullWidth
-                className="push-down"
-                disabled={this.state.step1complete || this.state.processing}
-              />
-              <TextField
                 onChange={this.handleChange("email")}
                 label="E-Mail"
                 type="email"
                 id="email"
                 required
                 value={this.state.email}
+                fullWidth
+                className="push-down"
+                disabled={this.state.step1complete || this.state.processing}
+              />
+              <TextField
+                onChange={this.handleChange("address")}
+                id="address"
+                label="Full Address"
+                required
+                value={this.state.address}
                 fullWidth
                 className="push-down"
                 disabled={this.state.step1complete || this.state.processing}
@@ -236,7 +240,7 @@ export default class Signup extends Component {
             </CardContent>
           </Card>
           {this.state.step1complete ? (
-            <Card className="push-down" data-aos="slide-up">
+            <Card className="push-down signup-page-content" data-aos="slide-up">
               <CardHeader
                 title="Confirmation"
                 subheader="Click done to create your account!"
