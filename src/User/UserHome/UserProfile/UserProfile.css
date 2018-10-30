@@ -1,0 +1,14 @@
+.user-profile-content {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: center !important;
+}
+
+.input-paper {
+  margin: 20px;
+  padding: 10px !important;
+  text-align: center;
+  border-radius: 25px !important;
+}
