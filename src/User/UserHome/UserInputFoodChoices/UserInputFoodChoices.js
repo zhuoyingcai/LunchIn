@@ -13,11 +13,13 @@ import {
   TableHead,
   TableRow,
   Typography,
-  Chip
+  Chip,
+  IconButton
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import Review from "../Review/Review";
+import Delete from "@material-ui/icons/DeleteForever";
 
 class UserInputFoodChoices extends Component {
   constructor(props) {
@@ -35,6 +37,7 @@ class UserInputFoodChoices extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleRandomFood = this.handleRandomFood.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount() {
     this.fetchInitialData();
@@ -83,10 +86,10 @@ class UserInputFoodChoices extends Component {
     });
   }
   componentDidUpdate(prevProps, prevState) {
-    
+
     if (prevState.randomFoodName !== this.state.randomFoodName) {
       console.log(this.state.address)
-      this.setState({businesses: []})
+      this.setState({ businesses: [] })
       fetch(`/api/yelp?term=${this.state.randomFoodName}&location=${this.state.address}`)
         .then(response => response.json())
         .then(data => {
@@ -146,6 +149,35 @@ class UserInputFoodChoices extends Component {
         });
       });
   }
+  handleDelete(e) {
+    e.preventDefault();
+    const x = e.currentTarget.value
+    console.log(x)
+
+    const foodList = this.state.foodNames
+    const foodIndex = foodList.indexOf(x)
+    foodList.splice(foodIndex, 1);
+    console.log(foodList)
+
+    this.setState({
+      processing: true
+    });
+    const deleteFoodRef = firebase
+      .database()
+      .ref(`Users/${firebase.auth().currentUser.uid}/foodNames`);
+    deleteFoodRef
+      .set(foodList)
+      .then(() => {
+        this.setState({ processing: false });
+      })
+      .catch(error => {
+        this.setState({
+          notify: true,
+          notifyMsg: error.message,
+          processing: false
+        });
+      });
+  }
 
   render() {
     return (
@@ -187,29 +219,26 @@ class UserInputFoodChoices extends Component {
           </Button>
           {this.state.foodNames.length > 0 ? (
             <Paper>
-              <Table style={{ textAlign: "center" }}>
+              <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Food Name</TableCell>
-                    <TableCell>Edit</TableCell>
-                    <TableCell>Delete</TableCell>
+                    <TableCell style={{ textAlign: "left", fontSize: 25 }}>Food Name</TableCell>
+                    <TableCell></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {this.state.foodNames.map(food => (
                     <TableRow key={food}>
-                      <TableCell component="th" scope="row">
+                      <TableCell component="th" scope="row" style={{ fontSize: 15 }}>
                         {food}
                       </TableCell>
                       <TableCell>
-                        <Button className="table-btn" color="primary">
-                          Edit
-                        </Button>
-                      </TableCell>
-                      <TableCell>
-                        <Button className="table-btn" color="secondary">
-                          Delete
-                        </Button>
+                        <IconButton id="delete" aria-label="Delete" style={{ float: "right" }}
+                          value={food}
+                          onClick={(e) => this.handleDelete(e)}
+                        >
+                          <Delete />
+                        </IconButton>
                       </TableCell>
                     </TableRow>
                   ))}
