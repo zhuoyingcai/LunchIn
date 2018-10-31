@@ -15,12 +15,12 @@ import {
   Typography,
   Chip,
   IconButton,
-  Grid
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import Review from "../Review/Review";
 import Delete from "@material-ui/icons/DeleteForever";
+import Restaurant from "@material-ui/icons/Restaurant";
 
 class UserInputFoodChoices extends Component {
   constructor(props) {
@@ -227,7 +227,6 @@ class UserInputFoodChoices extends Component {
                 <TableHead>
                   <TableRow>
                     <TableCell style={{ textAlign: "left", fontSize: 25 }}>Food Name</TableCell>
-                    <TableCell>Pick Directly</TableCell>
                     <TableCell></TableCell>
                   </TableRow>
                 </TableHead>
@@ -238,18 +237,18 @@ class UserInputFoodChoices extends Component {
                         {food}
                       </TableCell>
                       <TableCell>
-                        <Button value={food} onClick={(e) => this.handleRandomFood(e, false)} className="table-btn" style={{ color: '#66bb6a' }}>
-                          Pick
-                        </Button>
-                      </TableCell>
-                      <TableCell>
-                        <IconButton id="delete" aria-label="Delete" style={{ float: "right" }}
+                      <IconButton id="delete" aria-label="Delete" style={{ float: "right" }}
                           value={food}
                           onClick={(e) => this.handleDelete(e)}
                         >
                           <Delete />
                         </IconButton>
-                    </TableCell>
+                        <IconButton value={food} onClick={(e) => this.handleRandomFood(e, false)} className="table-btn" 
+                        style={{ color: '#66bb6a', float: "right", fontSize: 12}}
+                        >
+                          <Restaurant /> SELECT
+                        </IconButton>
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
