@@ -14,7 +14,8 @@ import {
   TableRow,
   Typography,
   Chip,
-  IconButton
+  IconButton,
+  Grid
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
@@ -124,11 +125,14 @@ class UserInputFoodChoices extends Component {
         });
     }
   }
-  handleRandomFood(e) {
+  handleRandomFood(e, isRand) {
     e.preventDefault();
-    const rand = this.state.foodNames[
+    let rand = this.state.foodNames[
       Math.floor(Math.random() * this.state.foodNames.length)
     ];
+    if (!isRand) {
+      rand = e.currentTarget.value
+    }
     this.setState({
       randomFoodName: rand,
       processing: true
@@ -223,6 +227,7 @@ class UserInputFoodChoices extends Component {
                 <TableHead>
                   <TableRow>
                     <TableCell style={{ textAlign: "left", fontSize: 25 }}>Food Name</TableCell>
+                    <TableCell>Pick Directly</TableCell>
                     <TableCell></TableCell>
                   </TableRow>
                 </TableHead>
@@ -233,13 +238,18 @@ class UserInputFoodChoices extends Component {
                         {food}
                       </TableCell>
                       <TableCell>
+                        <Button value={food} onClick={(e) => this.handleRandomFood(e, false)} className="table-btn" style={{ color: '#66bb6a' }}>
+                          Pick
+                        </Button>
+                      </TableCell>
+                      <TableCell>
                         <IconButton id="delete" aria-label="Delete" style={{ float: "right" }}
                           value={food}
                           onClick={(e) => this.handleDelete(e)}
                         >
                           <Delete />
                         </IconButton>
-                      </TableCell>
+                    </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -255,7 +265,8 @@ class UserInputFoodChoices extends Component {
               variant="raised"
               color="secondary"
               className="input-button"
-              onClick={this.handleRandomFood}
+              value=""
+              onClick={(e) => this.handleRandomFood(e, true)}
             >
               Generate Random Food
             </Button>
