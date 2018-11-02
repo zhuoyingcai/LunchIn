@@ -4,5 +4,7 @@ import App from "./App";
 import { shallow } from 'enzyme';
 
 test("renders without crashing", () => {
-  shallow( <App />)
+  
+  const wrapper = shallow( <App />)
+  expect(wrapper).toMatchSnapshot();
 });
