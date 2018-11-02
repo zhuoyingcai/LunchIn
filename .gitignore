@@ -5,6 +5,7 @@
 .idea/
 .vscode/
 package-lock.json
+__snapshots__
 
 # testing
 /coverage
