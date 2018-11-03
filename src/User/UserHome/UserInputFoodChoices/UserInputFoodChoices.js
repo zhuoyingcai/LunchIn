@@ -31,7 +31,7 @@ class UserInputFoodChoices extends Component {
       notify: false,
       notifyMsg: "",
       businesses: [],
-      address: ''
+      address: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -84,14 +84,17 @@ class UserInputFoodChoices extends Component {
     });
   }
   componentDidUpdate(prevProps, prevState) {
-
     if (prevState.randomFoodName !== this.state.randomFoodName) {
-      console.log(this.state.address)
-      this.setState({ businesses: [] })
-      fetch(`/api/yelp?term=${this.state.randomFoodName}&location=${this.state.address}`)
+      console.log(this.state.address);
+      this.setState({ businesses: [] });
+      fetch(
+        `/api/yelp?term=${this.state.randomFoodName}&location=${
+          this.state.address
+        }`
+      )
         .then(response => response.json())
         .then(data => {
-          console.log(data.jsonBody.businesses)
+          console.log(data.jsonBody.businesses);
           this.setState({ businesses: data.jsonBody.businesses });
         })
         .catch(e => console.log(e));
@@ -128,7 +131,7 @@ class UserInputFoodChoices extends Component {
       Math.floor(Math.random() * this.state.foodNames.length)
     ];
     if (!isRand) {
-      rand = e.currentTarget.value
+      rand = e.currentTarget.value;
     }
     this.setState({
       randomFoodName: rand,
@@ -206,7 +209,12 @@ class UserInputFoodChoices extends Component {
                         {food}
                       </TableCell>
                       <TableCell>
-                        <Button value={food} onClick={(e) => this.handleRandomFood(e, false)} className="table-btn" style={{ color: '#66bb6a' }}>
+                        <Button
+                          value={food}
+                          onClick={e => this.handleRandomFood(e, false)}
+                          className="table-btn"
+                          style={{ color: "#66bb6a" }}
+                        >
                           Pick
                         </Button>
                       </TableCell>
@@ -236,7 +244,7 @@ class UserInputFoodChoices extends Component {
               color="secondary"
               className="input-button"
               value=""
-              onClick={(e) => this.handleRandomFood(e, true)}
+              onClick={e => this.handleRandomFood(e, true)}
             >
               Generate Random Food
             </Button>

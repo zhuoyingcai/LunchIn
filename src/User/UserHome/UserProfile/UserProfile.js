@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./UserProfile.css";
 import { firebase } from "../../../Config";
 import {
@@ -8,9 +8,21 @@ import {
   Divider,
   Snackbar,
   TextField,
-  Typography
+  Typography,
+  Tabs,
+  Tab,
+  AppBar
 } from "@material-ui/core";
+import SwipeableViews from "react-swipeable-views";
 import Back from "@material-ui/icons/ArrowBack";
+
+function TabContainer({ children, dir }) {
+  return (
+    <Typography component="div" dir={dir}>
+      {children}
+    </Typography>
+  );
+}
 
 class UserProfile extends Component {
   constructor(props) {
@@ -20,12 +32,16 @@ class UserProfile extends Component {
       email: "",
       password: "",
       address: "",
+      newAddress: "",
       processing: false,
       notify: false,
       notifyMsg: "",
+      value: 0
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleAddressChange = this.handleAddressChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeTab = this.handleChangeTab.bind(this);
+    this.handleChangeIndex = this.handleChangeIndex.bind(this);
   }
   componentDidMount() {
     this.fetchInitialData();
@@ -33,6 +49,9 @@ class UserProfile extends Component {
   fetchInitialData() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
+        this.setState({
+          email: user.email
+        });
         firebase
           .database()
           .ref(`Users/${user.uid}`)
@@ -58,7 +77,16 @@ class UserProfile extends Component {
       [name]: event.target.value
     });
   };
-  handleSubmit(e) {
+
+  handleChangeTab = (event, value) => {
+    this.setState({ value });
+  };
+
+  handleChangeIndex = index => {
+    this.setState({ value: index });
+  };
+
+  handleAddressChange(e) {
     e.preventDefault();
     if (this.state.address) {
       this.setState({
@@ -74,7 +102,7 @@ class UserProfile extends Component {
           this.setState({
             processing: false,
             notify: true,
-            notifyMsg: "Update successfully.",
+            notifyMsg: "Update successfully."
           });
         })
         .catch(error => {
@@ -93,16 +121,17 @@ class UserProfile extends Component {
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">
           <Typography variant="display2" style={{ flex: 1 }}>
-            Profile
-
-        <Button
+            {this.state.name}
+            's Profile
+            <Button
               style={{ float: "right" }}
               onClick={() => {
                 this.props.history.push(`/user/home`);
-              }}>
-              <Back />Back
-        </Button>
-
+              }}
+            >
+              <Back />
+              Back
+            </Button>
           </Typography>
         </div>
         <Divider />
@@ -115,49 +144,75 @@ class UserProfile extends Component {
           autoHideDuration={6000}
           message={this.state.notifyMsg}
         />
+        <AppBar
+          className="bar"
+          data-aos="zoom-in-up"
+          position="static"
+          color="default"
+        >
+          <Tabs
+            value={this.state.value}
+            onChange={this.handleChangeTab}
+            indicatorColor="primary"
+            textColor="primary"
+            fullWidth
+          >
+            <Tab label="User Info" />
+            <Tab label="Change Email Section" />
+            <Tab label="Change Password Section" />
+          </Tabs>
+        </AppBar>
+        <SwipeableViews
+          index={this.state.value}
+          onChangeIndex={this.handleChangeIndex}
+        >
+          <TabContainer>
+            <div>
+              <Card className="input-paper" data-aos="zoom-in-up">
+                <CardContent>
+                  <TextField
+                    id="name"
+                    label="Full Name"
+                    value={this.state.name}
+                    fullWidth
+                    className="push-down"
+                    InputProps={{
+                      readOnly: true
+                    }}
+                  />
 
-        <div className="user-profile-content">
-          <Card className="input-paper" data-aos="zoom-in-up">
-            <CardContent>
-              <TextField
-                id="name"
-                label="Full Name"
-                value={this.state.name}
-                fullWidth
-                className="push-down"
-                InputProps={{
-                  readOnly: true,
-                }}
-              />
+                  <TextField
+                    onChange={this.handleChange("newAddress")}
+                    id="address"
+                    label="Full Address"
+                    required
+                    value={this.state.address}
+                    fullWidth
+                    className="push-down"
+                    disabled={this.state.processing}
+                  />
 
-              <TextField
-                onChange={this.handleChange("address")}
-                id="address"
-                label="Full Address"
-                required
-                value={this.state.address}
-                fullWidth
-                className="push-down"
-                disabled={this.state.processing}
-              />
-
-              <Button
-                style={{
-                  float: "right",
-                  marginTop: 10,
-                }}
-                variant="raised"
-                color="primary"
-                className="input-button"
-                onClick={this.handleSubmit}
-              >
-                Update
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+                  <Button
+                    style={{
+                      float: "right",
+                      marginTop: 10
+                    }}
+                    variant="raised"
+                    color="primary"
+                    className="input-button"
+                    onClick={this.handleAddressChange}
+                  >
+                    Update Address
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </TabContainer>
+          <TabContainer>{this.state.email}</TabContainer>
+          <TabContainer>Password</TabContainer>
+        </SwipeableViews>
       </div>
-    )
+    );
   }
 }
 export default UserProfile;
