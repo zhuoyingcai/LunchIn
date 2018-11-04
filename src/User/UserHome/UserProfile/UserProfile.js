@@ -129,7 +129,6 @@ class UserProfile extends Component {
       user.email,
       currentPassword
     );
-    console.log(cred);
     return user.reauthenticateAndRetrieveDataWithCredential(cred);
   };
 
