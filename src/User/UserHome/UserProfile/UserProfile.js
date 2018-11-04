@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./UserProfile.css";
 import { firebase } from "../../../Config";
+import * as firebaseAuth from "firebase";
 import {
   Button,
   Card,
@@ -9,11 +10,15 @@ import {
   Snackbar,
   TextField,
   Typography,
+  InputAdornment,
+  IconButton,
   Tabs,
   Tab,
   AppBar
 } from "@material-ui/core";
 import SwipeableViews from "react-swipeable-views";
+import Visible from "@material-ui/icons/Visibility";
+import Hidden from "@material-ui/icons/VisibilityOff";
 import Back from "@material-ui/icons/ArrowBack";
 
 function TabContainer({ children, dir }) {
@@ -32,8 +37,8 @@ class UserProfile extends Component {
       email: "",
       currentPassword: "",
       newPassword: "",
+      showPassword: false,
       address: "",
-      newAddress: "",
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -125,7 +130,7 @@ class UserProfile extends Component {
     var user = firebase.auth().currentUser;
     console.log(currentPassword);
     console.log(this.state.newPassword);
-    var cred = firebase.auth.EmailAuthProvider.credential(
+    var cred = firebaseAuth.auth.EmailAuthProvider.credential(
       user.email,
       currentPassword
     );
@@ -133,33 +138,46 @@ class UserProfile extends Component {
   };
 
   onChangePasswordPress = () => {
-    this.reauthenticate(this.state.currentPassword)
-      .then(() => {
-        var user = firebase.auth().currentUser;
-        user
-          .updatePassword(this.state.newPassword)
-          .then(() => {
-            this.setState({
-              notify: true,
-              notifyMsg: "Password updated successfully!",
-              processing: false
-            });
-          })
-          .catch(error => {
-            this.setState({
-              notify: true,
-              notifyMsg: error.message,
-              processing: false
-            });
-          });
-      })
-      .catch(error => {
-        this.setState({
-          notify: true,
-          notifyMsg: error.message,
-          processing: false
-        });
+    if (this.state.currentPassword === this.state.newPassword) {
+      this.setState({
+        notify: true,
+        processing: false,
+        notifyMsg:
+          "Your current password and the new password are the same, please try again.",
+        newPassword: "",
+        currentPassword: ""
       });
+    } else {
+      this.reauthenticate(this.state.currentPassword)
+        .then(() => {
+          var user = firebase.auth().currentUser;
+          user
+            .updatePassword(this.state.newPassword)
+            .then(() => {
+              this.setState({
+                notify: true,
+                notifyMsg: "Password updated successfully!",
+                processing: false,
+                newPassword: "",
+                currentPassword: ""
+              });
+            })
+            .catch(error => {
+              this.setState({
+                notify: true,
+                notifyMsg: error.message,
+                processing: false
+              });
+            });
+        })
+        .catch(error => {
+          this.setState({
+            notify: true,
+            notifyMsg: error.message,
+            processing: false
+          });
+        });
+    }
   };
 
   render() {
@@ -264,7 +282,22 @@ class UserProfile extends Component {
                   required
                   value={this.state.currentPassword}
                   fullWidth
-                  type="password"
+                  type={this.state.showPassword ? "text" : "password"}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => {
+                            this.setState({
+                              showPassword: !this.state.showPassword
+                            });
+                          }}
+                        >
+                          {this.state.showPassword ? <Visible /> : <Hidden />}
+                        </IconButton>
+                      </InputAdornment>
+                    )
+                  }}
                   className="push-down"
                   disabled={this.state.processing}
                 />
@@ -274,7 +307,7 @@ class UserProfile extends Component {
                   id="password"
                   label="New Password"
                   required
-                  type="password"
+                  type={this.state.showPassword ? "text" : "password"}
                   value={this.state.newPassword}
                   fullWidth
                   className="push-down"
