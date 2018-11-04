@@ -132,21 +132,47 @@ export default class GoogleMapComponent extends React.PureComponent {
         this.state = {
             randomFoodName: props.food,
             addressName: props.address,
-            lat: props.lat,
-            lng: props.lng,
+            lat: 0,
+            lng: 0,
         };
+        this.renderMaps = this.renderMaps.bind(this);
     }
 
+    getCoordinates() {
+        Geocode.setApiKey("AIzaSyA6XB8rJGuEV0lmR47wPSB7U3yfw1rL3SA");
+          console.log(this.state.addressName);
+          Geocode.fromAddress(this.state.addressName).then(
+            response => {
+              const { lat, lng } = response.results[0].geometry.location;
+              console.log(lat, lng);
+              this.setState({lat: lat , lng: lng});
+            },
+            error => {
+              console.error(error);
+            }
+          );
+      };
+
+    renderMaps(food) {
+        this.getCoordinates();
+        return (
+            <MapComponent food={this.state.randomFoodName}
+                address={this.state.addressName}
+                lng={this.state.lng}
+                lat={this.state.lat}
+                key={food}
+            />
+        );
+      }
 
     render() {
         return (
           <div>
-
-              <MapComponent food={this.state.randomFoodName}
-                address={this.state.addressName}
-                lng={this.state.lng}
-                lat={this.state.lat}
-                />
+              {!!this.props.food
+                ? (this.renderMaps(this.props.food))
+                : null
+              }
+              
           </div>
         )
     }

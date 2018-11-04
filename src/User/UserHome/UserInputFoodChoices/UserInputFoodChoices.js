@@ -24,16 +24,12 @@ class UserInputFoodChoices extends Component {
         this.state = {
             inputFoodName: '',
             foodNames: [],
-            reloads: 0,
             keyVal: "first",
             randomFoodName: '',
-            lastRandomFood: 'nothing',
             addressName: '',
             processing: false,
             notify: false,
             notifyMsg: '',
-            lat: 0,
-            lng: 0,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -106,7 +102,6 @@ class UserInputFoodChoices extends Component {
         e.preventDefault();
         const rand = this.state.foodNames[Math.floor(Math.random() * this.state.foodNames.length)];
         this.setState({
-            lastRandomFood: this.state.randomFoodName,
             randomFoodName: rand,
             processing: true
         })
@@ -125,56 +120,16 @@ class UserInputFoodChoices extends Component {
             })
     }
     renderMaps() {
-
-        if (this.state.randomFoodName !== this.state.lastRandomFood) {
-            if(this.state.reloads % 2 == 0 && this.state.reloads > 0) {
-                this.state.reloads++;
-                this.state.keyVal = "first";
-
-                // return (
-                //     <GoogleM food={this.state.randomFoodName} address={this.state.addressName} key={this.state.keyVal}/>
-                // );
-            } else {
-                this.state.reloads++;
-                this.state.keyVal = "second";
-                this.getCoordinates();
-                // If the food isn't the same as last time, show the new food
-                return (
-                    <GoogleM
-                      food={this.state.randomFoodName}
-                      address={this.state.addressName}
-                      lng={this.state.lng}
-                      lat={this.state.lat}
-                      key={this.state.keyVal}/>
-                );
-            }
-        } else {
-            // If the food is the same as last time, no need to update
-            return (
-                <GoogleM
-                  food={this.state.randomFoodName}
-                  address={this.state.addressName}
-                  lng={this.state.lng}
-                  lat={this.state.lat}
-                  key={this.state.keyVal}/>
-            );
-        }
+        return (
+            <GoogleM
+                food={this.state.randomFoodName}
+                address={this.state.addressName}
+                lng={this.state.lng}
+                lat={this.state.lat}
+            />
+        )
     }
 
-    getCoordinates() {
-      Geocode.setApiKey("AIzaSyA6XB8rJGuEV0lmR47wPSB7U3yfw1rL3SA");
-        console.log(this.state.addressName);
-        Geocode.fromAddress(this.state.addressName).then(
-          response => {
-            const { lat, lng } = response.results[0].geometry.location;
-            console.log(lat, lng);
-            this.setState({lat: lat , lng: lng});
-          },
-          error => {
-            console.error(error);
-          }
-        );
-    };
     render() {
         return (
             <Card className="input-paper">
