@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
-import UserProfile from "./UserProfile";
+import UserHome from "./UserHome";
 
-describe("UserProfile Component", () => {
+describe("UserHome Component", () => {
   describe("When provided with no props", () => {
     it("Should render correctly", () => {
-      const userProfileInstance = shallow(<UserProfile />);
-      expect(userProfileInstance).toMatchSnapshot();
+      const userHomeInstance = shallow(
+        <UserHome />
+      );
+      expect(userHomeInstance).toMatchSnapshot();
     });
   });
 });
