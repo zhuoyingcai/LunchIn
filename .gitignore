@@ -2,6 +2,7 @@
 
 # environment variables
 app-env
+.env
 
 # dependencies
 /node_modules
@@ -16,7 +17,6 @@ package-lock.json
 /build
 
 # misc
-.env
 .DS_Store
 .env.local
 .env.development.local
