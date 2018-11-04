@@ -137,7 +137,6 @@ export default class GoogleMapComponent extends React.PureComponent {
         };
         this.renderMaps = this.renderMaps.bind(this);
     }
-
     getCoordinates() {
         Geocode.setApiKey("AIzaSyA6XB8rJGuEV0lmR47wPSB7U3yfw1rL3SA");
           console.log(this.state.addressName);
@@ -151,20 +150,17 @@ export default class GoogleMapComponent extends React.PureComponent {
               console.error(error);
             }
           );
-      };
-
-    renderMaps(food) {
+    };
+    renderMaps() {
         this.getCoordinates();
         return (
             <MapComponent food={this.state.randomFoodName}
                 address={this.state.addressName}
                 lng={this.state.lng}
                 lat={this.state.lat}
-                key={food}
             />
         );
       }
-
     render() {
         return (
           <div>

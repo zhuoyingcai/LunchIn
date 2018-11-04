@@ -16,7 +16,6 @@ import {
 import "./UserInputFoodChoices.css"
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
-import Geocode from 'react-geocode';
 
 class UserInputFoodChoices extends Component {
     constructor(props) {
@@ -124,8 +123,7 @@ class UserInputFoodChoices extends Component {
             <GoogleM
                 food={this.state.randomFoodName}
                 address={this.state.addressName}
-                lng={this.state.lng}
-                lat={this.state.lat}
+                key={this.state.randomFoodName}
             />
         )
     }
