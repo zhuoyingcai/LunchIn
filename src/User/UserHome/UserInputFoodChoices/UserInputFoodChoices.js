@@ -16,6 +16,7 @@ import {
 import "./UserInputFoodChoices.css"
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
+import Geocode from 'react-geocode';
 
 class UserInputFoodChoices extends Component {
     constructor(props) {
@@ -31,6 +32,8 @@ class UserInputFoodChoices extends Component {
             processing: false,
             notify: false,
             notifyMsg: '',
+            lat: 0,
+            lng: 0,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -107,7 +110,7 @@ class UserInputFoodChoices extends Component {
             randomFoodName: rand,
             processing: true
         })
-        
+
         const foodSelectedRef = firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/foodSelected`)
         foodSelectedRef.set(rand)
             .then(() => {
@@ -121,29 +124,57 @@ class UserInputFoodChoices extends Component {
                 });
             })
     }
-    renderMaps() { 
+    renderMaps() {
+
         if (this.state.randomFoodName !== this.state.lastRandomFood) {
             if(this.state.reloads % 2 == 0 && this.state.reloads > 0) {
                 this.state.reloads++;
                 this.state.keyVal = "first";
+
                 // return (
                 //     <GoogleM food={this.state.randomFoodName} address={this.state.addressName} key={this.state.keyVal}/>
                 // );
             } else {
                 this.state.reloads++;
                 this.state.keyVal = "second";
+                this.getCoordinates();
                 // If the food isn't the same as last time, show the new food
                 return (
-                    <GoogleM food={this.state.randomFoodName} address={this.state.addressName} key={this.state.keyVal}/>
+                    <GoogleM
+                      food={this.state.randomFoodName}
+                      address={this.state.addressName}
+                      lng={this.state.lng}
+                      lat={this.state.lat}
+                      key={this.state.keyVal}/>
                 );
             }
         } else {
             // If the food is the same as last time, no need to update
             return (
-                <GoogleM food={this.state.randomFoodName} address={this.state.addressName} key={this.state.keyVal}/>
+                <GoogleM
+                  food={this.state.randomFoodName}
+                  address={this.state.addressName}
+                  lng={this.state.lng}
+                  lat={this.state.lat}
+                  key={this.state.keyVal}/>
             );
         }
     }
+
+    getCoordinates() {
+      Geocode.setApiKey("AIzaSyA6XB8rJGuEV0lmR47wPSB7U3yfw1rL3SA");
+        console.log(this.state.addressName);
+        Geocode.fromAddress(this.state.addressName).then(
+          response => {
+            const { lat, lng } = response.results[0].geometry.location;
+            console.log(lat, lng);
+            this.setState({lat: lat , lng: lng});
+          },
+          error => {
+            console.error(error);
+          }
+        );
+    };
     render() {
         return (
             <Card className="input-paper">

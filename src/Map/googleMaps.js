@@ -6,6 +6,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from "react
 import { firebase } from "../Config";
 import { Link } from 'react-router-dom';
 import './map.css';
+import Geocode from 'react-geocode';
 
 const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 const _ = require("lodash");
@@ -26,11 +27,14 @@ const MapComponent = compose(
     withHandlers((props) => {
             console.log(props.food);
             console.log(props.address);
+            console.log(props.lat);
+            console.log(props.lng);
 
             const refs = {
                 map: undefined,
                 searchBox: undefined,
             }
+
             return {
                 onMapMounted: () => (ref) => {
                   refs.map = ref
@@ -44,6 +48,8 @@ const MapComponent = compose(
                     center: refs.map.getCenter(),
                   })
                 },
+
+
                 onPlacesChanged: () => () => {
                   const places = refs.searchBox.getPlaces();
                   const bounds = new window.google.maps.LatLngBounds();
@@ -91,13 +97,12 @@ const MapComponent = compose(
 
 )((props) => {
     return (
-
       <div>
         <GoogleMap
               onTilesLoaded={props.fetchPlaces}
               ref={props.onMapMounted}
               defaultZoom={14}
-              defaultCenter={{ lat: 40.758896, lng: -73.985130 }} >
+              defaultCenter={{ lat: props.lat, lng: props.lng }} >
 
             {props.places && props.places.map((place, i) =>
                 <Marker
@@ -126,14 +131,22 @@ export default class GoogleMapComponent extends React.PureComponent {
         super(props);
         this.state = {
             randomFoodName: props.food,
-            addressName: props.address
+            addressName: props.address,
+            lat: props.lat,
+            lng: props.lng,
         };
     }
+
 
     render() {
         return (
           <div>
-              <MapComponent food={this.state.randomFoodName} address={this.state.addressName}/>
+
+              <MapComponent food={this.state.randomFoodName}
+                address={this.state.addressName}
+                lng={this.state.lng}
+                lat={this.state.lat}
+                />
           </div>
         )
     }
