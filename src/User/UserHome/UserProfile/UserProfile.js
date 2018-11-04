@@ -30,7 +30,8 @@ class UserProfile extends Component {
     this.state = {
       name: "",
       email: "",
-      password: "",
+      currentPassword: "",
+      newPassword: "",
       address: "",
       newAddress: "",
       processing: false,
@@ -38,40 +39,17 @@ class UserProfile extends Component {
       notifyMsg: "",
       value: 0
     };
-    this.handleAddressChange = this.handleAddressChange.bind(this);
+    this.submitNewAddress = this.submitNewAddress.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeTab = this.handleChangeTab.bind(this);
     this.handleChangeIndex = this.handleChangeIndex.bind(this);
+    this.onChangePasswordPress = this.onChangePasswordPress.bind(this);
+    this.reauthenticate = this.reauthenticate.bind(this);
   }
   componentDidMount() {
     this.fetchInitialData();
   }
-  fetchInitialData() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        this.setState({
-          email: user.email
-        });
-        firebase
-          .database()
-          .ref(`Users/${user.uid}`)
-          .once(
-            "value",
-            snapshot => {
-              if (snapshot.val() != null) {
-                this.setState({
-                  name: snapshot.val().name,
-                  address: snapshot.val().address
-                });
-              }
-            },
-            error => {
-              console.log("Error: " + error.code);
-            }
-          );
-      }
-    });
-  }
+
   handleChange = name => event => {
     this.setState({
       [name]: event.target.value
@@ -86,7 +64,35 @@ class UserProfile extends Component {
     this.setState({ value: index });
   };
 
-  handleAddressChange(e) {
+  fetchInitialData() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        firebase
+          .database()
+          .ref(`Users/${user.uid}`)
+          .once(
+            "value",
+            snapshot => {
+              if (snapshot.val() != null) {
+                this.setState({
+                  name: snapshot.val().name,
+                  address: snapshot.val().address
+                });
+              }
+            },
+            error => {
+              this.setState({
+                processing: false,
+                notify: true,
+                notifyMsg: error.message
+              });
+            }
+          );
+      }
+    });
+  }
+
+  submitNewAddress(e) {
     e.preventDefault();
     if (this.state.address) {
       this.setState({
@@ -102,7 +108,7 @@ class UserProfile extends Component {
           this.setState({
             processing: false,
             notify: true,
-            notifyMsg: "Update successfully."
+            notifyMsg: "Email update successfully!"
           });
         })
         .catch(error => {
@@ -114,6 +120,48 @@ class UserProfile extends Component {
         });
     }
   }
+
+  reauthenticate = currentPassword => {
+    var user = firebase.auth().currentUser;
+    console.log(currentPassword);
+    console.log(this.state.newPassword);
+    var cred = firebase.auth.EmailAuthProvider.credential(
+      user.email,
+      currentPassword
+    );
+    console.log(cred);
+    return user.reauthenticateAndRetrieveDataWithCredential(cred);
+  };
+
+  onChangePasswordPress = () => {
+    this.reauthenticate(this.state.currentPassword)
+      .then(() => {
+        var user = firebase.auth().currentUser;
+        user
+          .updatePassword(this.state.newPassword)
+          .then(() => {
+            this.setState({
+              notify: true,
+              notifyMsg: "Password updated successfully!",
+              processing: false
+            });
+          })
+          .catch(error => {
+            this.setState({
+              notify: true,
+              notifyMsg: error.message,
+              processing: false
+            });
+          });
+      })
+      .catch(error => {
+        this.setState({
+          notify: true,
+          notifyMsg: error.message,
+          processing: false
+        });
+      });
+  };
 
   render() {
     return (
@@ -141,7 +189,7 @@ class UserProfile extends Component {
             this.setState({ notify: false, notifyMsg: "" });
           }}
           open={this.state.notify}
-          autoHideDuration={6000}
+          autoHideDuration={3000}
           message={this.state.notifyMsg}
         />
         <AppBar
@@ -167,49 +215,88 @@ class UserProfile extends Component {
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer>
-            <div>
-              <Card className="input-paper" data-aos="zoom-in-up">
-                <CardContent>
-                  <TextField
-                    id="name"
-                    label="Full Name"
-                    value={this.state.name}
-                    fullWidth
-                    className="push-down"
-                    InputProps={{
-                      readOnly: true
-                    }}
-                  />
+            <Card className="input-paper" data-aos="zoom-in-up">
+              <CardContent>
+                <TextField
+                  id="name"
+                  label="Full Name"
+                  value={this.state.name}
+                  fullWidth
+                  className="push-down"
+                  InputProps={{
+                    readOnly: true
+                  }}
+                />
 
-                  <TextField
-                    onChange={this.handleChange("newAddress")}
-                    id="address"
-                    label="Full Address"
-                    required
-                    value={this.state.address}
-                    fullWidth
-                    className="push-down"
-                    disabled={this.state.processing}
-                  />
+                <TextField
+                  onChange={this.handleChange("address")}
+                  id="address"
+                  label="Full Address"
+                  required
+                  value={this.state.address}
+                  fullWidth
+                  className="push-down"
+                  disabled={this.state.processing}
+                />
 
-                  <Button
-                    style={{
-                      float: "right",
-                      marginTop: 10
-                    }}
-                    variant="raised"
-                    color="primary"
-                    className="input-button"
-                    onClick={this.handleAddressChange}
-                  >
-                    Update Address
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
+                <Button
+                  style={{
+                    float: "right",
+                    marginTop: 10
+                  }}
+                  variant="raised"
+                  color="primary"
+                  className="input-button"
+                  onClick={this.submitNewAddress}
+                >
+                  Update Address
+                </Button>
+              </CardContent>
+            </Card>
           </TabContainer>
           <TabContainer>{this.state.email}</TabContainer>
-          <TabContainer>Password</TabContainer>
+          <TabContainer>
+            <Card className="input-paper" data-aos="zoom-in-up">
+              <CardContent>
+                <TextField
+                  onChange={this.handleChange("currentPassword")}
+                  id="currentPassword"
+                  label="Current Password"
+                  required
+                  value={this.state.currentPassword}
+                  fullWidth
+                  type="password"
+                  className="push-down"
+                  disabled={this.state.processing}
+                />
+
+                <TextField
+                  onChange={this.handleChange("newPassword")}
+                  id="password"
+                  label="New Password"
+                  required
+                  type="password"
+                  value={this.state.newPassword}
+                  fullWidth
+                  className="push-down"
+                  disabled={this.state.processing}
+                />
+
+                <Button
+                  style={{
+                    float: "right",
+                    marginTop: 10
+                  }}
+                  variant="raised"
+                  color="primary"
+                  className="input-button"
+                  onClick={this.onChangePasswordPress}
+                >
+                  Change Password
+                </Button>
+              </CardContent>
+            </Card>
+          </TabContainer>
         </SwipeableViews>
       </div>
     );

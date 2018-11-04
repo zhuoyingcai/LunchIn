@@ -31,7 +31,6 @@ class UserHome extends Component {
           }
         });
       }
-      console.log(this.state.user.email);
     });
   }
 
