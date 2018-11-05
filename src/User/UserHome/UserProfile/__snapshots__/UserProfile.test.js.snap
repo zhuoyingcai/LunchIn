@@ -161,11 +161,16 @@ ShallowWrapper {
                       "endAdornment": <WithStyles(InputAdornment)
                         position="end"
                       >
-                        <WithStyles(IconButton)
-                          onClick={[Function]}
+                        <WithStyles(Tooltip)
+                          placement="top"
+                          title="Show Password"
                         >
-                          <pure(VisibilityOffIcon) />
-                        </WithStyles(IconButton)>
+                          <WithStyles(IconButton)
+                            onClick={[Function]}
+                          >
+                            <pure(VisibilityOffIcon) />
+                          </WithStyles(IconButton)>
+                        </WithStyles(Tooltip)>
                       </WithStyles(InputAdornment)>,
                     }
                   }
@@ -499,11 +504,16 @@ ShallowWrapper {
                         "endAdornment": <WithStyles(InputAdornment)
                           position="end"
                         >
-                          <WithStyles(IconButton)
-                            onClick={[Function]}
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
                           >
-                            <pure(VisibilityOffIcon) />
-                          </WithStyles(IconButton)>
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
                         </WithStyles(InputAdornment)>,
                       }
                     }
@@ -819,11 +829,16 @@ ShallowWrapper {
                         "endAdornment": <WithStyles(InputAdornment)
                           position="end"
                         >
-                          <WithStyles(IconButton)
-                            onClick={[Function]}
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
                           >
-                            <pure(VisibilityOffIcon) />
-                          </WithStyles(IconButton)>
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
                         </WithStyles(InputAdornment)>,
                       }
                     }
@@ -882,11 +897,16 @@ ShallowWrapper {
                         "endAdornment": <WithStyles(InputAdornment)
                           position="end"
                         >
-                          <WithStyles(IconButton)
-                            onClick={[Function]}
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
                           >
-                            <pure(VisibilityOffIcon) />
-                          </WithStyles(IconButton)>
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
                         </WithStyles(InputAdornment)>,
                       }
                     }
@@ -946,11 +966,16 @@ ShallowWrapper {
                           "endAdornment": <WithStyles(InputAdornment)
                             position="end"
                           >
-                            <WithStyles(IconButton)
-                              onClick={[Function]}
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
                             >
-                              <pure(VisibilityOffIcon) />
-                            </WithStyles(IconButton)>
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
                           </WithStyles(InputAdornment)>,
                         }
                       }
@@ -1006,11 +1031,16 @@ ShallowWrapper {
                         "endAdornment": <WithStyles(InputAdornment)
                           position="end"
                         >
-                          <WithStyles(IconButton)
-                            onClick={[Function]}
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
                           >
-                            <pure(VisibilityOffIcon) />
-                          </WithStyles(IconButton)>
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
                         </WithStyles(InputAdornment)>,
                       },
                       "className": "push-down",
@@ -1232,11 +1262,16 @@ ShallowWrapper {
                         "endAdornment": <WithStyles(InputAdornment)
                           position="end"
                         >
-                          <WithStyles(IconButton)
-                            onClick={[Function]}
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
                           >
-                            <pure(VisibilityOffIcon) />
-                          </WithStyles(IconButton)>
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
                         </WithStyles(InputAdornment)>,
                       }
                     }
@@ -1570,11 +1605,16 @@ ShallowWrapper {
                           "endAdornment": <WithStyles(InputAdornment)
                             position="end"
                           >
-                            <WithStyles(IconButton)
-                              onClick={[Function]}
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
                             >
-                              <pure(VisibilityOffIcon) />
-                            </WithStyles(IconButton)>
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
                           </WithStyles(InputAdornment)>,
                         }
                       }
@@ -1890,11 +1930,16 @@ ShallowWrapper {
                           "endAdornment": <WithStyles(InputAdornment)
                             position="end"
                           >
-                            <WithStyles(IconButton)
-                              onClick={[Function]}
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
                             >
-                              <pure(VisibilityOffIcon) />
-                            </WithStyles(IconButton)>
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
                           </WithStyles(InputAdornment)>,
                         }
                       }
@@ -1953,11 +1998,16 @@ ShallowWrapper {
                           "endAdornment": <WithStyles(InputAdornment)
                             position="end"
                           >
-                            <WithStyles(IconButton)
-                              onClick={[Function]}
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
                             >
-                              <pure(VisibilityOffIcon) />
-                            </WithStyles(IconButton)>
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
                           </WithStyles(InputAdornment)>,
                         }
                       }
@@ -2017,11 +2067,16 @@ ShallowWrapper {
                             "endAdornment": <WithStyles(InputAdornment)
                               position="end"
                             >
-                              <WithStyles(IconButton)
-                                onClick={[Function]}
+                              <WithStyles(Tooltip)
+                                placement="top"
+                                title="Show Password"
                               >
-                                <pure(VisibilityOffIcon) />
-                              </WithStyles(IconButton)>
+                                <WithStyles(IconButton)
+                                  onClick={[Function]}
+                                >
+                                  <pure(VisibilityOffIcon) />
+                                </WithStyles(IconButton)>
+                              </WithStyles(Tooltip)>
                             </WithStyles(InputAdornment)>,
                           }
                         }
@@ -2077,11 +2132,16 @@ ShallowWrapper {
                           "endAdornment": <WithStyles(InputAdornment)
                             position="end"
                           >
-                            <WithStyles(IconButton)
-                              onClick={[Function]}
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
                             >
-                              <pure(VisibilityOffIcon) />
-                            </WithStyles(IconButton)>
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
                           </WithStyles(InputAdornment)>,
                         },
                         "className": "push-down",
