@@ -3,8 +3,7 @@
 import React from "react"
 import { compose, withProps, withHandlers, withState } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from "react-google-maps";
-import { firebase } from "../Config";
-import { Link } from 'react-router-dom';
+import Card from '@material-ui/core/Card';
 import './map.css';
 import Geocode from 'react-geocode';
 
@@ -154,11 +153,14 @@ export default class GoogleMapComponent extends React.PureComponent {
     renderMaps() {
         this.getCoordinates();
         return (
-            <MapComponent food={this.state.randomFoodName}
+            <Card>
+                <MapComponent food={this.state.randomFoodName}
                 address={this.state.addressName}
                 lng={this.state.lng}
                 lat={this.state.lat}
-            />
+                />
+            </Card>
+            
         );
       }
     render() {
