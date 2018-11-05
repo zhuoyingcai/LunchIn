@@ -139,7 +139,7 @@ export default class GoogleMapComponent extends React.PureComponent {
     }
     getCoordinates() {
         Geocode.setApiKey("AIzaSyA6XB8rJGuEV0lmR47wPSB7U3yfw1rL3SA");
-          console.log(this.state.addressName);
+        //   console.log(this.state.addressName);
           Geocode.fromAddress(this.state.addressName).then(
             response => {
               const { lat, lng } = response.results[0].geometry.location;

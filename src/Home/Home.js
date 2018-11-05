@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./Home.css";
 import {
   Button,
@@ -80,7 +79,6 @@ class Home extends Component {
           <Typography variant="display4" className="title">
             <strong>LunchIn</strong>
           </Typography>
-          {/* <img src={logo} data-aos="fade-left" alt="Logo" /> */}
           <Typography
             variant="display2"
             className="tag-line"
@@ -114,7 +112,7 @@ class Home extends Component {
                   }}
                 >
                   <Next style={{ marginRight: "10px" }} />
-                  CONTINUE TO YOUR PORTAL
+                  Continue to Your Account
                 </Button>
                 <Button
                   fullWidth
@@ -126,7 +124,7 @@ class Home extends Component {
                   }}
                 >
                   <Signout style={{ marginRight: "10px" }} />
-                  SIGN OUT
+                  Sign Out
                 </Button>
               </CardContent>
             ) : (
@@ -195,8 +193,9 @@ class Home extends Component {
                   color="secondary"
                   fullWidth
                   className="login"
-                  component={Link}
-                  to="/sign-up"
+                  onClick={() => {
+                    this.props.history.push("/sign-up");
+                  }}
                 >
                   Sign-Up
                 </Button>
