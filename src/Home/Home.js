@@ -10,7 +10,8 @@ import {
   LinearProgress,
   Snackbar,
   TextField,
-  Typography
+  Typography,
+  Tooltip
 } from "@material-ui/core";
 import Visible from "@material-ui/icons/Visibility";
 import Hidden from "@material-ui/icons/VisibilityOff";
@@ -27,7 +28,8 @@ class Home extends Component {
       showPassword: false,
       notify: false,
       notifyMsg: "",
-      processing: this.props.loggedIn
+      processing: this.props.loggedIn,
+      message: "Show Password"
     };
     this.handleChange = this.handleChange.bind(this);
     this.login = this.login.bind(this);
@@ -153,15 +155,27 @@ class Home extends Component {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton
-                          onClick={() => {
-                            this.setState({
-                              showPassword: !this.state.showPassword
-                            });
-                          }}
-                        >
-                          {this.state.showPassword ? <Visible /> : <Hidden />}
-                        </IconButton>
+                        <Tooltip title={this.state.message} placement="top">
+                          <IconButton
+                            onClick={() => {
+                              if (this.state.message === "Show Password") {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Hide Password"
+                                });
+                              } else if (
+                                this.state.message === "Hide Password"
+                              ) {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Show Password"
+                                });
+                              }
+                            }}
+                          >
+                            {this.state.showPassword ? <Visible /> : <Hidden />}
+                          </IconButton>
+                        </Tooltip>
                       </InputAdornment>
                     )
                   }}

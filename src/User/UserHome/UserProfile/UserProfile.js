@@ -14,7 +14,8 @@ import {
   IconButton,
   Tabs,
   Tab,
-  AppBar
+  AppBar,
+  Tooltip
 } from "@material-ui/core";
 import SwipeableViews from "react-swipeable-views";
 import Visible from "@material-ui/icons/Visibility";
@@ -42,7 +43,8 @@ class UserProfile extends Component {
       processing: false,
       notify: false,
       notifyMsg: "",
-      value: 0
+      value: 0,
+      message: "Show Password"
     };
     this.submitNewAddress = this.submitNewAddress.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -284,15 +286,27 @@ class UserProfile extends Component {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton
-                          onClick={() => {
-                            this.setState({
-                              showPassword: !this.state.showPassword
-                            });
-                          }}
-                        >
-                          {this.state.showPassword ? <Visible /> : <Hidden />}
-                        </IconButton>
+                        <Tooltip title={this.state.message} placement="top">
+                          <IconButton
+                            onClick={() => {
+                              if (this.state.message === "Show Password") {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Hide Password"
+                                });
+                              } else if (
+                                this.state.message === "Hide Password"
+                              ) {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Show Password"
+                                });
+                              }
+                            }}
+                          >
+                            {this.state.showPassword ? <Visible /> : <Hidden />}
+                          </IconButton>
+                        </Tooltip>
                       </InputAdornment>
                     )
                   }}
