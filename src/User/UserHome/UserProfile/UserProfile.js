@@ -128,8 +128,6 @@ class UserProfile extends Component {
 
   reauthenticate = currentPassword => {
     var user = firebase.auth().currentUser;
-    console.log(currentPassword);
-    console.log(this.state.newPassword);
     var cred = firebaseAuth.auth.EmailAuthProvider.credential(
       user.email,
       currentPassword
