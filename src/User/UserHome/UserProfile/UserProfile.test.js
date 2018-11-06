@@ -6,9 +6,7 @@ import UserProfile from "./UserProfile";
 describe("UserProfile Component", () => {
   describe("When provided with no props", () => {
     it("Should render correctly", () => {
-      const userProfileInstance = shallow(
-        <UserProfile />
-      );
+      const userProfileInstance = shallow(<UserProfile />);
       expect(userProfileInstance).toMatchSnapshot();
     });
   });

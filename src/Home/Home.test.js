@@ -5,9 +5,7 @@ import Home from "./Home";
 
 describe("Home Component", () => {
   it("Should render correctly with correct path", () => {
-    const HomeInstance = shallow(
-      <Home />
-    );
+    const HomeInstance = shallow(<Home />);
     expect(HomeInstance).toMatchSnapshot();
   });
 });
