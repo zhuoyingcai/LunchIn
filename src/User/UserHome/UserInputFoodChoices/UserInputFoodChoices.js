@@ -18,6 +18,7 @@ import {
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
+import GoogleM from "../../../Map/googleMaps.js";
 import Review from "../Review/Review";
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
@@ -29,6 +30,7 @@ class UserInputFoodChoices extends Component {
       inputFoodName: "",
       foodNames: [],
       randomFoodName: "",
+      addressName: '',
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -42,6 +44,7 @@ class UserInputFoodChoices extends Component {
   }
   componentDidMount() {
     this.fetchInitialData();
+    this.fetchInitialData2();
   }
   fetchInitialData() {
     firebase.auth().onAuthStateChanged(user => {
@@ -81,6 +84,21 @@ class UserInputFoodChoices extends Component {
       }
     });
   }
+  fetchInitialData2() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            firebase.database().ref(`Users/${user.uid}/address`).once("value", (snapshot) => {
+                if (snapshot.val() != null) {
+                    this.setState({
+                        addressName: this.state.addressName.concat(snapshot.val())
+                    })
+                }
+            }, (error) => {
+                console.log("Error: " + error.code);
+            })
+        }
+    });
+  }
   handleInputChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -88,6 +106,7 @@ class UserInputFoodChoices extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.randomFoodName !== this.state.randomFoodName) {
+<<<<<<< HEAD
       console.log(this.state.address);
       this.setState({ businesses: [] });
       fetch(
@@ -95,6 +114,10 @@ class UserInputFoodChoices extends Component {
           this.state.address
         }`
       )
+=======
+      this.setState({ businesses: [] })
+      fetch(`/api/yelp?term=${this.state.randomFoodName}&location=${this.state.address}`)
+>>>>>>> master
         .then(response => response.json())
         .then(data => {
           console.log(data.jsonBody.businesses);
@@ -184,6 +207,15 @@ class UserInputFoodChoices extends Component {
           processing: false
         });
       });
+  }
+  renderMaps() {
+    return (
+        <GoogleM
+            food={this.state.randomFoodName}
+            address={this.state.addressName}
+            key={this.state.randomFoodName}
+        />
+    )
   }
 
   render() {
@@ -293,6 +325,7 @@ class UserInputFoodChoices extends Component {
             {this.state.randomFoodName ? (
               <Typography variant="subtitle1">
                 The food selected is: <Chip label={this.state.randomFoodName} />
+                {this.renderMaps()}
                 <Review businesses={this.state.businesses} />
               </Typography>
             ) : null}
