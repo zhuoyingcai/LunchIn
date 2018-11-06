@@ -5,12 +5,12 @@ import "../node_modules/aos/dist/aos.css";
 const aos = AOS.init();
 
 const firebase = firebaseInitial.initializeApp({
-    apiKey: "AIzaSyAiW-TzPFXngSQchx5IEJq1hjLB7kLFkN4",
-    authDomain: "lunchin-9fe27.firebaseapp.com",
-    databaseURL: "https://lunchin-9fe27.firebaseio.com",
-    projectId: "lunchin-9fe27",
-    storageBucket: "lunchin-9fe27.appspot.com",
-    messagingSenderId: "214952763354"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
   });
 
 export { firebase, aos };

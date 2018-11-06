@@ -2,7 +2,7 @@
 
 # environment variables
 app-env
-.env
+.env*
 
 # dependencies
 /node_modules

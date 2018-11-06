@@ -1,4 +1,5 @@
 require('dotenv').load();
+// console.log(process.env);
 const express = require('express');
 const morgan = require('morgan');
 const router = require('./routes/routes');
