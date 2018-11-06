@@ -24,7 +24,7 @@
   "scripts": {
     "start": "nodemon server/server.js & react-scripts start",
     "build": "react-scripts build",
-    "test": "./test/mocha_tests.sh & react-scripts test",
+    "test": "./test/mocha_tests.sh && react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
