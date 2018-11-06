@@ -17,10 +17,14 @@ import {
   AppBar,
   Tooltip
 } from "@material-ui/core";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import SwipeableViews from "react-swipeable-views";
 import Visible from "@material-ui/icons/Visibility";
 import Hidden from "@material-ui/icons/VisibilityOff";
 import Back from "@material-ui/icons/ArrowBack";
+import Email from "@material-ui/icons/Email";
+import Password from "@material-ui/icons/LockOpen";
+import Home from "@material-ui/icons/Home";
 
 function TabContainer({ children, dir }) {
   return (
@@ -36,6 +40,7 @@ class UserProfile extends Component {
     this.state = {
       name: "",
       email: "",
+      newEmail: "",
       currentPassword: "",
       newPassword: "",
       showPassword: false,
@@ -51,6 +56,7 @@ class UserProfile extends Component {
     this.handleChangeTab = this.handleChangeTab.bind(this);
     this.handleChangeIndex = this.handleChangeIndex.bind(this);
     this.onChangePasswordPress = this.onChangePasswordPress.bind(this);
+    this.onChangeEmailPress = this.onChangeEmailPress.bind(this);
     this.reauthenticate = this.reauthenticate.bind(this);
   }
   componentDidMount() {
@@ -74,6 +80,9 @@ class UserProfile extends Component {
   fetchInitialData() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
+        this.setState({
+          email: user.email
+        });
         firebase
           .database()
           .ref(`Users/${user.uid}`)
@@ -137,13 +146,56 @@ class UserProfile extends Component {
     return user.reauthenticateAndRetrieveDataWithCredential(cred);
   };
 
+  onChangeEmailPress = () => {
+    if (this.state.newEmail === this.state.email) {
+      this.setState({
+        notify: true,
+        processing: false,
+        notifyMsg:
+          "The new email you entered is the same as the current email, please enter a different email.",
+        currentPassword: "",
+        newEmail: ""
+      });
+    } else {
+      this.reauthenticate(this.state.currentPassword)
+        .then(() => {
+          var user = firebase.auth().currentUser;
+          user
+            .updateEmail(this.state.newEmail)
+            .then(() => {
+              this.setState({
+                notify: true,
+                notifyMsg: "Email updated successfully!",
+                processing: false,
+                currentPassword: "",
+                newEmail: ""
+              });
+            })
+            .catch(error => {
+              this.setState({
+                notify: true,
+                notifyMsg: error.message,
+                processing: false
+              });
+            });
+        })
+        .catch(error => {
+          this.setState({
+            notify: true,
+            notifyMsg: error.message,
+            processing: false
+          });
+        });
+    }
+  };
+
   onChangePasswordPress = () => {
     if (this.state.currentPassword === this.state.newPassword) {
       this.setState({
         notify: true,
         processing: false,
         notifyMsg:
-          "Your current password and the new password are the same, please try again.",
+          "The new password you entered matches the current password, please try again.",
         newPassword: "",
         currentPassword: ""
       });
@@ -183,6 +235,7 @@ class UserProfile extends Component {
   render() {
     return (
       <div style={{ padding: "50px 200px" }}>
+        <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">
           <Typography variant="display2" style={{ flex: 1 }}>
@@ -222,7 +275,7 @@ class UserProfile extends Component {
             textColor="primary"
             fullWidth
           >
-            <Tab label="User Info" />
+            <Tab label="User Information Section" />
             <Tab label="Change Email Section" />
             <Tab label="Change Password Section" />
           </Tabs>
@@ -262,16 +315,85 @@ class UserProfile extends Component {
                     marginTop: 10
                   }}
                   variant="raised"
-                  color="primary"
+                  color="secondary"
                   className="input-button"
                   onClick={this.submitNewAddress}
                 >
                   Update Address
+                  <Home style={{ marginLeft: 10 }} />
                 </Button>
               </CardContent>
             </Card>
           </TabContainer>
-          <TabContainer>{this.state.email}</TabContainer>
+          <TabContainer>
+            <Card className="input-paper" data-aos="zoom-in-up">
+              <CardContent>
+                <TextField
+                  onChange={this.handleChange("currentPassword")}
+                  id="currentPassword"
+                  label="Current Password"
+                  required
+                  value={this.state.currentPassword}
+                  fullWidth
+                  type={this.state.showPassword ? "text" : "password"}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <Tooltip title={this.state.message} placement="top">
+                          <IconButton
+                            onClick={() => {
+                              if (this.state.message === "Show Password") {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Hide Password"
+                                });
+                              } else if (
+                                this.state.message === "Hide Password"
+                              ) {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Show Password"
+                                });
+                              }
+                            }}
+                          >
+                            {this.state.showPassword ? <Visible /> : <Hidden />}
+                          </IconButton>
+                        </Tooltip>
+                      </InputAdornment>
+                    )
+                  }}
+                  className="push-down"
+                  disabled={this.state.processing}
+                />
+
+                <TextField
+                  onChange={this.handleChange("newEmail")}
+                  id="email"
+                  label="New Email"
+                  required
+                  value={this.state.newEmail}
+                  fullWidth
+                  className="push-down"
+                  disabled={this.state.processing}
+                />
+
+                <Button
+                  style={{
+                    float: "right",
+                    marginTop: 10
+                  }}
+                  variant="raised"
+                  color="primary"
+                  className="input-button"
+                  onClick={this.onChangeEmailPress}
+                >
+                  Change Email
+                  <Email style={{ marginLeft: 10 }} />
+                </Button>
+              </CardContent>
+            </Card>
+          </TabContainer>
           <TabContainer>
             <Card className="input-paper" data-aos="zoom-in-up">
               <CardContent>
@@ -332,11 +454,12 @@ class UserProfile extends Component {
                     marginTop: 10
                   }}
                   variant="raised"
-                  color="primary"
+                  color="inherit"
                   className="input-button"
                   onClick={this.onChangePasswordPress}
                 >
                   Change Password
+                  <Password style={{ marginLeft: 10 }} />
                 </Button>
               </CardContent>
             </Card>

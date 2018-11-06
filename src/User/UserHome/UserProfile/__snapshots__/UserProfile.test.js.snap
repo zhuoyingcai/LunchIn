@@ -18,6 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <WithStyles(CssBaseline) />,
         <div
           className="user-header"
         >
@@ -65,7 +66,7 @@ ShallowWrapper {
             value={0}
           >
             <WithStyles(Tab)
-              label="User Info"
+              label="User Information Section"
             />
             <WithStyles(Tab)
               label="Change Email Section"
@@ -131,7 +132,7 @@ ShallowWrapper {
                 />
                 <WithStyles(Button)
                   className="input-button"
-                  color="primary"
+                  color="secondary"
                   onClick={[Function]}
                   style={
                     Object {
@@ -142,12 +143,89 @@ ShallowWrapper {
                   variant="raised"
                 >
                   Update Address
+                  <pure(HomeIcon)
+                    style={
+                      Object {
+                        "marginLeft": 10,
+                      }
+                    }
+                  />
                 </WithStyles(Button)>
               </WithStyles(CardContent)>
             </WithStyles(Card)>
           </TabContainer>
           <TabContainer>
-            
+            <WithStyles(Card)
+              className="input-paper"
+              data-aos="zoom-in-up"
+            >
+              <WithStyles(CardContent)>
+                <TextField
+                  InputProps={
+                    Object {
+                      "endAdornment": <WithStyles(InputAdornment)
+                        position="end"
+                      >
+                        <WithStyles(Tooltip)
+                          placement="top"
+                          title="Show Password"
+                        >
+                          <WithStyles(IconButton)
+                            onClick={[Function]}
+                          >
+                            <pure(VisibilityOffIcon) />
+                          </WithStyles(IconButton)>
+                        </WithStyles(Tooltip)>
+                      </WithStyles(InputAdornment)>,
+                    }
+                  }
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="currentPassword"
+                  label="Current Password"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  type="password"
+                  value=""
+                  variant="standard"
+                />
+                <TextField
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="email"
+                  label="New Email"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  value=""
+                  variant="standard"
+                />
+                <WithStyles(Button)
+                  className="input-button"
+                  color="primary"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "float": "right",
+                      "marginTop": 10,
+                    }
+                  }
+                  variant="raised"
+                >
+                  Change Email
+                  <pure(EmailIcon)
+                    style={
+                      Object {
+                        "marginLeft": 10,
+                      }
+                    }
+                  />
+                </WithStyles(Button)>
+              </WithStyles(CardContent)>
+            </WithStyles(Card)>
           </TabContainer>
           <TabContainer>
             <WithStyles(Card)
@@ -201,7 +279,7 @@ ShallowWrapper {
                 />
                 <WithStyles(Button)
                   className="input-button"
-                  color="primary"
+                  color="inherit"
                   onClick={[Function]}
                   style={
                     Object {
@@ -212,6 +290,13 @@ ShallowWrapper {
                   variant="raised"
                 >
                   Change Password
+                  <pure(LockOpenIcon)
+                    style={
+                      Object {
+                        "marginLeft": 10,
+                      }
+                    }
+                  />
                 </WithStyles(Button)>
               </WithStyles(CardContent)>
             </WithStyles(Card)>
@@ -224,6 +309,15 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -353,7 +447,7 @@ ShallowWrapper {
             value={0}
           >
             <WithStyles(Tab)
-              label="User Info"
+              label="User Information Section"
             />
             <WithStyles(Tab)
               label="Change Email Section"
@@ -375,7 +469,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <WithStyles(Tab)
-                label="User Info"
+                label="User Information Section"
               />,
               <WithStyles(Tab)
                 label="Change Email Section"
@@ -397,7 +491,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "label": "User Info",
+                "label": "User Information Section",
               },
               "ref": null,
               "rendered": null,
@@ -474,7 +568,7 @@ ShallowWrapper {
                   />
                   <WithStyles(Button)
                     className="input-button"
-                    color="primary"
+                    color="secondary"
                     onClick={[Function]}
                     style={
                       Object {
@@ -485,12 +579,89 @@ ShallowWrapper {
                     variant="raised"
                   >
                     Update Address
+                    <pure(HomeIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>
               </WithStyles(Card)>
             </TabContainer>,
             <TabContainer>
-              
+              <WithStyles(Card)
+                className="input-paper"
+                data-aos="zoom-in-up"
+              >
+                <WithStyles(CardContent)>
+                  <TextField
+                    InputProps={
+                      Object {
+                        "endAdornment": <WithStyles(InputAdornment)
+                          position="end"
+                        >
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
+                          >
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
+                        </WithStyles(InputAdornment)>,
+                      }
+                    }
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="currentPassword"
+                    label="Current Password"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    type="password"
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="email"
+                    label="New Email"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    value=""
+                    variant="standard"
+                  />
+                  <WithStyles(Button)
+                    className="input-button"
+                    color="primary"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "float": "right",
+                        "marginTop": 10,
+                      }
+                    }
+                    variant="raised"
+                  >
+                    Change Email
+                    <pure(EmailIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
+                  </WithStyles(Button)>
+                </WithStyles(CardContent)>
+              </WithStyles(Card)>
             </TabContainer>,
             <TabContainer>
               <WithStyles(Card)
@@ -544,7 +715,7 @@ ShallowWrapper {
                   />
                   <WithStyles(Button)
                     className="input-button"
-                    color="primary"
+                    color="inherit"
                     onClick={[Function]}
                     style={
                       Object {
@@ -555,6 +726,13 @@ ShallowWrapper {
                     variant="raised"
                   >
                     Change Password
+                    <pure(LockOpenIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>
               </WithStyles(Card)>
@@ -616,7 +794,7 @@ ShallowWrapper {
                   />
                   <WithStyles(Button)
                     className="input-button"
-                    color="primary"
+                    color="secondary"
                     onClick={[Function]}
                     style={
                       Object {
@@ -627,6 +805,13 @@ ShallowWrapper {
                     variant="raised"
                   >
                     Update Address
+                    <pure(HomeIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>
               </WithStyles(Card)>,
@@ -667,7 +852,7 @@ ShallowWrapper {
                   />
                   <WithStyles(Button)
                     className="input-button"
-                    color="primary"
+                    color="secondary"
                     onClick={[Function]}
                     style={
                       Object {
@@ -678,6 +863,13 @@ ShallowWrapper {
                     variant="raised"
                   >
                     Update Address
+                    <pure(HomeIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>,
                 "className": "input-paper",
@@ -719,7 +911,7 @@ ShallowWrapper {
                     />,
                     <WithStyles(Button)
                       className="input-button"
-                      color="primary"
+                      color="secondary"
                       onClick={[Function]}
                       style={
                         Object {
@@ -730,6 +922,13 @@ ShallowWrapper {
                       variant="raised"
                     >
                       Update Address
+                      <pure(HomeIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
                     </WithStyles(Button)>,
                   ],
                 },
@@ -781,9 +980,18 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "Update Address",
+                      "children": Array [
+                        "Update Address",
+                        <pure(HomeIcon)
+                          style={
+                            Object {
+                              "marginLeft": 10,
+                            }
+                          }
+                        />,
+                      ],
                       "className": "input-button",
-                      "color": "primary",
+                      "color": "secondary",
                       "onClick": [Function],
                       "style": Object {
                         "float": "right",
@@ -792,7 +1000,22 @@ ShallowWrapper {
                       "variant": "raised",
                     },
                     "ref": null,
-                    "rendered": "Update Address",
+                    "rendered": Array [
+                      "Update Address",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "style": Object {
+                            "marginLeft": 10,
+                          },
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                    ],
                     "type": [Function],
                   },
                 ],
@@ -807,10 +1030,333 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": "",
+              "children": <WithStyles(Card)
+                className="input-paper"
+                data-aos="zoom-in-up"
+              >
+                <WithStyles(CardContent)>
+                  <TextField
+                    InputProps={
+                      Object {
+                        "endAdornment": <WithStyles(InputAdornment)
+                          position="end"
+                        >
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
+                          >
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
+                        </WithStyles(InputAdornment)>,
+                      }
+                    }
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="currentPassword"
+                    label="Current Password"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    type="password"
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="email"
+                    label="New Email"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    value=""
+                    variant="standard"
+                  />
+                  <WithStyles(Button)
+                    className="input-button"
+                    color="primary"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "float": "right",
+                        "marginTop": 10,
+                      }
+                    }
+                    variant="raised"
+                  >
+                    Change Email
+                    <pure(EmailIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
+                  </WithStyles(Button)>
+                </WithStyles(CardContent)>
+              </WithStyles(Card)>,
             },
             "ref": null,
-            "rendered": "",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <WithStyles(CardContent)>
+                  <TextField
+                    InputProps={
+                      Object {
+                        "endAdornment": <WithStyles(InputAdornment)
+                          position="end"
+                        >
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
+                          >
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
+                        </WithStyles(InputAdornment)>,
+                      }
+                    }
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="currentPassword"
+                    label="Current Password"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    type="password"
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="email"
+                    label="New Email"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    value=""
+                    variant="standard"
+                  />
+                  <WithStyles(Button)
+                    className="input-button"
+                    color="primary"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "float": "right",
+                        "marginTop": 10,
+                      }
+                    }
+                    variant="raised"
+                  >
+                    Change Email
+                    <pure(EmailIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
+                  </WithStyles(Button)>
+                </WithStyles(CardContent)>,
+                "className": "input-paper",
+                "data-aos": "zoom-in-up",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <TextField
+                      InputProps={
+                        Object {
+                          "endAdornment": <WithStyles(InputAdornment)
+                            position="end"
+                          >
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
+                            >
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
+                          </WithStyles(InputAdornment)>,
+                        }
+                      }
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="currentPassword"
+                      label="Current Password"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      type="password"
+                      value=""
+                      variant="standard"
+                    />,
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="email"
+                      label="New Email"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      value=""
+                      variant="standard"
+                    />,
+                    <WithStyles(Button)
+                      className="input-button"
+                      color="primary"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "float": "right",
+                          "marginTop": 10,
+                        }
+                      }
+                      variant="raised"
+                    >
+                      Change Email
+                      <pure(EmailIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
+                    </WithStyles(Button)>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "InputProps": Object {
+                        "endAdornment": <WithStyles(InputAdornment)
+                          position="end"
+                        >
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
+                          >
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
+                        </WithStyles(InputAdornment)>,
+                      },
+                      "className": "push-down",
+                      "disabled": false,
+                      "fullWidth": true,
+                      "id": "currentPassword",
+                      "label": "Current Password",
+                      "onChange": [Function],
+                      "required": true,
+                      "select": false,
+                      "type": "password",
+                      "value": "",
+                      "variant": "standard",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "className": "push-down",
+                      "disabled": false,
+                      "fullWidth": true,
+                      "id": "email",
+                      "label": "New Email",
+                      "onChange": [Function],
+                      "required": true,
+                      "select": false,
+                      "value": "",
+                      "variant": "standard",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        "Change Email",
+                        <pure(EmailIcon)
+                          style={
+                            Object {
+                              "marginLeft": 10,
+                            }
+                          }
+                        />,
+                      ],
+                      "className": "input-button",
+                      "color": "primary",
+                      "onClick": [Function],
+                      "style": Object {
+                        "float": "right",
+                        "marginTop": 10,
+                      },
+                      "variant": "raised",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Change Email",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "style": Object {
+                            "marginLeft": 10,
+                          },
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
             "type": [Function],
           },
           Object {
@@ -869,7 +1415,7 @@ ShallowWrapper {
                   />
                   <WithStyles(Button)
                     className="input-button"
-                    color="primary"
+                    color="inherit"
                     onClick={[Function]}
                     style={
                       Object {
@@ -880,6 +1426,13 @@ ShallowWrapper {
                     variant="raised"
                   >
                     Change Password
+                    <pure(LockOpenIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>
               </WithStyles(Card)>,
@@ -937,7 +1490,7 @@ ShallowWrapper {
                   />
                   <WithStyles(Button)
                     className="input-button"
-                    color="primary"
+                    color="inherit"
                     onClick={[Function]}
                     style={
                       Object {
@@ -948,6 +1501,13 @@ ShallowWrapper {
                     variant="raised"
                   >
                     Change Password
+                    <pure(LockOpenIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>,
                 "className": "input-paper",
@@ -1006,7 +1566,7 @@ ShallowWrapper {
                     />,
                     <WithStyles(Button)
                       className="input-button"
-                      color="primary"
+                      color="inherit"
                       onClick={[Function]}
                       style={
                         Object {
@@ -1017,6 +1577,13 @@ ShallowWrapper {
                       variant="raised"
                     >
                       Change Password
+                      <pure(LockOpenIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
                     </WithStyles(Button)>,
                   ],
                 },
@@ -1085,9 +1652,18 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "Change Password",
+                      "children": Array [
+                        "Change Password",
+                        <pure(LockOpenIcon)
+                          style={
+                            Object {
+                              "marginLeft": 10,
+                            }
+                          }
+                        />,
+                      ],
                       "className": "input-button",
-                      "color": "primary",
+                      "color": "inherit",
                       "onClick": [Function],
                       "style": Object {
                         "float": "right",
@@ -1096,7 +1672,22 @@ ShallowWrapper {
                       "variant": "raised",
                     },
                     "ref": null,
-                    "rendered": "Change Password",
+                    "rendered": Array [
+                      "Change Password",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "style": Object {
+                            "marginLeft": 10,
+                          },
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                    ],
                     "type": [Function],
                   },
                 ],
@@ -1119,6 +1710,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <WithStyles(CssBaseline) />,
           <div
             className="user-header"
           >
@@ -1166,7 +1758,7 @@ ShallowWrapper {
               value={0}
             >
               <WithStyles(Tab)
-                label="User Info"
+                label="User Information Section"
               />
               <WithStyles(Tab)
                 label="Change Email Section"
@@ -1232,7 +1824,7 @@ ShallowWrapper {
                   />
                   <WithStyles(Button)
                     className="input-button"
-                    color="primary"
+                    color="secondary"
                     onClick={[Function]}
                     style={
                       Object {
@@ -1243,12 +1835,89 @@ ShallowWrapper {
                     variant="raised"
                   >
                     Update Address
+                    <pure(HomeIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>
               </WithStyles(Card)>
             </TabContainer>
             <TabContainer>
-              
+              <WithStyles(Card)
+                className="input-paper"
+                data-aos="zoom-in-up"
+              >
+                <WithStyles(CardContent)>
+                  <TextField
+                    InputProps={
+                      Object {
+                        "endAdornment": <WithStyles(InputAdornment)
+                          position="end"
+                        >
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
+                          >
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
+                        </WithStyles(InputAdornment)>,
+                      }
+                    }
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="currentPassword"
+                    label="Current Password"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    type="password"
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="email"
+                    label="New Email"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    value=""
+                    variant="standard"
+                  />
+                  <WithStyles(Button)
+                    className="input-button"
+                    color="primary"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "float": "right",
+                        "marginTop": 10,
+                      }
+                    }
+                    variant="raised"
+                  >
+                    Change Email
+                    <pure(EmailIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
+                  </WithStyles(Button)>
+                </WithStyles(CardContent)>
+              </WithStyles(Card)>
             </TabContainer>
             <TabContainer>
               <WithStyles(Card)
@@ -1302,7 +1971,7 @@ ShallowWrapper {
                   />
                   <WithStyles(Button)
                     className="input-button"
-                    color="primary"
+                    color="inherit"
                     onClick={[Function]}
                     style={
                       Object {
@@ -1313,6 +1982,13 @@ ShallowWrapper {
                     variant="raised"
                   >
                     Change Password
+                    <pure(LockOpenIcon)
+                      style={
+                        Object {
+                          "marginLeft": 10,
+                        }
+                      }
+                    />
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>
               </WithStyles(Card)>
@@ -1325,6 +2001,15 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -1454,7 +2139,7 @@ ShallowWrapper {
               value={0}
             >
               <WithStyles(Tab)
-                label="User Info"
+                label="User Information Section"
               />
               <WithStyles(Tab)
                 label="Change Email Section"
@@ -1476,7 +2161,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <WithStyles(Tab)
-                  label="User Info"
+                  label="User Information Section"
                 />,
                 <WithStyles(Tab)
                   label="Change Email Section"
@@ -1498,7 +2183,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "label": "User Info",
+                  "label": "User Information Section",
                 },
                 "ref": null,
                 "rendered": null,
@@ -1575,7 +2260,7 @@ ShallowWrapper {
                     />
                     <WithStyles(Button)
                       className="input-button"
-                      color="primary"
+                      color="secondary"
                       onClick={[Function]}
                       style={
                         Object {
@@ -1586,12 +2271,89 @@ ShallowWrapper {
                       variant="raised"
                     >
                       Update Address
+                      <pure(HomeIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
                     </WithStyles(Button)>
                   </WithStyles(CardContent)>
                 </WithStyles(Card)>
               </TabContainer>,
               <TabContainer>
-                
+                <WithStyles(Card)
+                  className="input-paper"
+                  data-aos="zoom-in-up"
+                >
+                  <WithStyles(CardContent)>
+                    <TextField
+                      InputProps={
+                        Object {
+                          "endAdornment": <WithStyles(InputAdornment)
+                            position="end"
+                          >
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
+                            >
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
+                          </WithStyles(InputAdornment)>,
+                        }
+                      }
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="currentPassword"
+                      label="Current Password"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      type="password"
+                      value=""
+                      variant="standard"
+                    />
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="email"
+                      label="New Email"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      value=""
+                      variant="standard"
+                    />
+                    <WithStyles(Button)
+                      className="input-button"
+                      color="primary"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "float": "right",
+                          "marginTop": 10,
+                        }
+                      }
+                      variant="raised"
+                    >
+                      Change Email
+                      <pure(EmailIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
+                    </WithStyles(Button)>
+                  </WithStyles(CardContent)>
+                </WithStyles(Card)>
               </TabContainer>,
               <TabContainer>
                 <WithStyles(Card)
@@ -1645,7 +2407,7 @@ ShallowWrapper {
                     />
                     <WithStyles(Button)
                       className="input-button"
-                      color="primary"
+                      color="inherit"
                       onClick={[Function]}
                       style={
                         Object {
@@ -1656,6 +2418,13 @@ ShallowWrapper {
                       variant="raised"
                     >
                       Change Password
+                      <pure(LockOpenIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
                     </WithStyles(Button)>
                   </WithStyles(CardContent)>
                 </WithStyles(Card)>
@@ -1717,7 +2486,7 @@ ShallowWrapper {
                     />
                     <WithStyles(Button)
                       className="input-button"
-                      color="primary"
+                      color="secondary"
                       onClick={[Function]}
                       style={
                         Object {
@@ -1728,6 +2497,13 @@ ShallowWrapper {
                       variant="raised"
                     >
                       Update Address
+                      <pure(HomeIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
                     </WithStyles(Button)>
                   </WithStyles(CardContent)>
                 </WithStyles(Card)>,
@@ -1768,7 +2544,7 @@ ShallowWrapper {
                     />
                     <WithStyles(Button)
                       className="input-button"
-                      color="primary"
+                      color="secondary"
                       onClick={[Function]}
                       style={
                         Object {
@@ -1779,6 +2555,13 @@ ShallowWrapper {
                       variant="raised"
                     >
                       Update Address
+                      <pure(HomeIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
                     </WithStyles(Button)>
                   </WithStyles(CardContent)>,
                   "className": "input-paper",
@@ -1820,7 +2603,7 @@ ShallowWrapper {
                       />,
                       <WithStyles(Button)
                         className="input-button"
-                        color="primary"
+                        color="secondary"
                         onClick={[Function]}
                         style={
                           Object {
@@ -1831,6 +2614,13 @@ ShallowWrapper {
                         variant="raised"
                       >
                         Update Address
+                        <pure(HomeIcon)
+                          style={
+                            Object {
+                              "marginLeft": 10,
+                            }
+                          }
+                        />
                       </WithStyles(Button)>,
                     ],
                   },
@@ -1882,9 +2672,18 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "children": "Update Address",
+                        "children": Array [
+                          "Update Address",
+                          <pure(HomeIcon)
+                            style={
+                              Object {
+                                "marginLeft": 10,
+                              }
+                            }
+                          />,
+                        ],
                         "className": "input-button",
-                        "color": "primary",
+                        "color": "secondary",
                         "onClick": [Function],
                         "style": Object {
                           "float": "right",
@@ -1893,7 +2692,22 @@ ShallowWrapper {
                         "variant": "raised",
                       },
                       "ref": null,
-                      "rendered": "Update Address",
+                      "rendered": Array [
+                        "Update Address",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "style": Object {
+                              "marginLeft": 10,
+                            },
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
                       "type": [Function],
                     },
                   ],
@@ -1908,10 +2722,333 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": "",
+                "children": <WithStyles(Card)
+                  className="input-paper"
+                  data-aos="zoom-in-up"
+                >
+                  <WithStyles(CardContent)>
+                    <TextField
+                      InputProps={
+                        Object {
+                          "endAdornment": <WithStyles(InputAdornment)
+                            position="end"
+                          >
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
+                            >
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
+                          </WithStyles(InputAdornment)>,
+                        }
+                      }
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="currentPassword"
+                      label="Current Password"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      type="password"
+                      value=""
+                      variant="standard"
+                    />
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="email"
+                      label="New Email"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      value=""
+                      variant="standard"
+                    />
+                    <WithStyles(Button)
+                      className="input-button"
+                      color="primary"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "float": "right",
+                          "marginTop": 10,
+                        }
+                      }
+                      variant="raised"
+                    >
+                      Change Email
+                      <pure(EmailIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
+                    </WithStyles(Button)>
+                  </WithStyles(CardContent)>
+                </WithStyles(Card)>,
               },
               "ref": null,
-              "rendered": "",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <WithStyles(CardContent)>
+                    <TextField
+                      InputProps={
+                        Object {
+                          "endAdornment": <WithStyles(InputAdornment)
+                            position="end"
+                          >
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
+                            >
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
+                          </WithStyles(InputAdornment)>,
+                        }
+                      }
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="currentPassword"
+                      label="Current Password"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      type="password"
+                      value=""
+                      variant="standard"
+                    />
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="email"
+                      label="New Email"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      value=""
+                      variant="standard"
+                    />
+                    <WithStyles(Button)
+                      className="input-button"
+                      color="primary"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "float": "right",
+                          "marginTop": 10,
+                        }
+                      }
+                      variant="raised"
+                    >
+                      Change Email
+                      <pure(EmailIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
+                    </WithStyles(Button)>
+                  </WithStyles(CardContent)>,
+                  "className": "input-paper",
+                  "data-aos": "zoom-in-up",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <TextField
+                        InputProps={
+                          Object {
+                            "endAdornment": <WithStyles(InputAdornment)
+                              position="end"
+                            >
+                              <WithStyles(Tooltip)
+                                placement="top"
+                                title="Show Password"
+                              >
+                                <WithStyles(IconButton)
+                                  onClick={[Function]}
+                                >
+                                  <pure(VisibilityOffIcon) />
+                                </WithStyles(IconButton)>
+                              </WithStyles(Tooltip)>
+                            </WithStyles(InputAdornment)>,
+                          }
+                        }
+                        className="push-down"
+                        disabled={false}
+                        fullWidth={true}
+                        id="currentPassword"
+                        label="Current Password"
+                        onChange={[Function]}
+                        required={true}
+                        select={false}
+                        type="password"
+                        value=""
+                        variant="standard"
+                      />,
+                      <TextField
+                        className="push-down"
+                        disabled={false}
+                        fullWidth={true}
+                        id="email"
+                        label="New Email"
+                        onChange={[Function]}
+                        required={true}
+                        select={false}
+                        value=""
+                        variant="standard"
+                      />,
+                      <WithStyles(Button)
+                        className="input-button"
+                        color="primary"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "float": "right",
+                            "marginTop": 10,
+                          }
+                        }
+                        variant="raised"
+                      >
+                        Change Email
+                        <pure(EmailIcon)
+                          style={
+                            Object {
+                              "marginLeft": 10,
+                            }
+                          }
+                        />
+                      </WithStyles(Button)>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "InputProps": Object {
+                          "endAdornment": <WithStyles(InputAdornment)
+                            position="end"
+                          >
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
+                            >
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
+                          </WithStyles(InputAdornment)>,
+                        },
+                        "className": "push-down",
+                        "disabled": false,
+                        "fullWidth": true,
+                        "id": "currentPassword",
+                        "label": "Current Password",
+                        "onChange": [Function],
+                        "required": true,
+                        "select": false,
+                        "type": "password",
+                        "value": "",
+                        "variant": "standard",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "className": "push-down",
+                        "disabled": false,
+                        "fullWidth": true,
+                        "id": "email",
+                        "label": "New Email",
+                        "onChange": [Function],
+                        "required": true,
+                        "select": false,
+                        "value": "",
+                        "variant": "standard",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": Array [
+                          "Change Email",
+                          <pure(EmailIcon)
+                            style={
+                              Object {
+                                "marginLeft": 10,
+                              }
+                            }
+                          />,
+                        ],
+                        "className": "input-button",
+                        "color": "primary",
+                        "onClick": [Function],
+                        "style": Object {
+                          "float": "right",
+                          "marginTop": 10,
+                        },
+                        "variant": "raised",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Change Email",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "style": Object {
+                              "marginLeft": 10,
+                            },
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
               "type": [Function],
             },
             Object {
@@ -1970,7 +3107,7 @@ ShallowWrapper {
                     />
                     <WithStyles(Button)
                       className="input-button"
-                      color="primary"
+                      color="inherit"
                       onClick={[Function]}
                       style={
                         Object {
@@ -1981,6 +3118,13 @@ ShallowWrapper {
                       variant="raised"
                     >
                       Change Password
+                      <pure(LockOpenIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
                     </WithStyles(Button)>
                   </WithStyles(CardContent)>
                 </WithStyles(Card)>,
@@ -2038,7 +3182,7 @@ ShallowWrapper {
                     />
                     <WithStyles(Button)
                       className="input-button"
-                      color="primary"
+                      color="inherit"
                       onClick={[Function]}
                       style={
                         Object {
@@ -2049,6 +3193,13 @@ ShallowWrapper {
                       variant="raised"
                     >
                       Change Password
+                      <pure(LockOpenIcon)
+                        style={
+                          Object {
+                            "marginLeft": 10,
+                          }
+                        }
+                      />
                     </WithStyles(Button)>
                   </WithStyles(CardContent)>,
                   "className": "input-paper",
@@ -2107,7 +3258,7 @@ ShallowWrapper {
                       />,
                       <WithStyles(Button)
                         className="input-button"
-                        color="primary"
+                        color="inherit"
                         onClick={[Function]}
                         style={
                           Object {
@@ -2118,6 +3269,13 @@ ShallowWrapper {
                         variant="raised"
                       >
                         Change Password
+                        <pure(LockOpenIcon)
+                          style={
+                            Object {
+                              "marginLeft": 10,
+                            }
+                          }
+                        />
                       </WithStyles(Button)>,
                     ],
                   },
@@ -2186,9 +3344,18 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "children": "Change Password",
+                        "children": Array [
+                          "Change Password",
+                          <pure(LockOpenIcon)
+                            style={
+                              Object {
+                                "marginLeft": 10,
+                              }
+                            }
+                          />,
+                        ],
                         "className": "input-button",
-                        "color": "primary",
+                        "color": "inherit",
                         "onClick": [Function],
                         "style": Object {
                           "float": "right",
@@ -2197,7 +3364,22 @@ ShallowWrapper {
                         "variant": "raised",
                       },
                       "ref": null,
-                      "rendered": "Change Password",
+                      "rendered": Array [
+                        "Change Password",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "style": Object {
+                              "marginLeft": 10,
+                            },
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
                       "type": [Function],
                     },
                   ],

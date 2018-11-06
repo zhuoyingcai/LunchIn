@@ -13,6 +13,7 @@ import {
   Typography,
   Tooltip
 } from "@material-ui/core";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import Visible from "@material-ui/icons/Visibility";
 import Hidden from "@material-ui/icons/VisibilityOff";
 import Next from "@material-ui/icons/CheckCircle";
@@ -68,6 +69,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home-page">
+        <CssBaseline />
         <Snackbar
           onClose={() => {
             this.setState({ notify: false, notifyMsg: "" });

@@ -13,6 +13,7 @@ import {
   Typography,
   Tooltip
 } from "@material-ui/core";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import Visible from "@material-ui/icons/Visibility";
 import Hidden from "@material-ui/icons/VisibilityOff";
 import Next from "@material-ui/icons/PlayCircleFilled";
@@ -143,6 +144,7 @@ export default class Signup extends Component {
   render() {
     return (
       <div className="signup-page">
+        <CssBaseline />
         <Snackbar
           onClose={() => {
             this.setState({ notify: false, notifyMsg: "" });
