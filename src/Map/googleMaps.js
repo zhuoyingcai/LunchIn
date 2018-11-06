@@ -1,4 +1,3 @@
-
 /*global google*/
 import React from "react"
 import { compose, withProps, withHandlers, withState } from "recompose"
@@ -12,7 +11,7 @@ const _ = require("lodash");
 
 const MapComponent = compose(
     withProps({
-        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCTwzWuq9ff9eVO8s8rjpsIZef5fiABHPg&v=3.exp&libraries=geometry,drawing,places",
+        googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
         loadingElement: <div style={{ height: '600px', width: '600px' }} />,
         containerElement: <div style={{ height: '400px' }} />,
         mapElement: <div style={{ height: '600px', width: '600px' }} />,
@@ -137,7 +136,7 @@ export default class GoogleMapComponent extends React.PureComponent {
         this.renderMaps = this.renderMaps.bind(this);
     }
     getCoordinates() {
-        Geocode.setApiKey("AIzaSyA6XB8rJGuEV0lmR47wPSB7U3yfw1rL3SA");
+        Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
         //   console.log(this.state.addressName);
           Geocode.fromAddress(this.state.addressName).then(
             response => {
