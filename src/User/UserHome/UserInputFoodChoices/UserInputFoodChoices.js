@@ -30,7 +30,7 @@ class UserInputFoodChoices extends Component {
       inputFoodName: "",
       foodNames: [],
       randomFoodName: "",
-      addressName: '',
+      addressName: "",
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -86,17 +86,24 @@ class UserInputFoodChoices extends Component {
   }
   fetchInitialData2() {
     firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            firebase.database().ref(`Users/${user.uid}/address`).once("value", (snapshot) => {
-                if (snapshot.val() != null) {
-                    this.setState({
-                        addressName: this.state.addressName.concat(snapshot.val())
-                    })
-                }
-            }, (error) => {
-                console.log("Error: " + error.code);
-            })
-        }
+      if (user) {
+        firebase
+          .database()
+          .ref(`Users/${user.uid}/address`)
+          .once(
+            "value",
+            snapshot => {
+              if (snapshot.val() != null) {
+                this.setState({
+                  addressName: this.state.addressName.concat(snapshot.val())
+                });
+              }
+            },
+            error => {
+              console.log("Error: " + error.code);
+            }
+          );
+      }
     });
   }
   handleInputChange(e) {
@@ -106,18 +113,12 @@ class UserInputFoodChoices extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.randomFoodName !== this.state.randomFoodName) {
-<<<<<<< HEAD
-      console.log(this.state.address);
       this.setState({ businesses: [] });
       fetch(
         `/api/yelp?term=${this.state.randomFoodName}&location=${
           this.state.address
         }`
       )
-=======
-      this.setState({ businesses: [] })
-      fetch(`/api/yelp?term=${this.state.randomFoodName}&location=${this.state.address}`)
->>>>>>> master
         .then(response => response.json())
         .then(data => {
           console.log(data.jsonBody.businesses);
@@ -210,12 +211,12 @@ class UserInputFoodChoices extends Component {
   }
   renderMaps() {
     return (
-        <GoogleM
-            food={this.state.randomFoodName}
-            address={this.state.addressName}
-            key={this.state.randomFoodName}
-        />
-    )
+      <GoogleM
+        food={this.state.randomFoodName}
+        address={this.state.addressName}
+        key={this.state.randomFoodName}
+      />
+    );
   }
 
   render() {
