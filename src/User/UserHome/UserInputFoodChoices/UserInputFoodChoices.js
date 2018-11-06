@@ -14,7 +14,7 @@ import {
   TableRow,
   Typography,
   Chip,
-  IconButton,
+  IconButton
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
@@ -30,12 +30,12 @@ class UserInputFoodChoices extends Component {
       inputFoodName: "",
       foodNames: [],
       randomFoodName: "",
-      addressName: '',
+      addressName: "",
       processing: false,
       notify: false,
       notifyMsg: "",
       businesses: [],
-      address: ''
+      address: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -86,17 +86,24 @@ class UserInputFoodChoices extends Component {
   }
   fetchInitialData2() {
     firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            firebase.database().ref(`Users/${user.uid}/address`).once("value", (snapshot) => {
-                if (snapshot.val() != null) {
-                    this.setState({
-                        addressName: this.state.addressName.concat(snapshot.val())
-                    })
-                }
-            }, (error) => {
-                console.log("Error: " + error.code);
-            })
-        }
+      if (user) {
+        firebase
+          .database()
+          .ref(`Users/${user.uid}/address`)
+          .once(
+            "value",
+            snapshot => {
+              if (snapshot.val() != null) {
+                this.setState({
+                  addressName: this.state.addressName.concat(snapshot.val())
+                });
+              }
+            },
+            error => {
+              console.log("Error: " + error.code);
+            }
+          );
+      }
     });
   }
   handleInputChange(e) {
@@ -106,11 +113,15 @@ class UserInputFoodChoices extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.randomFoodName !== this.state.randomFoodName) {
-      this.setState({ businesses: [] })
-      fetch(`/api/yelp?term=${this.state.randomFoodName}&location=${this.state.address}`)
+      this.setState({ businesses: [] });
+      fetch(
+        `/api/yelp?term=${this.state.randomFoodName}&location=${
+          this.state.address
+        }`
+      )
         .then(response => response.json())
         .then(data => {
-          console.log(data.jsonBody.businesses)
+          console.log(data.jsonBody.businesses);
           this.setState({ businesses: data.jsonBody.businesses });
         })
         .catch(e => console.log(e));
@@ -147,7 +158,7 @@ class UserInputFoodChoices extends Component {
       Math.floor(Math.random() * this.state.foodNames.length)
     ];
     if (!isRand) {
-      rand = e.currentTarget.value
+      rand = e.currentTarget.value;
     }
     this.setState({
       randomFoodName: rand,
@@ -171,13 +182,13 @@ class UserInputFoodChoices extends Component {
   }
   handleDelete(e) {
     e.preventDefault();
-    const x = e.currentTarget.value
-    console.log(x)
+    const x = e.currentTarget.value;
+    console.log(x);
 
-    const foodList = this.state.foodNames
-    const foodIndex = foodList.indexOf(x)
+    const foodList = this.state.foodNames;
+    const foodIndex = foodList.indexOf(x);
     foodList.splice(foodIndex, 1);
-    console.log(foodList)
+    console.log(foodList);
 
     this.setState({
       processing: true
@@ -200,12 +211,12 @@ class UserInputFoodChoices extends Component {
   }
   renderMaps() {
     return (
-        <GoogleM
-            food={this.state.randomFoodName}
-            address={this.state.addressName}
-            key={this.state.randomFoodName}
-        />
-    )
+      <GoogleM
+        food={this.state.randomFoodName}
+        address={this.state.addressName}
+        key={this.state.randomFoodName}
+      />
+    );
   }
 
   render() {
@@ -251,25 +262,41 @@ class UserInputFoodChoices extends Component {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ textAlign: "left", fontSize: 25 }}>Food Name</TableCell>
-                    <TableCell></TableCell>
+                    <TableCell style={{ textAlign: "left", fontSize: 25 }}>
+                      Food Name
+                    </TableCell>
+                    <TableCell />
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {this.state.foodNames.map(food => (
                     <TableRow key={food}>
-                      <TableCell component="th" scope="row" style={{ fontSize: 15 }}>
+                      <TableCell
+                        component="th"
+                        scope="row"
+                        style={{ fontSize: 15 }}
+                      >
                         {food}
                       </TableCell>
                       <TableCell>
-                      <IconButton id="delete" aria-label="Delete" style={{ float: "right" }}
+                        <IconButton
+                          id="delete"
+                          aria-label="Delete"
+                          style={{ float: "right" }}
                           value={food}
-                          onClick={(e) => this.handleDelete(e)}
+                          onClick={e => this.handleDelete(e)}
                         >
                           <Delete />
                         </IconButton>
-                        <IconButton value={food} onClick={(e) => this.handleRandomFood(e, false)} className="table-btn" 
-                        style={{ color: '#66bb6a', float: "right", fontSize: 12}}
+                        <IconButton
+                          value={food}
+                          onClick={e => this.handleRandomFood(e, false)}
+                          className="table-btn"
+                          style={{
+                            color: "#66bb6a",
+                            float: "right",
+                            fontSize: 12
+                          }}
                         >
                           <Restaurant /> SELECT
                         </IconButton>
@@ -290,7 +317,7 @@ class UserInputFoodChoices extends Component {
               color="secondary"
               className="input-button"
               value=""
-              onClick={(e) => this.handleRandomFood(e, true)}
+              onClick={e => this.handleRandomFood(e, true)}
             >
               Generate Random Food
             </Button>

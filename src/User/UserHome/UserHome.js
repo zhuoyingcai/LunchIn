@@ -3,7 +3,8 @@ import "./UserHome.css";
 import { firebase } from "../../Config";
 import { Typography, Divider, Button } from "@material-ui/core";
 import Logout from "@material-ui/icons/ExitToApp";
-import UserInputFoodChoices from './UserInputFoodChoices/UserInputFoodChoices.js';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import UserInputFoodChoices from "./UserInputFoodChoices/UserInputFoodChoices.js";
 import Profile from "@material-ui/icons/Person";
 
 class UserHome extends Component {
@@ -42,6 +43,7 @@ class UserHome extends Component {
   render() {
     return (
       <div style={{ padding: "50px 200px" }}>
+        <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">
           <Typography variant="display2" style={{ flex: 1 }}>
@@ -54,20 +56,19 @@ class UserHome extends Component {
             >
               <Logout style={{ marginRight: "5px" }} /> Signout
             </Button>
-
-            <Button 
-            style={{ float: "right" }}
-            onClick={() => {
-              this.props.history.push(`/user/profile`);
-            }}>
-                <Profile /> Profile  
+            <Button
+              style={{ float: "right" }}
+              onClick={() => {
+                this.props.history.push(`/user/profile`);
+              }}
+            >
+              <Profile /> Profile
             </Button>
-
           </Typography>
         </div>
         <Divider />
-        <UserInputFoodChoices userUID={this.state.user.userUID}/>
-			</div>
+        <UserInputFoodChoices userUID={this.state.user.userUID} />
+      </div>
     );
   }
 }

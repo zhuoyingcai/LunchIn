@@ -5,9 +5,7 @@ import Signup from "./Signup";
 
 describe("Signup Component", () => {
   it("Should render correctly with correct path", () => {
-    const SignupInstance = shallow(
-      <Signup />
-    );
+    const SignupInstance = shallow(<Signup />);
     expect(SignupInstance).toMatchSnapshot();
   });
 });

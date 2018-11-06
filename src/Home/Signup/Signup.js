@@ -10,8 +10,10 @@ import {
   InputAdornment,
   Snackbar,
   TextField,
-  Typography
+  Typography,
+  Tooltip
 } from "@material-ui/core";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import Visible from "@material-ui/icons/Visibility";
 import Hidden from "@material-ui/icons/VisibilityOff";
 import Next from "@material-ui/icons/PlayCircleFilled";
@@ -38,7 +40,8 @@ export default class Signup extends Component {
       step2complete: false,
       processing: false,
       notify: false,
-      notifyMsg: ""
+      notifyMsg: "",
+      message: "Show Password"
     };
     this.handleChange = this.handleChange.bind(this);
     this.createUser = this.createUser.bind(this);
@@ -141,6 +144,7 @@ export default class Signup extends Component {
   render() {
     return (
       <div className="signup-page">
+        <CssBaseline />
         <Snackbar
           onClose={() => {
             this.setState({ notify: false, notifyMsg: "" });
@@ -210,15 +214,25 @@ export default class Signup extends Component {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
-                      <IconButton
-                        onClick={() => {
-                          this.setState({
-                            showPassword: !this.state.showPassword
-                          });
-                        }}
-                      >
-                        {this.state.showPassword ? <Visible /> : <Hidden />}
-                      </IconButton>
+                      <Tooltip title={this.state.message} placement="top">
+                        <IconButton
+                          onClick={() => {
+                            if (this.state.message === "Show Password") {
+                              this.setState({
+                                showPassword: !this.state.showPassword,
+                                message: "Hide Password"
+                              });
+                            } else if (this.state.message === "Hide Password") {
+                              this.setState({
+                                showPassword: !this.state.showPassword,
+                                message: "Show Password"
+                              });
+                            }
+                          }}
+                        >
+                          {this.state.showPassword ? <Visible /> : <Hidden />}
+                        </IconButton>
+                      </Tooltip>
                     </InputAdornment>
                   )
                 }}
