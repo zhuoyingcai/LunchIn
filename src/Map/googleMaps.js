@@ -165,7 +165,7 @@ export default class GoogleMapComponent extends React.PureComponent {
       }
     render() {
         return (
-          <div>
+          <div className="the_map">
               {!!this.props.food
                 ? (this.renderMaps(this.props.food))
                 : null
