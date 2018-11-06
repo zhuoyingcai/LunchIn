@@ -1,0 +1,16 @@
+.pizzerias {
+  background-color: white;
+}
+
+GoogleMap {
+  margin-left: 60px;
+
+  width: 600px;
+  float: center;
+}
+
+.the_map {
+  margin: 0 auto;
+  float: center;
+  width: 600px;
+}

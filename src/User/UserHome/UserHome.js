@@ -38,6 +38,7 @@ class UserHome extends Component {
     this.fireBaseListener && this.fireBaseListener();
     this.authListener = undefined;
   }
+
   render() {
     return (
       <div style={{ padding: "50px 200px" }}>
