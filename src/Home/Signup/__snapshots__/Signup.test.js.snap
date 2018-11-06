@@ -1,0 +1,1427 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup Component Should render correctly with correct path 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Signup />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <WithStyles(Snackbar)
+          autoHideDuration={6000}
+          message=""
+          onClose={[Function]}
+          open={false}
+        />,
+        <div
+          className="signup-title-bar"
+        >
+          <WithStyles(Typography)
+            variant="display2"
+          >
+            LunchIn | Sign-Up
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            style={
+              Object {
+                "marginTop": "10px",
+              }
+            }
+            variant="subheading"
+          >
+            Fill out the form below to sign-up for an account.
+          </WithStyles(Typography)>
+        </div>,
+        <WithStyles(Divider) />,
+        <div>
+          <WithStyles(Card)
+            className="signup-page-content"
+            data-aos="slide-up"
+            style={
+              Object {
+                "marginTop": "10px",
+              }
+            }
+          >
+            <WithStyles(CardHeader)
+              subheader="What we need to get started"
+              title="Essentials"
+            />
+            <WithStyles(CardContent)>
+              <TextField
+                className="push-down"
+                disabled={false}
+                fullWidth={true}
+                id="name"
+                label="Full Name"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                value=""
+                variant="standard"
+              />
+              <TextField
+                className="push-down"
+                disabled={false}
+                fullWidth={true}
+                id="email"
+                label="E-Mail"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                type="email"
+                value=""
+                variant="standard"
+              />
+              <TextField
+                className="push-down"
+                disabled={false}
+                fullWidth={true}
+                id="address"
+                label="Full Address"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                value=""
+                variant="standard"
+              />
+              <TextField
+                InputProps={
+                  Object {
+                    "endAdornment": <WithStyles(InputAdornment)
+                      position="end"
+                    >
+                      <WithStyles(Tooltip)
+                        placement="top"
+                        title="Show Password"
+                      >
+                        <WithStyles(IconButton)
+                          onClick={[Function]}
+                        >
+                          <pure(VisibilityOffIcon) />
+                        </WithStyles(IconButton)>
+                      </WithStyles(Tooltip)>
+                    </WithStyles(InputAdornment)>,
+                  }
+                }
+                className="push-down"
+                disabled={false}
+                fullWidth={true}
+                id="password"
+                label="Password"
+                onChange={[Function]}
+                required={true}
+                select={false}
+                type="password"
+                value=""
+                variant="standard"
+              />
+              <WithStyles(Button)
+                className="push-down"
+                color="primary"
+                disabled={false}
+                fullWidth={true}
+                onClick={[Function]}
+                variant="raised"
+              >
+                <pure(PlayCircleFilledIcon)
+                  style={
+                    Object {
+                      "marginRight": "10px",
+                    }
+                  }
+                />
+                Continue
+              </WithStyles(Button)>
+            </WithStyles(CardContent)>
+          </WithStyles(Card)>
+        </div>,
+      ],
+      "className": "signup-page",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "autoHideDuration": 6000,
+          "message": "",
+          "onClose": [Function],
+          "open": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <WithStyles(Typography)
+              variant="display2"
+            >
+              LunchIn | Sign-Up
+            </WithStyles(Typography)>,
+            <WithStyles(Typography)
+              style={
+                Object {
+                  "marginTop": "10px",
+                }
+              }
+              variant="subheading"
+            >
+              Fill out the form below to sign-up for an account.
+            </WithStyles(Typography)>,
+          ],
+          "className": "signup-title-bar",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "LunchIn | Sign-Up",
+              "variant": "display2",
+            },
+            "ref": null,
+            "rendered": "LunchIn | Sign-Up",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Fill out the form below to sign-up for an account.",
+              "style": Object {
+                "marginTop": "10px",
+              },
+              "variant": "subheading",
+            },
+            "ref": null,
+            "rendered": "Fill out the form below to sign-up for an account.",
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <WithStyles(Card)
+              className="signup-page-content"
+              data-aos="slide-up"
+              style={
+                Object {
+                  "marginTop": "10px",
+                }
+              }
+            >
+              <WithStyles(CardHeader)
+                subheader="What we need to get started"
+                title="Essentials"
+              />
+              <WithStyles(CardContent)>
+                <TextField
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="name"
+                  label="Full Name"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  value=""
+                  variant="standard"
+                />
+                <TextField
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="email"
+                  label="E-Mail"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  type="email"
+                  value=""
+                  variant="standard"
+                />
+                <TextField
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="address"
+                  label="Full Address"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  value=""
+                  variant="standard"
+                />
+                <TextField
+                  InputProps={
+                    Object {
+                      "endAdornment": <WithStyles(InputAdornment)
+                        position="end"
+                      >
+                        <WithStyles(Tooltip)
+                          placement="top"
+                          title="Show Password"
+                        >
+                          <WithStyles(IconButton)
+                            onClick={[Function]}
+                          >
+                            <pure(VisibilityOffIcon) />
+                          </WithStyles(IconButton)>
+                        </WithStyles(Tooltip)>
+                      </WithStyles(InputAdornment)>,
+                    }
+                  }
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="password"
+                  label="Password"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  type="password"
+                  value=""
+                  variant="standard"
+                />
+                <WithStyles(Button)
+                  className="push-down"
+                  color="primary"
+                  disabled={false}
+                  fullWidth={true}
+                  onClick={[Function]}
+                  variant="raised"
+                >
+                  <pure(PlayCircleFilledIcon)
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                  />
+                  Continue
+                </WithStyles(Button)>
+              </WithStyles(CardContent)>
+            </WithStyles(Card)>,
+            null,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <WithStyles(CardHeader)
+                  subheader="What we need to get started"
+                  title="Essentials"
+                />,
+                <WithStyles(CardContent)>
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="name"
+                    label="Full Name"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="email"
+                    label="E-Mail"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    type="email"
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="address"
+                    label="Full Address"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    InputProps={
+                      Object {
+                        "endAdornment": <WithStyles(InputAdornment)
+                          position="end"
+                        >
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
+                          >
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
+                        </WithStyles(InputAdornment)>,
+                      }
+                    }
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="password"
+                    label="Password"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    type="password"
+                    value=""
+                    variant="standard"
+                  />
+                  <WithStyles(Button)
+                    className="push-down"
+                    color="primary"
+                    disabled={false}
+                    fullWidth={true}
+                    onClick={[Function]}
+                    variant="raised"
+                  >
+                    <pure(PlayCircleFilledIcon)
+                      style={
+                        Object {
+                          "marginRight": "10px",
+                        }
+                      }
+                    />
+                    Continue
+                  </WithStyles(Button)>
+                </WithStyles(CardContent)>,
+              ],
+              "className": "signup-page-content",
+              "data-aos": "slide-up",
+              "style": Object {
+                "marginTop": "10px",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "subheader": "What we need to get started",
+                  "title": "Essentials",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="name"
+                      label="Full Name"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      value=""
+                      variant="standard"
+                    />,
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="email"
+                      label="E-Mail"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      type="email"
+                      value=""
+                      variant="standard"
+                    />,
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="address"
+                      label="Full Address"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      value=""
+                      variant="standard"
+                    />,
+                    <TextField
+                      InputProps={
+                        Object {
+                          "endAdornment": <WithStyles(InputAdornment)
+                            position="end"
+                          >
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
+                            >
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
+                          </WithStyles(InputAdornment)>,
+                        }
+                      }
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="password"
+                      label="Password"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      type="password"
+                      value=""
+                      variant="standard"
+                    />,
+                    <WithStyles(Button)
+                      className="push-down"
+                      color="primary"
+                      disabled={false}
+                      fullWidth={true}
+                      onClick={[Function]}
+                      variant="raised"
+                    >
+                      <pure(PlayCircleFilledIcon)
+                        style={
+                          Object {
+                            "marginRight": "10px",
+                          }
+                        }
+                      />
+                      Continue
+                    </WithStyles(Button)>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "className": "push-down",
+                      "disabled": false,
+                      "fullWidth": true,
+                      "id": "name",
+                      "label": "Full Name",
+                      "onChange": [Function],
+                      "required": true,
+                      "select": false,
+                      "value": "",
+                      "variant": "standard",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "className": "push-down",
+                      "disabled": false,
+                      "fullWidth": true,
+                      "id": "email",
+                      "label": "E-Mail",
+                      "onChange": [Function],
+                      "required": true,
+                      "select": false,
+                      "type": "email",
+                      "value": "",
+                      "variant": "standard",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "className": "push-down",
+                      "disabled": false,
+                      "fullWidth": true,
+                      "id": "address",
+                      "label": "Full Address",
+                      "onChange": [Function],
+                      "required": true,
+                      "select": false,
+                      "value": "",
+                      "variant": "standard",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "InputProps": Object {
+                        "endAdornment": <WithStyles(InputAdornment)
+                          position="end"
+                        >
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
+                          >
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
+                        </WithStyles(InputAdornment)>,
+                      },
+                      "className": "push-down",
+                      "disabled": false,
+                      "fullWidth": true,
+                      "id": "password",
+                      "label": "Password",
+                      "onChange": [Function],
+                      "required": true,
+                      "select": false,
+                      "type": "password",
+                      "value": "",
+                      "variant": "standard",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        <pure(PlayCircleFilledIcon)
+                          style={
+                            Object {
+                              "marginRight": "10px",
+                            }
+                          }
+                        />,
+                        "Continue",
+                      ],
+                      "className": "push-down",
+                      "color": "primary",
+                      "disabled": false,
+                      "fullWidth": true,
+                      "onClick": [Function],
+                      "variant": "raised",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "style": Object {
+                            "marginRight": "10px",
+                          },
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      "Continue",
+                    ],
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          null,
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <WithStyles(Snackbar)
+            autoHideDuration={6000}
+            message=""
+            onClose={[Function]}
+            open={false}
+          />,
+          <div
+            className="signup-title-bar"
+          >
+            <WithStyles(Typography)
+              variant="display2"
+            >
+              LunchIn | Sign-Up
+            </WithStyles(Typography)>
+            <WithStyles(Typography)
+              style={
+                Object {
+                  "marginTop": "10px",
+                }
+              }
+              variant="subheading"
+            >
+              Fill out the form below to sign-up for an account.
+            </WithStyles(Typography)>
+          </div>,
+          <WithStyles(Divider) />,
+          <div>
+            <WithStyles(Card)
+              className="signup-page-content"
+              data-aos="slide-up"
+              style={
+                Object {
+                  "marginTop": "10px",
+                }
+              }
+            >
+              <WithStyles(CardHeader)
+                subheader="What we need to get started"
+                title="Essentials"
+              />
+              <WithStyles(CardContent)>
+                <TextField
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="name"
+                  label="Full Name"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  value=""
+                  variant="standard"
+                />
+                <TextField
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="email"
+                  label="E-Mail"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  type="email"
+                  value=""
+                  variant="standard"
+                />
+                <TextField
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="address"
+                  label="Full Address"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  value=""
+                  variant="standard"
+                />
+                <TextField
+                  InputProps={
+                    Object {
+                      "endAdornment": <WithStyles(InputAdornment)
+                        position="end"
+                      >
+                        <WithStyles(Tooltip)
+                          placement="top"
+                          title="Show Password"
+                        >
+                          <WithStyles(IconButton)
+                            onClick={[Function]}
+                          >
+                            <pure(VisibilityOffIcon) />
+                          </WithStyles(IconButton)>
+                        </WithStyles(Tooltip)>
+                      </WithStyles(InputAdornment)>,
+                    }
+                  }
+                  className="push-down"
+                  disabled={false}
+                  fullWidth={true}
+                  id="password"
+                  label="Password"
+                  onChange={[Function]}
+                  required={true}
+                  select={false}
+                  type="password"
+                  value=""
+                  variant="standard"
+                />
+                <WithStyles(Button)
+                  className="push-down"
+                  color="primary"
+                  disabled={false}
+                  fullWidth={true}
+                  onClick={[Function]}
+                  variant="raised"
+                >
+                  <pure(PlayCircleFilledIcon)
+                    style={
+                      Object {
+                        "marginRight": "10px",
+                      }
+                    }
+                  />
+                  Continue
+                </WithStyles(Button)>
+              </WithStyles(CardContent)>
+            </WithStyles(Card)>
+          </div>,
+        ],
+        "className": "signup-page",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "autoHideDuration": 6000,
+            "message": "",
+            "onClose": [Function],
+            "open": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <WithStyles(Typography)
+                variant="display2"
+              >
+                LunchIn | Sign-Up
+              </WithStyles(Typography)>,
+              <WithStyles(Typography)
+                style={
+                  Object {
+                    "marginTop": "10px",
+                  }
+                }
+                variant="subheading"
+              >
+                Fill out the form below to sign-up for an account.
+              </WithStyles(Typography)>,
+            ],
+            "className": "signup-title-bar",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "LunchIn | Sign-Up",
+                "variant": "display2",
+              },
+              "ref": null,
+              "rendered": "LunchIn | Sign-Up",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Fill out the form below to sign-up for an account.",
+                "style": Object {
+                  "marginTop": "10px",
+                },
+                "variant": "subheading",
+              },
+              "ref": null,
+              "rendered": "Fill out the form below to sign-up for an account.",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <WithStyles(Card)
+                className="signup-page-content"
+                data-aos="slide-up"
+                style={
+                  Object {
+                    "marginTop": "10px",
+                  }
+                }
+              >
+                <WithStyles(CardHeader)
+                  subheader="What we need to get started"
+                  title="Essentials"
+                />
+                <WithStyles(CardContent)>
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="name"
+                    label="Full Name"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="email"
+                    label="E-Mail"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    type="email"
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="address"
+                    label="Full Address"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    value=""
+                    variant="standard"
+                  />
+                  <TextField
+                    InputProps={
+                      Object {
+                        "endAdornment": <WithStyles(InputAdornment)
+                          position="end"
+                        >
+                          <WithStyles(Tooltip)
+                            placement="top"
+                            title="Show Password"
+                          >
+                            <WithStyles(IconButton)
+                              onClick={[Function]}
+                            >
+                              <pure(VisibilityOffIcon) />
+                            </WithStyles(IconButton)>
+                          </WithStyles(Tooltip)>
+                        </WithStyles(InputAdornment)>,
+                      }
+                    }
+                    className="push-down"
+                    disabled={false}
+                    fullWidth={true}
+                    id="password"
+                    label="Password"
+                    onChange={[Function]}
+                    required={true}
+                    select={false}
+                    type="password"
+                    value=""
+                    variant="standard"
+                  />
+                  <WithStyles(Button)
+                    className="push-down"
+                    color="primary"
+                    disabled={false}
+                    fullWidth={true}
+                    onClick={[Function]}
+                    variant="raised"
+                  >
+                    <pure(PlayCircleFilledIcon)
+                      style={
+                        Object {
+                          "marginRight": "10px",
+                        }
+                      }
+                    />
+                    Continue
+                  </WithStyles(Button)>
+                </WithStyles(CardContent)>
+              </WithStyles(Card)>,
+              null,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <WithStyles(CardHeader)
+                    subheader="What we need to get started"
+                    title="Essentials"
+                  />,
+                  <WithStyles(CardContent)>
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="name"
+                      label="Full Name"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      value=""
+                      variant="standard"
+                    />
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="email"
+                      label="E-Mail"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      type="email"
+                      value=""
+                      variant="standard"
+                    />
+                    <TextField
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="address"
+                      label="Full Address"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      value=""
+                      variant="standard"
+                    />
+                    <TextField
+                      InputProps={
+                        Object {
+                          "endAdornment": <WithStyles(InputAdornment)
+                            position="end"
+                          >
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
+                            >
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
+                          </WithStyles(InputAdornment)>,
+                        }
+                      }
+                      className="push-down"
+                      disabled={false}
+                      fullWidth={true}
+                      id="password"
+                      label="Password"
+                      onChange={[Function]}
+                      required={true}
+                      select={false}
+                      type="password"
+                      value=""
+                      variant="standard"
+                    />
+                    <WithStyles(Button)
+                      className="push-down"
+                      color="primary"
+                      disabled={false}
+                      fullWidth={true}
+                      onClick={[Function]}
+                      variant="raised"
+                    >
+                      <pure(PlayCircleFilledIcon)
+                        style={
+                          Object {
+                            "marginRight": "10px",
+                          }
+                        }
+                      />
+                      Continue
+                    </WithStyles(Button)>
+                  </WithStyles(CardContent)>,
+                ],
+                "className": "signup-page-content",
+                "data-aos": "slide-up",
+                "style": Object {
+                  "marginTop": "10px",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "subheader": "What we need to get started",
+                    "title": "Essentials",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <TextField
+                        className="push-down"
+                        disabled={false}
+                        fullWidth={true}
+                        id="name"
+                        label="Full Name"
+                        onChange={[Function]}
+                        required={true}
+                        select={false}
+                        value=""
+                        variant="standard"
+                      />,
+                      <TextField
+                        className="push-down"
+                        disabled={false}
+                        fullWidth={true}
+                        id="email"
+                        label="E-Mail"
+                        onChange={[Function]}
+                        required={true}
+                        select={false}
+                        type="email"
+                        value=""
+                        variant="standard"
+                      />,
+                      <TextField
+                        className="push-down"
+                        disabled={false}
+                        fullWidth={true}
+                        id="address"
+                        label="Full Address"
+                        onChange={[Function]}
+                        required={true}
+                        select={false}
+                        value=""
+                        variant="standard"
+                      />,
+                      <TextField
+                        InputProps={
+                          Object {
+                            "endAdornment": <WithStyles(InputAdornment)
+                              position="end"
+                            >
+                              <WithStyles(Tooltip)
+                                placement="top"
+                                title="Show Password"
+                              >
+                                <WithStyles(IconButton)
+                                  onClick={[Function]}
+                                >
+                                  <pure(VisibilityOffIcon) />
+                                </WithStyles(IconButton)>
+                              </WithStyles(Tooltip)>
+                            </WithStyles(InputAdornment)>,
+                          }
+                        }
+                        className="push-down"
+                        disabled={false}
+                        fullWidth={true}
+                        id="password"
+                        label="Password"
+                        onChange={[Function]}
+                        required={true}
+                        select={false}
+                        type="password"
+                        value=""
+                        variant="standard"
+                      />,
+                      <WithStyles(Button)
+                        className="push-down"
+                        color="primary"
+                        disabled={false}
+                        fullWidth={true}
+                        onClick={[Function]}
+                        variant="raised"
+                      >
+                        <pure(PlayCircleFilledIcon)
+                          style={
+                            Object {
+                              "marginRight": "10px",
+                            }
+                          }
+                        />
+                        Continue
+                      </WithStyles(Button)>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "className": "push-down",
+                        "disabled": false,
+                        "fullWidth": true,
+                        "id": "name",
+                        "label": "Full Name",
+                        "onChange": [Function],
+                        "required": true,
+                        "select": false,
+                        "value": "",
+                        "variant": "standard",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "className": "push-down",
+                        "disabled": false,
+                        "fullWidth": true,
+                        "id": "email",
+                        "label": "E-Mail",
+                        "onChange": [Function],
+                        "required": true,
+                        "select": false,
+                        "type": "email",
+                        "value": "",
+                        "variant": "standard",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "className": "push-down",
+                        "disabled": false,
+                        "fullWidth": true,
+                        "id": "address",
+                        "label": "Full Address",
+                        "onChange": [Function],
+                        "required": true,
+                        "select": false,
+                        "value": "",
+                        "variant": "standard",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "InputProps": Object {
+                          "endAdornment": <WithStyles(InputAdornment)
+                            position="end"
+                          >
+                            <WithStyles(Tooltip)
+                              placement="top"
+                              title="Show Password"
+                            >
+                              <WithStyles(IconButton)
+                                onClick={[Function]}
+                              >
+                                <pure(VisibilityOffIcon) />
+                              </WithStyles(IconButton)>
+                            </WithStyles(Tooltip)>
+                          </WithStyles(InputAdornment)>,
+                        },
+                        "className": "push-down",
+                        "disabled": false,
+                        "fullWidth": true,
+                        "id": "password",
+                        "label": "Password",
+                        "onChange": [Function],
+                        "required": true,
+                        "select": false,
+                        "type": "password",
+                        "value": "",
+                        "variant": "standard",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": Array [
+                          <pure(PlayCircleFilledIcon)
+                            style={
+                              Object {
+                                "marginRight": "10px",
+                              }
+                            }
+                          />,
+                          "Continue",
+                        ],
+                        "className": "push-down",
+                        "color": "primary",
+                        "disabled": false,
+                        "fullWidth": true,
+                        "onClick": [Function],
+                        "variant": "raised",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "style": Object {
+                              "marginRight": "10px",
+                            },
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                        "Continue",
+                      ],
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            null,
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

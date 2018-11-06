@@ -6,10 +6,39 @@ LunchIn is a web application that helps people pick out a lunch option for the d
 
 Users are able input the foods that they like and have one selected at random. The food can also be manually picked by the user if desired. The chosen/randomly generated food will tied to restaurants close to your entered address along with the reviews of those restaurants.
 
-## Roles
-- Gerry Xu (Customer)
-- Zhuoying Cai (Tracker, Presenter)
-- Chieh-Huang Chen (Designer, Unit Tester)
-- Seng Fung Mun (Continuous Integrator/ Deployment)
-- Evan Vasquez (Code Reviewer)
-- Luis Bueno (Documenter)
+## Our Team
+<table>
+  <thead>
+    <tr>
+      <td><strong>Member</strong></td>
+      <td><strong>Role(s)</strong></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gerry Xu</td>
+      <td>Customer</td>
+    </tr>
+    <tr>
+      <td>Zhuoying Cai</td>
+      <td>Tracker, Presenter</td>
+    </tr>
+    <tr>
+      <td>Chieh-Huang Chen</td>
+      <td>Designer, Unit Tester</td>
+    </tr>
+    <tr>
+      <td>Seng Fung Mun</td>
+      <td>Continuous Integrator/ Deployment</td>
+    </tr>
+    <tr>
+      <td>Evan Vasquez</td>
+      <td>Code Reviewer</td>
+    </tr>
+    <tr>
+      <td>Luis Bueno</td>
+      <td>Documenter</td>
+    </tr>
+  </tbody>
+
+</table>

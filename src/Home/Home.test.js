@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { shallow } from "enzyme";
 import Home from "./Home";
 
-test("renders Home component without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Home />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe("Home Component", () => {
+  it("Should render correctly with correct path", () => {
+    const HomeInstance = shallow(<Home />);
+    expect(HomeInstance).toMatchSnapshot();
+  });
 });
