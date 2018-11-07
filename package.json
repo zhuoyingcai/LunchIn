@@ -28,8 +28,10 @@
     "yelp-fusion": "^2.2.1"
   },
   "scripts": {
-    "start": "nodemon server/server.js & react-scripts start",
-    "build": "react-scripts build",
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+		"client": "react-scripts start",
+		"build": "react-scripts build",
     "test": "./test/mocha_tests.sh && react-scripts test",
     "eject": "react-scripts eject"
   },
