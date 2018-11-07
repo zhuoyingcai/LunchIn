@@ -3,6 +3,7 @@
 # environment variables
 app-env
 .env*
+.firebase
 
 # dependencies
 /node_modules
