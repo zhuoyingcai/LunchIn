@@ -6,6 +6,8 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <GoogleMapComponent
     address="160 Convent Ave, New York, NY 10031"
     food="Pizza"
+    lat={40.8216144}
+    lng={-73.9479427}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -24,8 +26,8 @@ ShallowWrapper {
         <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component))))))))
           address="160 Convent Ave, New York, NY 10031"
           food="Pizza"
-          lat={0}
-          lng={0}
+          lat={40.8216144}
+          lng={-73.9479427}
         />
       </WithStyles(Card)>,
     },
@@ -38,20 +40,20 @@ ShallowWrapper {
         "children": <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component))))))))
           address="160 Convent Ave, New York, NY 10031"
           food="Pizza"
-          lat={0}
-          lng={0}
+          lat={40.8216144}
+          lng={-73.9479427}
         />,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
-        "key": undefined,
+        "key": "Pizza",
         "nodeType": "function",
         "props": Object {
           "address": "160 Convent Ave, New York, NY 10031",
           "food": "Pizza",
-          "lat": 0,
-          "lng": 0,
+          "lat": 40.8216144,
+          "lng": -73.9479427,
         },
         "ref": null,
         "rendered": null,
@@ -71,8 +73,8 @@ ShallowWrapper {
           <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component))))))))
             address="160 Convent Ave, New York, NY 10031"
             food="Pizza"
-            lat={0}
-            lng={0}
+            lat={40.8216144}
+            lng={-73.9479427}
           />
         </WithStyles(Card)>,
       },
@@ -85,20 +87,20 @@ ShallowWrapper {
           "children": <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component))))))))
             address="160 Convent Ave, New York, NY 10031"
             food="Pizza"
-            lat={0}
-            lng={0}
+            lat={40.8216144}
+            lng={-73.9479427}
           />,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
-          "key": undefined,
+          "key": "Pizza",
           "nodeType": "function",
           "props": Object {
             "address": "160 Convent Ave, New York, NY 10031",
             "food": "Pizza",
-            "lat": 0,
-            "lng": 0,
+            "lat": 40.8216144,
+            "lng": -73.9479427,
           },
           "ref": null,
           "rendered": null,
