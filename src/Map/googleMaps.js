@@ -130,14 +130,14 @@ export default class GoogleMapComponent extends React.PureComponent {
         this.state = {
             randomFoodName: props.food,
             addressName: props.address,
-            lat: 0,
-            lng: 0,
+            lat: props.lat,
+            lng: props.lng,
         };
         this.renderMaps = this.renderMaps.bind(this);
     }
-    getCoordinates() {
+    componentDidMount() {
         Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-        //   console.log(this.state.addressName);
+          console.log(this.state.addressName);
           Geocode.fromAddress(this.state.addressName).then(
             response => {
               const { lat, lng } = response.results[0].geometry.location;
@@ -147,16 +147,16 @@ export default class GoogleMapComponent extends React.PureComponent {
             error => {
               console.error(error);
             }
-          );
-    };
+        );
+    }
     renderMaps() {
-        this.getCoordinates();
         return (
             <Card>
                 <MapComponent food={this.state.randomFoodName}
                 address={this.state.addressName}
                 lng={this.state.lng}
                 lat={this.state.lat}
+                key={this.state.randomFoodName}
                 />
             </Card>
             
@@ -168,8 +168,7 @@ export default class GoogleMapComponent extends React.PureComponent {
               {!!this.props.food
                 ? (this.renderMaps(this.props.food))
                 : null
-              }
-              
+              }      
           </div>
         )
     }

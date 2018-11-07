@@ -19,6 +19,7 @@ import {
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
+import Geocode from 'react-geocode';
 import Review from "../Review/Review";
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
@@ -31,6 +32,8 @@ class UserInputFoodChoices extends Component {
       foodNames: [],
       randomFoodName: "",
       addressName: "",
+      lat: 0,
+      lng: 0,
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -113,6 +116,18 @@ class UserInputFoodChoices extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.randomFoodName !== this.state.randomFoodName) {
+      Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+          console.log(this.state.addressName);
+          Geocode.fromAddress(this.state.addressName).then(
+            response => {
+              const { lat, lng } = response.results[0].geometry.location;
+              console.log(lat, lng);
+              this.setState({lat: lat , lng: lng});              
+            },
+            error => {
+              console.error(error);
+            }
+        );
       this.setState({ businesses: [] });
       fetch(
         `/api/yelp?term=${this.state.randomFoodName}&location=${
@@ -214,6 +229,8 @@ class UserInputFoodChoices extends Component {
       <GoogleM
         food={this.state.randomFoodName}
         address={this.state.addressName}
+        lat={this.state.lat}
+        lng={this.state.lng}
         key={this.state.randomFoodName}
       />
     );
