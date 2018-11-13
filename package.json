@@ -19,15 +19,18 @@
     "morgan": "^1.9.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-geocode": "^0.1.2",
+    "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
+    "react-swipeable-views": "^0.13.0",
     "typeface-roboto": "0.0.54",
     "yelp-fusion": "^2.2.1"
   },
   "scripts": {
     "start": "nodemon server/server.js & react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test & ./test/mocha_tests.sh ",
+    "test": "./test/mocha_tests.sh && react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
