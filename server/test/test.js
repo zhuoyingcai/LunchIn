@@ -8,23 +8,20 @@ describe('Morgan: Testing If Each Express Routes Responds', () => {
   it('Responds to /', done => {
   	request(server).get('/').expect(200, done);
   });
-  
-  it('Respond to GET /api/yelp', done => {
+
+  it('Does not respond to GET /api/yelp', done => {
   	request(server)
 		.get('/api/yelp')
-		.expect(400)
-		.expect('Content-Type', /json/)
+		.expect(404)
 		.end((err, res) => err ? done(err) : done());
   });
 
-  it('Responds to POST /api/yelp', done => { 
+  it('Does not respond to POST /api/yelp', done => {
   	request(server)
 		.post('/api/yelp')
-		.expect(400)
-		.expect('Content-Type', /json/)
+		.expect(404)
 		.end((err, res) => res ? done(err) : done());
 	});
 
-  
-});
 
+});
