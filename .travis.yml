@@ -16,6 +16,5 @@ jobs:
     - stage: deploy
       if: branch = master
       script:
-        - npm run build
-        - firebase deploy --token $FIREBASE_TOKEN
+        - npm run build && firebase deploy --token $FIREBASE_TOKEN
       
