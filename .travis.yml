@@ -1,9 +1,13 @@
 language: node_js
 node_js:
-  - "stable"
+  - "7"
 cache:
   directories:
     - "node_modules"
+install:
+  - npm install 
+before_script:
+  - npm install -g firebase-tools
 jobs:
   include:
     - stage: test
