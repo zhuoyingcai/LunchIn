@@ -4,10 +4,11 @@ const express = require('express');
 const morgan = require('morgan');
 const router = require('./routes/routes');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const cors = require('cors');
 const app = express();
-const server_port = 5000;
+const server_port = process.env.PORT || 5000;
 const cilent_port = 3000;
 
 app.use(morgan('combined'));
@@ -20,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
   // Serve any static files
   app.use(express.static(path.join(__dirname, '../client/build')));
   // Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
+  app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
   });
 }

@@ -1,7 +1,7 @@
 const yelp = require('yelp-fusion');
 const clientID = process.env.YELP_CLIENT_ID;
 const yelpApiKey = process.env.YELP_API_KEY;
-
+// console.log(process.env);
 /**
 	Soon to be implemented:
 

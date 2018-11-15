@@ -9,6 +9,7 @@ import { firebase } from "./Config";
 class App extends Component {
   constructor(props) {
     super(props);
+    // console.log(process.env);
     this.authListener = this.authListener.bind(this);
     this.firebaseListener = null;
     this.history = createHistory();
