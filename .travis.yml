@@ -14,7 +14,7 @@ jobs:
       script:
         - npm test
     - stage: deploy
-      if: branch = master
+      if: (branch = master) AND (type NOT IN (pull_request))
       script:
         - npm run build && firebase deploy --token $FIREBASE_TOKEN
       
