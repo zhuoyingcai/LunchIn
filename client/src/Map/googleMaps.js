@@ -1,4 +1,3 @@
-/*global google*/
 import React from "react"
 import { compose, withProps, withHandlers, withState } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from "react-google-maps";
@@ -6,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import './map.css';
 import Geocode from 'react-geocode';
 
-const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
+// const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 const _ = require("lodash");
 
 const MapComponent = compose(
@@ -64,12 +63,13 @@ const MapComponent = compose(
                       placeId: place
                     }));
                     console.log(nextMarkers.position);
-                  const nextCenter = _.get(nextMarkers, '0.position', refs.map.getCenter());
+                  // const nextCenter = 
+                  _.get(nextMarkers, '0.position', refs.map.getCenter());
                   refs.map.fitBounds(bounds);
                 },
 
                 fetchPlaces: ({ updatePlaces }) => () => {
-                    let places;
+                    // let places;
                     const service = new window.google.maps.places.PlacesService(refs.map.context.__SECRET_MAP_DO_NOT_USE_OR_YOU_WILL_BE_FIRED);
                     const request = {
                       location: refs.map.getCenter(),

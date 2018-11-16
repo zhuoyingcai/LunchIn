@@ -4,10 +4,17 @@ node_js:
 cache:
   directories:
     - "node_modules"
+install:
+  - npm install 
 before_script:
   - npm install -g firebase-tools
-after_success:  
-  if [ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "true" ]; then
-    - npm run build
-    - firebase deploy --token $FIREBASE_TOKEN
-  fi
+jobs:
+  include:
+    - stage: test
+      script:
+        - npm test
+    - stage: deploy
+      if: (branch = master) AND (type NOT IN (pull_request))
+      script:
+        - npm run build && firebase deploy --token $FIREBASE_TOKEN
+      
