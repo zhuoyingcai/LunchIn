@@ -11,7 +11,7 @@
     "dev": "concurrently --kill-others-on-fail \"npm run-script server\" \"npm run-script client\"",
     "start": "node server/server.js",
     "postinstall": "cd server && npm install && cd ../client && npm install",
-		"heroku-postbuild":"cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "devDependencies": {
     "concurrently": "^4.0.1"

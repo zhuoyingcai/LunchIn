@@ -16,8 +16,6 @@ import {
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Visible from "@material-ui/icons/Visibility";
 import Hidden from "@material-ui/icons/VisibilityOff";
-import Next from "@material-ui/icons/CheckCircle";
-import Signout from "@material-ui/icons/Cancel";
 import { firebase } from "../Config";
 
 class Home extends Component {
@@ -44,6 +42,7 @@ class Home extends Component {
       .signInWithEmailAndPassword(this.state.username, this.state.password)
       .then(
         resp => {
+          this.props.history.push(`/user/home`);
           // wait for AuthStateChange
         },
         err => {
@@ -101,122 +100,88 @@ class Home extends Component {
               title="Sign In"
               subheader="Your Lunch Option Awaits"
             />
-            {this.props.loggedIn === true ? (
-              <CardContent className="login-form-content">
-                <Typography className="push-down" variant="subheading">
-                  Welcome, {firebase.auth().currentUser.displayName}!
-                </Typography>
-                <Button
-                  fullWidth
-                  color="primary"
-                  variant="raised"
-                  className="push-down"
-                  onClick={() => {
-                    this.props.history.push(`/user/home`);
-                  }}
-                >
-                  <Next style={{ marginRight: "10px" }} />
-                  Continue to Your Account
-                </Button>
-                <Button
-                  fullWidth
-                  color="secondary"
-                  variant="raised"
-                  className="push-down"
-                  onClick={() => {
-                    firebase.auth().signOut();
-                  }}
-                >
-                  <Signout style={{ marginRight: "10px" }} />
-                  Sign Out
-                </Button>
-              </CardContent>
-            ) : (
-              <CardContent className="login-form-content">
-                <TextField
-                  disabled={this.state.processing}
-                  className="username"
-                  id="username"
-                  label="E-mail"
-                  value={this.state.username}
-                  onChange={this.handleChange("username")}
-                  fullWidth
-                  required
-                  type="email"
-                />
-                <TextField
-                  disabled={this.state.processing}
-                  className="password"
-                  id="password"
-                  label="Password"
-                  value={this.state.password}
-                  onChange={this.handleChange("password")}
-                  fullWidth
-                  required
-                  type={this.state.showPassword ? "text" : "password"}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <Tooltip title={this.state.message} placement="top">
-                          <IconButton
-                            onClick={() => {
-                              if (this.state.message === "Show Password") {
-                                this.setState({
-                                  showPassword: !this.state.showPassword,
-                                  message: "Hide Password"
-                                });
-                              } else if (
-                                this.state.message === "Hide Password"
-                              ) {
-                                this.setState({
-                                  showPassword: !this.state.showPassword,
-                                  message: "Show Password"
-                                });
-                              }
-                            }}
-                          >
-                            {this.state.showPassword ? <Visible /> : <Hidden />}
-                          </IconButton>
-                        </Tooltip>
-                      </InputAdornment>
-                    )
-                  }}
-                />
-                <Button
-                  style={{ marginTop: 5, marginBottom: 5 }}
-                  disabled={this.state.processing}
-                  variant="raised"
-                  color="primary"
-                  fullWidth
-                  onClick={() => {
-                    this.login();
-                  }}
-                  className="login"
-                >
-                  Sign-In
-                </Button>
-                <Typography
-                  style={{ marginTop: 5, marginBottom: 5 }}
-                  variant="subheading"
-                  className="signup-line"
-                >
-                  Don't have an account? Signup now!
-                </Typography>
-                <Button
-                  style={{ marginTop: 5, marginBottom: 5 }}
-                  disabled={this.state.processing}
-                  variant="raised"
-                  color="secondary"
-                  fullWidth
-                  className="login"
-                  onClick={() => {
-                    this.props.history.push("/sign-up");
-                  }}
-                >
-                  Sign-Up
-                </Button>
-              </CardContent>
-            )}
+            <CardContent className="login-form-content">
+              <TextField
+                disabled={this.state.processing}
+                className="username"
+                id="username"
+                label="E-mail"
+                value={this.state.username}
+                onChange={this.handleChange("username")}
+                fullWidth
+                required
+                type="email"
+              />
+              <TextField
+                disabled={this.state.processing}
+                className="password"
+                id="password"
+                label="Password"
+                value={this.state.password}
+                onChange={this.handleChange("password")}
+                fullWidth
+                required
+                type={this.state.showPassword ? "text" : "password"}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <Tooltip title={this.state.message} placement="top">
+                        <IconButton
+                          onClick={() => {
+                            if (this.state.message === "Show Password") {
+                              this.setState({
+                                showPassword: !this.state.showPassword,
+                                message: "Hide Password"
+                              });
+                            } else if (this.state.message === "Hide Password") {
+                              this.setState({
+                                showPassword: !this.state.showPassword,
+                                message: "Show Password"
+                              });
+                            }
+                          }}
+                        >
+                          {this.state.showPassword ? <Visible /> : <Hidden />}
+                        </IconButton>
+                      </Tooltip>
+                    </InputAdornment>
+                  )
+                }}
+              />
+              <Button
+                style={{ marginTop: 5, marginBottom: 5 }}
+                disabled={this.state.processing}
+                variant="raised"
+                color="primary"
+                fullWidth
+                onClick={() => {
+                  this.login();
+                }}
+                className="login"
+              >
+                Sign-In
+              </Button>
+              <Typography
+                style={{ marginTop: 5, marginBottom: 5 }}
+                variant="subheading"
+                className="signup-line"
+              >
+                Don't have an account? Signup now!
+              </Typography>
+              <Button
+                style={{ marginTop: 5, marginBottom: 5 }}
+                disabled={this.state.processing}
+                variant="raised"
+                color="secondary"
+                fullWidth
+                className="login"
+                onClick={() => {
+                  this.props.history.push("/sign-up");
+                }}
+              >
+                Sign-Up
+              </Button>
+            </CardContent>
           </Card>
         </div>
       </div>

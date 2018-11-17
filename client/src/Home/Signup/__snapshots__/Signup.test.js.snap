@@ -34,11 +34,6 @@ ShallowWrapper {
             LunchIn | Sign-Up
           </WithStyles(Typography)>
           <WithStyles(Typography)
-            style={
-              Object {
-                "marginTop": "10px",
-              }
-            }
             variant="subheading"
           >
             Fill out the form below to sign-up for an account.
@@ -51,7 +46,7 @@ ShallowWrapper {
             data-aos="slide-up"
             style={
               Object {
-                "marginTop": "10px",
+                "marginTop": "5px",
               }
             }
           >
@@ -136,14 +131,24 @@ ShallowWrapper {
                 onClick={[Function]}
                 variant="raised"
               >
-                <pure(PlayCircleFilledIcon)
+                <pure(CheckCircleIcon)
                   style={
                     Object {
                       "marginRight": "10px",
                     }
                   }
                 />
-                Continue
+                Sign Up
+              </WithStyles(Button)>
+              <WithStyles(Button)
+                className="push-down"
+                color="default"
+                disabled={false}
+                fullWidth={true}
+                onClick={[Function]}
+                variant="outlined"
+              >
+                Already have an account? Sign in here!
               </WithStyles(Button)>
             </WithStyles(CardContent)>
           </WithStyles(Card)>
@@ -188,11 +193,6 @@ ShallowWrapper {
               LunchIn | Sign-Up
             </WithStyles(Typography)>,
             <WithStyles(Typography)
-              style={
-                Object {
-                  "marginTop": "10px",
-                }
-              }
               variant="subheading"
             >
               Fill out the form below to sign-up for an account.
@@ -220,9 +220,6 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "Fill out the form below to sign-up for an account.",
-              "style": Object {
-                "marginTop": "10px",
-              },
               "variant": "subheading",
             },
             "ref": null,
@@ -252,7 +249,7 @@ ShallowWrapper {
               data-aos="slide-up"
               style={
                 Object {
-                  "marginTop": "10px",
+                  "marginTop": "5px",
                 }
               }
             >
@@ -337,14 +334,24 @@ ShallowWrapper {
                   onClick={[Function]}
                   variant="raised"
                 >
-                  <pure(PlayCircleFilledIcon)
+                  <pure(CheckCircleIcon)
                     style={
                       Object {
                         "marginRight": "10px",
                       }
                     }
                   />
-                  Continue
+                  Sign Up
+                </WithStyles(Button)>
+                <WithStyles(Button)
+                  className="push-down"
+                  color="default"
+                  disabled={false}
+                  fullWidth={true}
+                  onClick={[Function]}
+                  variant="outlined"
+                >
+                  Already have an account? Sign in here!
                 </WithStyles(Button)>
               </WithStyles(CardContent)>
             </WithStyles(Card)>,
@@ -440,21 +447,31 @@ ShallowWrapper {
                     onClick={[Function]}
                     variant="raised"
                   >
-                    <pure(PlayCircleFilledIcon)
+                    <pure(CheckCircleIcon)
                       style={
                         Object {
                           "marginRight": "10px",
                         }
                       }
                     />
-                    Continue
+                    Sign Up
+                  </WithStyles(Button)>
+                  <WithStyles(Button)
+                    className="push-down"
+                    color="default"
+                    disabled={false}
+                    fullWidth={true}
+                    onClick={[Function]}
+                    variant="outlined"
+                  >
+                    Already have an account? Sign in here!
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>,
               ],
               "className": "signup-page-content",
               "data-aos": "slide-up",
               "style": Object {
-                "marginTop": "10px",
+                "marginTop": "5px",
               },
             },
             "ref": null,
@@ -553,14 +570,24 @@ ShallowWrapper {
                       onClick={[Function]}
                       variant="raised"
                     >
-                      <pure(PlayCircleFilledIcon)
+                      <pure(CheckCircleIcon)
                         style={
                           Object {
                             "marginRight": "10px",
                           }
                         }
                       />
-                      Continue
+                      Sign Up
+                    </WithStyles(Button)>,
+                    <WithStyles(Button)
+                      className="push-down"
+                      color="default"
+                      disabled={false}
+                      fullWidth={true}
+                      onClick={[Function]}
+                      variant="outlined"
+                    >
+                      Already have an account? Sign in here!
                     </WithStyles(Button)>,
                   ],
                 },
@@ -670,14 +697,14 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "children": Array [
-                        <pure(PlayCircleFilledIcon)
+                        <pure(CheckCircleIcon)
                           style={
                             Object {
                               "marginRight": "10px",
                             }
                           }
                         />,
-                        "Continue",
+                        "Sign Up",
                       ],
                       "className": "push-down",
                       "color": "primary",
@@ -701,8 +728,25 @@ ShallowWrapper {
                         "rendered": null,
                         "type": [Function],
                       },
-                      "Continue",
+                      "Sign Up",
                     ],
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Already have an account? Sign in here!",
+                      "className": "push-down",
+                      "color": "default",
+                      "disabled": false,
+                      "fullWidth": true,
+                      "onClick": [Function],
+                      "variant": "outlined",
+                    },
+                    "ref": null,
+                    "rendered": "Already have an account? Sign in here!",
                     "type": [Function],
                   },
                 ],
@@ -741,11 +785,6 @@ ShallowWrapper {
               LunchIn | Sign-Up
             </WithStyles(Typography)>
             <WithStyles(Typography)
-              style={
-                Object {
-                  "marginTop": "10px",
-                }
-              }
               variant="subheading"
             >
               Fill out the form below to sign-up for an account.
@@ -758,7 +797,7 @@ ShallowWrapper {
               data-aos="slide-up"
               style={
                 Object {
-                  "marginTop": "10px",
+                  "marginTop": "5px",
                 }
               }
             >
@@ -843,14 +882,24 @@ ShallowWrapper {
                   onClick={[Function]}
                   variant="raised"
                 >
-                  <pure(PlayCircleFilledIcon)
+                  <pure(CheckCircleIcon)
                     style={
                       Object {
                         "marginRight": "10px",
                       }
                     }
                   />
-                  Continue
+                  Sign Up
+                </WithStyles(Button)>
+                <WithStyles(Button)
+                  className="push-down"
+                  color="default"
+                  disabled={false}
+                  fullWidth={true}
+                  onClick={[Function]}
+                  variant="outlined"
+                >
+                  Already have an account? Sign in here!
                 </WithStyles(Button)>
               </WithStyles(CardContent)>
             </WithStyles(Card)>
@@ -895,11 +944,6 @@ ShallowWrapper {
                 LunchIn | Sign-Up
               </WithStyles(Typography)>,
               <WithStyles(Typography)
-                style={
-                  Object {
-                    "marginTop": "10px",
-                  }
-                }
                 variant="subheading"
               >
                 Fill out the form below to sign-up for an account.
@@ -927,9 +971,6 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Fill out the form below to sign-up for an account.",
-                "style": Object {
-                  "marginTop": "10px",
-                },
                 "variant": "subheading",
               },
               "ref": null,
@@ -959,7 +1000,7 @@ ShallowWrapper {
                 data-aos="slide-up"
                 style={
                   Object {
-                    "marginTop": "10px",
+                    "marginTop": "5px",
                   }
                 }
               >
@@ -1044,14 +1085,24 @@ ShallowWrapper {
                     onClick={[Function]}
                     variant="raised"
                   >
-                    <pure(PlayCircleFilledIcon)
+                    <pure(CheckCircleIcon)
                       style={
                         Object {
                           "marginRight": "10px",
                         }
                       }
                     />
-                    Continue
+                    Sign Up
+                  </WithStyles(Button)>
+                  <WithStyles(Button)
+                    className="push-down"
+                    color="default"
+                    disabled={false}
+                    fullWidth={true}
+                    onClick={[Function]}
+                    variant="outlined"
+                  >
+                    Already have an account? Sign in here!
                   </WithStyles(Button)>
                 </WithStyles(CardContent)>
               </WithStyles(Card)>,
@@ -1147,21 +1198,31 @@ ShallowWrapper {
                       onClick={[Function]}
                       variant="raised"
                     >
-                      <pure(PlayCircleFilledIcon)
+                      <pure(CheckCircleIcon)
                         style={
                           Object {
                             "marginRight": "10px",
                           }
                         }
                       />
-                      Continue
+                      Sign Up
+                    </WithStyles(Button)>
+                    <WithStyles(Button)
+                      className="push-down"
+                      color="default"
+                      disabled={false}
+                      fullWidth={true}
+                      onClick={[Function]}
+                      variant="outlined"
+                    >
+                      Already have an account? Sign in here!
                     </WithStyles(Button)>
                   </WithStyles(CardContent)>,
                 ],
                 "className": "signup-page-content",
                 "data-aos": "slide-up",
                 "style": Object {
-                  "marginTop": "10px",
+                  "marginTop": "5px",
                 },
               },
               "ref": null,
@@ -1260,14 +1321,24 @@ ShallowWrapper {
                         onClick={[Function]}
                         variant="raised"
                       >
-                        <pure(PlayCircleFilledIcon)
+                        <pure(CheckCircleIcon)
                           style={
                             Object {
                               "marginRight": "10px",
                             }
                           }
                         />
-                        Continue
+                        Sign Up
+                      </WithStyles(Button)>,
+                      <WithStyles(Button)
+                        className="push-down"
+                        color="default"
+                        disabled={false}
+                        fullWidth={true}
+                        onClick={[Function]}
+                        variant="outlined"
+                      >
+                        Already have an account? Sign in here!
                       </WithStyles(Button)>,
                     ],
                   },
@@ -1377,14 +1448,14 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": Array [
-                          <pure(PlayCircleFilledIcon)
+                          <pure(CheckCircleIcon)
                             style={
                               Object {
                                 "marginRight": "10px",
                               }
                             }
                           />,
-                          "Continue",
+                          "Sign Up",
                         ],
                         "className": "push-down",
                         "color": "primary",
@@ -1408,8 +1479,25 @@ ShallowWrapper {
                           "rendered": null,
                           "type": [Function],
                         },
-                        "Continue",
+                        "Sign Up",
                       ],
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Already have an account? Sign in here!",
+                        "className": "push-down",
+                        "color": "default",
+                        "disabled": false,
+                        "fullWidth": true,
+                        "onClick": [Function],
+                        "variant": "outlined",
+                      },
+                      "ref": null,
+                      "rendered": "Already have an account? Sign in here!",
                       "type": [Function],
                     },
                   ],

@@ -255,8 +255,8 @@ ShallowWrapper {
                   className="push-down"
                   disabled={false}
                   fullWidth={true}
-                  id="currentPassword"
-                  label="Current Password"
+                  id="currentUserPassword"
+                  label="Current User Password"
                   onChange={[Function]}
                   required={true}
                   select={false}
@@ -691,8 +691,8 @@ ShallowWrapper {
                     className="push-down"
                     disabled={false}
                     fullWidth={true}
-                    id="currentPassword"
-                    label="Current Password"
+                    id="currentUserPassword"
+                    label="Current User Password"
                     onChange={[Function]}
                     required={true}
                     select={false}
@@ -1391,8 +1391,8 @@ ShallowWrapper {
                     className="push-down"
                     disabled={false}
                     fullWidth={true}
-                    id="currentPassword"
-                    label="Current Password"
+                    id="currentUserPassword"
+                    label="Current User Password"
                     onChange={[Function]}
                     required={true}
                     select={false}
@@ -1466,8 +1466,8 @@ ShallowWrapper {
                     className="push-down"
                     disabled={false}
                     fullWidth={true}
-                    id="currentPassword"
-                    label="Current Password"
+                    id="currentUserPassword"
+                    label="Current User Password"
                     onChange={[Function]}
                     required={true}
                     select={false}
@@ -1542,8 +1542,8 @@ ShallowWrapper {
                       className="push-down"
                       disabled={false}
                       fullWidth={true}
-                      id="currentPassword"
-                      label="Current Password"
+                      id="currentUserPassword"
+                      label="Current User Password"
                       onChange={[Function]}
                       required={true}
                       select={false}
@@ -1613,8 +1613,8 @@ ShallowWrapper {
                       "className": "push-down",
                       "disabled": false,
                       "fullWidth": true,
-                      "id": "currentPassword",
-                      "label": "Current Password",
+                      "id": "currentUserPassword",
+                      "label": "Current User Password",
                       "onChange": [Function],
                       "required": true,
                       "select": false,
@@ -1947,8 +1947,8 @@ ShallowWrapper {
                     className="push-down"
                     disabled={false}
                     fullWidth={true}
-                    id="currentPassword"
-                    label="Current Password"
+                    id="currentUserPassword"
+                    label="Current User Password"
                     onChange={[Function]}
                     required={true}
                     select={false}
@@ -2383,8 +2383,8 @@ ShallowWrapper {
                       className="push-down"
                       disabled={false}
                       fullWidth={true}
-                      id="currentPassword"
-                      label="Current Password"
+                      id="currentUserPassword"
+                      label="Current User Password"
                       onChange={[Function]}
                       required={true}
                       select={false}
@@ -3083,8 +3083,8 @@ ShallowWrapper {
                       className="push-down"
                       disabled={false}
                       fullWidth={true}
-                      id="currentPassword"
-                      label="Current Password"
+                      id="currentUserPassword"
+                      label="Current User Password"
                       onChange={[Function]}
                       required={true}
                       select={false}
@@ -3158,8 +3158,8 @@ ShallowWrapper {
                       className="push-down"
                       disabled={false}
                       fullWidth={true}
-                      id="currentPassword"
-                      label="Current Password"
+                      id="currentUserPassword"
+                      label="Current User Password"
                       onChange={[Function]}
                       required={true}
                       select={false}
@@ -3234,8 +3234,8 @@ ShallowWrapper {
                         className="push-down"
                         disabled={false}
                         fullWidth={true}
-                        id="currentPassword"
-                        label="Current Password"
+                        id="currentUserPassword"
+                        label="Current User Password"
                         onChange={[Function]}
                         required={true}
                         select={false}
@@ -3305,8 +3305,8 @@ ShallowWrapper {
                         "className": "push-down",
                         "disabled": false,
                         "fullWidth": true,
-                        "id": "currentPassword",
-                        "label": "Current Password",
+                        "id": "currentUserPassword",
+                        "label": "Current User Password",
                         "onChange": [Function],
                         "required": true,
                         "select": false,
