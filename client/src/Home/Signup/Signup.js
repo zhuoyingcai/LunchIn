@@ -16,9 +16,7 @@ import {
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Visible from "@material-ui/icons/Visibility";
 import Hidden from "@material-ui/icons/VisibilityOff";
-import Next from "@material-ui/icons/PlayCircleFilled";
-import Done from "@material-ui/icons/CheckCircle";
-import { Link } from "react-router-dom";
+import Check from "@material-ui/icons/CheckCircle";
 import { firebase } from "../../Config";
 
 const validation = {
@@ -45,7 +43,6 @@ export default class Signup extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.createUser = this.createUser.bind(this);
-    this.finalizeUserUpdate = this.finalizeUserUpdate.bind(this);
     this.validate = this.validate.bind(this);
   }
   handleChange = name => event => {
@@ -53,6 +50,7 @@ export default class Signup extends Component {
       [name]: event.target.value
     });
   };
+
   validate(type) {
     if (type === "createUser") {
       if (
@@ -71,24 +69,36 @@ export default class Signup extends Component {
       this.setState({
         processing: true
       });
+      var setData = {
+        type: this.state.userType,
+        name: this.state.name,
+        address: this.state.address
+      };
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(
-          resp => {
-            firebase.auth().currentUser.updateProfile({
-              displayName: this.state.name
+        .then(() => {
+          firebase
+            .database()
+            .ref(`Users/${firebase.auth().currentUser.uid}/`)
+            .set(setData)
+            .then(() => {
+              this.setState({
+                processing: false,
+                step1complete: true
+              }).then(() => {
+                this.props.history.push("/user/home");
+              });
+            })
+            .catch(error => {
+              this.setState({
+                notify: true,
+                notifyMsg: error.message,
+                processing: false,
+                step1complete: false
+              });
             });
-            this.setState({
-              processing: false,
-              step1complete: true
-            });
-          },
-          this.setState({
-            processing: false,
-            step1complete: true
-          })
-        )
+        })
         .catch(error => {
           this.setState({
             notify: true,
@@ -101,43 +111,6 @@ export default class Signup extends Component {
       this.setState({
         notify: true,
         notifyMsg: "Looks like you're missing stuff."
-      });
-    }
-  }
-  finalizeUserUpdate() {
-    const isValid = this.validate("finalizeUser");
-    if (isValid === validation.valid) {
-      this.setState({
-        processing: true
-      });
-      var setData = {
-        type: this.state.userType,
-        name: this.state.name,
-        address: this.state.address
-      };
-      firebase
-        .database()
-        .ref(`Users/${firebase.auth().currentUser.uid}/`)
-        .set(setData)
-        .then(() => {
-          this.setState({
-            processing: false,
-            step2complete: true
-          });
-        })
-        .catch(error => {
-          this.setState({
-            notify: true,
-            notifyMsg: error.message,
-            processing: false,
-            step2complete: false
-          });
-        });
-    } else {
-      this.setState({
-        notify: true,
-        notifyMsg: "Looks like you're missing stuff.",
-        processing: false
       });
     }
   }
@@ -155,7 +128,7 @@ export default class Signup extends Component {
         />
         <div className="signup-title-bar">
           <Typography variant="display2">LunchIn | Sign-Up</Typography>
-          <Typography variant="subheading" style={{ marginTop: "10px" }}>
+          <Typography variant="subheading">
             Fill out the form below to sign-up for an account.
           </Typography>
         </div>
@@ -163,7 +136,7 @@ export default class Signup extends Component {
         <div>
           <Card
             className="signup-page-content"
-            style={{ marginTop: "10px" }}
+            style={{ marginTop: "5px" }}
             data-aos="slide-up"
           >
             <CardHeader
@@ -248,8 +221,20 @@ export default class Signup extends Component {
                 className="push-down"
                 disabled={this.state.step1complete || this.state.processing}
               >
-                <Next style={{ marginRight: "10px" }} />
-                Continue
+                <Check style={{ marginRight: "10px" }} />
+                Sign Up
+              </Button>
+              <Button
+                onClick={() => {
+                  this.props.history.push(`/`);
+                }}
+                fullWidth
+                variant="outlined"
+                color="default"
+                className="push-down"
+                disabled={this.state.step1complete || this.state.processing}
+              >
+                Already have an account? Sign in here!
               </Button>
             </CardContent>
           </Card>
@@ -259,23 +244,6 @@ export default class Signup extends Component {
                 title="Confirmation"
                 subheader="Click done to create your account!"
               />
-              <CardContent>
-                <Button
-                  onClick={() => {
-                    this.finalizeUserUpdate();
-                  }}
-                  fullWidth
-                  variant="raised"
-                  color="primary"
-                  className="push-down"
-                  component={Link}
-                  to="/"
-                  disabled={this.state.step2complete || this.state.processing}
-                >
-                  <Done style={{ marginRight: "10px" }} />
-                  Done
-                </Button>
-              </CardContent>
             </Card>
           ) : null}
         </div>
