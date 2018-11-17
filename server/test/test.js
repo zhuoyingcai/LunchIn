@@ -5,8 +5,8 @@ describe('Morgan: Testing If Each Express Routes Responds', () => {
   var server;
   beforeEach(() => server = require('./../server'));
   afterEach(() => server.close());
-  it('Responds to /', done => {
-  	request(server).get('/').expect(200, done);
+  it('Responds to /testing', done => {
+  	request(server).get('/testing').expect(200, done);
   });
 
   it('Does not respond to GET /api/yelp', done => {
