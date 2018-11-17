@@ -1,6 +1,7 @@
 const yelp = require('yelp-fusion');
 const clientID = process.env.YELP_CLIENT_ID;
 const yelpApiKey = process.env.YELP_API_KEY;
+// console.log(process.env);
 // Initializing a client class that's responsible for making requests with Yelp.
 const client = yelp.client(process.env.YELP_API_KEY, { socketTimeout: 5000 });
 
