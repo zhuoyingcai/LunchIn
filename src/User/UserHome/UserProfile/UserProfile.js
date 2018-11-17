@@ -25,6 +25,7 @@ import Back from "@material-ui/icons/ArrowBack";
 import Email from "@material-ui/icons/Email";
 import Password from "@material-ui/icons/LockOpen";
 import Home from "@material-ui/icons/Home";
+import Geocode from 'react-geocode';
 
 function TabContainer({ children, dir }) {
   return (
@@ -44,7 +45,10 @@ class UserProfile extends Component {
       currentPassword: "",
       newPassword: "",
       showPassword: false,
+      oldAddress: "",
       address: "",
+      lat: 0,
+      lng: 0,
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -92,7 +96,8 @@ class UserProfile extends Component {
               if (snapshot.val() != null) {
                 this.setState({
                   name: snapshot.val().name,
-                  address: snapshot.val().address
+                  address: snapshot.val().address,
+                  oldAddress: snapshot.val().address
                 });
               }
             },
@@ -110,9 +115,25 @@ class UserProfile extends Component {
 
   submitNewAddress(e) {
     e.preventDefault();
-    if (this.state.address) {
+    if (this.state.address === "") {
       this.setState({
+        processing: false,
+        notify: true,
+        notifyMsg: "Address cannot be blank"
+      });
+    }
+    if (this.state.address) {
+      if (this.state.address === this.state.oldAddress) {
+        this.setState({
+          processing: false,
+          notify: true,
+          notifyMsg: "The new address you entered is the same as the current address, please enter a different address"
+        });
+      }
+      else {
+        this.setState({
         address: this.state.address,
+        oldAddress: this.state.address,
         processing: true
       });
       const addressRef = firebase
@@ -124,7 +145,7 @@ class UserProfile extends Component {
           this.setState({
             processing: false,
             notify: true,
-            notifyMsg: "Email update successfully!"
+            notifyMsg: "Address update successfully!"
           });
         })
         .catch(error => {
@@ -134,9 +155,10 @@ class UserProfile extends Component {
             processing: false
           });
         });
+      }
     }
   }
-
+  
   reauthenticate = currentPassword => {
     var user = firebase.auth().currentUser;
     var cred = firebaseAuth.auth.EmailAuthProvider.credential(
@@ -308,6 +330,36 @@ class UserProfile extends Component {
                   className="push-down"
                   disabled={this.state.processing}
                 />
+                {/* <TextField
+                  onChange={this.handleChange("address")}
+                  id="address"
+                  label="City"
+                  required
+                  value={this.state.address}
+                  //fullWidth
+                  className="push-down"
+                  disabled={this.state.processing}
+                />
+                <TextField
+                  onChange={this.handleChange("address")}
+                  id="address"
+                  label="State"
+                  required
+                  value={this.state.address}
+                  //fullWidth
+                  className="push-down"
+                  disabled={this.state.processing}
+                />
+                <TextField
+                  onChange={this.handleChange("address")}
+                  id="address"
+                  label="Country"
+                  required
+                  value={this.state.address}
+                  //fullWidth
+                  className="push-down"
+                  disabled={this.state.processing}
+                /> */}
 
                 <Button
                   style={{
