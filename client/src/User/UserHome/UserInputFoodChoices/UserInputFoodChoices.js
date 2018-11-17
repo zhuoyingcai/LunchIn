@@ -130,7 +130,7 @@ class UserInputFoodChoices extends Component {
         );
       this.setState({ businesses: [] });
       fetch(
-        `/api/yelp?term=${this.state.randomFoodName}&location=${
+        `/api/yelp/search?term=${this.state.randomFoodName}&location=${
           this.state.address
         }`
       )
