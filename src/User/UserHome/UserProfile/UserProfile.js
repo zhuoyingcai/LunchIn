@@ -399,8 +399,8 @@ class UserProfile extends Component {
               <CardContent>
                 <TextField
                   onChange={this.handleChange("currentPassword")}
-                  id="currentPassword"
-                  label="Current Password"
+                  id="currentUserPassword"
+                  label="Current User Password"
                   required
                   value={this.state.currentPassword}
                   fullWidth
