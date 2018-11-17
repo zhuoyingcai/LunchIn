@@ -33,7 +33,6 @@ class App extends Component {
               }
             });
         }
-        window.location.reload();
       }
       this.setState({
         lastLocation: loc.pathname
