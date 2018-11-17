@@ -47,8 +47,6 @@ class UserProfile extends Component {
       showPassword: false,
       oldAddress: "",
       address: "",
-      lat: 0,
-      lng: 0,
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -131,30 +129,46 @@ class UserProfile extends Component {
         });
       }
       else {
-        this.setState({
-        address: this.state.address,
-        oldAddress: this.state.address,
-        processing: true
-      });
-      const addressRef = firebase
-        .database()
-        .ref(`Users/${firebase.auth().currentUser.uid}/address`);
-      addressRef
-        .set(this.state.address)
-        .then(() => {
-          this.setState({
-            processing: false,
-            notify: true,
-            notifyMsg: "Address update successfully!"
-          });
-        })
-        .catch(error => {
-          this.setState({
-            notify: true,
-            notifyMsg: error.message,
-            processing: false
-          });
-        });
+        Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+        console.log(this.state.address);
+        Geocode.fromAddress(this.state.address).then(
+          response => {
+            const { lat, lng } = response.results[0].geometry.location;
+            console.log(lat, lng);  
+            
+            this.setState({
+              address: this.state.address,
+              oldAddress: this.state.address,
+              processing: true
+            });
+            const addressRef = firebase
+              .database()
+              .ref(`Users/${firebase.auth().currentUser.uid}/address`);
+            addressRef
+              .set(this.state.address)
+              .then(() => {
+                this.setState({
+                  processing: false,
+                  notify: true,
+                  notifyMsg: "Address update successfully!"
+                });
+              })
+              .catch(error => {
+                this.setState({
+                  notify: true,
+                  notifyMsg: error.message,
+                  processing: false
+                });
+              });
+          },
+          error => {
+            this.setState({
+              processing: false,
+              notify: true,
+              notifyMsg: error.message
+            });
+          }
+        );
       }
     }
   }
