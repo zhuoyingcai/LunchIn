@@ -11,9 +11,9 @@ const _ = require("lodash");
 const MapComponent = compose(
     withProps({
         googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
-        loadingElement: <div style={{ height: '600px', width: '600px' }} />,
-        containerElement: <div style={{ height: '400px' }} />,
-        mapElement: <div style={{ height: '600px', width: '600px' }} />,
+        loadingElement: <div style={{ height: '450px', width: '800px' }} />,
+        containerElement: <div style={{ height: '450px' }} />,
+        mapElement: <div style={{ height: '450px', width: '800px' }} />,
     }),
     withScriptjs,
     withGoogleMap,
@@ -101,7 +101,7 @@ const MapComponent = compose(
         <GoogleMap
               onTilesLoaded={props.fetchPlaces}
               ref={props.onMapMounted}
-              defaultZoom={14}
+              defaultZoom={16}
               defaultCenter={{ lat: props.lat, lng: props.lng }} >
 
             {props.places && props.places.map((place, i) =>
@@ -137,7 +137,7 @@ export default class GoogleMapComponent extends React.PureComponent {
         };
         this.renderMaps = this.renderMaps.bind(this);
     }
-    
+
     renderMaps() {
         return (
             <Card>

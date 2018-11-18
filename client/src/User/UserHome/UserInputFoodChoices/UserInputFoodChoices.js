@@ -140,6 +140,7 @@ class UserInputFoodChoices extends Component {
         .catch(e => console.log(e));
     }
   }
+
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.inputFoodName) {
@@ -227,7 +228,9 @@ class UserInputFoodChoices extends Component {
     console.log(this.state.lat);
     console.log(this.state.lng);
     console.log(this.state.addressName);
+    console.log(this.state.randomFoodName);
     console.log("-----------THE END !----------");
+    // checks if the lng and lat are being pass through before rendering gmaps on your screen.
     if(this.state.lat !== 0 && this.state.lng !== 0){
       return (
         <GoogleM
