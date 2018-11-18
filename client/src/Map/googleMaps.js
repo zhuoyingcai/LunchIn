@@ -22,12 +22,6 @@ const MapComponent = compose(
     withState('center', '', ''),
     withState('selectedPlace', 'updateSelectedPlace', null),
     withHandlers((props) => {
-            console.log(" ---------GMAP START !!! ----------");
-            console.log(props.food);
-            console.log(props.address);
-            console.log(props.lat);
-            console.log(props.lng);
-            console.log(" ---------GMAP END !!! ----------");
 
             const refs = {
                 map: undefined,
@@ -65,7 +59,6 @@ const MapComponent = compose(
                       placeId: place
                     }));
                     console.log(nextMarkers.position);
-                  // const nextCenter =
                   _.get(nextMarkers, '0.position', refs.map.getCenter());
                   refs.map.fitBounds(bounds);
                 },
@@ -98,6 +91,7 @@ const MapComponent = compose(
 )((props) => {
     return (
       <div>
+      // Displays Gmap with specific user location and restaurant based on randomly selected food.
         <GoogleMap
               onTilesLoaded={props.fetchPlaces}
               ref={props.onMapMounted}
@@ -126,7 +120,7 @@ const MapComponent = compose(
     )
 })
 
-export default class GoogleMapComponent extends React.PureComponent {
+export default class GoogleMapComponent extends React.PureComponent { 
     constructor(props) {
         super(props);
         this.state = {

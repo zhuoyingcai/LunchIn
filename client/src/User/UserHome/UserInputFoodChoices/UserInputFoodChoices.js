@@ -224,12 +224,7 @@ class UserInputFoodChoices extends Component {
       });
   }
   renderMaps() {
-    console.log("-----------HOLA-------------");
-    console.log(this.state.lat);
-    console.log(this.state.lng);
-    console.log(this.state.addressName);
-    console.log(this.state.randomFoodName);
-    console.log("-----------THE END !----------");
+    
     // checks if the lng and lat are being pass through before rendering gmaps on your screen.
     if(this.state.lat !== 0 && this.state.lng !== 0){
       return (
