@@ -14,7 +14,9 @@ jobs:
       script:
         - npm test
     - stage: deploy
-      if: (branch = master) AND (type NOT IN (pull_request))
-      script:
-        - npm run build && firebase deploy --token $FIREBASE_TOKEN
+      deploy:
+        provider: heroku
+        api_key: $HEROKU_TOKEN
+        app: 
+          master: lunchin-csc59939
       
