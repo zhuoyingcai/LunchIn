@@ -22,10 +22,12 @@ const MapComponent = compose(
     withState('center', '', ''),
     withState('selectedPlace', 'updateSelectedPlace', null),
     withHandlers((props) => {
+            console.log(" ---------GMAP START !!! ----------");
             console.log(props.food);
             console.log(props.address);
             console.log(props.lat);
             console.log(props.lng);
+            console.log(" ---------GMAP END !!! ----------");
 
             const refs = {
                 map: undefined,
@@ -63,7 +65,7 @@ const MapComponent = compose(
                       placeId: place
                     }));
                     console.log(nextMarkers.position);
-                  // const nextCenter = 
+                  // const nextCenter =
                   _.get(nextMarkers, '0.position', refs.map.getCenter());
                   refs.map.fitBounds(bounds);
                 },
@@ -135,20 +137,7 @@ export default class GoogleMapComponent extends React.PureComponent {
         };
         this.renderMaps = this.renderMaps.bind(this);
     }
-    componentDidMount() {
-        Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-          console.log(this.state.addressName);
-          Geocode.fromAddress(this.state.addressName).then(
-            response => {
-              const { lat, lng } = response.results[0].geometry.location;
-              console.log(lat, lng);
-              this.setState({lat: lat , lng: lng});
-            },
-            error => {
-              console.error(error);
-            }
-        );
-    }
+    
     renderMaps() {
         return (
             <Card>
@@ -159,7 +148,7 @@ export default class GoogleMapComponent extends React.PureComponent {
                 key={this.state.randomFoodName}
                 />
             </Card>
-            
+
         );
       }
     render() {
@@ -168,7 +157,7 @@ export default class GoogleMapComponent extends React.PureComponent {
               {!!this.props.food
                 ? (this.renderMaps(this.props.food))
                 : null
-              }      
+              }
           </div>
         )
     }

@@ -117,12 +117,10 @@ class UserInputFoodChoices extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.randomFoodName !== this.state.randomFoodName) {
       Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-          console.log(this.state.addressName);
           Geocode.fromAddress(this.state.addressName).then(
             response => {
               const { lat, lng } = response.results[0].geometry.location;
-              console.log(lat, lng);
-              this.setState({lat: lat , lng: lng});              
+              this.setState({lat: lat , lng: lng});
             },
             error => {
               console.error(error);
@@ -225,15 +223,23 @@ class UserInputFoodChoices extends Component {
       });
   }
   renderMaps() {
-    return (
-      <GoogleM
-        food={this.state.randomFoodName}
-        address={this.state.addressName}
-        lat={this.state.lat}
-        lng={this.state.lng}
-        key={this.state.randomFoodName}
-      />
-    );
+    console.log("-----------HOLA-------------");
+    console.log(this.state.lat);
+    console.log(this.state.lng);
+    console.log(this.state.addressName);
+    console.log("-----------THE END !----------");
+    if(this.state.lat !== 0 && this.state.lng !== 0){
+      return (
+        <GoogleM
+          food={this.state.randomFoodName}
+          address={this.state.addressName}
+          lat={this.state.lat}
+          lng={this.state.lng}
+          key={this.state.randomFoodName}
+        />
+      );
+    }
+
   }
 
   render() {
