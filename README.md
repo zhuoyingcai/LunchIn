@@ -6,7 +6,7 @@ LunchIn is a web application that helps people pick out a lunch option for the d
 
 Users are able input the foods that they like and have one selected at random. The food can also be manually picked by the user if desired. The chosen/randomly generated food will tied to restaurants close to your entered address along with the reviews of those restaurants.
 
-Check out our website: <https://lunchin-9fe27.firebaseapp.com>
+Check out our website: <https://lunchin-csc59939.herokuapp.com>
 
 ## Our Team
 <table>
