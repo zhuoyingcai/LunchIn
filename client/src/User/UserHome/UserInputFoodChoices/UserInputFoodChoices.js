@@ -117,19 +117,19 @@ class UserInputFoodChoices extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.randomFoodName !== this.state.randomFoodName) {
       Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-          Geocode.fromAddress(this.state.addressName).then(
-            response => {
-              const { lat, lng } = response.results[0].geometry.location;
-              this.setState({lat: lat , lng: lng});
-            },
-            error => {
-              console.error(error);
-            }
-        );
+      Geocode.fromAddress(this.state.addressName).then(
+        response => {
+          const { lat, lng } = response.results[0].geometry.location;
+          this.setState({ lat: lat, lng: lng });
+        },
+        error => {
+          console.error(error);
+        }
+      );
       this.setState({ businesses: [] });
       fetch(
-        `/api/yelp/search?term=${this.state.randomFoodName}&location=${
-          this.state.address
+        `/api/yelp/search?term=${this.sanitizeInput(this.state.randomFoodName)}&location=${
+        this.state.address
         }`
       )
         .then(response => response.json())
@@ -224,20 +224,30 @@ class UserInputFoodChoices extends Component {
       });
   }
   renderMaps() {
-    
     // checks if the lng and lat are being pass through before rendering gmaps on your screen.
-    if(this.state.lat !== 0 && this.state.lng !== 0){
+    if (this.state.lat !== 0 && this.state.lng !== 0) {
       return (
         <GoogleM
-          food={this.state.randomFoodName}
+          food={this.sanitizeInput(this.state.randomFoodName)}
           address={this.state.addressName}
           lat={this.state.lat}
           lng={this.state.lng}
-          key={this.state.randomFoodName}
+          key={this.sanitizeInput(this.state.randomFoodName)}
         />
       );
     }
-
+  }
+  sanitizeInput(string) {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      "/": '&#x2F;',
+    };
+    const reg = /[&<>"'/]/ig;
+    return string.replace(reg, (match) => (map[match]));
   }
 
   render() {
@@ -256,6 +266,7 @@ class UserInputFoodChoices extends Component {
           <TextField
             fullWidth
             inputProps={{
+              maxLength: 20,
               style: { textAlign: "center" }
             }}
             value={this.state.inputFoodName}
