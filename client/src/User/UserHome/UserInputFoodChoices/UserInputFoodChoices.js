@@ -130,7 +130,7 @@ class UserInputFoodChoices extends Component {
         );
       this.setState({ businesses: [] });
       fetch(
-        `/api/yelp/search?term=${this.state.randomFoodName}&location=${
+        `/api/yelp/search?term=${this.sanitizeInput(this.state.randomFoodName)}&location=${
           this.state.address
         }`
       )
@@ -227,13 +227,25 @@ class UserInputFoodChoices extends Component {
   renderMaps() {
     return (
       <GoogleM
-        food={this.state.randomFoodName}
+        food={this.sanitizeInput(this.state.randomFoodName)}
         address={this.state.addressName}
         lat={this.state.lat}
         lng={this.state.lng}
-        key={this.state.randomFoodName}
+        key={this.sanitizeInput(this.state.randomFoodName)}
       />
     );
+  }
+  sanitizeInput(string) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#x27;',
+        "/": '&#x2F;',
+    };
+    const reg = /[&<>"'/]/ig;
+    return string.replace(reg, (match)=>(map[match]));
   }
 
   render() {
@@ -252,6 +264,7 @@ class UserInputFoodChoices extends Component {
           <TextField
             fullWidth
             inputProps={{
+              maxLength: 20,
               style: { textAlign: "center" }
             }}
             value={this.state.inputFoodName}
