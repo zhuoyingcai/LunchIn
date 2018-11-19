@@ -25,7 +25,6 @@ import Back from "@material-ui/icons/ArrowBack";
 import Email from "@material-ui/icons/Email";
 import Password from "@material-ui/icons/LockOpen";
 import Home from "@material-ui/icons/Home";
-import Geocode from 'react-geocode';
 
 function TabContainer({ children, dir }) {
   return (
@@ -47,6 +46,7 @@ class UserProfile extends Component {
       showPassword: false,
       oldAddress: "",
       address: "",
+      validAddress: true,
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -129,48 +129,33 @@ class UserProfile extends Component {
         });
       }
       else {
-        Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-        console.log(this.state.address);
-        Geocode.fromAddress(this.state.address).then(
-          response => {
-            const { lat, lng } = response.results[0].geometry.location;
-            console.log(lat, lng);  
-            
+        this.setState({
+          validAddress: true,
+          address: this.state.address,
+          oldAddress: this.state.address,            
+          processing: true
+        });
+        const addressRef = firebase
+          .database()
+          .ref(`Users/${firebase.auth().currentUser.uid}/address`);
+          addressRef
+          .set(this.state.address)
+          .then(() => {
             this.setState({
-              address: this.state.address,
-              oldAddress: this.state.address,
-              processing: true
-            });
-            const addressRef = firebase
-              .database()
-              .ref(`Users/${firebase.auth().currentUser.uid}/address`);
-            addressRef
-              .set(this.state.address)
-              .then(() => {
-                this.setState({
-                  processing: false,
-                  notify: true,
-                  notifyMsg: "Address update successfully!"
-                });
-              })
-              .catch(error => {
-                this.setState({
-                  notify: true,
-                  notifyMsg: error.message,
-                  processing: false
-                });
-              });
-          },
-          error => {
-            this.setState({
-              processing: false,
+              rocessing: false,
               notify: true,
-              notifyMsg: error.message
+              notifyMsg: "Address update successfully!"
             });
-          }
-        );
-      }
-    }
+          })
+          .catch(error => {
+              this.setState({
+              notify: true,
+              notifyMsg: error.message,
+              processing: false
+            });
+          });
+       }
+     }
   }
   
   reauthenticate = currentPassword => {
@@ -344,36 +329,6 @@ class UserProfile extends Component {
                   className="push-down"
                   disabled={this.state.processing}
                 />
-                {/* <TextField
-                  onChange={this.handleChange("address")}
-                  id="address"
-                  label="City"
-                  required
-                  value={this.state.address}
-                  //fullWidth
-                  className="push-down"
-                  disabled={this.state.processing}
-                />
-                <TextField
-                  onChange={this.handleChange("address")}
-                  id="address"
-                  label="State"
-                  required
-                  value={this.state.address}
-                  //fullWidth
-                  className="push-down"
-                  disabled={this.state.processing}
-                />
-                <TextField
-                  onChange={this.handleChange("address")}
-                  id="address"
-                  label="Country"
-                  required
-                  value={this.state.address}
-                  //fullWidth
-                  className="push-down"
-                  disabled={this.state.processing}
-                /> */}
 
                 <Button
                   style={{
