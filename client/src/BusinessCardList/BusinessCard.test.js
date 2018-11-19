@@ -1,20 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
-import BusinessCardList from "./BusinessCardList";
+import BusinessCard from "./BusinessCard";
 
-describe("BusinessCardList Component", () => {
+describe("BusinessCard Component", () => {
   describe("When provided with no info", () => {
     it("Should render correctly", () => {
-      const businessListInstance = shallow(
-        <BusinessCardList />
+      const businessInstance = shallow(
+        <BusinessCard />
       );
-      expect(businessListInstance).toMatchSnapshot();
+      expect(businessInstance).toMatchSnapshot();
     });
   });
-  describe("When provided with business list info", () => {
+  describe("When provided with business info", () => {
     it("Should render correctly", () => {
-      const businesses = [
+      const business =
         {
           "rating": 4.5,
           "price": "$$",
@@ -43,30 +43,11 @@ describe("BusinessCardList Component", () => {
             "address1": "373 Columbus Ave",
             "zip_code": "94133"
           }
-        },
-        {
-          "rating": 4,
-          "image_url": "",
-          "name": "North India Restaurant",
-          "url": "https://www.yelp.com/biz/north-india-restaurant-san-francisco",
-          "review_count": 551,
-          "coordinates": {
-            "latitude": null,
-            "longitude": null
-          },
-          "id": "north-india-restaurant-san-francisco",
-          "categories": [
-            {
-              "alias": "indpak",
-              "title": "Indian"
-            }
-          ]
-        }
-      ];
-      const businessListInstance = shallow(
-        <BusinessCardList businesses={businesses} />
+        };
+      const businessInstance = shallow(
+        <BusinessCard business={business} />
       );
-      expect(businessListInstance).toMatchSnapshot();
+      expect(businessInstance).toMatchSnapshot();
     });
   });
 });
