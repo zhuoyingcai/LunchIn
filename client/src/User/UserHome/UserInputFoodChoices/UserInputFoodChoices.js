@@ -20,7 +20,7 @@ import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
 import Geocode from 'react-geocode';
-import Review from "../Review/Review";
+import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
 
@@ -122,7 +122,7 @@ class UserInputFoodChoices extends Component {
             response => {
               const { lat, lng } = response.results[0].geometry.location;
               console.log(lat, lng);
-              this.setState({lat: lat , lng: lng});              
+              this.setState({lat: lat , lng: lng});
             },
             error => {
               console.error(error);
@@ -344,7 +344,7 @@ class UserInputFoodChoices extends Component {
               <Typography variant="subtitle1">
                 The food selected is: <Chip label={this.state.randomFoodName} />
                 {this.renderMaps()}
-                <Review businesses={this.state.businesses} />
+                <BusinessCardList businesses={this.state.businesses} />
               </Typography>
             ) : null}
           </div>

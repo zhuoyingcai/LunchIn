@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
-import Review from "./Review";
+import BusinessCardList from "./BusinessCardList";
 
-describe("Review Component", () => {
+describe("BusinessCardList Component", () => {
   describe("When provided with no info", () => {
     it("Should render correctly", () => {
       const reviewInstance = shallow(
-        <Review />
+        <BusinessCardList />
       );
       expect(reviewInstance).toMatchSnapshot();
     });
@@ -64,7 +64,7 @@ describe("Review Component", () => {
         }
       ];
       const reviewInstance = shallow(
-        <Review businesses={businesses} />
+        <BusinessCardList businesses={businesses} />
       );
       expect(reviewInstance).toMatchSnapshot();
     });
