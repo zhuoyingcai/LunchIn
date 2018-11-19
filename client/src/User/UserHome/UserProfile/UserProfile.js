@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./UserProfile.css";
-import { firebase } from "../../../Config";
-import * as firebaseAuth from "firebase";
+import { firebase as firebaseAuth }  from "../../../Config";
+import firebase from "firebase/app";
+import 'firebase/auth';
 import {
   Button,
   Card,
@@ -80,12 +81,12 @@ class UserProfile extends Component {
   };
 
   fetchInitialData() {
-    firebase.auth().onAuthStateChanged(user => {
+    firebaseAuth.auth().onAuthStateChanged(user => {
       if (user) {
         this.setState({
           email: user.email
         });
-        firebase
+        firebaseAuth
           .database()
           .ref(`Users/${user.uid}`)
           .once(
@@ -159,8 +160,8 @@ class UserProfile extends Component {
   }
   
   reauthenticate = currentPassword => {
-    var user = firebase.auth().currentUser;
-    var cred = firebaseAuth.auth.EmailAuthProvider.credential(
+    var user = firebaseAuth.auth().currentUser;
+    var cred = firebase.auth.EmailAuthProvider.credential(
       user.email,
       currentPassword
     );
@@ -180,7 +181,7 @@ class UserProfile extends Component {
     } else {
       this.reauthenticate(this.state.currentPassword)
         .then(() => {
-          var user = firebase.auth().currentUser;
+          var user = firebaseAuth.auth().currentUser;
           user
             .updateEmail(this.state.newEmail)
             .then(() => {
@@ -223,7 +224,7 @@ class UserProfile extends Component {
     } else {
       this.reauthenticate(this.state.currentPassword)
         .then(() => {
-          var user = firebase.auth().currentUser;
+          var user = firebaseAuth.auth().currentUser;
           user
             .updatePassword(this.state.newPassword)
             .then(() => {
