@@ -47,7 +47,6 @@ class UserProfile extends Component {
       showPassword: false,
       oldAddress: "",
       address: "",
-      validAddress: true,
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -131,7 +130,6 @@ class UserProfile extends Component {
       }
       else {
         this.setState({
-          validAddress: true,
           address: this.state.address,
           oldAddress: this.state.address,            
           processing: true
@@ -143,7 +141,7 @@ class UserProfile extends Component {
           .set(this.state.address)
           .then(() => {
             this.setState({
-              rocessing: false,
+              processing: false,
               notify: true,
               notifyMsg: "Address update successfully!"
             });
