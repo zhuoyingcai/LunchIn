@@ -2,8 +2,14 @@ import React from 'react';
 import UserInputFoodChoices from './UserInputFoodChoices';
 import { shallow } from 'enzyme';
 
-test('render UserInputFoodChoices Compoenent correctly', () => {
-
+describe('UserInputFoodChoices Component', () => {
     const wrapper = shallow(<UserInputFoodChoices >LunchIn</UserInputFoodChoices>)
-    expect(wrapper).toMatchSnapshot();
+    it('render UserInputFoodChoices Compoenent correctly', () => {
+        expect(wrapper).toMatchSnapshot();
+    })
+
+    it('sanitize the input before passing as props.', () => {
+        expect(wrapper.instance().sanitizeInput('\'')).toBe('&#x27;')      
+    })
+    
 });
