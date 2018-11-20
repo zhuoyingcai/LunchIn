@@ -31,7 +31,6 @@ ShallowWrapper {
             variant="display2"
           >
             Welcome, 
-            
             <WithStyles(Button)
               onClick={[Function]}
               style={
@@ -96,7 +95,6 @@ ShallowWrapper {
             variant="display2"
           >
             Welcome, 
-            
             <WithStyles(Button)
               onClick={[Function]}
               style={
@@ -136,7 +134,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Welcome, ",
-              "",
+              undefined,
               <WithStyles(Button)
                 onClick={[Function]}
                 style={
@@ -174,7 +172,7 @@ ShallowWrapper {
           "ref": null,
           "rendered": Array [
             "Welcome, ",
-            "",
+            undefined,
             Object {
               "instance": null,
               "key": undefined,
@@ -291,7 +289,6 @@ ShallowWrapper {
               variant="display2"
             >
               Welcome, 
-              
               <WithStyles(Button)
                 onClick={[Function]}
                 style={
@@ -356,7 +353,6 @@ ShallowWrapper {
               variant="display2"
             >
               Welcome, 
-              
               <WithStyles(Button)
                 onClick={[Function]}
                 style={
@@ -396,7 +392,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 "Welcome, ",
-                "",
+                undefined,
                 <WithStyles(Button)
                   onClick={[Function]}
                   style={
@@ -434,7 +430,7 @@ ShallowWrapper {
             "ref": null,
             "rendered": Array [
               "Welcome, ",
-              "",
+              undefined,
               Object {
                 "instance": null,
                 "key": undefined,
