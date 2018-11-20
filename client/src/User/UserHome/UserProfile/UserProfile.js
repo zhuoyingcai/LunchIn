@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./UserProfile.css";
-import { firebase } from "../../../Config";
-import * as firebaseAuth from "firebase";
+import { firebase as firebaseAuth }  from "../../../Config";
+import firebase from "firebase/app";
+import 'firebase/auth';
 import {
   Button,
   Card,
@@ -44,6 +45,7 @@ class UserProfile extends Component {
       currentPassword: "",
       newPassword: "",
       showPassword: false,
+      oldAddress: "",
       address: "",
       processing: false,
       notify: false,
@@ -78,12 +80,12 @@ class UserProfile extends Component {
   };
 
   fetchInitialData() {
-    firebase.auth().onAuthStateChanged(user => {
+    firebaseAuth.auth().onAuthStateChanged(user => {
       if (user) {
         this.setState({
           email: user.email
         });
-        firebase
+        firebaseAuth
           .database()
           .ref(`Users/${user.uid}`)
           .once(
@@ -92,7 +94,8 @@ class UserProfile extends Component {
               if (snapshot.val() != null) {
                 this.setState({
                   name: snapshot.val().name,
-                  address: snapshot.val().address
+                  address: snapshot.val().address,
+                  oldAddress: snapshot.val().address
                 });
               }
             },
@@ -110,36 +113,53 @@ class UserProfile extends Component {
 
   submitNewAddress(e) {
     e.preventDefault();
-    if (this.state.address) {
+    if (this.state.address === "") {
       this.setState({
-        address: this.state.address,
-        processing: true
+        processing: false,
+        notify: true,
+        notifyMsg: "Address cannot be blank"
       });
-      const addressRef = firebase
-        .database()
-        .ref(`Users/${firebase.auth().currentUser.uid}/address`);
-      addressRef
-        .set(this.state.address)
-        .then(() => {
-          this.setState({
-            processing: false,
-            notify: true,
-            notifyMsg: "Email update successfully!"
-          });
-        })
-        .catch(error => {
-          this.setState({
-            notify: true,
-            notifyMsg: error.message,
-            processing: false
-          });
-        });
     }
+    if (this.state.address) {
+      if (this.state.address === this.state.oldAddress) {
+        this.setState({
+          processing: false,
+          notify: true,
+          notifyMsg: "The new address you entered is the same as the current address, please enter a different address"
+        });
+      }
+      else {
+        this.setState({
+          address: this.state.address,
+          oldAddress: this.state.address,            
+          processing: true
+        });
+        const addressRef = firebase
+          .database()
+          .ref(`Users/${firebase.auth().currentUser.uid}/address`);
+          addressRef
+          .set(this.state.address)
+          .then(() => {
+            this.setState({
+              processing: false,
+              notify: true,
+              notifyMsg: "Address update successfully!"
+            });
+          })
+          .catch(error => {
+              this.setState({
+              notify: true,
+              notifyMsg: error.message,
+              processing: false
+            });
+          });
+       }
+     }
   }
-
+  
   reauthenticate = currentPassword => {
-    var user = firebase.auth().currentUser;
-    var cred = firebaseAuth.auth.EmailAuthProvider.credential(
+    var user = firebaseAuth.auth().currentUser;
+    var cred = firebase.auth.EmailAuthProvider.credential(
       user.email,
       currentPassword
     );
@@ -159,7 +179,7 @@ class UserProfile extends Component {
     } else {
       this.reauthenticate(this.state.currentPassword)
         .then(() => {
-          var user = firebase.auth().currentUser;
+          var user = firebaseAuth.auth().currentUser;
           user
             .updateEmail(this.state.newEmail)
             .then(() => {
@@ -202,7 +222,7 @@ class UserProfile extends Component {
     } else {
       this.reauthenticate(this.state.currentPassword)
         .then(() => {
-          var user = firebase.auth().currentUser;
+          var user = firebaseAuth.auth().currentUser;
           user
             .updatePassword(this.state.newPassword)
             .then(() => {
