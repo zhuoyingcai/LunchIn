@@ -3,7 +3,7 @@ import { compose, withProps, withHandlers, withState } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from "react-google-maps";
 import Card from '@material-ui/core/Card';
 import './map.css';
-import Geocode from 'react-geocode';
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 // const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 const _ = require("lodash");
@@ -13,7 +13,7 @@ const MapComponent = compose(
         googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
         loadingElement: <div style={{ height: '450px', width: '800px' }} />,
         containerElement: <div style={{ height: '450px' }} />,
-        mapElement: <div style={{ height: '450px', width: '800px' }} />,
+        mapElement: <div style={{ height: '100%', width: '100%' }} />,
     }),
     withScriptjs,
     withGoogleMap,
@@ -68,7 +68,7 @@ const MapComponent = compose(
                     const service = new window.google.maps.places.PlacesService(refs.map.context.__SECRET_MAP_DO_NOT_USE_OR_YOU_WILL_BE_FIRED);
                     const request = {
                       location: refs.map.getCenter(),
-                      radius: '450',
+                      radius: '400',
                       keyword: props.food,
                       name: props.food,
                       type: 'restaurant',
@@ -91,11 +91,11 @@ const MapComponent = compose(
 )((props) => {
     return (
       <div>
-      // Displays Gmap with specific user location and restaurant based on randomly selected food.
+      {/* // Displays Gmap with specific user location and restaurant based on randomly selected food. */}
         <GoogleMap
               onTilesLoaded={props.fetchPlaces}
               ref={props.onMapMounted}
-              defaultZoom={16}
+              defaultZoom={15}
               defaultCenter={{ lat: props.lat, lng: props.lng }} >
 
             {props.places && props.places.map((place, i) =>
@@ -135,6 +135,7 @@ export default class GoogleMapComponent extends React.PureComponent {
     renderMaps() {
         return (
             <Card>
+                <CssBaseline />
                 <MapComponent food={this.state.randomFoodName}
                 address={this.state.addressName}
                 lng={this.state.lng}
@@ -148,6 +149,7 @@ export default class GoogleMapComponent extends React.PureComponent {
     render() {
         return (
           <div>
+              <CssBaseline />
               {!!this.props.food
                 ? (this.renderMaps(this.props.food))
                 : null
