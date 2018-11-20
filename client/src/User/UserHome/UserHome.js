@@ -27,11 +27,26 @@ class UserHome extends Component {
       if (user) {
         this.setState({
           user: {
-            userName: user.displayName,
             userUID: user.uid
           }
         });
       }
+      firebase
+        .database()
+        .ref(`Users/${user.uid}/name`)
+        .once(
+          "value",
+          snapshot => {
+            if (snapshot.val() != null) {
+              this.setState({
+                userName: snapshot.val()
+              });
+            }
+          },
+          error => {
+            console.log("Error: " + error.code);
+          }
+        );
     });
   }
 
@@ -47,7 +62,7 @@ class UserHome extends Component {
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">
           <Typography variant="display2" style={{ flex: 1 }}>
-            Welcome, {this.state.user.userName}
+            Welcome, {this.state.userName}
             <Button
               style={{ float: "right" }}
               onClick={() => {
