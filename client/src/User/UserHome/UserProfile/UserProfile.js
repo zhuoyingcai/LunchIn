@@ -135,11 +135,9 @@ class UserProfile extends Component {
       }
       else {
         Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-        console.log(this.state.address);
         Geocode.fromAddress(this.state.address).then(
           response => {
             const { lat, lng } = response.results[0].geometry.location;
-            console.log(lat, lng);
   
             this.setState({
               oldAddress: this.state.address,
@@ -181,7 +179,6 @@ class UserProfile extends Component {
           },
           error => {
             if (error.message === "Server returned status code ZERO_RESULTS") {
-              console.error(error.message)
               this.setState({
                 processing: false,
                 notify: true,
@@ -189,7 +186,6 @@ class UserProfile extends Component {
               });
             }
             if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
-              console.error(error.message)
               this.setState({
                 processing: false,
                 notify: true,
