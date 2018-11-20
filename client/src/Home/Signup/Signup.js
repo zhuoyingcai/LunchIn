@@ -120,7 +120,6 @@ export default class Signup extends Component {
                 step1complete: false
               });
             });
-
         },
         error => {
           if (error.message === "Server returned status code ZERO_RESULTS") {
@@ -140,45 +139,6 @@ export default class Signup extends Component {
             });
           }
         })
-
-      // var setData = {
-      //   type: this.state.userType,
-      //   name: this.state.name,
-      //   address: this.state.address
-      // };
-      // firebase
-      //   .auth()
-      //   .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      //   .then(() => {
-      //     firebase
-      //       .database()
-      //       .ref(`Users/${firebase.auth().currentUser.uid}/`)
-      //       .set(setData)
-      //       .then(() => {
-      //         this.setState({
-      //           processing: false,
-      //           step1complete: true
-      //         }).then(() => {
-      //           this.props.history.push("/user/home");
-      //         });
-      //       })
-      //       .catch(error => {
-      //         this.setState({
-      //           notify: true,
-      //           notifyMsg: error.message,
-      //           processing: false,
-      //           step1complete: false
-      //         });
-      //       });
-      //   })
-      //   .catch(error => {
-      //     this.setState({
-      //       notify: true,
-      //       notifyMsg: error.message,
-      //       processing: false,
-      //       step1complete: false
-      //     });
-      //   });
     } else {
       this.setState({
         notify: true,
