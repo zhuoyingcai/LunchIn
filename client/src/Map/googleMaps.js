@@ -3,7 +3,7 @@ import { compose, withProps, withHandlers, withState } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from "react-google-maps";
 import Card from '@material-ui/core/Card';
 import './map.css';
-import Geocode from 'react-geocode';
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 // const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 const _ = require("lodash");
@@ -91,7 +91,7 @@ const MapComponent = compose(
 )((props) => {
     return (
       <div>
-      // Displays Gmap with specific user location and restaurant based on randomly selected food.
+      {/* // Displays Gmap with specific user location and restaurant based on randomly selected food. */}
         <GoogleMap
               onTilesLoaded={props.fetchPlaces}
               ref={props.onMapMounted}
@@ -135,6 +135,7 @@ export default class GoogleMapComponent extends React.PureComponent {
     renderMaps() {
         return (
             <Card>
+                <CssBaseline />
                 <MapComponent food={this.state.randomFoodName}
                 address={this.state.addressName}
                 lng={this.state.lng}
@@ -148,6 +149,7 @@ export default class GoogleMapComponent extends React.PureComponent {
     render() {
         return (
           <div>
+              <CssBaseline />
               {!!this.props.food
                 ? (this.renderMaps(this.props.food))
                 : null
