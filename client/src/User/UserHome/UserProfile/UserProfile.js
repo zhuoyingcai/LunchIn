@@ -26,6 +26,7 @@ import Back from "@material-ui/icons/ArrowBack";
 import Email from "@material-ui/icons/Email";
 import Password from "@material-ui/icons/LockOpen";
 import Home from "@material-ui/icons/Home";
+import Geocode from "react-geocode"
 
 function TabContainer({ children, dir }) {
   return (
@@ -129,30 +130,83 @@ class UserProfile extends Component {
         });
       }
       else {
-        this.setState({
-          address: this.state.address,
-          oldAddress: this.state.address,            
-          processing: true
-        });
-        const addressRef = firebase
-          .database()
-          .ref(`Users/${firebase.auth().currentUser.uid}/address`);
-          addressRef
-          .set(this.state.address)
-          .then(() => {
+
+        Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+        console.log(this.state.address);
+        Geocode.fromAddress(this.state.address).then(
+          response => {
+            const { lat, lng } = response.results[0].geometry.location;
+            console.log(lat, lng);
+  
             this.setState({
-              processing: false,
-              notify: true,
-              notifyMsg: "Address update successfully!"
+              address: this.state.address,
+              oldAddress: this.state.address,
+              processing: true
             });
-          })
-          .catch(error => {
+            const addressRef = firebase
+              .database()
+              .ref(`Users/${firebase.auth().currentUser.uid}/address`);
+            addressRef
+              .set(this.state.address)
+              .then(() => {
+                this.setState({
+                  processing: false,
+                  notify: true,
+                  notifyMsg: "Address update successfully!"
+                });
+              })
+              .catch(error => {
+                this.setState({
+                  notify: true,
+                  notifyMsg: error.message,
+                  processing: false
+                });
+              });
+          },
+          error => {
+            if (error.message === "Server returned status code ZERO_RESULTS") {
+              console.error(error.message)
               this.setState({
-              notify: true,
-              notifyMsg: error.message,
-              processing: false
-            });
-          });
+                processing: false,
+                notify: true,
+                notifyMsg: "Invalid address"
+              });
+            }
+            if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
+              console.error(error.message)
+              this.setState({
+                processing: false,
+                notify: true,
+                notifyMsg: "Try agian later"
+              });
+            }
+          }
+        );
+
+        // this.setState({
+        //   address: this.state.address,
+        //   oldAddress: this.state.address,            
+        //   processing: true
+        // });
+        // const addressRef = firebase
+        //   .database()
+        //   .ref(`Users/${firebase.auth().currentUser.uid}/address`);
+        //   addressRef
+        //   .set(this.state.address)
+        //   .then(() => {
+        //     this.setState({
+        //       processing: false,
+        //       notify: true,
+        //       notifyMsg: "Address update successfully!"
+        //     });
+        //   })
+        //   .catch(error => {
+        //       this.setState({
+        //       notify: true,
+        //       notifyMsg: error.message,
+        //       processing: false
+        //     });
+        //   });
        }
      }
   }
