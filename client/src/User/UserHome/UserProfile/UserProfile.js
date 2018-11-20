@@ -48,6 +48,8 @@ class UserProfile extends Component {
       showPassword: false,
       oldAddress: "",
       address: "",
+      lat: 0,
+      lng: 0,
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -96,7 +98,9 @@ class UserProfile extends Component {
                 this.setState({
                   name: snapshot.val().name,
                   address: snapshot.val().address,
-                  oldAddress: snapshot.val().address
+                  oldAddress: snapshot.val().address,
+                  lat: snapshot.val().lat,
+                  lng: snapshot.val().lng,
                 });
               }
             },
@@ -130,7 +134,6 @@ class UserProfile extends Component {
         });
       }
       else {
-
         Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
         console.log(this.state.address);
         Geocode.fromAddress(this.state.address).then(
@@ -139,15 +142,28 @@ class UserProfile extends Component {
             console.log(lat, lng);
   
             this.setState({
-              address: this.state.address,
               oldAddress: this.state.address,
               processing: true
             });
+
             const addressRef = firebase
               .database()
               .ref(`Users/${firebase.auth().currentUser.uid}/address`);
+            
+            const latRef = firebase
+              .database()
+              .ref(`Users/${firebase.auth().currentUser.uid}/lat`);
+
+            const lngRef = firebase
+              .database()
+              .ref(`Users/${firebase.auth().currentUser.uid}/lng`);
+
             addressRef
               .set(this.state.address)
+            latRef
+              .set(lat)
+            lngRef
+              .set(lng)
               .then(() => {
                 this.setState({
                   processing: false,
@@ -169,7 +185,7 @@ class UserProfile extends Component {
               this.setState({
                 processing: false,
                 notify: true,
-                notifyMsg: "Invalid address"
+                notifyMsg: "Invalid address. Please enter a valid address"
               });
             }
             if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
@@ -177,36 +193,11 @@ class UserProfile extends Component {
               this.setState({
                 processing: false,
                 notify: true,
-                notifyMsg: "Try agian later"
+                notifyMsg: "Please try agian later"
               });
             }
           }
         );
-
-        // this.setState({
-        //   address: this.state.address,
-        //   oldAddress: this.state.address,            
-        //   processing: true
-        // });
-        // const addressRef = firebase
-        //   .database()
-        //   .ref(`Users/${firebase.auth().currentUser.uid}/address`);
-        //   addressRef
-        //   .set(this.state.address)
-        //   .then(() => {
-        //     this.setState({
-        //       processing: false,
-        //       notify: true,
-        //       notifyMsg: "Address update successfully!"
-        //     });
-        //   })
-        //   .catch(error => {
-        //       this.setState({
-        //       notify: true,
-        //       notifyMsg: error.message,
-        //       processing: false
-        //     });
-        //   });
        }
      }
   }

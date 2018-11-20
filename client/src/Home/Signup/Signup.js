@@ -18,6 +18,7 @@ import Visible from "@material-ui/icons/Visibility";
 import Hidden from "@material-ui/icons/VisibilityOff";
 import Check from "@material-ui/icons/CheckCircle";
 import { firebase } from "../../Config";
+import Geocode from "react-geocode";
 
 const validation = {
   invalid: 0,
@@ -33,6 +34,8 @@ export default class Signup extends Component {
       email: "",
       password: "",
       address: "",
+      lat: 0,
+      lng: 0,
       showPassword: false,
       step1complete: false,
       step2complete: false,
@@ -69,26 +72,45 @@ export default class Signup extends Component {
       this.setState({
         processing: true
       });
-      var setData = {
-        type: this.state.userType,
-        name: this.state.name,
-        address: this.state.address
-      };
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(() => {
+
+      Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+      console.log(this.state.address);
+      Geocode.fromAddress(this.state.address).then(
+        response => {
+          const { lat, lng } = response.results[0].geometry.location;
+          console.log(lat, lng);
+
+          var setData = {
+            type: this.state.userType,
+            name: this.state.name,
+            address: this.state.address,
+            lat: lat,
+            lng: lng
+          };
           firebase
-            .database()
-            .ref(`Users/${firebase.auth().currentUser.uid}/`)
-            .set(setData)
+            .auth()
+            .createUserWithEmailAndPassword(this.state.email, this.state.password)
             .then(() => {
-              this.setState({
-                processing: false,
-                step1complete: true
-              }).then(() => {
-                this.props.history.push("/user/home");
-              });
+              firebase
+                .database()
+                .ref(`Users/${firebase.auth().currentUser.uid}/`)
+                .set(setData)
+                .then(() => {
+                  this.setState({
+                    processing: false,
+                    step1complete: true
+                  }).then(() => {
+                    this.props.history.push("/user/home");
+                  });
+                })
+                .catch(error => {
+                  this.setState({
+                    notify: true,
+                    notifyMsg: error.message,
+                    processing: false,
+                    step1complete: false
+                  });
+                });
             })
             .catch(error => {
               this.setState({
@@ -98,15 +120,65 @@ export default class Signup extends Component {
                 step1complete: false
               });
             });
+
+        },
+        error => {
+          if (error.message === "Server returned status code ZERO_RESULTS") {
+            console.error(error.message)
+            this.setState({
+              processing: false,
+              notify: true,
+              notifyMsg: "Invalid address. Please enter a valid address"
+            });
+          }
+          if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
+            console.error(error.message)
+            this.setState({
+              processing: false,
+              notify: true,
+              notifyMsg: "Please try agian later"
+            });
+          }
         })
-        .catch(error => {
-          this.setState({
-            notify: true,
-            notifyMsg: error.message,
-            processing: false,
-            step1complete: false
-          });
-        });
+
+      // var setData = {
+      //   type: this.state.userType,
+      //   name: this.state.name,
+      //   address: this.state.address
+      // };
+      // firebase
+      //   .auth()
+      //   .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      //   .then(() => {
+      //     firebase
+      //       .database()
+      //       .ref(`Users/${firebase.auth().currentUser.uid}/`)
+      //       .set(setData)
+      //       .then(() => {
+      //         this.setState({
+      //           processing: false,
+      //           step1complete: true
+      //         }).then(() => {
+      //           this.props.history.push("/user/home");
+      //         });
+      //       })
+      //       .catch(error => {
+      //         this.setState({
+      //           notify: true,
+      //           notifyMsg: error.message,
+      //           processing: false,
+      //           step1complete: false
+      //         });
+      //       });
+      //   })
+      //   .catch(error => {
+      //     this.setState({
+      //       notify: true,
+      //       notifyMsg: error.message,
+      //       processing: false,
+      //       step1complete: false
+      //     });
+      //   });
     } else {
       this.setState({
         notify: true,
