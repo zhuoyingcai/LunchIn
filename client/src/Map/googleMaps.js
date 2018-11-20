@@ -13,7 +13,7 @@ const MapComponent = compose(
         googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
         loadingElement: <div style={{ height: '450px', width: '800px' }} />,
         containerElement: <div style={{ height: '450px' }} />,
-        mapElement: <div style={{ height: '450px', width: '800px' }} />,
+        mapElement: <div style={{ height: '100%', width: '100%' }} />,
     }),
     withScriptjs,
     withGoogleMap,
@@ -68,7 +68,7 @@ const MapComponent = compose(
                     const service = new window.google.maps.places.PlacesService(refs.map.context.__SECRET_MAP_DO_NOT_USE_OR_YOU_WILL_BE_FIRED);
                     const request = {
                       location: refs.map.getCenter(),
-                      radius: '450',
+                      radius: '400',
                       keyword: props.food,
                       name: props.food,
                       type: 'restaurant',
@@ -95,7 +95,7 @@ const MapComponent = compose(
         <GoogleMap
               onTilesLoaded={props.fetchPlaces}
               ref={props.onMapMounted}
-              defaultZoom={16}
+              defaultZoom={15}
               defaultCenter={{ lat: props.lat, lng: props.lng }} >
 
             {props.places && props.places.map((place, i) =>
