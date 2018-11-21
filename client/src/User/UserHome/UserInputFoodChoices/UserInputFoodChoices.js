@@ -34,6 +34,11 @@ class UserInputFoodChoices extends Component {
       addressName: "",
       lat: 0,
       lng: 0,
+      ziplat: 0,
+      ziplng: 0,
+      viewZip: false,
+      zipCode: "",
+      displayZipMap: false,
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -41,7 +46,9 @@ class UserInputFoodChoices extends Component {
       address: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleZipSubmit = this.handleZipSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInputChange2 = this.handleInputChange2.bind(this);
     this.handleRandomFood = this.handleRandomFood.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -115,7 +122,7 @@ class UserInputFoodChoices extends Component {
     });
   }
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.randomFoodName !== this.state.randomFoodName) {
+    if (prevState.randomFoodName !== this.state.randomFoodName && !this.state.displayZipMap) {
       Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
       Geocode.fromAddress(this.state.addressName).then(
         response => {
@@ -127,6 +134,7 @@ class UserInputFoodChoices extends Component {
         }
       );
       this.setState({ businesses: [] });
+      console.log(this.state.displayZipMap);
       fetch(
         `/api/yelp/search?term=${this.sanitizeInput(this.state.randomFoodName)}&location=${
         this.state.address
@@ -134,10 +142,24 @@ class UserInputFoodChoices extends Component {
       )
         .then(response => response.json())
         .then(data => {
-          console.log(data.jsonBody.businesses);
+        console.log(data.jsonBody.businesses);
           this.setState({ businesses: data.jsonBody.businesses });
         })
         .catch(e => console.log(e));
+    } else if(prevState.displayZipMap !== this.state.displayZipMap) {
+        if(this.state.ziplat === 0) {
+          fetch(
+            `/api/yelp/search?term=restaurant&location=${
+            this.state.zipCode
+            }`
+          )
+            .then(response => response.json())
+            .then(data => {
+              console.log(data.jsonBody.businesses);
+              this.setState({ businesses: data.jsonBody.businesses });
+            })
+            .catch(e => console.log(e));
+        }    
     }
   }
 
@@ -176,7 +198,9 @@ class UserInputFoodChoices extends Component {
     }
     this.setState({
       randomFoodName: rand,
-      processing: true
+      processing: true,
+      viewZip: false,
+      displayZipMap: false
     });
     const foodSelectedRef = firebase
       .database()
@@ -223,19 +247,87 @@ class UserInputFoodChoices extends Component {
         });
       });
   }
-  renderMaps() {
-    // checks if the lng and lat are being pass through before rendering gmaps on your screen.
-    if (this.state.lat !== 0 && this.state.lng !== 0) {
-      return (
-        <GoogleM
-          food={this.sanitizeInput(this.state.randomFoodName)}
-          address={this.state.addressName}
-          lat={this.state.lat}
-          lng={this.state.lng}
-          key={this.sanitizeInput(this.state.randomFoodName)}
-        />
-      );
+  handleZipRequest(e) {
+    e.preventDefault();
+    if(!this.state.viewZip) {
+      this.setState({
+        viewZip: true,
+        displayZipMap: false,
+        ziplat: 0,
+        ziplng: 0
+      })
     }
+  }
+  handleZipSubmit(e) {
+    e.preventDefault();
+    if(this.state.zipCode.length === 5) {
+      if(!isNaN(this.state.zipCode)) {
+        this.setState({
+          viewZip: false,
+          displayZipMap: true,
+          randomFoodName: ""
+        })
+        console.log(this.state.zipCode);
+        
+        Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+          Geocode.fromAddress(this.state.zipCode).then(
+          response => {
+            const { lat, lng } = response.results[0].geometry.location;
+            // console.log(lat, lng);
+            this.setState({ ziplat: lat, ziplng: lng });
+
+          },
+          error => {
+            console.error(error);
+          }
+        );
+      } else {
+        this.setState({
+          notify:true,
+          notifyMsg: "Zip Code must be a number"
+        })
+      }
+    } else {
+      this.setState({
+        notify:true,
+        notifyMsg: "Zip Code must be 5 digits"
+      })
+    }
+  }
+  handleInputChange2(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+  renderMaps(searchZip) {
+    // checks if the lng and lat are being pass through before rendering gmaps on your screen.
+    if(!searchZip) {
+      if (this.state.lat !== 0 && this.state.lng !== 0) {
+        return (
+          <GoogleM
+            food={this.sanitizeInput(this.state.randomFoodName)}
+            address={this.state.addressName}
+            lat={this.state.lat}
+            lng={this.state.lng}
+            key={this.sanitizeInput(this.state.randomFoodName)}
+          />
+        );
+      }
+    } else {
+      console.log(this.state.ziplat, this.state.ziplng);
+      if (this.state.ziplat !== 0 && this.state.ziplng !== 0) {
+        return (
+          <GoogleM
+            food={"restaurant"}
+            address={this.state.zipCode}
+            lat={this.state.ziplat}
+            lng={this.state.ziplng}
+            key={this.state.zipCode}
+          />
+        );
+      }
+    }
+    
   }
   sanitizeInput(string) {
     const map = {
@@ -354,11 +446,59 @@ class UserInputFoodChoices extends Component {
               Generate Random Food
             </Button>
           ) : null}
+          {this.state.viewZip ? 
+            <Button
+              style={{
+                marginTop: 10,
+                marginBottom: 5
+              }}
+              variant="raised"
+              color="primary"
+              className="input-button"
+              value=""
+              onClick={this.handleZipSubmit}
+            >
+              Search Entered Zip Code
+            </Button>
+          :<Button
+            style={{
+              marginTop: 10,
+              marginBottom: 5
+            }}
+            variant="raised"
+            color="primary"
+            className="input-button"
+            value=""
+            onClick={e => this.handleZipRequest(e)}
+          >
+            View all Restaurants by Zip Code
+          </Button>}
+          {this.state.viewZip ?
+            <TextField
+              fullWidth
+              inputProps={{
+                maxLength: 5,
+                style: { textAlign: "center" }
+              }}
+              value={this.state.zipCode}
+             className=""
+              onChange={this.handleInputChange2}
+              placeholder="Enter 5 Digit Zip Code"
+              name="zipCode"
+              required
+            />
+          :null}
+          {this.state.displayZipMap ?
+            <Typography variant="subtitle1">
+              {this.renderMaps(true)}
+              <BusinessCardList businesses={this.state.businesses} />
+            </Typography> 
+            :null}
           <div className="random-food-section">
             {this.state.randomFoodName ? (
               <Typography variant="subtitle1">
                 The food selected is: <Chip label={this.state.randomFoodName} />
-                {this.renderMaps()}
+                {this.renderMaps(false)}
                 <BusinessCardList businesses={this.state.businesses} />
               </Typography>
             ) : null}

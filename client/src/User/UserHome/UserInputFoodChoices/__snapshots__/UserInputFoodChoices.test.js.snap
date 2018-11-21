@@ -64,6 +64,21 @@ ShallowWrapper {
           >
             Add Food
           </WithStyles(Button)>
+          <WithStyles(Button)
+            className="input-button"
+            color="primary"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 5,
+                "marginTop": 10,
+              }
+            }
+            value=""
+            variant="raised"
+          >
+            View all Restaurants by Zip Code
+          </WithStyles(Button)>
           <div
             className="random-food-section"
           />
@@ -130,6 +145,23 @@ ShallowWrapper {
               variant="raised"
             >
               Add Food
+            </WithStyles(Button)>,
+            null,
+            null,
+            <WithStyles(Button)
+              className="input-button"
+              color="primary"
+              onClick={[Function]}
+              style={
+                Object {
+                  "marginBottom": 5,
+                  "marginTop": 10,
+                }
+              }
+              value=""
+              variant="raised"
+            >
+              View all Restaurants by Zip Code
             </WithStyles(Button)>,
             null,
             null,
@@ -204,6 +236,28 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "View all Restaurants by Zip Code",
+              "className": "input-button",
+              "color": "primary",
+              "onClick": [Function],
+              "style": Object {
+                "marginBottom": 5,
+                "marginTop": 10,
+              },
+              "value": "",
+              "variant": "raised",
+            },
+            "ref": null,
+            "rendered": "View all Restaurants by Zip Code",
+            "type": [Function],
+          },
+          null,
+          null,
+          Object {
+            "instance": null,
+            "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": null,
@@ -269,6 +323,21 @@ ShallowWrapper {
               variant="raised"
             >
               Add Food
+            </WithStyles(Button)>
+            <WithStyles(Button)
+              className="input-button"
+              color="primary"
+              onClick={[Function]}
+              style={
+                Object {
+                  "marginBottom": 5,
+                  "marginTop": 10,
+                }
+              }
+              value=""
+              variant="raised"
+            >
+              View all Restaurants by Zip Code
             </WithStyles(Button)>
             <div
               className="random-food-section"
@@ -339,6 +408,23 @@ ShallowWrapper {
               </WithStyles(Button)>,
               null,
               null,
+              <WithStyles(Button)
+                className="input-button"
+                color="primary"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "marginBottom": 5,
+                    "marginTop": 10,
+                  }
+                }
+                value=""
+                variant="raised"
+              >
+                View all Restaurants by Zip Code
+              </WithStyles(Button)>,
+              null,
+              null,
               <div
                 className="random-food-section"
               />,
@@ -403,6 +489,28 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Add Food",
+              "type": [Function],
+            },
+            null,
+            null,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "View all Restaurants by Zip Code",
+                "className": "input-button",
+                "color": "primary",
+                "onClick": [Function],
+                "style": Object {
+                  "marginBottom": 5,
+                  "marginTop": 10,
+                },
+                "value": "",
+                "variant": "raised",
+              },
+              "ref": null,
+              "rendered": "View all Restaurants by Zip Code",
               "type": [Function],
             },
             null,
