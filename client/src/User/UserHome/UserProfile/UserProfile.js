@@ -26,6 +26,7 @@ import Back from "@material-ui/icons/ArrowBack";
 import Email from "@material-ui/icons/Email";
 import Password from "@material-ui/icons/LockOpen";
 import Home from "@material-ui/icons/Home";
+import Geocode from "react-geocode"
 
 function TabContainer({ children, dir }) {
   return (
@@ -47,6 +48,8 @@ class UserProfile extends Component {
       showPassword: false,
       oldAddress: "",
       address: "",
+      lat: 0,
+      lng: 0,
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -95,7 +98,9 @@ class UserProfile extends Component {
                 this.setState({
                   name: snapshot.val().name,
                   address: snapshot.val().address,
-                  oldAddress: snapshot.val().address
+                  oldAddress: snapshot.val().address,
+                  lat: snapshot.val().lat,
+                  lng: snapshot.val().lng,
                 });
               }
             },
@@ -129,30 +134,66 @@ class UserProfile extends Component {
         });
       }
       else {
-        this.setState({
-          address: this.state.address,
-          oldAddress: this.state.address,            
-          processing: true
-        });
-        const addressRef = firebase
-          .database()
-          .ref(`Users/${firebase.auth().currentUser.uid}/address`);
-          addressRef
-          .set(this.state.address)
-          .then(() => {
+        Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+        Geocode.fromAddress(this.state.address).then(
+          response => {
+            const { lat, lng } = response.results[0].geometry.location;
+  
             this.setState({
-              processing: false,
-              notify: true,
-              notifyMsg: "Address update successfully!"
+              oldAddress: this.state.address,
+              processing: true
             });
-          })
-          .catch(error => {
+
+            const addressRef = firebase
+              .database()
+              .ref(`Users/${firebase.auth().currentUser.uid}/address`);
+            
+            const latRef = firebase
+              .database()
+              .ref(`Users/${firebase.auth().currentUser.uid}/lat`);
+
+            const lngRef = firebase
+              .database()
+              .ref(`Users/${firebase.auth().currentUser.uid}/lng`);
+
+            addressRef
+              .set(this.state.address)
+            latRef
+              .set(lat)
+            lngRef
+              .set(lng)
+              .then(() => {
+                this.setState({
+                  processing: false,
+                  notify: true,
+                  notifyMsg: "Address update successfully!"
+                });
+              })
+              .catch(error => {
+                this.setState({
+                  notify: true,
+                  notifyMsg: error.message,
+                  processing: false
+                });
+              });
+          },
+          error => {
+            if (error.message === "Server returned status code ZERO_RESULTS") {
               this.setState({
-              notify: true,
-              notifyMsg: error.message,
-              processing: false
-            });
-          });
+                processing: false,
+                notify: true,
+                notifyMsg: "Invalid address. Please enter a valid address"
+              });
+            }
+            if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
+              this.setState({
+                processing: false,
+                notify: true,
+                notifyMsg: "Please try agian later"
+              });
+            }
+          }
+        );
        }
      }
   }
