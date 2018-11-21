@@ -1,20 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
-import Review from "./Review";
+import BusinessCard from "./BusinessCard";
 
-describe("Review Component", () => {
+describe("BusinessCard Component", () => {
   describe("When provided with no info", () => {
     it("Should render correctly", () => {
-      const reviewInstance = shallow(
-        <Review />
+      const businessInstance = shallow(
+        <BusinessCard />
       );
-      expect(reviewInstance).toMatchSnapshot();
+      expect(businessInstance).toMatchSnapshot();
     });
   });
-  describe("When provided with review info", () => {
+  describe("When provided with business info", () => {
     it("Should render correctly", () => {
-      const businesses = [
+      const business =
         {
           "rating": 4.5,
           "price": "$$",
@@ -43,30 +43,11 @@ describe("Review Component", () => {
             "address1": "373 Columbus Ave",
             "zip_code": "94133"
           }
-        },
-        {
-          "rating": 4,
-          "image_url": "",
-          "name": "North India Restaurant",
-          "url": "https://www.yelp.com/biz/north-india-restaurant-san-francisco",
-          "review_count": 551,
-          "coordinates": {
-            "latitude": null,
-            "longitude": null
-          },
-          "id": "north-india-restaurant-san-francisco",
-          "categories": [
-            {
-              "alias": "indpak",
-              "title": "Indian"
-            }
-          ]
-        }
-      ];
-      const reviewInstance = shallow(
-        <Review businesses={businesses} />
+        };
+      const businessInstance = shallow(
+        <BusinessCard business={business} />
       );
-      expect(reviewInstance).toMatchSnapshot();
+      expect(businessInstance).toMatchSnapshot();
     });
   });
 });
