@@ -127,18 +127,6 @@ class UserInputFoodChoices extends Component {
           console.error(error);
         }
       );
-      this.setState({ businesses: [] });
-      fetch(
-        `/api/yelp/search?term=${this.state.sanitizedRandomFood}&location=${
-        this.state.address
-        }`
-      )
-        .then(response => response.json())
-        .then(data => {
-          console.log(data.jsonBody.businesses);
-          this.setState({ businesses: data.jsonBody.businesses });
-        })
-        .catch(e => console.log(e));
     }
   }
 
@@ -228,7 +216,9 @@ class UserInputFoodChoices extends Component {
   }
   renderMaps() {
     // checks if the lng and lat are being pass through before rendering gmaps on your screen.
-    if (this.state.lat !== 0 && this.state.lng !== 0) {
+    if (this.state.lat !== 0
+        && this.state.lng !== 0
+        && this.state.sanitizedRandomFood) {
       return (
         <GoogleM
           food={this.state.sanitizedRandomFood}
@@ -358,13 +348,19 @@ class UserInputFoodChoices extends Component {
             </Button>
           ) : null}
           <div className="random-food-section">
-            {this.state.randomFoodName ? (
               <Typography variant="subtitle1">
-                The food selected is: <Chip label={this.state.randomFoodName} />
+                {this.state.randomFoodName ? (
+                    <span>
+                    The food selected is: <Chip label={this.state.randomFoodName} />
+                    </span>
+                  ) : null
+                }
                 {this.renderMaps()}
-                <BusinessCardList businesses={this.state.businesses} />
+                <BusinessCardList
+                  address={this.state.address}
+                  randomFoodName={this.state.sanitizedRandomFood}
+                  />
               </Typography>
-            ) : null}
           </div>
         </CardContent>
       </Card>
