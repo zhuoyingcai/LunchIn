@@ -31,6 +31,7 @@ class UserInputFoodChoices extends Component {
       inputFoodName: "",
       foodNames: [],
       randomFoodName: "",
+      sanitizedRandomFood: "",
       addressName: "",
       lat: 0,
       lng: 0,
@@ -128,7 +129,7 @@ class UserInputFoodChoices extends Component {
       );
       this.setState({ businesses: [] });
       fetch(
-        `/api/yelp/search?term=${this.sanitizeInput(this.state.randomFoodName)}&location=${
+        `/api/yelp/search?term=${this.state.sanitizedRandomFood}&location=${
         this.state.address
         }`
       )
@@ -174,8 +175,10 @@ class UserInputFoodChoices extends Component {
     if (!isRand) {
       rand = e.currentTarget.value;
     }
+    let sanitizedRandomFood = this.sanitizeInput(rand);
     this.setState({
       randomFoodName: rand,
+      sanitizedRandomFood: sanitizedRandomFood,
       processing: true
     });
     const foodSelectedRef = firebase
@@ -228,11 +231,11 @@ class UserInputFoodChoices extends Component {
     if (this.state.lat !== 0 && this.state.lng !== 0) {
       return (
         <GoogleM
-          food={this.sanitizeInput(this.state.randomFoodName)}
+          food={this.state.sanitizedRandomFood}
           address={this.state.addressName}
           lat={this.state.lat}
           lng={this.state.lng}
-          key={this.sanitizeInput(this.state.randomFoodName)}
+          key={this.state.sanitizedRandomFood}
         />
       );
     }
