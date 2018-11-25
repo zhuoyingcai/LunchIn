@@ -22,7 +22,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      email: "",
       password: "",
       showPassword: false,
       notify: false,
@@ -39,7 +39,7 @@ class Home extends Component {
     });
     firebase
       .auth()
-      .signInWithEmailAndPassword(this.state.username, this.state.password)
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then(
         resp => {
           this.props.history.push(`/user/home`);
@@ -103,11 +103,11 @@ class Home extends Component {
             <CardContent className="login-form-content">
               <TextField
                 disabled={this.state.processing}
-                className="username"
-                id="username"
+                className="email"
+                id="email"
                 label="E-mail"
-                value={this.state.username}
-                onChange={this.handleChange("username")}
+                value={this.state.email}
+                onChange={this.handleChange("email")}
                 fullWidth
                 required
                 type="email"
