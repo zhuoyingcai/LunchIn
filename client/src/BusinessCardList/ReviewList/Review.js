@@ -9,27 +9,26 @@ import "./Review.css";
 
 class Review extends Component {
   render() {
-    return (
-      <Card className="review-card">
-        { this.props.review
-          ? (
-              <CardActionArea key={this.props.review.id}>
-                <CardMedia
-                  className="review-card-media"
-                  image={this.props.review.user.image_url}
-                  title={this.props.review.user.image_url}
-                />
-                <Typography component="p">
-                  {this.props.review.user.name} <br />
-                  {this.props.review.time_created} <br />
-                  {this.props.review.rating} <br />
-                  {this.props.review.text} <br />
-                </Typography>
-              </CardActionArea>
-          ) : <CircularProgress />
-        }
-      </Card>
-    );
+    if(this.props.review){
+      return (
+        <Card className="review-card">
+            <CardMedia
+              className="review-card-media"
+              image={this.props.review.user.image_url}
+              title={this.props.review.user.image_url}
+            />
+            <Typography component="p">
+              {this.props.review.user.name} <br />
+              {this.props.review.time_created} <br />
+              {this.props.review.rating} <br />
+              {this.props.review.text} <br />
+            </Typography>
+        </Card>
+      );
+    }
+    else{
+      return (<CircularProgress />);
+    }
   }
 }
 export default Review;

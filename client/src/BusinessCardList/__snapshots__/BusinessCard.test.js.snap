@@ -49,12 +49,12 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <WithStyles(CardActionArea)>
+      "children": Array [
         <WithStyles(CardMedia)
           className="business-card-media"
           image="http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg"
           title="http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg"
-        />
+        />,
         <WithStyles(CardContent)>
           <WithStyles(Typography)
             component="h2"
@@ -77,14 +77,160 @@ ShallowWrapper {
             Review Counts: 
             910
           </WithStyles(Typography)>
-        </WithStyles(CardContent)>
-      </WithStyles(CardActionArea)>,
+          <WithStyles(CardActionArea)
+            onClick={[Function]}
+          >
+            <pure(ExpandMoreIcon) />
+          </WithStyles(CardActionArea)>
+        </WithStyles(CardContent)>,
+      ],
       "className": "business-card",
     },
     "ref": null,
-    "rendered": Object {
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "className": "business-card-media",
+          "image": "http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg",
+          "title": "http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <WithStyles(Typography)
+              component="h2"
+              gutterBottom={true}
+              variant="h5"
+            >
+              Molinari Delicatessen
+            </WithStyles(Typography)>,
+            <WithStyles(Typography)
+              component="p"
+            >
+              Price: 
+              $$
+               
+              <br />
+              Rating: 
+              4.5
+               
+              <br />
+              Review Counts: 
+              910
+            </WithStyles(Typography)>,
+            <WithStyles(CardActionArea)
+              onClick={[Function]}
+            >
+              <pure(ExpandMoreIcon) />
+            </WithStyles(CardActionArea)>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Molinari Delicatessen",
+              "component": "h2",
+              "gutterBottom": true,
+              "variant": "h5",
+            },
+            "ref": null,
+            "rendered": "Molinari Delicatessen",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "Price: ",
+                "$$",
+                " ",
+                <br />,
+                "Rating: ",
+                4.5,
+                " ",
+                <br />,
+                "Review Counts: ",
+                910,
+              ],
+              "component": "p",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Price: ",
+              "$$",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              "Rating: ",
+              4.5,
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              "Review Counts: ",
+              910,
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <pure(ExpandMoreIcon) />,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
       "instance": null,
-      "key": "Molinari Delicatessen",
+      "key": undefined,
       "nodeType": "class",
       "props": Object {
         "children": Array [
@@ -115,8 +261,14 @@ ShallowWrapper {
               Review Counts: 
               910
             </WithStyles(Typography)>
+            <WithStyles(CardActionArea)
+              onClick={[Function]}
+            >
+              <pure(ExpandMoreIcon) />
+            </WithStyles(CardActionArea)>
           </WithStyles(CardContent)>,
         ],
+        "className": "business-card",
       },
       "ref": null,
       "rendered": Array [
@@ -160,6 +312,11 @@ ShallowWrapper {
                 Review Counts: 
                 910
               </WithStyles(Typography)>,
+              <WithStyles(CardActionArea)
+                onClick={[Function]}
+              >
+                <pure(ExpandMoreIcon) />
+              </WithStyles(CardActionArea)>,
             ],
           },
           "ref": null,
@@ -228,205 +385,30 @@ ShallowWrapper {
               ],
               "type": [Function],
             },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <pure(ExpandMoreIcon) />,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
           ],
           "type": [Function],
         },
       ],
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <WithStyles(CardActionArea)>
-          <WithStyles(CardMedia)
-            className="business-card-media"
-            image="http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg"
-            title="http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg"
-          />
-          <WithStyles(CardContent)>
-            <WithStyles(Typography)
-              component="h2"
-              gutterBottom={true}
-              variant="h5"
-            >
-              Molinari Delicatessen
-            </WithStyles(Typography)>
-            <WithStyles(Typography)
-              component="p"
-            >
-              Price: 
-              $$
-               
-              <br />
-              Rating: 
-              4.5
-               
-              <br />
-              Review Counts: 
-              910
-            </WithStyles(Typography)>
-          </WithStyles(CardContent)>
-        </WithStyles(CardActionArea)>,
-        "className": "business-card",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": "Molinari Delicatessen",
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <WithStyles(CardMedia)
-              className="business-card-media"
-              image="http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg"
-              title="http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg"
-            />,
-            <WithStyles(CardContent)>
-              <WithStyles(Typography)
-                component="h2"
-                gutterBottom={true}
-                variant="h5"
-              >
-                Molinari Delicatessen
-              </WithStyles(Typography)>
-              <WithStyles(Typography)
-                component="p"
-              >
-                Price: 
-                $$
-                 
-                <br />
-                Rating: 
-                4.5
-                 
-                <br />
-                Review Counts: 
-                910
-              </WithStyles(Typography)>
-            </WithStyles(CardContent)>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "className": "business-card-media",
-              "image": "http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg",
-              "title": "http://s3-media4.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <WithStyles(Typography)
-                  component="h2"
-                  gutterBottom={true}
-                  variant="h5"
-                >
-                  Molinari Delicatessen
-                </WithStyles(Typography)>,
-                <WithStyles(Typography)
-                  component="p"
-                >
-                  Price: 
-                  $$
-                   
-                  <br />
-                  Rating: 
-                  4.5
-                   
-                  <br />
-                  Review Counts: 
-                  910
-                </WithStyles(Typography)>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "Molinari Delicatessen",
-                  "component": "h2",
-                  "gutterBottom": true,
-                  "variant": "h5",
-                },
-                "ref": null,
-                "rendered": "Molinari Delicatessen",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    "Price: ",
-                    "$$",
-                    " ",
-                    <br />,
-                    "Rating: ",
-                    4.5,
-                    " ",
-                    <br />,
-                    "Review Counts: ",
-                    910,
-                  ],
-                  "component": "p",
-                },
-                "ref": null,
-                "rendered": Array [
-                  "Price: ",
-                  "$$",
-                  " ",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "br",
-                  },
-                  "Rating: ",
-                  4.5,
-                  " ",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": "br",
-                  },
-                  "Review Counts: ",
-                  910,
-                ],
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
       "type": [Function],
     },
   ],
@@ -466,20 +448,9 @@ ShallowWrapper {
     "instance": null,
     "key": undefined,
     "nodeType": "class",
-    "props": Object {
-      "children": <WithStyles(CircularProgress) />,
-      "className": "business-card",
-    },
+    "props": Object {},
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {},
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
+    "rendered": null,
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -487,20 +458,9 @@ ShallowWrapper {
       "instance": null,
       "key": undefined,
       "nodeType": "class",
-      "props": Object {
-        "children": <WithStyles(CircularProgress) />,
-        "className": "business-card",
-      },
+      "props": Object {},
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
+      "rendered": null,
       "type": [Function],
     },
   ],

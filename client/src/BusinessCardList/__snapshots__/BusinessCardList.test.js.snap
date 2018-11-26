@@ -72,7 +72,6 @@ ShallowWrapper {
       "children": Array [
         <div
           className="item"
-          onClick={[Function]}
         >
           <BusinessCard
             business={
@@ -106,11 +105,11 @@ ShallowWrapper {
                 "url": "https://www.yelp.com/biz/molinari-delicatessen-san-francisco",
               }
             }
+            onClickReviewBtn={[Function]}
           />
         </div>,
         <div
           className="item"
-          onClick={[Function]}
         >
           <BusinessCard
             business={
@@ -133,6 +132,7 @@ ShallowWrapper {
                 "url": "https://www.yelp.com/biz/north-india-restaurant-san-francisco",
               }
             }
+            onClickReviewBtn={[Function]}
           />
         </div>,
       ],
@@ -178,17 +178,17 @@ ShallowWrapper {
                   "url": "https://www.yelp.com/biz/molinari-delicatessen-san-francisco",
                 }
               }
+              onClickReviewBtn={[Function]}
             />,
             null,
           ],
           "className": "item",
-          "onClick": [Function],
         },
         "ref": null,
         "rendered": Array [
           Object {
             "instance": null,
-            "key": undefined,
+            "key": "molinari-delicatessen-san-francisco",
             "nodeType": "class",
             "props": Object {
               "business": Object {
@@ -220,6 +220,7 @@ ShallowWrapper {
                 "review_count": 910,
                 "url": "https://www.yelp.com/biz/molinari-delicatessen-san-francisco",
               },
+              "onClickReviewBtn": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -256,17 +257,17 @@ ShallowWrapper {
                   "url": "https://www.yelp.com/biz/north-india-restaurant-san-francisco",
                 }
               }
+              onClickReviewBtn={[Function]}
             />,
             null,
           ],
           "className": "item",
-          "onClick": [Function],
         },
         "ref": null,
         "rendered": Array [
           Object {
             "instance": null,
-            "key": undefined,
+            "key": "north-india-restaurant-san-francisco",
             "nodeType": "class",
             "props": Object {
               "business": Object {
@@ -287,6 +288,7 @@ ShallowWrapper {
                 "review_count": 551,
                 "url": "https://www.yelp.com/biz/north-india-restaurant-san-francisco",
               },
+              "onClickReviewBtn": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -308,7 +310,6 @@ ShallowWrapper {
         "children": Array [
           <div
             className="item"
-            onClick={[Function]}
           >
             <BusinessCard
               business={
@@ -342,11 +343,11 @@ ShallowWrapper {
                   "url": "https://www.yelp.com/biz/molinari-delicatessen-san-francisco",
                 }
               }
+              onClickReviewBtn={[Function]}
             />
           </div>,
           <div
             className="item"
-            onClick={[Function]}
           >
             <BusinessCard
               business={
@@ -369,6 +370,7 @@ ShallowWrapper {
                   "url": "https://www.yelp.com/biz/north-india-restaurant-san-francisco",
                 }
               }
+              onClickReviewBtn={[Function]}
             />
           </div>,
         ],
@@ -414,17 +416,17 @@ ShallowWrapper {
                     "url": "https://www.yelp.com/biz/molinari-delicatessen-san-francisco",
                   }
                 }
+                onClickReviewBtn={[Function]}
               />,
               null,
             ],
             "className": "item",
-            "onClick": [Function],
           },
           "ref": null,
           "rendered": Array [
             Object {
               "instance": null,
-              "key": undefined,
+              "key": "molinari-delicatessen-san-francisco",
               "nodeType": "class",
               "props": Object {
                 "business": Object {
@@ -456,6 +458,7 @@ ShallowWrapper {
                   "review_count": 910,
                   "url": "https://www.yelp.com/biz/molinari-delicatessen-san-francisco",
                 },
+                "onClickReviewBtn": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -492,17 +495,17 @@ ShallowWrapper {
                     "url": "https://www.yelp.com/biz/north-india-restaurant-san-francisco",
                   }
                 }
+                onClickReviewBtn={[Function]}
               />,
               null,
             ],
             "className": "item",
-            "onClick": [Function],
           },
           "ref": null,
           "rendered": Array [
             Object {
               "instance": null,
-              "key": undefined,
+              "key": "north-india-restaurant-san-francisco",
               "nodeType": "class",
               "props": Object {
                 "business": Object {
@@ -523,6 +526,7 @@ ShallowWrapper {
                   "review_count": 551,
                   "url": "https://www.yelp.com/biz/north-india-restaurant-san-francisco",
                 },
+                "onClickReviewBtn": [Function],
               },
               "ref": null,
               "rendered": null,

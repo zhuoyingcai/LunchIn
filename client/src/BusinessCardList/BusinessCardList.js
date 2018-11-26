@@ -10,14 +10,22 @@ class BusinessCardList extends Component {
       selectedBusinessId: null
     };
     this.renderBusinessCard = this.renderBusinessCard.bind(this);
+    this.onClickReviewBtn = this.onClickReviewBtn.bind(this);
   }
-
+  onClickReviewBtn(businessId){
+    console.log("hello world");
+    this.setState({selectedBusinessId: businessId});
+  }
   renderBusinessCard(business) {
     return (
       <div className="item"
         key={business.id}
-        onClick={() => this.setState({selectedBusinessId: business.id})}>
-        <BusinessCard business={business} />
+        >
+        <BusinessCard
+          business={business}
+          onClickReviewBtn={this.onClickReviewBtn}
+          key={business.id}
+        />
         { this.state.selectedBusinessId === business.id
           ? (
             <ReviewList

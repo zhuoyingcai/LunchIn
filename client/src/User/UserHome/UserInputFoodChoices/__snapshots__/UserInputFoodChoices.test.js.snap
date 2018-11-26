@@ -60,7 +60,7 @@ ShallowWrapper {
                 "marginTop": 10,
               }
             }
-            variant="raised"
+            variant="contained"
           >
             Add Food
           </WithStyles(Button)>
@@ -127,7 +127,7 @@ ShallowWrapper {
                   "marginTop": 10,
                 }
               }
-              variant="raised"
+              variant="contained"
             >
               Add Food
             </WithStyles(Button)>,
@@ -193,7 +193,7 @@ ShallowWrapper {
                 "marginBottom": 5,
                 "marginTop": 10,
               },
-              "variant": "raised",
+              "variant": "contained",
             },
             "ref": null,
             "rendered": "Add Food",
@@ -266,7 +266,7 @@ ShallowWrapper {
                   "marginTop": 10,
                 }
               }
-              variant="raised"
+              variant="contained"
             >
               Add Food
             </WithStyles(Button)>
@@ -333,7 +333,7 @@ ShallowWrapper {
                     "marginTop": 10,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Add Food
               </WithStyles(Button)>,
@@ -399,7 +399,7 @@ ShallowWrapper {
                   "marginBottom": 5,
                   "marginTop": 10,
                 },
-                "variant": "raised",
+                "variant": "contained",
               },
               "ref": null,
               "rendered": "Add Food",
