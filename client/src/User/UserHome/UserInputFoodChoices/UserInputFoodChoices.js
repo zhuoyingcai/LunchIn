@@ -38,7 +38,7 @@ class UserInputFoodChoices extends Component {
       notify: false,
       notifyMsg: "",
       businesses: [],
-      address: ""
+      address: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -266,6 +266,7 @@ class UserInputFoodChoices extends Component {
           <TextField
             fullWidth
             inputProps={{
+              id: "input-food-choices",
               maxLength: 20,
               style: { textAlign: "center" }
             }}
@@ -282,6 +283,7 @@ class UserInputFoodChoices extends Component {
               marginBottom: 5
             }}
             variant="contained"
+            id="foodSubmit"
             color="primary"
             className="input-button"
             onClick={this.handleSubmit}
