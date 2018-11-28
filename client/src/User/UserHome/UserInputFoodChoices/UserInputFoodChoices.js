@@ -431,78 +431,83 @@ class UserInputFoodChoices extends Component {
               </Table>
             </Paper>
           ) : null}
-          {this.state.foodNames.length > 0 ? (
-            <Button
-              style={{
-                marginTop: 10,
-                marginBottom: 5
-              }}
-              variant="raised"
-              color="secondary"
-              className="input-button"
-              value=""
-              onClick={e => this.handleRandomFood(e, true)}
-            >
-              Generate Random Food
+          <div>
+            {this.state.foodNames.length > 0 ? (
+              <Button
+                style={{
+                  marginTop: 10,
+                  marginBottom: 5,
+                  fontSize: 11
+                }}
+                variant="raised"
+                color="secondary"
+                className="input-button"
+                value=""
+                onClick={e => this.handleRandomFood(e, true)}
+              >
+                Generate Random Food
             </Button>
-          ) : null}
-          {this.state.viewZip ? 
-            <Button
-              style={{
-                marginTop: 10,
-                marginBottom: 5
-              }}
-              variant="raised"
-              color="primary"
-              className="input-button"
-              value=""
-              onClick={this.handleZipSubmit}
-            >
-              Search Entered Zip Code
+            ) : null}
+            {this.state.viewZip ?
+              <Button
+                style={{
+                  marginTop: 10,
+                  marginBottom: 5,
+                  fontSize: 11
+                }}
+                variant="raised"
+                color="primary"
+                className="input-button"
+                value=""
+                onClick={this.handleZipSubmit}
+              >
+                Search Entered Zip Code
             </Button>
-          :<Button
-            style={{
-              marginTop: 10,
-              marginBottom: 5
-            }}
-            variant="raised"
-            color="primary"
-            className="input-button"
-            value=""
-            onClick={e => this.handleZipRequest(e)}
-          >
-            View all Restaurants by Zip Code
+              : <Button
+                style={{
+                  marginTop: 10,
+                  marginBottom: 5,
+                  fontSize: 11
+                }}
+                variant="raised"
+                color="primary"
+                className="input-button"
+                value=""
+                onClick={e => this.handleZipRequest(e)}
+              >
+                View Restaurants by Zip Code
           </Button>}
-          {this.state.viewZip ?
-            <TextField
-              fullWidth
-              inputProps={{
-                maxLength: 5,
-                style: { textAlign: "center" }
-              }}
-              value={this.state.zipCode}
-             className=""
-              onChange={this.handleInputChange2}
-              placeholder="Enter 5 Digit Zip Code"
-              name="zipCode"
-              required
-            />
-          :null}
-          {this.state.displayZipMap ?
-            <Typography variant="subtitle1">
-              {this.renderMaps(true)}
-              <BusinessCardList businesses={this.state.businesses} />
-            </Typography> 
-            :null}
-          <div className="random-food-section">
-            {this.state.randomFoodName ? (
+            {this.state.viewZip ?
+              <TextField
+                fullWidth
+                inputProps={{
+                  maxLength: 5,
+                  style: { textAlign: "center" }
+                }}
+                value={this.state.zipCode}
+                className=""
+                onChange={this.handleInputChange2}
+                placeholder="Enter 5 Digit Zip Code"
+                name="zipCode"
+                required
+              />
+              : null}
+            {this.state.displayZipMap ?
               <Typography variant="subtitle1">
-                The food selected is: <Chip label={this.state.randomFoodName} />
-                {this.renderMaps(false)}
+                {this.renderMaps(true)}
                 <BusinessCardList businesses={this.state.businesses} />
               </Typography>
-            ) : null}
-          </div>
+              : null}
+            <div className="random-food-section">
+              {this.state.randomFoodName ? (
+                <Typography variant="subtitle1">
+                  The food selected is: <Chip label={this.state.randomFoodName} />
+                  {this.renderMaps(false)}
+                  <BusinessCardList businesses={this.state.businesses} />
+                </Typography>
+              ) : null}
+            </div>
+          </div>    
         </CardContent>
       </Card>
     );
