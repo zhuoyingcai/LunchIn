@@ -20,7 +20,7 @@ import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
 import Geocode from 'react-geocode';
-import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
+import BusinessCard from "../../../BusinessCard/BusinessCard";
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
 
@@ -358,7 +358,7 @@ class UserInputFoodChoices extends Component {
                   ) : null
                 }
                 {this.renderMaps()}
-                <BusinessCardList
+                <BusinessCard
                   address={this.state.address}
                   randomFoodName={this.state.sanitizedRandomFood}
                   />

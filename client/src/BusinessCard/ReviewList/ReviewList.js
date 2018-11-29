@@ -4,6 +4,7 @@ import React, { Component } from "react";
 // import CardContent from '@material-ui/core/CardContent';
 // import CardMedia from '@material-ui/core/CardMedia';
 // import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Review from './Review';
 import "./ReviewList.css";
 
@@ -11,18 +12,25 @@ import "./ReviewList.css";
 class ReviewList extends Component {
   constructor(props) {
     super(props);
-    this.state = { reviewList: [] };
+    this.state = {
+      reviewList: null,
+      loading: false
+    };
   }
   componentDidMount(){
+    this.setState({ loading: true });
     fetch(
       `/api/yelp/reviews?id=${this.props.selectedBusinessId}`
     )
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       this.setState({ reviewList: data.reviews });
+      this.setState({ loading: false });
     })
-    .catch(e => console.log(e));
+    .catch(e => {
+      this.setState({ loading: false });
+      console.log(e);
+    });
   }
   renderReview(review) {
     return (
@@ -32,7 +40,13 @@ class ReviewList extends Component {
   render() {
     return (
       <div className="review-card-list">
-        {this.state.reviewList.map(this.renderReview)}
+      { this.state.reviewList
+        ? this.state.reviewList.map(this.renderReview)
+        : ( this.state.loading
+            ? (<CircularProgress />)
+            : (null)
+        )
+      }
       </div>
     );
   }
