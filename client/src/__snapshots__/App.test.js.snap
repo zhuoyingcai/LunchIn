@@ -14,7 +14,7 @@ exports[`App Component converts mount wrapper correctly 1`] = `
       "listen": [Function],
       "location": Object {
         "hash": "",
-        "key": "uewq3o",
+        "key": "snlr4z",
         "pathname": "/",
         "search": "",
         "state": undefined,
@@ -68,7 +68,7 @@ exports[`App Component converts shallow wrapper correctly 1`] = `
       "listen": [Function],
       "location": Object {
         "hash": "",
-        "key": "j2trb4",
+        "key": "pyr9k0",
         "pathname": "/",
         "search": "",
         "state": undefined,
