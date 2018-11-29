@@ -134,7 +134,7 @@ class UserInputFoodChoices extends Component {
         }
       );
       this.setState({ businesses: [] });
-      console.log(this.state.displayZipMap);
+      // console.log(this.state.displayZipMap);
       fetch(
         `/api/yelp/search?term=${this.sanitizeInput(this.state.randomFoodName)}&location=${
         this.state.address
@@ -146,8 +146,7 @@ class UserInputFoodChoices extends Component {
           this.setState({ businesses: data.jsonBody.businesses });
         })
         .catch(e => console.log(e));
-    } else if(this.state.displayZipMap) {
-        if(this.state.ziplat === 0 && !this.state.notify) {
+    } else if(prevState.displayZipMap !== this.state.displayZipMap && this.state.displayZipMap) {
           fetch(
             `/api/yelp/search?term=restaurant&location=${
             this.state.zipCode
@@ -158,8 +157,7 @@ class UserInputFoodChoices extends Component {
               console.log(data.jsonBody.businesses);
               this.setState({ businesses: data.jsonBody.businesses });
             })
-            .catch(e => console.log(e));
-        }    
+            .catch(e => console.log(e));  
     }
   }
 
@@ -256,6 +254,7 @@ class UserInputFoodChoices extends Component {
       })
     }
   }
+  // Check zipcode search
   handleZipSubmit(e) {
     e.preventDefault();
     this.setState({
@@ -277,7 +276,7 @@ class UserInputFoodChoices extends Component {
       // Make sure length of input is 5
       if (zipcode.length === 5) {
         
-        // Check if the input is a Number
+        // Check if the input is a number
         if (!isNaN(zipcode)) {
           // console.log(zipcode);
           Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
@@ -285,9 +284,16 @@ class UserInputFoodChoices extends Component {
             response => {
               const { lat, lng } = response.results[0].geometry.location;
               // console.log(lat, lng);
-              this.setState({ ziplat: lat, ziplng: lng });
+              this.setState({ 
+                ziplat: lat, 
+                ziplng: lng,
+                viewZip: false,
+                randomFoodName: "",
+                displayZipMap: true 
+              });
             },
             error => {
+              // Zip code does not exist
               if (error.message === "Server returned status code ZERO_RESULTS") {
                 this.setState({
                   processing: false,
@@ -308,15 +314,8 @@ class UserInputFoodChoices extends Component {
                   displayZipMap: false
                 });
               }
-              }
-            );
-            if(!this.state.notify) {
-              this.setState({
-                viewZip: false,
-                randomFoodName: "",
-                displayZipMap: true
-              })
-            }    
+            }
+          );               
         } else {
           this.setState({
             notify: true,
@@ -337,7 +336,7 @@ class UserInputFoodChoices extends Component {
     });
   }
   renderMaps(searchZip) {
-    // checks if the lng and lat are being pass through before rendering gmaps on your screen.
+    // checks if the lng and lat are being passed through before rendering gmaps on your screen.
     if(!searchZip) {
       if (this.state.lat !== 0 && this.state.lng !== 0) {
         return (
@@ -365,7 +364,7 @@ class UserInputFoodChoices extends Component {
       }
     }
   }
-
+  // Render Yelp correctly when searching a zip code
   renderZipBusiness() {
     if (this.state.ziplat !== 0 && this.state.ziplng !== 0) {
       return (
@@ -389,177 +388,180 @@ class UserInputFoodChoices extends Component {
 
   render() {
     return (
-      <Card className="input-paper" data-aos="zoom-in-up">
-        <CardHeader title="Please enter your food choices:" />
-        <CardContent>
-          <Snackbar
-            onClose={() => {
-              this.setState({ notify: false, notifyMsg: "" });
-            }}
-            open={this.state.notify}
-            autoHideDuration={6000}
-            message={this.state.notifyMsg}
-          />
-          <TextField
-            fullWidth
-            inputProps={{
-              id: "input-food-choices",
-              maxLength: 20,
-              style: { textAlign: "center" }
-            }}
-            value={this.state.inputFoodName}
-            className="addFoodChoice"
-            onChange={this.handleInputChange}
-            placeholder="Food name"
-            name="inputFoodName"
-            required
-          />
-          <Button
-            style={{
-              marginTop: 10,
-              marginBottom: 5
-            }}
-            id="foodSubmit"
-            variant="raised"
-            color="primary"
-            className="input-button"
-            onClick={this.handleSubmit}
-            disabled={!this.state.inputFoodName}
-          >
-            Add Food
+      <div>
+        <Snackbar
+          onClose={() => {
+            this.setState({ notify: false, notifyMsg: "" });
+          }}
+          open={this.state.notify}
+          autoHideDuration={6000}
+          message={this.state.notifyMsg}
+        />
+        <Card className="input-paper" data-aos="zoom-in-up">
+          <CardHeader title="Please enter your food choices:" />
+          <CardContent>
+            <TextField
+              fullWidth
+              inputProps={{
+                id: "input-food-choices",
+                maxLength: 20,
+                style: { textAlign: "center" }
+              }}
+              value={this.state.inputFoodName}
+              className="addFoodChoice"
+              onChange={this.handleInputChange}
+              placeholder="Food name"
+              name="inputFoodName"
+              required
+            />
+            <Button
+              style={{
+                marginTop: 10,
+                marginBottom: 5
+              }}
+              id="foodSubmit"
+              variant="raised"
+              color="primary"
+              className="input-button"
+              onClick={this.handleSubmit}
+              disabled={!this.state.inputFoodName}
+            >
+              Add Food
           </Button>
-          {this.state.foodNames.length > 0 ? (
-            <Paper>
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    <TableCell style={{ textAlign: "left", fontSize: 25 }}>
-                      Food Name
-                    </TableCell>
-                    <TableCell />
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {this.state.foodNames.map(food => (
-                    <TableRow key={food}>
-                      <TableCell
-                        component="th"
-                        scope="row"
-                        style={{ fontSize: 15 }}
-                      >
-                        {food}
-                      </TableCell>
-                      <TableCell>
-                        <IconButton
-                          id="delete"
-                          aria-label="Delete"
-                          style={{ float: "right" }}
-                          value={food}
-                          onClick={e => this.handleDelete(e)}
-                        >
-                          <Delete />
-                        </IconButton>
-                        <IconButton
-                          value={food}
-                          onClick={e => this.handleRandomFood(e, false)}
-                          className="table-btn"
-                          style={{
-                            color: "#66bb6a",
-                            float: "right",
-                            fontSize: 12
-                          }}
-                        >
-                          <Restaurant /> SELECT
-                        </IconButton>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </Paper>
-          ) : null}
-          <div>
             {this.state.foodNames.length > 0 ? (
-              <Button
-                style={{
-                  marginTop: 10,
-                  marginBottom: 5,
-                  marginRight: 5,
-                  fontSize: 11
-                }}
-                variant="raised"
-                color="secondary"
-                className="input-button"
-                value=""
-                onClick={e => this.handleRandomFood(e, true)}
-              >
-                Generate Random Food
-            </Button>
+              <Paper>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell style={{ textAlign: "left", fontSize: 25 }}>
+                        Food Name
+                    </TableCell>
+                      <TableCell />
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {this.state.foodNames.map(food => (
+                      <TableRow key={food}>
+                        <TableCell
+                          component="th"
+                          scope="row"
+                          style={{ fontSize: 15 }}
+                        >
+                          {food}
+                        </TableCell>
+                        <TableCell>
+                          <IconButton
+                            id="delete"
+                            aria-label="Delete"
+                            style={{ float: "right" }}
+                            value={food}
+                            onClick={e => this.handleDelete(e)}
+                          >
+                            <Delete />
+                          </IconButton>
+                          <IconButton
+                            value={food}
+                            onClick={e => this.handleRandomFood(e, false)}
+                            className="table-btn"
+                            style={{
+                              color: "#66bb6a",
+                              float: "right",
+                              fontSize: 12
+                            }}
+                          >
+                            <Restaurant /> SELECT
+                        </IconButton>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </Paper>
             ) : null}
-            {this.state.viewZip ?
-              <Button
-                style={{
-                  marginTop: 10,
-                  marginBottom: 5,
-                  marginLeft: 5,
-                  fontSize: 11
-                }}
-                variant="raised"
-                color="primary"
-                className="input-button"
-                value=""
-                onClick={this.handleZipSubmit}
-              >
-                Search Entered Zip Code
+            <div>
+              {this.state.foodNames.length > 0 ? (
+                <Button
+                  style={{
+                    marginTop: 10,
+                    marginBottom: 5,
+                    marginRight: 5,
+                    fontSize: 11
+                  }}
+                  variant="raised"
+                  color="secondary"
+                  className="input-button"
+                  value=""
+                  onClick={e => this.handleRandomFood(e, true)}
+                >
+                  Generate Random Food
             </Button>
-              : <Button
-                style={{
-                  marginTop: 10,
-                  marginBottom: 5,
-                  marginLeft: 5,
-                  fontSize: 11
-                }}
-                variant="raised"
-                color="primary"
-                className="input-button"
-                value=""
-                onClick={e => this.handleZipRequest(e)}
-              >
-                View Restaurants by Zip Code
-          </Button>}
-            {this.state.viewZip ?
-              <TextField
-                fullWidth
-                inputProps={{
-                  maxLength: 5,
-                  style: { textAlign: "center" }
-                }}
-                value={this.state.zipCode}
-                className=""
-                onChange={this.handleInputChange2}
-                placeholder="Enter 5 Digit Zip Code"
-                name="zipCode"
-                required
-              />
-              : null}
-            {this.state.displayZipMap ?
-              <Typography variant="subtitle1">
-                {this.renderMaps(true)}
-                {this.renderZipBusiness()}
-              </Typography>
-              : null}
-            <div className="random-food-section">
-              {this.state.randomFoodName ? (
-                <Typography variant="subtitle1">
-                  The food selected is: <Chip label={this.state.randomFoodName} />
-                  {this.renderMaps(false)}
-                  <BusinessCardList businesses={this.state.businesses} />
-                </Typography>
               ) : null}
+              {this.state.viewZip ?
+                <Button
+                  style={{
+                    marginTop: 10,
+                    marginBottom: 5,
+                    marginLeft: 5,
+                    fontSize: 11
+                  }}
+                  variant="raised"
+                  color="primary"
+                  className="input-button"
+                  value=""
+                  onClick={this.handleZipSubmit}
+                >
+                  Search Entered Zip Code
+            </Button>
+                : <Button
+                  style={{
+                    marginTop: 10,
+                    marginBottom: 5,
+                    marginLeft: 5,
+                    fontSize: 11
+                  }}
+                  variant="raised"
+                  color="primary"
+                  className="input-button"
+                  value=""
+                  onClick={e => this.handleZipRequest(e)}
+                >
+                  View Restaurants by Zip Code
+          </Button>}
+              {this.state.viewZip ?
+                <TextField
+                  fullWidth
+                  inputProps={{
+                    maxLength: 5,
+                    style: { textAlign: "center" }
+                  }}
+                  value={this.state.zipCode}
+                  className=""
+                  onChange={this.handleInputChange2}
+                  placeholder="Enter 5 Digit Zip Code"
+                  name="zipCode"
+                  required
+                />
+                : null}
+              {this.state.displayZipMap ?
+                <Typography variant="subtitle1">
+                  Showing all Restaurants in: <Chip label={this.state.zipCode} />
+                  {this.renderMaps(true)}
+                  {this.renderZipBusiness()}
+                </Typography>
+                : null}
+              <div className="random-food-section">
+                {this.state.randomFoodName ? (
+                  <Typography variant="subtitle1">
+                    The food selected is: <Chip label={this.state.randomFoodName} />
+                    {this.renderMaps(false)}
+                    <BusinessCardList businesses={this.state.businesses} />
+                  </Typography>
+                ) : null}
+              </div>
             </div>
-          </div>    
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     );
   }
 }
