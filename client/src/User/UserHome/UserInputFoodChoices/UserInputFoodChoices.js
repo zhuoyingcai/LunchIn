@@ -260,38 +260,56 @@ class UserInputFoodChoices extends Component {
   }
   handleZipSubmit(e) {
     e.preventDefault();
-    if(this.state.zipCode.length === 5) {
-      if(!isNaN(this.state.zipCode)) {
-        this.setState({
-          viewZip: false,
-          displayZipMap: true,
-          randomFoodName: ""
-        })
-        console.log(this.state.zipCode);
-        
-        Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-          Geocode.fromAddress(this.state.zipCode).then(
-          response => {
-            const { lat, lng } = response.results[0].geometry.location;
-            // console.log(lat, lng);
-            this.setState({ ziplat: lat, ziplng: lng });
+    let zipcode = this.state.zipCode;
+    // Prevent negative numbers
+    if (zipcode[0] === "-") {
+      this.setState({
+        notify: true,
+        notifyMsg: "Input cannot be negative"
+      })
+    } 
 
-          },
-          error => {
-            console.error(error);
-          }
-        );
+    // General input checks
+    else { 
+
+      // Make sure length of input is 5
+      if (zipcode.length === 5) {
+        
+        // Check if the input is a Number
+        if (!isNaN(zipcode)) {
+          this.setState({
+            viewZip: false,
+            displayZipMap: true,
+            randomFoodName: ""
+          })
+          // console.log(zipcode);
+          Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+          Geocode.fromAddress(zipcode).then(
+            response => {
+                const { lat, lng } = response.results[0].geometry.location;
+                // console.log(lat, lng);
+                this.setState({ ziplat: lat, ziplng: lng });
+            },
+            error => {
+                console.error(error);
+              }
+            );
+          this.setState({
+            notify: true,
+            notifyMsg: "Zip Code cannot be negative"
+          })   
+        } else {
+          this.setState({
+            notify: true,
+            notifyMsg: "Zip Code must be a number"
+          })
+        }
       } else {
         this.setState({
-          notify:true,
-          notifyMsg: "Zip Code must be a number"
+          notify: true,
+          notifyMsg: "Zip Code must be 5 digits"
         })
       }
-    } else {
-      this.setState({
-        notify:true,
-        notifyMsg: "Zip Code must be 5 digits"
-      })
     }
   }
   handleInputChange2(e) {
@@ -439,6 +457,7 @@ class UserInputFoodChoices extends Component {
                 style={{
                   marginTop: 10,
                   marginBottom: 5,
+                  marginRight: 5,
                   fontSize: 11
                 }}
                 variant="raised"
@@ -455,6 +474,7 @@ class UserInputFoodChoices extends Component {
                 style={{
                   marginTop: 10,
                   marginBottom: 5,
+                  marginLeft: 5,
                   fontSize: 11
                 }}
                 variant="raised"
@@ -469,6 +489,7 @@ class UserInputFoodChoices extends Component {
                 style={{
                   marginTop: 10,
                   marginBottom: 5,
+                  marginLeft: 5,
                   fontSize: 11
                 }}
                 variant="raised"

@@ -60,6 +60,7 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
           Object {
             "fontSize": 11,
             "marginBottom": 5,
+            "marginLeft": 5,
             "marginTop": 10,
           }
         }
@@ -138,6 +139,7 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
           Object {
             "fontSize": 11,
             "marginBottom": 5,
+            "marginLeft": 5,
             "marginTop": 10,
           }
         }
@@ -214,6 +216,7 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
           Object {
             "fontSize": 11,
             "marginBottom": 5,
+            "marginLeft": 5,
             "marginTop": 10,
           }
         }
@@ -290,6 +293,7 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
           Object {
             "fontSize": 11,
             "marginBottom": 5,
+            "marginLeft": 5,
             "marginTop": 10,
           }
         }
