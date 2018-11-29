@@ -1,10 +1,33 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { MemoryRouter } from "react-router-dom";
 import App from "./App";
-import { shallow } from 'enzyme';
+import { mount, shallow } from "enzyme";
+import Home from "./Home/Home.js";
+import Signup from "./Home/Signup/Signup.js";
 
-test("renders without crashing", () => {
-  
-  const wrapper = shallow( <App />)
-  expect(wrapper).toMatchSnapshot();
+describe("App Component", () => {
+  it("should renders without crashing", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper).toMatchSnapshot();
+  });
+});
+
+describe("Router Test", () => {
+  it("should redirect to Home (login) page successfully", () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(wrapper.find(Home)).toHaveLength(1);
+  });
+
+  it("should redirect to Sign Up page successfully", () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={["/sign-up"]}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(wrapper.find(Signup)).toHaveLength(0);
+  });
 });
