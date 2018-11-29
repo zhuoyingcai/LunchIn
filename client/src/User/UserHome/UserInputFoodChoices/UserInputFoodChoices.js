@@ -146,8 +146,8 @@ class UserInputFoodChoices extends Component {
           this.setState({ businesses: data.jsonBody.businesses });
         })
         .catch(e => console.log(e));
-    } else if(prevState.displayZipMap !== this.state.displayZipMap) {
-        if(this.state.ziplat === 0) {
+    } else if(this.state.displayZipMap) {
+        if(this.state.ziplat === 0 && !this.state.notify) {
           fetch(
             `/api/yelp/search?term=restaurant&location=${
             this.state.zipCode
@@ -252,14 +252,16 @@ class UserInputFoodChoices extends Component {
     if(!this.state.viewZip) {
       this.setState({
         viewZip: true,
-        displayZipMap: false,
-        ziplat: 0,
-        ziplng: 0
+        displayZipMap: false
       })
     }
   }
   handleZipSubmit(e) {
     e.preventDefault();
+    this.setState({
+      ziplat: 0,
+      ziplng: 0
+    })
     let zipcode = this.state.zipCode;
     // Prevent negative numbers
     if (zipcode[0] === "-") {
@@ -277,27 +279,44 @@ class UserInputFoodChoices extends Component {
         
         // Check if the input is a Number
         if (!isNaN(zipcode)) {
-          this.setState({
-            viewZip: false,
-            displayZipMap: true,
-            randomFoodName: ""
-          })
           // console.log(zipcode);
           Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
           Geocode.fromAddress(zipcode).then(
             response => {
-                const { lat, lng } = response.results[0].geometry.location;
-                // console.log(lat, lng);
-                this.setState({ ziplat: lat, ziplng: lng });
+              const { lat, lng } = response.results[0].geometry.location;
+              // console.log(lat, lng);
+              this.setState({ ziplat: lat, ziplng: lng });
             },
             error => {
-                console.error(error);
+              if (error.message === "Server returned status code ZERO_RESULTS") {
+                this.setState({
+                  processing: false,
+                  notify: true,
+                  notifyMsg: "Invalid zipcode. Please enter a valid zipcode",
+                  ziplat: 0,
+                  ziplng: 0,
+                  displayZipMap: false
+                });
+              }
+              if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
+                this.setState({
+                  processing: false,
+                  notify: true,
+                  notifyMsg: "Please try agian later",
+                  ziplat: 0,
+                  ziplng: 0,
+                  displayZipMap: false
+                });
+              }
               }
             );
-          this.setState({
-            notify: true,
-            notifyMsg: "Zip Code cannot be negative"
-          })   
+            if(!this.state.notify) {
+              this.setState({
+                viewZip: false,
+                randomFoodName: "",
+                displayZipMap: true
+              })
+            }    
         } else {
           this.setState({
             notify: true,
@@ -332,7 +351,7 @@ class UserInputFoodChoices extends Component {
         );
       }
     } else {
-      console.log(this.state.ziplat, this.state.ziplng);
+      // console.log(this.state.ziplat, this.state.ziplng);
       if (this.state.ziplat !== 0 && this.state.ziplng !== 0) {
         return (
           <GoogleM
@@ -345,8 +364,16 @@ class UserInputFoodChoices extends Component {
         );
       }
     }
-    
   }
+
+  renderZipBusiness() {
+    if (this.state.ziplat !== 0 && this.state.ziplng !== 0) {
+      return (
+        <BusinessCardList businesses={this.state.businesses} />
+      );
+    }
+  }
+
   sanitizeInput(string) {
     const map = {
       '&': '&amp;',
@@ -518,7 +545,7 @@ class UserInputFoodChoices extends Component {
             {this.state.displayZipMap ?
               <Typography variant="subtitle1">
                 {this.renderMaps(true)}
-                <BusinessCardList businesses={this.state.businesses} />
+                {this.renderZipBusiness()}
               </Typography>
               : null}
             <div className="random-food-section">
