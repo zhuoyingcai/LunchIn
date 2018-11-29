@@ -11,8 +11,13 @@ class BusinessCardList extends Component {
       businesses: []
     };
     this.renderBusinessCard = this.renderBusinessCard.bind(this);
+    this.onClickReviewBtn = this.onClickReviewBtn.bind(this);
   }
-  
+  onClickReviewBtn(businessId){
+    console.log("hello world");
+    this.setState({selectedBusinessId: businessId});
+  }
+
   retrieveData(){
     const data = {
       term: this.props.randomFoodName,
@@ -42,13 +47,16 @@ class BusinessCardList extends Component {
       this.fetchBusinessesFromYelp();
     }
   }
-
   renderBusinessCard(business) {
     return (
       <div className="item"
         key={business.id}
-        onClick={() => this.setState({selectedBusinessId: business.id})}>
-        <BusinessCard business={business} />
+        >
+        <BusinessCard
+          business={business}
+          onClickReviewBtn={this.onClickReviewBtn}
+          key={business.id}
+        />
         { this.state.selectedBusinessId === business.id
           ? (
             <ReviewList

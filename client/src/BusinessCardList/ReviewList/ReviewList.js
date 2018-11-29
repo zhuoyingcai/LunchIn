@@ -26,7 +26,7 @@ class ReviewList extends Component {
   }
   renderReview(review) {
     return (
-      <Review review={review} />
+      <Review review={review} key={review.id} />
     );
   }
   render() {

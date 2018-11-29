@@ -47,7 +47,7 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
           "marginTop": 10,
         }
       }
-      variant="raised"
+      variant="contained"
     >
       Add Food
     </WithStyles(Button)>
@@ -116,7 +116,7 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
           "marginTop": 10,
         }
       }
-      variant="raised"
+      variant="contained"
     >
       Add Food
     </WithStyles(Button)>
@@ -183,7 +183,7 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
           "marginTop": 10,
         }
       }
-      variant="raised"
+      variant="contained"
     >
       Add Food
     </WithStyles(Button)>
@@ -250,7 +250,7 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
           "marginTop": 10,
         }
       }
-      variant="raised"
+      variant="contained"
     >
       Add Food
     </WithStyles(Button)>

@@ -67,7 +67,7 @@ ShallowWrapper {
         />,
       ],
       "style": Object {
-        "padding": "50px 200px",
+        "margin": "5%",
       },
     },
     "ref": null,
@@ -325,7 +325,7 @@ ShallowWrapper {
           />,
         ],
         "style": Object {
-          "padding": "50px 200px",
+          "margin": "5%",
         },
       },
       "ref": null,

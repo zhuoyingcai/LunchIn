@@ -16,20 +16,9 @@ ShallowWrapper {
     "instance": null,
     "key": undefined,
     "nodeType": "class",
-    "props": Object {
-      "children": <WithStyles(CircularProgress) />,
-      "className": "review-card",
-    },
+    "props": Object {},
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {},
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
+    "rendered": null,
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -37,20 +26,9 @@ ShallowWrapper {
       "instance": null,
       "key": undefined,
       "nodeType": "class",
-      "props": Object {
-        "children": <WithStyles(CircularProgress) />,
-        "className": "review-card",
-      },
+      "props": Object {},
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
+      "rendered": null,
       "type": [Function],
     },
   ],
@@ -107,12 +85,12 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <WithStyles(CardActionArea)>
+      "children": Array [
         <WithStyles(CardMedia)
           className="review-card-media"
           image="https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg"
           title="https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg"
-        />
+        />,
         <WithStyles(Typography)
           component="p"
         >
@@ -128,14 +106,102 @@ ShallowWrapper {
           Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...
            
           <br />
-        </WithStyles(Typography)>
-      </WithStyles(CardActionArea)>,
+        </WithStyles(Typography)>,
+      ],
       "className": "review-card",
     },
     "ref": null,
-    "rendered": Object {
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "className": "review-card-media",
+          "image": "https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg",
+          "title": "https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            "Ella A.",
+            " ",
+            <br />,
+            "2016-08-29 00:41:13",
+            " ",
+            <br />,
+            5,
+            " ",
+            <br />,
+            "Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...",
+            " ",
+            <br />,
+          ],
+          "component": "p",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Ella A.",
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          "2016-08-29 00:41:13",
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          5,
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          "Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...",
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
       "instance": null,
-      "key": "xAG4O7l-t1ubbwVAlPnDKg",
+      "key": undefined,
       "nodeType": "class",
       "props": Object {
         "children": Array [
@@ -161,6 +227,7 @@ ShallowWrapper {
             <br />
           </WithStyles(Typography)>,
         ],
+        "className": "review-card",
       },
       "ref": null,
       "rendered": Array [
@@ -248,159 +315,6 @@ ShallowWrapper {
           "type": [Function],
         },
       ],
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <WithStyles(CardActionArea)>
-          <WithStyles(CardMedia)
-            className="review-card-media"
-            image="https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg"
-            title="https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg"
-          />
-          <WithStyles(Typography)
-            component="p"
-          >
-            Ella A.
-             
-            <br />
-            2016-08-29 00:41:13
-             
-            <br />
-            5
-             
-            <br />
-            Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...
-             
-            <br />
-          </WithStyles(Typography)>
-        </WithStyles(CardActionArea)>,
-        "className": "review-card",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": "xAG4O7l-t1ubbwVAlPnDKg",
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <WithStyles(CardMedia)
-              className="review-card-media"
-              image="https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg"
-              title="https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg"
-            />,
-            <WithStyles(Typography)
-              component="p"
-            >
-              Ella A.
-               
-              <br />
-              2016-08-29 00:41:13
-               
-              <br />
-              5
-               
-              <br />
-              Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...
-               
-              <br />
-            </WithStyles(Typography)>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "className": "review-card-media",
-              "image": "https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg",
-              "title": "https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                "Ella A.",
-                " ",
-                <br />,
-                "2016-08-29 00:41:13",
-                " ",
-                <br />,
-                5,
-                " ",
-                <br />,
-                "Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...",
-                " ",
-                <br />,
-              ],
-              "component": "p",
-            },
-            "ref": null,
-            "rendered": Array [
-              "Ella A.",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": "br",
-              },
-              "2016-08-29 00:41:13",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": "br",
-              },
-              5,
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": "br",
-              },
-              "Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": "br",
-              },
-            ],
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
       "type": [Function],
     },
   ],

@@ -275,8 +275,8 @@ class UserInputFoodChoices extends Component {
               marginTop: 10,
               marginBottom: 5
             }}
+            variant="contained"
             id="foodSubmit"
-            variant="raised"
             color="primary"
             className="input-button"
             onClick={this.handleSubmit}
@@ -340,7 +340,7 @@ class UserInputFoodChoices extends Component {
                 marginTop: 10,
                 marginBottom: 5
               }}
-              variant="raised"
+              variant="contained"
               color="secondary"
               className="input-button"
               value=""
