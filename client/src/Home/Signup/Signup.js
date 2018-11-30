@@ -72,12 +72,10 @@ export default class Signup extends Component {
       this.setState({
         processing: true
       });
-
       Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-      Geocode.fromAddress(this.state.address).then(
+      return Geocode.fromAddress(this.state.address).then(
         response => {
           const { lat, lng } = response.results[0].geometry.location;
-
           var setData = {
             type: this.state.userType,
             name: this.state.name,
@@ -85,11 +83,11 @@ export default class Signup extends Component {
             lat: lat,
             lng: lng
           };
-          firebase
+          return firebase
             .auth()
             .createUserWithEmailAndPassword(this.state.email, this.state.password)
             .then(() => {
-              firebase
+              return firebase
                 .database()
                 .ref(`Users/${firebase.auth().currentUser.uid}/`)
                 .set(setData)
@@ -131,7 +129,7 @@ export default class Signup extends Component {
             this.setState({
               processing: false,
               notify: true,
-              notifyMsg: "Please try agian later"
+              notifyMsg: "Please try again later"
             });
           }
         })
