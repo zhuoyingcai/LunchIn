@@ -122,7 +122,7 @@ class UserInputFoodChoices extends Component {
     });
   }
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.randomFoodName !== this.state.randomFoodName && !this.state.displayZipMap) {
+    if (prevState.randomFoodName !== this.state.randomFoodName && !this.state.viewZip) {
       Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
       Geocode.fromAddress(this.state.addressName).then(
         response => {
@@ -250,7 +250,8 @@ class UserInputFoodChoices extends Component {
     if(!this.state.viewZip) {
       this.setState({
         viewZip: true,
-        displayZipMap: false
+        displayZipMap: false,
+        randomFoodName: ""
       })
     }
   }
@@ -544,7 +545,7 @@ class UserInputFoodChoices extends Component {
                 : null}
               {this.state.displayZipMap ?
                 <Typography variant="subtitle1">
-                  Showing all Restaurants in: <Chip label={this.state.zipCode} />
+                  Showing all restaurants in: <Chip label={this.state.zipCode} />
                   {this.renderMaps(true)}
                   {this.renderZipBusiness()}
                 </Typography>
