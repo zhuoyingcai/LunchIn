@@ -140,24 +140,24 @@ class UserInputFoodChoices extends Component {
         this.state.address
         }`
       )
-        .then(response => response.json())
-        .then(data => {
-        console.log(data.jsonBody.businesses);
-          this.setState({ businesses: data.jsonBody.businesses });
-        })
-        .catch(e => console.log(e));
+      .then(response => response.json())
+      .then(data => {
+      console.log(data.jsonBody.businesses);
+        this.setState({ businesses: data.jsonBody.businesses });
+      })
+      .catch(e => console.log(e));
     } else if(prevState.displayZipMap !== this.state.displayZipMap && this.state.displayZipMap) {
-          fetch(
-            `/api/yelp/search?term=restaurant&location=${
-            this.state.zipCode
-            }`
-          )
-            .then(response => response.json())
-            .then(data => {
-              console.log(data.jsonBody.businesses);
-              this.setState({ businesses: data.jsonBody.businesses });
-            })
-            .catch(e => console.log(e));  
+      fetch(
+        `/api/yelp/search?term=restaurant&location=${
+          this.state.zipCode
+        }`
+      )
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.jsonBody.businesses);
+        this.setState({ businesses: data.jsonBody.businesses });
+      })
+      .catch(e => console.log(e));  
     }
   }
 
@@ -527,7 +527,8 @@ class UserInputFoodChoices extends Component {
                   onClick={e => this.handleZipRequest(e)}
                 >
                   View Restaurants by Zip Code
-          </Button>}
+                </Button>
+              }
               {this.state.viewZip ?
                 <TextField
                   fullWidth
