@@ -31,7 +31,13 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             className="title"
-            variant="display4"
+            component="h2"
+            style={
+              Object {
+                "color": "#000000",
+              }
+            }
+            variant="h1"
           >
             <strong>
               LunchIn
@@ -39,8 +45,9 @@ ShallowWrapper {
           </WithStyles(Typography)>
           <WithStyles(Typography)
             className="tag-line"
+            component="h2"
             data-aos="fade-up"
-            variant="display2"
+            variant="h3"
           >
             Automatically Choose a Lunch Option For You
           </WithStyles(Typography)>
@@ -116,19 +123,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -144,7 +152,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -187,7 +195,13 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -195,8 +209,9 @@ ShallowWrapper {
             </WithStyles(Typography)>,
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>,
@@ -215,7 +230,11 @@ ShallowWrapper {
                 LunchIn
               </strong>,
               "className": "title",
-              "variant": "display4",
+              "component": "h2",
+              "style": Object {
+                "color": "#000000",
+              },
+              "variant": "h1",
             },
             "ref": null,
             "rendered": Object {
@@ -238,8 +257,9 @@ ShallowWrapper {
             "props": Object {
               "children": "Automatically Choose a Lunch Option For You",
               "className": "tag-line",
+              "component": "h2",
               "data-aos": "fade-up",
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "Automatically Choose a Lunch Option For You",
@@ -321,19 +341,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -349,7 +370,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -429,19 +450,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -457,7 +479,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -544,19 +566,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>,
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>,
@@ -572,7 +595,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>,
@@ -654,7 +677,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-In",
@@ -667,11 +690,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Don't have an account? Signup now!",
                     "className": "signup-line",
+                    "component": "h2",
                     "style": Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "subheading",
+                    "variant": "subtitle1",
                   },
                   "ref": null,
                   "rendered": "Don't have an account? Signup now!",
@@ -692,7 +716,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-Up",
@@ -729,7 +753,13 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -737,8 +767,9 @@ ShallowWrapper {
             </WithStyles(Typography)>
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>
@@ -814,19 +845,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -842,7 +874,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -885,7 +917,13 @@ ShallowWrapper {
             "children": Array [
               <WithStyles(Typography)
                 className="title"
-                variant="display4"
+                component="h2"
+                style={
+                  Object {
+                    "color": "#000000",
+                  }
+                }
+                variant="h1"
               >
                 <strong>
                   LunchIn
@@ -893,8 +931,9 @@ ShallowWrapper {
               </WithStyles(Typography)>,
               <WithStyles(Typography)
                 className="tag-line"
+                component="h2"
                 data-aos="fade-up"
-                variant="display2"
+                variant="h3"
               >
                 Automatically Choose a Lunch Option For You
               </WithStyles(Typography)>,
@@ -913,7 +952,11 @@ ShallowWrapper {
                   LunchIn
                 </strong>,
                 "className": "title",
-                "variant": "display4",
+                "component": "h2",
+                "style": Object {
+                  "color": "#000000",
+                },
+                "variant": "h1",
               },
               "ref": null,
               "rendered": Object {
@@ -936,8 +979,9 @@ ShallowWrapper {
               "props": Object {
                 "children": "Automatically Choose a Lunch Option For You",
                 "className": "tag-line",
+                "component": "h2",
                 "data-aos": "fade-up",
-                "variant": "display2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "Automatically Choose a Lunch Option For You",
@@ -1019,19 +1063,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -1047,7 +1092,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -1127,19 +1172,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>
@@ -1155,7 +1201,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>
@@ -1242,19 +1288,20 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-In
                     </WithStyles(Button)>,
                     <WithStyles(Typography)
                       className="signup-line"
+                      component="h2"
                       style={
                         Object {
                           "marginBottom": 5,
                           "marginTop": 5,
                         }
                       }
-                      variant="subheading"
+                      variant="subtitle1"
                     >
                       Don't have an account? Signup now!
                     </WithStyles(Typography)>,
@@ -1270,7 +1317,7 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-Up
                     </WithStyles(Button)>,
@@ -1352,7 +1399,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-In",
@@ -1365,11 +1412,12 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Don't have an account? Signup now!",
                       "className": "signup-line",
+                      "component": "h2",
                       "style": Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "subheading",
+                      "variant": "subtitle1",
                     },
                     "ref": null,
                     "rendered": "Don't have an account? Signup now!",
@@ -1390,7 +1438,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-Up",
@@ -1462,7 +1510,13 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             className="title"
-            variant="display4"
+            component="h2"
+            style={
+              Object {
+                "color": "#000000",
+              }
+            }
+            variant="h1"
           >
             <strong>
               LunchIn
@@ -1470,8 +1524,9 @@ ShallowWrapper {
           </WithStyles(Typography)>
           <WithStyles(Typography)
             className="tag-line"
+            component="h2"
             data-aos="fade-up"
-            variant="display2"
+            variant="h3"
           >
             Automatically Choose a Lunch Option For You
           </WithStyles(Typography)>
@@ -1547,19 +1602,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -1575,7 +1631,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -1618,7 +1674,13 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -1626,8 +1688,9 @@ ShallowWrapper {
             </WithStyles(Typography)>,
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>,
@@ -1646,7 +1709,11 @@ ShallowWrapper {
                 LunchIn
               </strong>,
               "className": "title",
-              "variant": "display4",
+              "component": "h2",
+              "style": Object {
+                "color": "#000000",
+              },
+              "variant": "h1",
             },
             "ref": null,
             "rendered": Object {
@@ -1669,8 +1736,9 @@ ShallowWrapper {
             "props": Object {
               "children": "Automatically Choose a Lunch Option For You",
               "className": "tag-line",
+              "component": "h2",
               "data-aos": "fade-up",
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "Automatically Choose a Lunch Option For You",
@@ -1752,19 +1820,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -1780,7 +1849,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -1860,19 +1929,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -1888,7 +1958,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -1975,19 +2045,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>,
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>,
@@ -2003,7 +2074,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>,
@@ -2085,7 +2156,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-In",
@@ -2098,11 +2169,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Don't have an account? Signup now!",
                     "className": "signup-line",
+                    "component": "h2",
                     "style": Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "subheading",
+                    "variant": "subtitle1",
                   },
                   "ref": null,
                   "rendered": "Don't have an account? Signup now!",
@@ -2123,7 +2195,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-Up",
@@ -2160,7 +2232,13 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -2168,8 +2246,9 @@ ShallowWrapper {
             </WithStyles(Typography)>
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>
@@ -2245,19 +2324,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -2273,7 +2353,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -2316,7 +2396,13 @@ ShallowWrapper {
             "children": Array [
               <WithStyles(Typography)
                 className="title"
-                variant="display4"
+                component="h2"
+                style={
+                  Object {
+                    "color": "#000000",
+                  }
+                }
+                variant="h1"
               >
                 <strong>
                   LunchIn
@@ -2324,8 +2410,9 @@ ShallowWrapper {
               </WithStyles(Typography)>,
               <WithStyles(Typography)
                 className="tag-line"
+                component="h2"
                 data-aos="fade-up"
-                variant="display2"
+                variant="h3"
               >
                 Automatically Choose a Lunch Option For You
               </WithStyles(Typography)>,
@@ -2344,7 +2431,11 @@ ShallowWrapper {
                   LunchIn
                 </strong>,
                 "className": "title",
-                "variant": "display4",
+                "component": "h2",
+                "style": Object {
+                  "color": "#000000",
+                },
+                "variant": "h1",
               },
               "ref": null,
               "rendered": Object {
@@ -2367,8 +2458,9 @@ ShallowWrapper {
               "props": Object {
                 "children": "Automatically Choose a Lunch Option For You",
                 "className": "tag-line",
+                "component": "h2",
                 "data-aos": "fade-up",
-                "variant": "display2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "Automatically Choose a Lunch Option For You",
@@ -2450,19 +2542,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -2478,7 +2571,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -2558,19 +2651,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>
@@ -2586,7 +2680,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>
@@ -2673,19 +2767,20 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-In
                     </WithStyles(Button)>,
                     <WithStyles(Typography)
                       className="signup-line"
+                      component="h2"
                       style={
                         Object {
                           "marginBottom": 5,
                           "marginTop": 5,
                         }
                       }
-                      variant="subheading"
+                      variant="subtitle1"
                     >
                       Don't have an account? Signup now!
                     </WithStyles(Typography)>,
@@ -2701,7 +2796,7 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-Up
                     </WithStyles(Button)>,
@@ -2783,7 +2878,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-In",
@@ -2796,11 +2891,12 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Don't have an account? Signup now!",
                       "className": "signup-line",
+                      "component": "h2",
                       "style": Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "subheading",
+                      "variant": "subtitle1",
                     },
                     "ref": null,
                     "rendered": "Don't have an account? Signup now!",
@@ -2821,7 +2917,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-Up",
@@ -2893,7 +2989,13 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             className="title"
-            variant="display4"
+            component="h2"
+            style={
+              Object {
+                "color": "#000000",
+              }
+            }
+            variant="h1"
           >
             <strong>
               LunchIn
@@ -2901,8 +3003,9 @@ ShallowWrapper {
           </WithStyles(Typography)>
           <WithStyles(Typography)
             className="tag-line"
+            component="h2"
             data-aos="fade-up"
-            variant="display2"
+            variant="h3"
           >
             Automatically Choose a Lunch Option For You
           </WithStyles(Typography)>
@@ -2978,19 +3081,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -3006,7 +3110,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -3049,7 +3153,13 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -3057,8 +3167,9 @@ ShallowWrapper {
             </WithStyles(Typography)>,
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>,
@@ -3077,7 +3188,11 @@ ShallowWrapper {
                 LunchIn
               </strong>,
               "className": "title",
-              "variant": "display4",
+              "component": "h2",
+              "style": Object {
+                "color": "#000000",
+              },
+              "variant": "h1",
             },
             "ref": null,
             "rendered": Object {
@@ -3100,8 +3215,9 @@ ShallowWrapper {
             "props": Object {
               "children": "Automatically Choose a Lunch Option For You",
               "className": "tag-line",
+              "component": "h2",
               "data-aos": "fade-up",
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "Automatically Choose a Lunch Option For You",
@@ -3183,19 +3299,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -3211,7 +3328,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -3291,19 +3408,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -3319,7 +3437,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -3406,19 +3524,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>,
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>,
@@ -3434,7 +3553,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>,
@@ -3516,7 +3635,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-In",
@@ -3529,11 +3648,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Don't have an account? Signup now!",
                     "className": "signup-line",
+                    "component": "h2",
                     "style": Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "subheading",
+                    "variant": "subtitle1",
                   },
                   "ref": null,
                   "rendered": "Don't have an account? Signup now!",
@@ -3554,7 +3674,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-Up",
@@ -3591,7 +3711,13 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -3599,8 +3725,9 @@ ShallowWrapper {
             </WithStyles(Typography)>
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>
@@ -3676,19 +3803,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -3704,7 +3832,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -3747,7 +3875,13 @@ ShallowWrapper {
             "children": Array [
               <WithStyles(Typography)
                 className="title"
-                variant="display4"
+                component="h2"
+                style={
+                  Object {
+                    "color": "#000000",
+                  }
+                }
+                variant="h1"
               >
                 <strong>
                   LunchIn
@@ -3755,8 +3889,9 @@ ShallowWrapper {
               </WithStyles(Typography)>,
               <WithStyles(Typography)
                 className="tag-line"
+                component="h2"
                 data-aos="fade-up"
-                variant="display2"
+                variant="h3"
               >
                 Automatically Choose a Lunch Option For You
               </WithStyles(Typography)>,
@@ -3775,7 +3910,11 @@ ShallowWrapper {
                   LunchIn
                 </strong>,
                 "className": "title",
-                "variant": "display4",
+                "component": "h2",
+                "style": Object {
+                  "color": "#000000",
+                },
+                "variant": "h1",
               },
               "ref": null,
               "rendered": Object {
@@ -3798,8 +3937,9 @@ ShallowWrapper {
               "props": Object {
                 "children": "Automatically Choose a Lunch Option For You",
                 "className": "tag-line",
+                "component": "h2",
                 "data-aos": "fade-up",
-                "variant": "display2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "Automatically Choose a Lunch Option For You",
@@ -3881,19 +4021,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -3909,7 +4050,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -3989,19 +4130,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>
@@ -4017,7 +4159,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>
@@ -4104,19 +4246,20 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-In
                     </WithStyles(Button)>,
                     <WithStyles(Typography)
                       className="signup-line"
+                      component="h2"
                       style={
                         Object {
                           "marginBottom": 5,
                           "marginTop": 5,
                         }
                       }
-                      variant="subheading"
+                      variant="subtitle1"
                     >
                       Don't have an account? Signup now!
                     </WithStyles(Typography)>,
@@ -4132,7 +4275,7 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-Up
                     </WithStyles(Button)>,
@@ -4214,7 +4357,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-In",
@@ -4227,11 +4370,12 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Don't have an account? Signup now!",
                       "className": "signup-line",
+                      "component": "h2",
                       "style": Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "subheading",
+                      "variant": "subtitle1",
                     },
                     "ref": null,
                     "rendered": "Don't have an account? Signup now!",
@@ -4252,7 +4396,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-Up",
@@ -4324,7 +4468,13 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             className="title"
-            variant="display4"
+            component="h2"
+            style={
+              Object {
+                "color": "#000000",
+              }
+            }
+            variant="h1"
           >
             <strong>
               LunchIn
@@ -4332,8 +4482,9 @@ ShallowWrapper {
           </WithStyles(Typography)>
           <WithStyles(Typography)
             className="tag-line"
+            component="h2"
             data-aos="fade-up"
-            variant="display2"
+            variant="h3"
           >
             Automatically Choose a Lunch Option For You
           </WithStyles(Typography)>
@@ -4409,19 +4560,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -4437,7 +4589,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -4480,7 +4632,13 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -4488,8 +4646,9 @@ ShallowWrapper {
             </WithStyles(Typography)>,
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>,
@@ -4508,7 +4667,11 @@ ShallowWrapper {
                 LunchIn
               </strong>,
               "className": "title",
-              "variant": "display4",
+              "component": "h2",
+              "style": Object {
+                "color": "#000000",
+              },
+              "variant": "h1",
             },
             "ref": null,
             "rendered": Object {
@@ -4531,8 +4694,9 @@ ShallowWrapper {
             "props": Object {
               "children": "Automatically Choose a Lunch Option For You",
               "className": "tag-line",
+              "component": "h2",
               "data-aos": "fade-up",
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "Automatically Choose a Lunch Option For You",
@@ -4614,19 +4778,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -4642,7 +4807,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -4722,19 +4887,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -4750,7 +4916,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -4837,19 +5003,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>,
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>,
@@ -4865,7 +5032,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>,
@@ -4947,7 +5114,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-In",
@@ -4960,11 +5127,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Don't have an account? Signup now!",
                     "className": "signup-line",
+                    "component": "h2",
                     "style": Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "subheading",
+                    "variant": "subtitle1",
                   },
                   "ref": null,
                   "rendered": "Don't have an account? Signup now!",
@@ -4985,7 +5153,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-Up",
@@ -5022,7 +5190,13 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -5030,8 +5204,9 @@ ShallowWrapper {
             </WithStyles(Typography)>
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>
@@ -5107,19 +5282,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -5135,7 +5311,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -5178,7 +5354,13 @@ ShallowWrapper {
             "children": Array [
               <WithStyles(Typography)
                 className="title"
-                variant="display4"
+                component="h2"
+                style={
+                  Object {
+                    "color": "#000000",
+                  }
+                }
+                variant="h1"
               >
                 <strong>
                   LunchIn
@@ -5186,8 +5368,9 @@ ShallowWrapper {
               </WithStyles(Typography)>,
               <WithStyles(Typography)
                 className="tag-line"
+                component="h2"
                 data-aos="fade-up"
-                variant="display2"
+                variant="h3"
               >
                 Automatically Choose a Lunch Option For You
               </WithStyles(Typography)>,
@@ -5206,7 +5389,11 @@ ShallowWrapper {
                   LunchIn
                 </strong>,
                 "className": "title",
-                "variant": "display4",
+                "component": "h2",
+                "style": Object {
+                  "color": "#000000",
+                },
+                "variant": "h1",
               },
               "ref": null,
               "rendered": Object {
@@ -5229,8 +5416,9 @@ ShallowWrapper {
               "props": Object {
                 "children": "Automatically Choose a Lunch Option For You",
                 "className": "tag-line",
+                "component": "h2",
                 "data-aos": "fade-up",
-                "variant": "display2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "Automatically Choose a Lunch Option For You",
@@ -5312,19 +5500,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -5340,7 +5529,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -5420,19 +5609,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>
@@ -5448,7 +5638,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>
@@ -5535,19 +5725,20 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-In
                     </WithStyles(Button)>,
                     <WithStyles(Typography)
                       className="signup-line"
+                      component="h2"
                       style={
                         Object {
                           "marginBottom": 5,
                           "marginTop": 5,
                         }
                       }
-                      variant="subheading"
+                      variant="subtitle1"
                     >
                       Don't have an account? Signup now!
                     </WithStyles(Typography)>,
@@ -5563,7 +5754,7 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-Up
                     </WithStyles(Button)>,
@@ -5645,7 +5836,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-In",
@@ -5658,11 +5849,12 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Don't have an account? Signup now!",
                       "className": "signup-line",
+                      "component": "h2",
                       "style": Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "subheading",
+                      "variant": "subtitle1",
                     },
                     "ref": null,
                     "rendered": "Don't have an account? Signup now!",
@@ -5683,7 +5875,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-Up",
@@ -5755,7 +5947,13 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             className="title"
-            variant="display4"
+            component="h2"
+            style={
+              Object {
+                "color": "#000000",
+              }
+            }
+            variant="h1"
           >
             <strong>
               LunchIn
@@ -5763,8 +5961,9 @@ ShallowWrapper {
           </WithStyles(Typography)>
           <WithStyles(Typography)
             className="tag-line"
+            component="h2"
             data-aos="fade-up"
-            variant="display2"
+            variant="h3"
           >
             Automatically Choose a Lunch Option For You
           </WithStyles(Typography)>
@@ -5840,19 +6039,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -5868,7 +6068,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -5911,7 +6111,13 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -5919,8 +6125,9 @@ ShallowWrapper {
             </WithStyles(Typography)>,
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>,
@@ -5939,7 +6146,11 @@ ShallowWrapper {
                 LunchIn
               </strong>,
               "className": "title",
-              "variant": "display4",
+              "component": "h2",
+              "style": Object {
+                "color": "#000000",
+              },
+              "variant": "h1",
             },
             "ref": null,
             "rendered": Object {
@@ -5962,8 +6173,9 @@ ShallowWrapper {
             "props": Object {
               "children": "Automatically Choose a Lunch Option For You",
               "className": "tag-line",
+              "component": "h2",
               "data-aos": "fade-up",
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "Automatically Choose a Lunch Option For You",
@@ -6045,19 +6257,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -6073,7 +6286,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -6153,19 +6366,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -6181,7 +6395,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -6268,19 +6482,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>,
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>,
@@ -6296,7 +6511,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>,
@@ -6378,7 +6593,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-In",
@@ -6391,11 +6606,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Don't have an account? Signup now!",
                     "className": "signup-line",
+                    "component": "h2",
                     "style": Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "subheading",
+                    "variant": "subtitle1",
                   },
                   "ref": null,
                   "rendered": "Don't have an account? Signup now!",
@@ -6416,7 +6632,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-Up",
@@ -6453,7 +6669,13 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -6461,8 +6683,9 @@ ShallowWrapper {
             </WithStyles(Typography)>
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>
@@ -6538,19 +6761,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -6566,7 +6790,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -6609,7 +6833,13 @@ ShallowWrapper {
             "children": Array [
               <WithStyles(Typography)
                 className="title"
-                variant="display4"
+                component="h2"
+                style={
+                  Object {
+                    "color": "#000000",
+                  }
+                }
+                variant="h1"
               >
                 <strong>
                   LunchIn
@@ -6617,8 +6847,9 @@ ShallowWrapper {
               </WithStyles(Typography)>,
               <WithStyles(Typography)
                 className="tag-line"
+                component="h2"
                 data-aos="fade-up"
-                variant="display2"
+                variant="h3"
               >
                 Automatically Choose a Lunch Option For You
               </WithStyles(Typography)>,
@@ -6637,7 +6868,11 @@ ShallowWrapper {
                   LunchIn
                 </strong>,
                 "className": "title",
-                "variant": "display4",
+                "component": "h2",
+                "style": Object {
+                  "color": "#000000",
+                },
+                "variant": "h1",
               },
               "ref": null,
               "rendered": Object {
@@ -6660,8 +6895,9 @@ ShallowWrapper {
               "props": Object {
                 "children": "Automatically Choose a Lunch Option For You",
                 "className": "tag-line",
+                "component": "h2",
                 "data-aos": "fade-up",
-                "variant": "display2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "Automatically Choose a Lunch Option For You",
@@ -6743,19 +6979,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -6771,7 +7008,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -6851,19 +7088,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>
@@ -6879,7 +7117,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>
@@ -6966,19 +7204,20 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-In
                     </WithStyles(Button)>,
                     <WithStyles(Typography)
                       className="signup-line"
+                      component="h2"
                       style={
                         Object {
                           "marginBottom": 5,
                           "marginTop": 5,
                         }
                       }
-                      variant="subheading"
+                      variant="subtitle1"
                     >
                       Don't have an account? Signup now!
                     </WithStyles(Typography)>,
@@ -6994,7 +7233,7 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-Up
                     </WithStyles(Button)>,
@@ -7076,7 +7315,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-In",
@@ -7089,11 +7328,12 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Don't have an account? Signup now!",
                       "className": "signup-line",
+                      "component": "h2",
                       "style": Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "subheading",
+                      "variant": "subtitle1",
                     },
                     "ref": null,
                     "rendered": "Don't have an account? Signup now!",
@@ -7114,7 +7354,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-Up",
@@ -7186,7 +7426,13 @@ ShallowWrapper {
         >
           <WithStyles(Typography)
             className="title"
-            variant="display4"
+            component="h2"
+            style={
+              Object {
+                "color": "#000000",
+              }
+            }
+            variant="h1"
           >
             <strong>
               LunchIn
@@ -7194,8 +7440,9 @@ ShallowWrapper {
           </WithStyles(Typography)>
           <WithStyles(Typography)
             className="tag-line"
+            component="h2"
             data-aos="fade-up"
-            variant="display2"
+            variant="h3"
           >
             Automatically Choose a Lunch Option For You
           </WithStyles(Typography)>
@@ -7271,19 +7518,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -7299,7 +7547,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -7342,7 +7590,13 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -7350,8 +7604,9 @@ ShallowWrapper {
             </WithStyles(Typography)>,
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>,
@@ -7370,7 +7625,11 @@ ShallowWrapper {
                 LunchIn
               </strong>,
               "className": "title",
-              "variant": "display4",
+              "component": "h2",
+              "style": Object {
+                "color": "#000000",
+              },
+              "variant": "h1",
             },
             "ref": null,
             "rendered": Object {
@@ -7393,8 +7652,9 @@ ShallowWrapper {
             "props": Object {
               "children": "Automatically Choose a Lunch Option For You",
               "className": "tag-line",
+              "component": "h2",
               "data-aos": "fade-up",
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "Automatically Choose a Lunch Option For You",
@@ -7476,19 +7736,20 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-In
               </WithStyles(Button)>
               <WithStyles(Typography)
                 className="signup-line"
+                component="h2"
                 style={
                   Object {
                     "marginBottom": 5,
                     "marginTop": 5,
                   }
                 }
-                variant="subheading"
+                variant="subtitle1"
               >
                 Don't have an account? Signup now!
               </WithStyles(Typography)>
@@ -7504,7 +7765,7 @@ ShallowWrapper {
                     "marginTop": 5,
                   }
                 }
-                variant="raised"
+                variant="contained"
               >
                 Sign-Up
               </WithStyles(Button)>
@@ -7584,19 +7845,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -7612,7 +7874,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -7699,19 +7961,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>,
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>,
@@ -7727,7 +7990,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>,
@@ -7809,7 +8072,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-In",
@@ -7822,11 +8085,12 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Don't have an account? Signup now!",
                     "className": "signup-line",
+                    "component": "h2",
                     "style": Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "subheading",
+                    "variant": "subtitle1",
                   },
                   "ref": null,
                   "rendered": "Don't have an account? Signup now!",
@@ -7847,7 +8111,7 @@ ShallowWrapper {
                       "marginBottom": 5,
                       "marginTop": 5,
                     },
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Sign-Up",
@@ -7884,7 +8148,13 @@ ShallowWrapper {
           >
             <WithStyles(Typography)
               className="title"
-              variant="display4"
+              component="h2"
+              style={
+                Object {
+                  "color": "#000000",
+                }
+              }
+              variant="h1"
             >
               <strong>
                 LunchIn
@@ -7892,8 +8162,9 @@ ShallowWrapper {
             </WithStyles(Typography)>
             <WithStyles(Typography)
               className="tag-line"
+              component="h2"
               data-aos="fade-up"
-              variant="display2"
+              variant="h3"
             >
               Automatically Choose a Lunch Option For You
             </WithStyles(Typography)>
@@ -7969,19 +8240,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -7997,7 +8269,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -8040,7 +8312,13 @@ ShallowWrapper {
             "children": Array [
               <WithStyles(Typography)
                 className="title"
-                variant="display4"
+                component="h2"
+                style={
+                  Object {
+                    "color": "#000000",
+                  }
+                }
+                variant="h1"
               >
                 <strong>
                   LunchIn
@@ -8048,8 +8326,9 @@ ShallowWrapper {
               </WithStyles(Typography)>,
               <WithStyles(Typography)
                 className="tag-line"
+                component="h2"
                 data-aos="fade-up"
-                variant="display2"
+                variant="h3"
               >
                 Automatically Choose a Lunch Option For You
               </WithStyles(Typography)>,
@@ -8068,7 +8347,11 @@ ShallowWrapper {
                   LunchIn
                 </strong>,
                 "className": "title",
-                "variant": "display4",
+                "component": "h2",
+                "style": Object {
+                  "color": "#000000",
+                },
+                "variant": "h1",
               },
               "ref": null,
               "rendered": Object {
@@ -8091,8 +8374,9 @@ ShallowWrapper {
               "props": Object {
                 "children": "Automatically Choose a Lunch Option For You",
                 "className": "tag-line",
+                "component": "h2",
                 "data-aos": "fade-up",
-                "variant": "display2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "Automatically Choose a Lunch Option For You",
@@ -8174,19 +8458,20 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-In
                 </WithStyles(Button)>
                 <WithStyles(Typography)
                   className="signup-line"
+                  component="h2"
                   style={
                     Object {
                       "marginBottom": 5,
                       "marginTop": 5,
                     }
                   }
-                  variant="subheading"
+                  variant="subtitle1"
                 >
                   Don't have an account? Signup now!
                 </WithStyles(Typography)>
@@ -8202,7 +8487,7 @@ ShallowWrapper {
                       "marginTop": 5,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Sign-Up
                 </WithStyles(Button)>
@@ -8282,19 +8567,20 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-In
                   </WithStyles(Button)>
                   <WithStyles(Typography)
                     className="signup-line"
+                    component="h2"
                     style={
                       Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       }
                     }
-                    variant="subheading"
+                    variant="subtitle1"
                   >
                     Don't have an account? Signup now!
                   </WithStyles(Typography)>
@@ -8310,7 +8596,7 @@ ShallowWrapper {
                         "marginTop": 5,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Sign-Up
                   </WithStyles(Button)>
@@ -8397,19 +8683,20 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-In
                     </WithStyles(Button)>,
                     <WithStyles(Typography)
                       className="signup-line"
+                      component="h2"
                       style={
                         Object {
                           "marginBottom": 5,
                           "marginTop": 5,
                         }
                       }
-                      variant="subheading"
+                      variant="subtitle1"
                     >
                       Don't have an account? Signup now!
                     </WithStyles(Typography)>,
@@ -8425,7 +8712,7 @@ ShallowWrapper {
                           "marginTop": 5,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Sign-Up
                     </WithStyles(Button)>,
@@ -8507,7 +8794,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-In",
@@ -8520,11 +8807,12 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Don't have an account? Signup now!",
                       "className": "signup-line",
+                      "component": "h2",
                       "style": Object {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "subheading",
+                      "variant": "subtitle1",
                     },
                     "ref": null,
                     "rendered": "Don't have an account? Signup now!",
@@ -8545,7 +8833,7 @@ ShallowWrapper {
                         "marginBottom": 5,
                         "marginTop": 5,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Sign-Up",

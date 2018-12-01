@@ -61,7 +61,7 @@ class UserHome extends Component {
         <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">
-          <Typography variant="display2" style={{ flex: 1 }}>
+          <Typography component="h2" variant="h3" style={{ flex: 1 }}>
             Welcome, {this.state.userName}
             <Button
               style={{ float: "right" }}

@@ -79,11 +79,17 @@ class Home extends Component {
         />
 
         <div className="title-bar" data-aos="fade-up">
-          <Typography variant="display4" className="title">
+          <Typography
+            component="h2"
+            variant="h1"
+            className="title"
+            style={{ color: "#000000" }}
+          >
             <strong>LunchIn</strong>
           </Typography>
           <Typography
-            variant="display2"
+            component="h2"
+            variant="h3"
             className="tag-line"
             data-aos="fade-up"
           >
@@ -151,7 +157,7 @@ class Home extends Component {
               <Button
                 style={{ marginTop: 5, marginBottom: 5 }}
                 disabled={this.state.processing}
-                variant="raised"
+                variant="contained"
                 color="primary"
                 fullWidth
                 onClick={() => {
@@ -162,8 +168,9 @@ class Home extends Component {
                 Sign-In
               </Button>
               <Typography
+                component="h2"
                 style={{ marginTop: 5, marginBottom: 5 }}
-                variant="subheading"
+                variant="subtitle1"
                 className="signup-line"
               >
                 Don't have an account? Signup now!
@@ -171,7 +178,7 @@ class Home extends Component {
               <Button
                 style={{ marginTop: 5, marginBottom: 5 }}
                 disabled={this.state.processing}
-                variant="raised"
+                variant="contained"
                 color="secondary"
                 fullWidth
                 className="login"
