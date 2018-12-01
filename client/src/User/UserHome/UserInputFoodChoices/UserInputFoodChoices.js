@@ -19,7 +19,7 @@ import {
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
-import Geocode from 'react-geocode';
+import Geocode from "react-geocode";
 import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
@@ -39,7 +39,7 @@ class UserInputFoodChoices extends Component {
       notify: false,
       notifyMsg: "",
       businesses: [],
-      address: "",
+      address: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -216,9 +216,11 @@ class UserInputFoodChoices extends Component {
   }
   renderMaps() {
     // checks if the lng and lat are being pass through before rendering gmaps on your screen.
-    if (this.state.lat !== 0
-        && this.state.lng !== 0
-        && this.state.sanitizedRandomFood) {
+    if (
+      this.state.lat !== 0 &&
+      this.state.lng !== 0 &&
+      this.state.sanitizedRandomFood
+    ) {
       return (
         <GoogleM
           food={this.state.sanitizedRandomFood}
@@ -232,15 +234,15 @@ class UserInputFoodChoices extends Component {
   }
   sanitizeInput(string) {
     const map = {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#x27;',
-      "/": '&#x2F;',
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#x27;",
+      "/": "&#x2F;"
     };
-    const reg = /[&<>"'/]/ig;
-    return string.replace(reg, (match) => (map[match]));
+    const reg = /[&<>"'/]/gi;
+    return string.replace(reg, match => map[match]);
   }
 
   render() {
@@ -276,7 +278,7 @@ class UserInputFoodChoices extends Component {
               marginBottom: 5
             }}
             id="foodSubmit"
-            variant="raised"
+            variant="contained"
             color="primary"
             className="input-button"
             onClick={this.handleSubmit}
@@ -340,7 +342,7 @@ class UserInputFoodChoices extends Component {
                 marginTop: 10,
                 marginBottom: 5
               }}
-              variant="raised"
+              variant="contained"
               color="secondary"
               className="input-button"
               value=""
@@ -350,19 +352,19 @@ class UserInputFoodChoices extends Component {
             </Button>
           ) : null}
           <div className="random-food-section">
-              <Typography variant="subtitle1">
-                {this.state.randomFoodName ? (
-                    <span>
-                    The food selected is: <Chip label={this.state.randomFoodName} />
-                    </span>
-                  ) : null
-                }
-                {this.renderMaps()}
-                <BusinessCardList
-                  address={this.state.address}
-                  randomFoodName={this.state.sanitizedRandomFood}
-                  />
-              </Typography>
+            <Typography variant="subtitle1">
+              {this.state.randomFoodName ? (
+                <span>
+                  The food selected is:{" "}
+                  <Chip label={this.state.randomFoodName} />
+                </span>
+              ) : null}
+              {this.renderMaps()}
+              <BusinessCardList
+                address={this.state.address}
+                randomFoodName={this.state.sanitizedRandomFood}
+              />
+            </Typography>
           </div>
         </CardContent>
       </Card>

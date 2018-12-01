@@ -87,7 +87,10 @@ export default class Signup extends Component {
           };
           firebase
             .auth()
-            .createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .createUserWithEmailAndPassword(
+              this.state.email,
+              this.state.password
+            )
             .then(() => {
               firebase
                 .database()
@@ -127,14 +130,17 @@ export default class Signup extends Component {
               notifyMsg: "Invalid address. Please enter a valid address"
             });
           }
-          if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
+          if (
+            error.message === "Server returned status code OVER_QUERY_LIMIT"
+          ) {
             this.setState({
               processing: false,
               notify: true,
               notifyMsg: "Please try agian later"
             });
           }
-        })
+        }
+      );
     } else {
       this.setState({
         notify: true,
@@ -155,8 +161,8 @@ export default class Signup extends Component {
           message={this.state.notifyMsg}
         />
         <div className="signup-title-bar">
-          <Typography variant="display2">LunchIn | Sign-Up</Typography>
-          <Typography variant="subheading">
+          <Typography variant="h3">LunchIn | Sign-Up</Typography>
+          <Typography variant="subtitle1">
             Fill out the form below to sign-up for an account.
           </Typography>
         </div>
@@ -244,7 +250,7 @@ export default class Signup extends Component {
                   this.createUser();
                 }}
                 fullWidth
-                variant="raised"
+                variant="contained"
                 color="primary"
                 className="push-down"
                 disabled={this.state.step1complete || this.state.processing}
