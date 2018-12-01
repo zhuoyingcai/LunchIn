@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./UserProfile.css";
-import { firebase as firebaseAuth }  from "../../../Config";
+import { firebase as firebaseAuth } from "../../../Config";
 import firebase from "firebase/app";
-import 'firebase/auth';
+import "firebase/auth";
 import {
   Button,
   Card,
@@ -26,11 +26,11 @@ import Back from "@material-ui/icons/ArrowBack";
 import Email from "@material-ui/icons/Email";
 import Password from "@material-ui/icons/LockOpen";
 import Home from "@material-ui/icons/Home";
-import Geocode from "react-geocode"
+import Geocode from "react-geocode";
 
 function TabContainer({ children, dir }) {
   return (
-    <Typography component="div" dir={dir}>
+    <Typography component="h2" dir={dir}>
       {children}
     </Typography>
   );
@@ -100,7 +100,7 @@ class UserProfile extends Component {
                   address: snapshot.val().address,
                   oldAddress: snapshot.val().address,
                   lat: snapshot.val().lat,
-                  lng: snapshot.val().lng,
+                  lng: snapshot.val().lng
                 });
               }
             },
@@ -130,15 +130,15 @@ class UserProfile extends Component {
         this.setState({
           processing: false,
           notify: true,
-          notifyMsg: "The new address you entered is the same as the current address, please enter a different address"
+          notifyMsg:
+            "The new address you entered is the same as the current address, please enter a different address"
         });
-      }
-      else {
+      } else {
         Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
         Geocode.fromAddress(this.state.address).then(
           response => {
             const { lat, lng } = response.results[0].geometry.location;
-  
+
             this.setState({
               oldAddress: this.state.address,
               processing: true
@@ -147,7 +147,7 @@ class UserProfile extends Component {
             const addressRef = firebase
               .database()
               .ref(`Users/${firebase.auth().currentUser.uid}/address`);
-            
+
             const latRef = firebase
               .database()
               .ref(`Users/${firebase.auth().currentUser.uid}/lat`);
@@ -156,10 +156,8 @@ class UserProfile extends Component {
               .database()
               .ref(`Users/${firebase.auth().currentUser.uid}/lng`);
 
-            addressRef
-              .set(this.state.address)
-            latRef
-              .set(lat)
+            addressRef.set(this.state.address);
+            latRef.set(lat);
             lngRef
               .set(lng)
               .then(() => {
@@ -185,7 +183,9 @@ class UserProfile extends Component {
                 notifyMsg: "Invalid address. Please enter a valid address"
               });
             }
-            if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
+            if (
+              error.message === "Server returned status code OVER_QUERY_LIMIT"
+            ) {
               this.setState({
                 processing: false,
                 notify: true,
@@ -194,10 +194,10 @@ class UserProfile extends Component {
             }
           }
         );
-       }
-     }
+      }
+    }
   }
-  
+
   reauthenticate = currentPassword => {
     var user = firebaseAuth.auth().currentUser;
     var cred = firebase.auth.EmailAuthProvider.credential(
@@ -299,7 +299,7 @@ class UserProfile extends Component {
         <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">
-          <Typography variant="display2" style={{ flex: 1 }}>
+          <Typography component="h2" variant="h3" style={{ flex: 1 }}>
             {this.state.name}
             's Profile
             <Button
@@ -375,7 +375,7 @@ class UserProfile extends Component {
                     float: "right",
                     marginTop: 10
                   }}
-                  variant="raised"
+                  variant="contained"
                   color="secondary"
                   className="input-button"
                   onClick={this.submitNewAddress}
@@ -444,7 +444,7 @@ class UserProfile extends Component {
                     float: "right",
                     marginTop: 10
                   }}
-                  variant="raised"
+                  variant="contained"
                   color="primary"
                   className="input-button"
                   onClick={this.onChangeEmailPress}
@@ -514,7 +514,7 @@ class UserProfile extends Component {
                     float: "right",
                     marginTop: 10
                   }}
-                  variant="raised"
+                  variant="contained"
                   color="inherit"
                   className="input-button"
                   onClick={this.onChangePasswordPress}
