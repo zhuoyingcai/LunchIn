@@ -27,7 +27,7 @@ class Home extends Component {
       showPassword: false,
       notify: false,
       notifyMsg: "",
-      processing: this.props.loggedIn,
+      processing: false,
       message: "Show Password"
     };
     this.handleChange = this.handleChange.bind(this);
