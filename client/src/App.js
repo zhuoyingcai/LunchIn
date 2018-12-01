@@ -9,7 +9,6 @@ import { firebase } from "./Config";
 class App extends Component {
   constructor(props) {
     super(props);
-    // console.log(process.env);
     this.authListener = this.authListener.bind(this);
     this.firebaseListener = null;
     this.history = createHistory();
@@ -47,7 +46,7 @@ class App extends Component {
         });
         /*
                     User is logged in, check type and redirect here
-                    How to redirect -- this.history.push('/sign-up');
+                    How to redirect -- this.history.push('/{name_of_component}');
                 */
         firebase
           .database()
@@ -81,19 +80,7 @@ class App extends Component {
       <Router history={this.history}>
         <div style={{ width: "100%", height: "100%" }}>
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => {
-                return (
-                  <Home
-                    {...props}
-                    userType={this.state.userType}
-                    loggedIn={this.state.loggedIn}
-                  />
-                );
-              }}
-            />
+            <Route exact path="/" component={Home} />
             <Route path="/sign-up" component={Signup} />
             <Route path="/user" component={UserRoutes} />>
           </Switch>

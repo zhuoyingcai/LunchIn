@@ -19,7 +19,7 @@ import {
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
-import Geocode from 'react-geocode';
+import Geocode from "react-geocode";
 import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
@@ -31,6 +31,7 @@ class UserInputFoodChoices extends Component {
       inputFoodName: "",
       foodNames: [],
       randomFoodName: "",
+      sanitizedRandomFood: "",
       addressName: "",
       lat: 0,
       lng: 0,
@@ -38,7 +39,7 @@ class UserInputFoodChoices extends Component {
       notify: false,
       notifyMsg: "",
       businesses: [],
-      address: "",
+      address: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -126,18 +127,6 @@ class UserInputFoodChoices extends Component {
           console.error(error);
         }
       );
-      this.setState({ businesses: [] });
-      fetch(
-        `/api/yelp/search?term=${this.sanitizeInput(this.state.randomFoodName)}&location=${
-        this.state.address
-        }`
-      )
-        .then(response => response.json())
-        .then(data => {
-          console.log(data.jsonBody.businesses);
-          this.setState({ businesses: data.jsonBody.businesses });
-        })
-        .catch(e => console.log(e));
     }
   }
 
@@ -174,8 +163,10 @@ class UserInputFoodChoices extends Component {
     if (!isRand) {
       rand = e.currentTarget.value;
     }
+    let sanitizedRandomFood = this.sanitizeInput(rand);
     this.setState({
       randomFoodName: rand,
+      sanitizedRandomFood: sanitizedRandomFood,
       processing: true
     });
     const foodSelectedRef = firebase
@@ -225,29 +216,33 @@ class UserInputFoodChoices extends Component {
   }
   renderMaps() {
     // checks if the lng and lat are being pass through before rendering gmaps on your screen.
-    if (this.state.lat !== 0 && this.state.lng !== 0) {
+    if (
+      this.state.lat !== 0 &&
+      this.state.lng !== 0 &&
+      this.state.sanitizedRandomFood
+    ) {
       return (
         <GoogleM
-          food={this.sanitizeInput(this.state.randomFoodName)}
+          food={this.state.sanitizedRandomFood}
           address={this.state.addressName}
           lat={this.state.lat}
           lng={this.state.lng}
-          key={this.sanitizeInput(this.state.randomFoodName)}
+          key={this.state.sanitizedRandomFood}
         />
       );
     }
   }
   sanitizeInput(string) {
     const map = {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#x27;',
-      "/": '&#x2F;',
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#x27;",
+      "/": "&#x2F;"
     };
-    const reg = /[&<>"'/]/ig;
-    return string.replace(reg, (match) => (map[match]));
+    const reg = /[&<>"'/]/gi;
+    return string.replace(reg, match => map[match]);
   }
 
   render() {
@@ -283,7 +278,7 @@ class UserInputFoodChoices extends Component {
               marginBottom: 5
             }}
             id="foodSubmit"
-            variant="raised"
+            variant="contained"
             color="primary"
             className="input-button"
             onClick={this.handleSubmit}
@@ -347,7 +342,7 @@ class UserInputFoodChoices extends Component {
                 marginTop: 10,
                 marginBottom: 5
               }}
-              variant="raised"
+              variant="contained"
               color="secondary"
               className="input-button"
               value=""
@@ -357,13 +352,19 @@ class UserInputFoodChoices extends Component {
             </Button>
           ) : null}
           <div className="random-food-section">
-            {this.state.randomFoodName ? (
-              <Typography variant="subtitle1">
-                The food selected is: <Chip label={this.state.randomFoodName} />
-                {this.renderMaps()}
-                <BusinessCardList businesses={this.state.businesses} />
-              </Typography>
-            ) : null}
+            <Typography component="h2" variant="subtitle1">
+              {this.state.randomFoodName ? (
+                <span>
+                  The food selected is:{" "}
+                  <Chip label={this.state.randomFoodName} />
+                </span>
+              ) : null}
+              {this.renderMaps()}
+              <BusinessCardList
+                address={this.state.address}
+                randomFoodName={this.state.sanitizedRandomFood}
+              />
+            </Typography>
           </div>
         </CardContent>
       </Card>

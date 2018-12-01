@@ -17,12 +17,14 @@ exports[`Signup Component When provided with empty address info Should render co
     className="signup-title-bar"
   >
     <WithStyles(Typography)
-      variant="display2"
+      component="h2"
+      variant="h3"
     >
       LunchIn | Sign-Up
     </WithStyles(Typography)>
     <WithStyles(Typography)
-      variant="subheading"
+      component="h2"
+      variant="subtitle1"
     >
       Fill out the form below to sign-up for an account.
     </WithStyles(Typography)>
@@ -117,7 +119,7 @@ exports[`Signup Component When provided with empty address info Should render co
           disabled={false}
           fullWidth={true}
           onClick={[Function]}
-          variant="raised"
+          variant="contained"
         >
           <pure(CheckCircleIcon)
             style={
@@ -159,12 +161,14 @@ exports[`Signup Component When provided with invalid address info Should render 
     className="signup-title-bar"
   >
     <WithStyles(Typography)
-      variant="display2"
+      component="h2"
+      variant="h3"
     >
       LunchIn | Sign-Up
     </WithStyles(Typography)>
     <WithStyles(Typography)
-      variant="subheading"
+      component="h2"
+      variant="subtitle1"
     >
       Fill out the form below to sign-up for an account.
     </WithStyles(Typography)>
@@ -259,7 +263,7 @@ exports[`Signup Component When provided with invalid address info Should render 
           disabled={false}
           fullWidth={true}
           onClick={[Function]}
-          variant="raised"
+          variant="contained"
         >
           <pure(CheckCircleIcon)
             style={
@@ -301,12 +305,14 @@ exports[`Signup Component When provided with missing user info Should render cor
     className="signup-title-bar"
   >
     <WithStyles(Typography)
-      variant="display2"
+      component="h2"
+      variant="h3"
     >
       LunchIn | Sign-Up
     </WithStyles(Typography)>
     <WithStyles(Typography)
-      variant="subheading"
+      component="h2"
+      variant="subtitle1"
     >
       Fill out the form below to sign-up for an account.
     </WithStyles(Typography)>
@@ -401,7 +407,7 @@ exports[`Signup Component When provided with missing user info Should render cor
           disabled={false}
           fullWidth={true}
           onClick={[Function]}
-          variant="raised"
+          variant="contained"
         >
           <pure(CheckCircleIcon)
             style={
@@ -443,12 +449,14 @@ exports[`Signup Component When provided with user info Should render correctly 1
     className="signup-title-bar"
   >
     <WithStyles(Typography)
-      variant="display2"
+      component="h2"
+      variant="h3"
     >
       LunchIn | Sign-Up
     </WithStyles(Typography)>
     <WithStyles(Typography)
-      variant="subheading"
+      component="h2"
+      variant="subtitle1"
     >
       Fill out the form below to sign-up for an account.
     </WithStyles(Typography)>
@@ -543,7 +551,7 @@ exports[`Signup Component When provided with user info Should render correctly 1
           disabled={false}
           fullWidth={true}
           onClick={[Function]}
-          variant="raised"
+          variant="contained"
         >
           <pure(CheckCircleIcon)
             style={

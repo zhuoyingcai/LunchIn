@@ -47,13 +47,23 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
           "marginTop": 10,
         }
       }
-      variant="raised"
+      variant="contained"
     >
       Add Food
     </WithStyles(Button)>
     <div
       className="random-food-section"
-    />
+    >
+      <WithStyles(Typography)
+        component="h2"
+        variant="subtitle1"
+      >
+        <BusinessCardList
+          address=""
+          randomFoodName=""
+        />
+      </WithStyles(Typography)>
+    </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
 `;
@@ -107,13 +117,23 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
           "marginTop": 10,
         }
       }
-      variant="raised"
+      variant="contained"
     >
       Add Food
     </WithStyles(Button)>
     <div
       className="random-food-section"
-    />
+    >
+      <WithStyles(Typography)
+        component="h2"
+        variant="subtitle1"
+      >
+        <BusinessCardList
+          address=""
+          randomFoodName=""
+        />
+      </WithStyles(Typography)>
+    </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
 `;
@@ -165,13 +185,23 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
           "marginTop": 10,
         }
       }
-      variant="raised"
+      variant="contained"
     >
       Add Food
     </WithStyles(Button)>
     <div
       className="random-food-section"
-    />
+    >
+      <WithStyles(Typography)
+        component="h2"
+        variant="subtitle1"
+      >
+        <BusinessCardList
+          address=""
+          randomFoodName=""
+        />
+      </WithStyles(Typography)>
+    </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
 `;
@@ -223,13 +253,23 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
           "marginTop": 10,
         }
       }
-      variant="raised"
+      variant="contained"
     >
       Add Food
     </WithStyles(Button)>
     <div
       className="random-food-section"
-    />
+    >
+      <WithStyles(Typography)
+        component="h2"
+        variant="subtitle1"
+      >
+        <BusinessCardList
+          address=""
+          randomFoodName=""
+        />
+      </WithStyles(Typography)>
+    </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
 `;
