@@ -68,7 +68,7 @@ ShallowWrapper {
               }
             >
               <pure(SwapCallsIcon) />
-               Zipcode
+               Zipcode Search
             </WithStyles(Button)>
           </WithStyles(Typography)>
         </div>,
@@ -143,7 +143,7 @@ ShallowWrapper {
               }
             >
               <pure(SwapCallsIcon) />
-               Zipcode
+               Zipcode Search
             </WithStyles(Button)>
           </WithStyles(Typography)>,
           "className": "user-header",
@@ -194,7 +194,7 @@ ShallowWrapper {
                 }
               >
                 <pure(SwapCallsIcon) />
-                 Zipcode
+                 Zipcode Search
               </WithStyles(Button)>,
             ],
             "style": Object {
@@ -281,7 +281,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <pure(SwapCallsIcon) />,
-                  " Zipcode",
+                  " Zipcode Search",
                 ],
                 "onClick": [Function],
                 "style": Object {
@@ -299,7 +299,7 @@ ShallowWrapper {
                   "rendered": null,
                   "type": [Function],
                 },
-                " Zipcode",
+                " Zipcode Search",
               ],
               "type": [Function],
             },
@@ -388,7 +388,7 @@ ShallowWrapper {
                 }
               >
                 <pure(SwapCallsIcon) />
-                 Zipcode
+                 Zipcode Search
               </WithStyles(Button)>
             </WithStyles(Typography)>
           </div>,
@@ -463,7 +463,7 @@ ShallowWrapper {
                 }
               >
                 <pure(SwapCallsIcon) />
-                 Zipcode
+                 Zipcode Search
               </WithStyles(Button)>
             </WithStyles(Typography)>,
             "className": "user-header",
@@ -514,7 +514,7 @@ ShallowWrapper {
                   }
                 >
                   <pure(SwapCallsIcon) />
-                   Zipcode
+                   Zipcode Search
                 </WithStyles(Button)>,
               ],
               "style": Object {
@@ -601,7 +601,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     <pure(SwapCallsIcon) />,
-                    " Zipcode",
+                    " Zipcode Search",
                   ],
                   "onClick": [Function],
                   "style": Object {
@@ -619,7 +619,7 @@ ShallowWrapper {
                     "rendered": null,
                     "type": [Function],
                   },
-                  " Zipcode",
+                  " Zipcode Search",
                 ],
                 "type": [Function],
               },

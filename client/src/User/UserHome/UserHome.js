@@ -86,7 +86,7 @@ class UserHome extends Component {
                 this.props.history.push(`/user/zipcode`);
               }}
             >
-              <Zipcode /> Zipcode
+              <Zipcode /> Zipcode Search
             </Button>
           </Typography>
         </div>
