@@ -12,6 +12,9 @@ app-env
 
 package-lock.json
 
+# logs
+*.txt
+
 # testing
 /coverage
 
