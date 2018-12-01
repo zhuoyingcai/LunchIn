@@ -25,35 +25,34 @@ class Zipcode extends Component {
       ziplat: 0,
       ziplng: 0,
       zipCode: "",
+      searchZip: " ",
       displayZipMap: false,
       processing: false,
       notify: false,
       notifyMsg: "",
       businesses: [],
       address: "",
+      searchTerm: "restaurant"
     };
     this.handleZipSubmit = this.handleZipSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.displayZipMap !== this.state.displayZipMap && this.state.displayZipMap) {
-      fetch(
-        `/api/yelp/search?term=restaurant&location=${
-        this.state.zipCode
-        }`
-      )
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.jsonBody.businesses);
-        this.setState({ businesses: data.jsonBody.businesses });
-      })
-      .catch(e => console.log(e));
+    if(prevState.searchZip !== this.state.searchZip){
+      if (this.state.searchTerm === "restaurant") {
+        this.setState({
+          searchTerm: "restaurant "
+        })
+      } else {
+        this.setState({
+          searchTerm: "restaurant"
+        })
+      }
     }
   }
   handleInputChange(e) {
     this.setState({
-      [e.target.name]: e.target.value,
-      displayZipMap: false
+      [e.target.name]: e.target.value
     });
   }
   // Check zipcode search
@@ -68,7 +67,8 @@ class Zipcode extends Component {
     if (zipcode[0] === "-") {
       this.setState({
         notify: true,
-        notifyMsg: "Input cannot be negative"
+        notifyMsg: "Input cannot be negative",
+        displayZipMap: false
       })
     }
 
@@ -89,7 +89,9 @@ class Zipcode extends Component {
               this.setState({
                 ziplat: lat,
                 ziplng: lng,
-                displayZipMap: true
+                displayZipMap: true,
+                searchZip: this.state.zipCode,
+                zipCode: ""
               });
             },
             error => {
@@ -119,13 +121,15 @@ class Zipcode extends Component {
         } else {
           this.setState({
             notify: true,
-            notifyMsg: "Zip Code must be a number"
+            notifyMsg: "Zip Code must be a number",
+            displayZipMap: false
           })
         }
       } else {
         this.setState({
           notify: true,
-          notifyMsg: "Zip Code must be 5 digits"
+          notifyMsg: "Zip Code must be 5 digits",
+          displayZipMap: false
         })
       }
     }
@@ -136,19 +140,11 @@ class Zipcode extends Component {
       return (
         <GoogleM
           food={"restaurant"}
-          address={this.state.zipCode}
+          address={this.state.searchZip}
           lat={this.state.ziplat}
           lng={this.state.ziplng}
-          key={this.state.zipCode}
+          key={this.state.searchZip}
         />
-      );
-    }
-  }
-  // Render Yelp correctly when searching a zip code
-  renderZipBusiness() {
-    if (this.state.ziplat !== 0 && this.state.ziplng !== 0) {
-      return (
-        <BusinessCardList businesses={this.state.businesses} />
       );
     }
   }
@@ -211,14 +207,23 @@ class Zipcode extends Component {
               >
                 Search Entered Zip Code
               </Button>
-              {this.state.displayZipMap ?
-                <Typography variant="subtitle1">
-                  Showing all restaurants in: <Chip label={this.state.zipCode} />
-                  {this.renderMaps(true)}
-                  {this.renderZipBusiness()}
-                </Typography>
-              : null}
             </div>
+            <div className="zip-section">
+              <Typography variant="subtitle1">
+                {this.state.displayZipMap ?
+                  <div>
+                    <span>
+                      Showing all restaurants in: <Chip label={this.state.searchZip} />
+                    </span>
+                    {this.renderMaps()}
+                    <BusinessCardList
+                      address={this.state.searchZip}
+                      randomFoodName={this.state.searchTerm}
+                    />
+                  </div>
+                  : null} 
+              </Typography>
+            </div>   
           </CardContent>
         </Card>
       </div>
