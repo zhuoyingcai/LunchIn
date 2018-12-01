@@ -34,11 +34,6 @@ class UserInputFoodChoices extends Component {
       addressName: "",
       lat: 0,
       lng: 0,
-      ziplat: 0,
-      ziplng: 0,
-      viewZip: false,
-      zipCode: "",
-      displayZipMap: false,
       processing: false,
       notify: false,
       notifyMsg: "",
@@ -46,9 +41,7 @@ class UserInputFoodChoices extends Component {
       address: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleZipSubmit = this.handleZipSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleInputChange2 = this.handleInputChange2.bind(this);
     this.handleRandomFood = this.handleRandomFood.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -122,7 +115,7 @@ class UserInputFoodChoices extends Component {
     });
   }
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.randomFoodName !== this.state.randomFoodName && !this.state.viewZip) {
+    if (prevState.randomFoodName !== this.state.randomFoodName) {
       Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
       Geocode.fromAddress(this.state.addressName).then(
         response => {
@@ -134,30 +127,17 @@ class UserInputFoodChoices extends Component {
         }
       );
       this.setState({ businesses: [] });
-      // console.log(this.state.displayZipMap);
       fetch(
         `/api/yelp/search?term=${this.sanitizeInput(this.state.randomFoodName)}&location=${
         this.state.address
         }`
       )
-      .then(response => response.json())
-      .then(data => {
-      console.log(data.jsonBody.businesses);
-        this.setState({ businesses: data.jsonBody.businesses });
-      })
-      .catch(e => console.log(e));
-    } else if(prevState.displayZipMap !== this.state.displayZipMap && this.state.displayZipMap) {
-      fetch(
-        `/api/yelp/search?term=restaurant&location=${
-          this.state.zipCode
-        }`
-      )
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.jsonBody.businesses);
-        this.setState({ businesses: data.jsonBody.businesses });
-      })
-      .catch(e => console.log(e));  
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.jsonBody.businesses);
+          this.setState({ businesses: data.jsonBody.businesses });
+        })
+        .catch(e => console.log(e));
     }
   }
 
@@ -196,9 +176,7 @@ class UserInputFoodChoices extends Component {
     }
     this.setState({
       randomFoodName: rand,
-      processing: true,
-      viewZip: false,
-      displayZipMap: false
+      processing: true
     });
     const foodSelectedRef = firebase
       .database()
@@ -245,135 +223,20 @@ class UserInputFoodChoices extends Component {
         });
       });
   }
-  handleZipRequest(e) {
-    e.preventDefault();
-    if(!this.state.viewZip) {
-      this.setState({
-        viewZip: true,
-        displayZipMap: false,
-        randomFoodName: ""
-      })
-    }
-  }
-  // Check zipcode search
-  handleZipSubmit(e) {
-    e.preventDefault();
-    this.setState({
-      ziplat: 0,
-      ziplng: 0
-    })
-    let zipcode = this.state.zipCode;
-    // Prevent negative numbers
-    if (zipcode[0] === "-") {
-      this.setState({
-        notify: true,
-        notifyMsg: "Input cannot be negative"
-      })
-    } 
-
-    // General input checks
-    else { 
-
-      // Make sure length of input is 5
-      if (zipcode.length === 5) {
-        
-        // Check if the input is a number
-        if (!isNaN(zipcode)) {
-          // console.log(zipcode);
-          Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-          Geocode.fromAddress(zipcode).then(
-            response => {
-              const { lat, lng } = response.results[0].geometry.location;
-              // console.log(lat, lng);
-              this.setState({ 
-                ziplat: lat, 
-                ziplng: lng,
-                viewZip: false,
-                randomFoodName: "",
-                displayZipMap: true 
-              });
-            },
-            error => {
-              // Zip code does not exist
-              if (error.message === "Server returned status code ZERO_RESULTS") {
-                this.setState({
-                  processing: false,
-                  notify: true,
-                  notifyMsg: "Invalid zipcode. Please enter a valid zipcode",
-                  ziplat: 0,
-                  ziplng: 0,
-                  displayZipMap: false
-                });
-              }
-              if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
-                this.setState({
-                  processing: false,
-                  notify: true,
-                  notifyMsg: "Please try agian later",
-                  ziplat: 0,
-                  ziplng: 0,
-                  displayZipMap: false
-                });
-              }
-            }
-          );               
-        } else {
-          this.setState({
-            notify: true,
-            notifyMsg: "Zip Code must be a number"
-          })
-        }
-      } else {
-        this.setState({
-          notify: true,
-          notifyMsg: "Zip Code must be 5 digits"
-        })
-      }
-    }
-  }
-  handleInputChange2(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  }
-  renderMaps(searchZip) {
-    // checks if the lng and lat are being passed through before rendering gmaps on your screen.
-    if(!searchZip) {
-      if (this.state.lat !== 0 && this.state.lng !== 0) {
-        return (
-          <GoogleM
-            food={this.sanitizeInput(this.state.randomFoodName)}
-            address={this.state.addressName}
-            lat={this.state.lat}
-            lng={this.state.lng}
-            key={this.sanitizeInput(this.state.randomFoodName)}
-          />
-        );
-      }
-    } else {
-      // console.log(this.state.ziplat, this.state.ziplng);
-      if (this.state.ziplat !== 0 && this.state.ziplng !== 0) {
-        return (
-          <GoogleM
-            food={"restaurant"}
-            address={this.state.zipCode}
-            lat={this.state.ziplat}
-            lng={this.state.ziplng}
-            key={this.state.zipCode}
-          />
-        );
-      }
-    }
-  }
-  // Render Yelp correctly when searching a zip code
-  renderZipBusiness() {
-    if (this.state.ziplat !== 0 && this.state.ziplng !== 0) {
+  renderMaps() {
+    // checks if the lng and lat are being pass through before rendering gmaps on your screen.
+    if (this.state.lat !== 0 && this.state.lng !== 0) {
       return (
-        <BusinessCardList businesses={this.state.businesses} />
+        <GoogleM
+          food={this.sanitizeInput(this.state.randomFoodName)}
+          address={this.state.addressName}
+          lat={this.state.lat}
+          lng={this.state.lng}
+          key={this.sanitizeInput(this.state.randomFoodName)}
+        />
       );
     }
   }
-
   sanitizeInput(string) {
     const map = {
       '&': '&amp;',
@@ -389,181 +252,121 @@ class UserInputFoodChoices extends Component {
 
   render() {
     return (
-      <div>
-        <Snackbar
-          onClose={() => {
-            this.setState({ notify: false, notifyMsg: "" });
-          }}
-          open={this.state.notify}
-          autoHideDuration={6000}
-          message={this.state.notifyMsg}
-        />
-        <Card className="input-paper" data-aos="zoom-in-up">
-          <CardHeader title="Please enter your food choices:" />
-          <CardContent>
-            <TextField
-              fullWidth
-              inputProps={{
-                id: "input-food-choices",
-                maxLength: 20,
-                style: { textAlign: "center" }
-              }}
-              value={this.state.inputFoodName}
-              className="addFoodChoice"
-              onChange={this.handleInputChange}
-              placeholder="Food name"
-              name="inputFoodName"
-              required
-            />
+      <Card className="input-paper" data-aos="zoom-in-up">
+        <CardHeader title="Please enter your food choices:" />
+        <CardContent>
+          <Snackbar
+            onClose={() => {
+              this.setState({ notify: false, notifyMsg: "" });
+            }}
+            open={this.state.notify}
+            autoHideDuration={6000}
+            message={this.state.notifyMsg}
+          />
+          <TextField
+            fullWidth
+            inputProps={{
+              id: "input-food-choices",
+              maxLength: 20,
+              style: { textAlign: "center" }
+            }}
+            value={this.state.inputFoodName}
+            className="addFoodChoice"
+            onChange={this.handleInputChange}
+            placeholder="Food name"
+            name="inputFoodName"
+            required
+          />
+          <Button
+            style={{
+              marginTop: 10,
+              marginBottom: 5
+            }}
+            id="foodSubmit"
+            variant="raised"
+            color="primary"
+            className="input-button"
+            onClick={this.handleSubmit}
+            disabled={!this.state.inputFoodName}
+          >
+            Add Food
+          </Button>
+          {this.state.foodNames.length > 0 ? (
+            <Paper>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell style={{ textAlign: "left", fontSize: 25 }}>
+                      Food Name
+                    </TableCell>
+                    <TableCell />
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {this.state.foodNames.map(food => (
+                    <TableRow key={food}>
+                      <TableCell
+                        component="th"
+                        scope="row"
+                        style={{ fontSize: 15 }}
+                      >
+                        {food}
+                      </TableCell>
+                      <TableCell>
+                        <IconButton
+                          id="delete"
+                          aria-label="Delete"
+                          style={{ float: "right" }}
+                          value={food}
+                          onClick={e => this.handleDelete(e)}
+                        >
+                          <Delete />
+                        </IconButton>
+                        <IconButton
+                          value={food}
+                          onClick={e => this.handleRandomFood(e, false)}
+                          className="table-btn"
+                          style={{
+                            color: "#66bb6a",
+                            float: "right",
+                            fontSize: 12
+                          }}
+                        >
+                          <Restaurant /> SELECT
+                        </IconButton>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Paper>
+          ) : null}
+          {this.state.foodNames.length > 0 ? (
             <Button
               style={{
                 marginTop: 10,
                 marginBottom: 5
               }}
-              id="foodSubmit"
               variant="raised"
-              color="primary"
+              color="secondary"
               className="input-button"
-              onClick={this.handleSubmit}
-              disabled={!this.state.inputFoodName}
+              value=""
+              onClick={e => this.handleRandomFood(e, true)}
             >
-              Add Food
-          </Button>
-            {this.state.foodNames.length > 0 ? (
-              <Paper>
-                <Table>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell style={{ textAlign: "left", fontSize: 25 }}>
-                        Food Name
-                    </TableCell>
-                      <TableCell />
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {this.state.foodNames.map(food => (
-                      <TableRow key={food}>
-                        <TableCell
-                          component="th"
-                          scope="row"
-                          style={{ fontSize: 15 }}
-                        >
-                          {food}
-                        </TableCell>
-                        <TableCell>
-                          <IconButton
-                            id="delete"
-                            aria-label="Delete"
-                            style={{ float: "right" }}
-                            value={food}
-                            onClick={e => this.handleDelete(e)}
-                          >
-                            <Delete />
-                          </IconButton>
-                          <IconButton
-                            value={food}
-                            onClick={e => this.handleRandomFood(e, false)}
-                            className="table-btn"
-                            style={{
-                              color: "#66bb6a",
-                              float: "right",
-                              fontSize: 12
-                            }}
-                          >
-                            <Restaurant /> SELECT
-                        </IconButton>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </Paper>
+              Generate Random Food
+            </Button>
+          ) : null}
+          <div className="random-food-section">
+            {this.state.randomFoodName ? (
+              <Typography variant="subtitle1">
+                The food selected is: <Chip label={this.state.randomFoodName} />
+                {this.renderMaps()}
+                <BusinessCardList businesses={this.state.businesses} />
+              </Typography>
             ) : null}
-            <div>
-              {this.state.foodNames.length > 0 ? (
-                <Button
-                  style={{
-                    marginTop: 10,
-                    marginBottom: 5,
-                    marginRight: 5,
-                    fontSize: 11
-                  }}
-                  variant="raised"
-                  color="secondary"
-                  className="input-button"
-                  value=""
-                  onClick={e => this.handleRandomFood(e, true)}
-                >
-                  Generate Random Food
-            </Button>
-              ) : null}
-              {this.state.viewZip ?
-                <Button
-                  style={{
-                    marginTop: 10,
-                    marginBottom: 5,
-                    marginLeft: 5,
-                    fontSize: 11
-                  }}
-                  variant="raised"
-                  color="primary"
-                  className="input-button"
-                  value=""
-                  onClick={this.handleZipSubmit}
-                >
-                  Search Entered Zip Code
-            </Button>
-                : <Button
-                  style={{
-                    marginTop: 10,
-                    marginBottom: 5,
-                    marginLeft: 5,
-                    fontSize: 11
-                  }}
-                  variant="raised"
-                  color="primary"
-                  className="input-button"
-                  value=""
-                  onClick={e => this.handleZipRequest(e)}
-                >
-                  View Restaurants by Zip Code
-                </Button>
-              }
-              {this.state.viewZip ?
-                <TextField
-                  fullWidth
-                  inputProps={{
-                    maxLength: 5,
-                    style: { textAlign: "center" }
-                  }}
-                  value={this.state.zipCode}
-                  className=""
-                  onChange={this.handleInputChange2}
-                  placeholder="Enter 5 Digit Zip Code"
-                  name="zipCode"
-                  required
-                />
-                : null}
-              {this.state.displayZipMap ?
-                <Typography variant="subtitle1">
-                  Showing all restaurants in: <Chip label={this.state.zipCode} />
-                  {this.renderMaps(true)}
-                  {this.renderZipBusiness()}
-                </Typography>
-                : null}
-              <div className="random-food-section">
-                {this.state.randomFoodName ? (
-                  <Typography variant="subtitle1">
-                    The food selected is: <Chip label={this.state.randomFoodName} />
-                    {this.renderMaps(false)}
-                    <BusinessCardList businesses={this.state.businesses} />
-                  </Typography>
-                ) : null}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </CardContent>
+      </Card>
     );
   }
 }

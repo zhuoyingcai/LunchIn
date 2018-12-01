@@ -1,319 +1,235 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
-<div>
-  <WithStyles(Snackbar)
-    autoHideDuration={6000}
-    message=""
-    onClose={[Function]}
-    open={false}
+<WithStyles(Card)
+  className="input-paper"
+  data-aos="zoom-in-up"
+>
+  <WithStyles(CardHeader)
+    title="Please enter your food choices:"
   />
-  <WithStyles(Card)
-    className="input-paper"
-    data-aos="zoom-in-up"
-  >
-    <WithStyles(CardHeader)
-      title="Please enter your food choices:"
+  <WithStyles(CardContent)>
+    <WithStyles(Snackbar)
+      autoHideDuration={6000}
+      message=""
+      onClose={[Function]}
+      open={false}
     />
-    <WithStyles(CardContent)>
-      <TextField
-        className="addFoodChoice"
-        fullWidth={true}
-        inputProps={
-          Object {
-            "id": "input-food-choices",
-            "maxLength": 20,
-            "style": Object {
-              "textAlign": "center",
-            },
-          }
+    <TextField
+      className="addFoodChoice"
+      fullWidth={true}
+      inputProps={
+        Object {
+          "id": "input-food-choices",
+          "maxLength": 20,
+          "style": Object {
+            "textAlign": "center",
+          },
         }
-        name="inputFoodName"
-        onChange={[Function]}
-        placeholder="Food name"
-        required={true}
-        select={false}
-        value=""
-        variant="standard"
-      />
-      <WithStyles(Button)
-        className="input-button"
-        color="primary"
-        disabled={true}
-        id="foodSubmit"
-        onClick={[Function]}
-        style={
-          Object {
-            "marginBottom": 5,
-            "marginTop": 10,
-          }
+      }
+      name="inputFoodName"
+      onChange={[Function]}
+      placeholder="Food name"
+      required={true}
+      select={false}
+      value=""
+      variant="standard"
+    />
+    <WithStyles(Button)
+      className="input-button"
+      color="primary"
+      disabled={true}
+      id="foodSubmit"
+      onClick={[Function]}
+      style={
+        Object {
+          "marginBottom": 5,
+          "marginTop": 10,
         }
-        variant="raised"
-      >
-        Add Food
-      </WithStyles(Button)>
-      <div>
-        <WithStyles(Button)
-          className="input-button"
-          color="primary"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontSize": 11,
-              "marginBottom": 5,
-              "marginLeft": 5,
-              "marginTop": 10,
-            }
-          }
-          value=""
-          variant="raised"
-        >
-          View Restaurants by Zip Code
-        </WithStyles(Button)>
-        <div
-          className="random-food-section"
-        />
-      </div>
-    </WithStyles(CardContent)>
-  </WithStyles(Card)>
-</div>
+      }
+      variant="raised"
+    >
+      Add Food
+    </WithStyles(Button)>
+    <div
+      className="random-food-section"
+    />
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
 `;
 
 exports[`UserInputFoodChoices Component converts render wrapper correctly 1`] = `null`;
 
 exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] = `
-<div>
-  <WithStyles(Snackbar)
-    autoHideDuration={6000}
-    message=""
-    onClose={[Function]}
-    open={false}
+<WithStyles(Card)
+  className="input-paper"
+  data-aos="zoom-in-up"
+>
+  <WithStyles(CardHeader)
+    title="Please enter your food choices:"
   />
-  <WithStyles(Card)
-    className="input-paper"
-    data-aos="zoom-in-up"
-  >
-    <WithStyles(CardHeader)
-      title="Please enter your food choices:"
+  <WithStyles(CardContent)>
+    <WithStyles(Snackbar)
+      autoHideDuration={6000}
+      message=""
+      onClose={[Function]}
+      open={false}
     />
-    <WithStyles(CardContent)>
-      <TextField
-        className="addFoodChoice"
-        fullWidth={true}
-        inputProps={
-          Object {
-            "id": "input-food-choices",
-            "maxLength": 20,
-            "style": Object {
-              "textAlign": "center",
-            },
-          }
+    <TextField
+      className="addFoodChoice"
+      fullWidth={true}
+      inputProps={
+        Object {
+          "id": "input-food-choices",
+          "maxLength": 20,
+          "style": Object {
+            "textAlign": "center",
+          },
         }
-        name="inputFoodName"
-        onChange={[Function]}
-        placeholder="Food name"
-        required={true}
-        select={false}
-        value=""
-        variant="standard"
-      />
-      <WithStyles(Button)
-        className="input-button"
-        color="primary"
-        disabled={true}
-        id="foodSubmit"
-        onClick={[Function]}
-        style={
-          Object {
-            "marginBottom": 5,
-            "marginTop": 10,
-          }
+      }
+      name="inputFoodName"
+      onChange={[Function]}
+      placeholder="Food name"
+      required={true}
+      select={false}
+      value=""
+      variant="standard"
+    />
+    <WithStyles(Button)
+      className="input-button"
+      color="primary"
+      disabled={true}
+      id="foodSubmit"
+      onClick={[Function]}
+      style={
+        Object {
+          "marginBottom": 5,
+          "marginTop": 10,
         }
-        variant="raised"
-      >
-        Add Food
-      </WithStyles(Button)>
-      <div>
-        <WithStyles(Button)
-          className="input-button"
-          color="primary"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontSize": 11,
-              "marginBottom": 5,
-              "marginLeft": 5,
-              "marginTop": 10,
-            }
-          }
-          value=""
-          variant="raised"
-        >
-          View Restaurants by Zip Code
-        </WithStyles(Button)>
-        <div
-          className="random-food-section"
-        />
-      </div>
-    </WithStyles(CardContent)>
-  </WithStyles(Card)>
-</div>
+      }
+      variant="raised"
+    >
+      Add Food
+    </WithStyles(Button)>
+    <div
+      className="random-food-section"
+    />
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
 `;
 
 exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component correctly 1`] = `
-<div>
-  <WithStyles(Snackbar)
-    autoHideDuration={6000}
-    message=""
-    onClose={[Function]}
-    open={false}
+<WithStyles(Card)
+  className="input-paper"
+  data-aos="zoom-in-up"
+>
+  <WithStyles(CardHeader)
+    title="Please enter your food choices:"
   />
-  <WithStyles(Card)
-    className="input-paper"
-    data-aos="zoom-in-up"
-  >
-    <WithStyles(CardHeader)
-      title="Please enter your food choices:"
+  <WithStyles(CardContent)>
+    <WithStyles(Snackbar)
+      autoHideDuration={6000}
+      message=""
+      onClose={[Function]}
+      open={false}
     />
-    <WithStyles(CardContent)>
-      <TextField
-        className="addFoodChoice"
-        fullWidth={true}
-        inputProps={
-          Object {
-            "id": "input-food-choices",
-            "maxLength": 20,
-            "style": Object {
-              "textAlign": "center",
-            },
-          }
+    <TextField
+      className="addFoodChoice"
+      fullWidth={true}
+      inputProps={
+        Object {
+          "id": "input-food-choices",
+          "maxLength": 20,
+          "style": Object {
+            "textAlign": "center",
+          },
         }
-        name="inputFoodName"
-        onChange={[Function]}
-        placeholder="Food name"
-        required={true}
-        select={false}
-        value=""
-        variant="standard"
-      />
-      <WithStyles(Button)
-        className="input-button"
-        color="primary"
-        disabled={true}
-        id="foodSubmit"
-        onClick={[Function]}
-        style={
-          Object {
-            "marginBottom": 5,
-            "marginTop": 10,
-          }
+      }
+      name="inputFoodName"
+      onChange={[Function]}
+      placeholder="Food name"
+      required={true}
+      select={false}
+      value=""
+      variant="standard"
+    />
+    <WithStyles(Button)
+      className="input-button"
+      color="primary"
+      disabled={true}
+      id="foodSubmit"
+      onClick={[Function]}
+      style={
+        Object {
+          "marginBottom": 5,
+          "marginTop": 10,
         }
-        variant="raised"
-      >
-        Add Food
-      </WithStyles(Button)>
-      <div>
-        <WithStyles(Button)
-          className="input-button"
-          color="primary"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontSize": 11,
-              "marginBottom": 5,
-              "marginLeft": 5,
-              "marginTop": 10,
-            }
-          }
-          value=""
-          variant="raised"
-        >
-          View Restaurants by Zip Code
-        </WithStyles(Button)>
-        <div
-          className="random-food-section"
-        />
-      </div>
-    </WithStyles(CardContent)>
-  </WithStyles(Card)>
-</div>
+      }
+      variant="raised"
+    >
+      Add Food
+    </WithStyles(Button)>
+    <div
+      className="random-food-section"
+    />
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
 `;
 
 exports[`UserInputFoodChoices Component should render UserInputFoodChoices with inputs food. 1`] = `
-<div>
-  <WithStyles(Snackbar)
-    autoHideDuration={6000}
-    message=""
-    onClose={[Function]}
-    open={false}
+<WithStyles(Card)
+  className="input-paper"
+  data-aos="zoom-in-up"
+>
+  <WithStyles(CardHeader)
+    title="Please enter your food choices:"
   />
-  <WithStyles(Card)
-    className="input-paper"
-    data-aos="zoom-in-up"
-  >
-    <WithStyles(CardHeader)
-      title="Please enter your food choices:"
+  <WithStyles(CardContent)>
+    <WithStyles(Snackbar)
+      autoHideDuration={6000}
+      message=""
+      onClose={[Function]}
+      open={false}
     />
-    <WithStyles(CardContent)>
-      <TextField
-        className="addFoodChoice"
-        fullWidth={true}
-        inputProps={
-          Object {
-            "id": "input-food-choices",
-            "maxLength": 20,
-            "style": Object {
-              "textAlign": "center",
-            },
-          }
+    <TextField
+      className="addFoodChoice"
+      fullWidth={true}
+      inputProps={
+        Object {
+          "id": "input-food-choices",
+          "maxLength": 20,
+          "style": Object {
+            "textAlign": "center",
+          },
         }
-        name="inputFoodName"
-        onChange={[Function]}
-        placeholder="Food name"
-        required={true}
-        select={false}
-        value=""
-        variant="standard"
-      />
-      <WithStyles(Button)
-        className="input-button"
-        color="primary"
-        disabled={true}
-        id="foodSubmit"
-        onClick={[Function]}
-        style={
-          Object {
-            "marginBottom": 5,
-            "marginTop": 10,
-          }
+      }
+      name="inputFoodName"
+      onChange={[Function]}
+      placeholder="Food name"
+      required={true}
+      select={false}
+      value=""
+      variant="standard"
+    />
+    <WithStyles(Button)
+      className="input-button"
+      color="primary"
+      disabled={true}
+      id="foodSubmit"
+      onClick={[Function]}
+      style={
+        Object {
+          "marginBottom": 5,
+          "marginTop": 10,
         }
-        variant="raised"
-      >
-        Add Food
-      </WithStyles(Button)>
-      <div>
-        <WithStyles(Button)
-          className="input-button"
-          color="primary"
-          onClick={[Function]}
-          style={
-            Object {
-              "fontSize": 11,
-              "marginBottom": 5,
-              "marginLeft": 5,
-              "marginTop": 10,
-            }
-          }
-          value=""
-          variant="raised"
-        >
-          View Restaurants by Zip Code
-        </WithStyles(Button)>
-        <div
-          className="random-food-section"
-        />
-      </div>
-    </WithStyles(CardContent)>
-  </WithStyles(Card)>
-</div>
+      }
+      variant="raised"
+    >
+      Add Food
+    </WithStyles(Button)>
+    <div
+      className="random-food-section"
+    />
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
 `;
