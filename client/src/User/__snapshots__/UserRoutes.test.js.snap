@@ -44,6 +44,16 @@ ShallowWrapper {
           exact={true}
           path="/user/profile"
         />,
+        <Route
+          exact={true}
+          path="/user"
+          render={[Function]}
+        />,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/user/zipcode"
+        />,
       ],
       "style": Object {
         "height": "100%",
@@ -104,6 +114,32 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/user",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/user/zipcode",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -133,6 +169,16 @@ ShallowWrapper {
             component={[Function]}
             exact={true}
             path="/user/profile"
+          />,
+          <Route
+            exact={true}
+            path="/user"
+            render={[Function]}
+          />,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/user/zipcode"
           />,
         ],
         "style": Object {
@@ -189,6 +235,32 @@ ShallowWrapper {
             "component": [Function],
             "exact": true,
             "path": "/user/profile",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/user",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/user/zipcode",
           },
           "ref": null,
           "rendered": null,

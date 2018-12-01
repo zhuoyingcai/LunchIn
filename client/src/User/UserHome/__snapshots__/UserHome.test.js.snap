@@ -59,6 +59,17 @@ ShallowWrapper {
               <pure(PersonIcon) />
                Profile
             </WithStyles(Button)>
+            <WithStyles(Button)
+              onClick={[Function]}
+              style={
+                Object {
+                  "float": "right",
+                }
+              }
+            >
+              <pure(SwapCallsIcon) />
+               Zipcode
+            </WithStyles(Button)>
           </WithStyles(Typography)>
         </div>,
         <WithStyles(Divider) />,
@@ -123,6 +134,17 @@ ShallowWrapper {
               <pure(PersonIcon) />
                Profile
             </WithStyles(Button)>
+            <WithStyles(Button)
+              onClick={[Function]}
+              style={
+                Object {
+                  "float": "right",
+                }
+              }
+            >
+              <pure(SwapCallsIcon) />
+               Zipcode
+            </WithStyles(Button)>
           </WithStyles(Typography)>,
           "className": "user-header",
         },
@@ -162,6 +184,17 @@ ShallowWrapper {
               >
                 <pure(PersonIcon) />
                  Profile
+              </WithStyles(Button)>,
+              <WithStyles(Button)
+                onClick={[Function]}
+                style={
+                  Object {
+                    "float": "right",
+                  }
+                }
+              >
+                <pure(SwapCallsIcon) />
+                 Zipcode
               </WithStyles(Button)>,
             ],
             "style": Object {
@@ -241,6 +274,35 @@ ShallowWrapper {
               ],
               "type": [Function],
             },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <pure(SwapCallsIcon) />,
+                  " Zipcode",
+                ],
+                "onClick": [Function],
+                "style": Object {
+                  "float": "right",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                " Zipcode",
+              ],
+              "type": [Function],
+            },
           ],
           "type": [Function],
         },
@@ -317,6 +379,17 @@ ShallowWrapper {
                 <pure(PersonIcon) />
                  Profile
               </WithStyles(Button)>
+              <WithStyles(Button)
+                onClick={[Function]}
+                style={
+                  Object {
+                    "float": "right",
+                  }
+                }
+              >
+                <pure(SwapCallsIcon) />
+                 Zipcode
+              </WithStyles(Button)>
             </WithStyles(Typography)>
           </div>,
           <WithStyles(Divider) />,
@@ -381,6 +454,17 @@ ShallowWrapper {
                 <pure(PersonIcon) />
                  Profile
               </WithStyles(Button)>
+              <WithStyles(Button)
+                onClick={[Function]}
+                style={
+                  Object {
+                    "float": "right",
+                  }
+                }
+              >
+                <pure(SwapCallsIcon) />
+                 Zipcode
+              </WithStyles(Button)>
             </WithStyles(Typography)>,
             "className": "user-header",
           },
@@ -420,6 +504,17 @@ ShallowWrapper {
                 >
                   <pure(PersonIcon) />
                    Profile
+                </WithStyles(Button)>,
+                <WithStyles(Button)
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "float": "right",
+                    }
+                  }
+                >
+                  <pure(SwapCallsIcon) />
+                   Zipcode
                 </WithStyles(Button)>,
               ],
               "style": Object {
@@ -496,6 +591,35 @@ ShallowWrapper {
                     "type": [Function],
                   },
                   " Profile",
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <pure(SwapCallsIcon) />,
+                    " Zipcode",
+                  ],
+                  "onClick": [Function],
+                  "style": Object {
+                    "float": "right",
+                  },
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  " Zipcode",
                 ],
                 "type": [Function],
               },
