@@ -12,9 +12,8 @@ var yelpApiKey = process.env.YELP_API_KEYS.split(",")[CURR_YELP_KEY_ID];
 var client = yelp.client(yelpApiKey, { socketTimeout: 5000 });
 
 var tot_requests;
-var key_id = 0;
 
-// (Re)initializing Data from the Key
+// (Re)initializing Data from the RequestData logs.
 function init(){
   if(!fs.existsSync(yelpReqDataFile)){
     console.log("Yelp Api Key Data does not exist, creating a new file.");
@@ -47,6 +46,9 @@ function updateKeyData(keyData, requests){
   });
 }
 
+/**
+  Logs the request into a row (request_id, date, time, action, request)
+**/
 function log(action){
   loggingData = [tot_requests, getDay(), getTime(), action];
   tot_requests += 1;
@@ -60,7 +62,7 @@ function log(action){
   This method is used to swap api keys which increases the number of requests.
 **/
 function handleRequestOverload(){
-  console.log("MAXIMUM YELP API REQUESTS HAVE BEEN REACHED FOR THIS KEY...");
+  console.log("MAXIMUM YELP API REQUESTS HAVE BEEN REACHED FOR THIS KEY ID #", CURR_YELP_KEY_ID);
   CURR_YELP_KEY_ID = (CURR_YELP_KEY_ID + 1) % process.env.NUM_YELP_KEYS;
   process.env.CURR_YELP_KEY_ID = CURR_YELP_KEY_ID;
   clientID = process.env.YELP_CLIENT_IDS.split(",")[CURR_YELP_KEY_ID];
@@ -68,8 +70,8 @@ function handleRequestOverload(){
   tot_requests = 0;
   updateKeyData(yelpReqDataFile, tot_requests);
   client = yelp.client(yelpApiKey, { socketTimeout: 5000 });
-
 }
+
 function getDay(){
   const today = new Date();
   return today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -89,7 +91,7 @@ function getTime(){
 **/
 function consumeYelpSearch(req, res){
   log("Yelp-Search,"+JSON.stringify(req.query));
-  console.log("Consuming Business Search with Parameters", req.query, );
+  console.log("Consuming Business Search with Parameters", req.query);
 	client.search(req.query)
 				.then(response => res.status(200).json(response))
 				.catch(e => {
