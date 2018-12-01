@@ -27,12 +27,13 @@ ShallowWrapper {
           className="user-header"
         >
           <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             
             's Profile
@@ -144,7 +145,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Update Address
                   <pure(HomeIcon)
@@ -217,7 +218,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Change Email
                   <pure(EmailIcon)
@@ -291,7 +292,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Change Password
                   <pure(LockOpenIcon)
@@ -328,12 +329,13 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             
             's Profile
@@ -372,10 +374,11 @@ ShallowWrapper {
                 Back
               </WithStyles(Button)>,
             ],
+            "component": "h2",
             "style": Object {
               "flex": 1,
             },
-            "variant": "display2",
+            "variant": "h3",
           },
           "ref": null,
           "rendered": Array [
@@ -580,7 +583,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -653,7 +656,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -727,7 +730,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -806,7 +809,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -864,7 +867,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -923,7 +926,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -1001,7 +1004,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -1092,7 +1095,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -1166,7 +1169,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -1241,7 +1244,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -1335,7 +1338,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -1427,7 +1430,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -1502,7 +1505,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -1578,7 +1581,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -1673,7 +1676,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -1719,12 +1722,13 @@ ShallowWrapper {
             className="user-header"
           >
             <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               
               's Profile
@@ -1836,7 +1840,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -1909,7 +1913,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -1983,7 +1987,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -2020,12 +2024,13 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               
               's Profile
@@ -2064,10 +2069,11 @@ ShallowWrapper {
                   Back
                 </WithStyles(Button)>,
               ],
+              "component": "h2",
               "style": Object {
                 "flex": 1,
               },
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": Array [
@@ -2272,7 +2278,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -2345,7 +2351,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -2419,7 +2425,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -2498,7 +2504,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -2556,7 +2562,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -2615,7 +2621,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Update Address
                         <pure(HomeIcon)
@@ -2693,7 +2699,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -2784,7 +2790,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -2858,7 +2864,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -2933,7 +2939,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Change Email
                         <pure(EmailIcon)
@@ -3027,7 +3033,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -3119,7 +3125,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -3194,7 +3200,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -3270,7 +3276,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Change Password
                         <pure(LockOpenIcon)
@@ -3365,7 +3371,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -3445,12 +3451,13 @@ ShallowWrapper {
           className="user-header"
         >
           <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             
             's Profile
@@ -3562,7 +3569,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Update Address
                   <pure(HomeIcon)
@@ -3635,7 +3642,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Change Email
                   <pure(EmailIcon)
@@ -3709,7 +3716,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Change Password
                   <pure(LockOpenIcon)
@@ -3746,12 +3753,13 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             
             's Profile
@@ -3790,10 +3798,11 @@ ShallowWrapper {
                 Back
               </WithStyles(Button)>,
             ],
+            "component": "h2",
             "style": Object {
               "flex": 1,
             },
-            "variant": "display2",
+            "variant": "h3",
           },
           "ref": null,
           "rendered": Array [
@@ -3998,7 +4007,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -4071,7 +4080,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -4145,7 +4154,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -4224,7 +4233,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -4282,7 +4291,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -4341,7 +4350,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -4419,7 +4428,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -4510,7 +4519,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -4584,7 +4593,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -4659,7 +4668,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -4753,7 +4762,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -4845,7 +4854,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -4920,7 +4929,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -4996,7 +5005,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -5091,7 +5100,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -5137,12 +5146,13 @@ ShallowWrapper {
             className="user-header"
           >
             <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               
               's Profile
@@ -5254,7 +5264,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -5327,7 +5337,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -5401,7 +5411,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -5438,12 +5448,13 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               
               's Profile
@@ -5482,10 +5493,11 @@ ShallowWrapper {
                   Back
                 </WithStyles(Button)>,
               ],
+              "component": "h2",
               "style": Object {
                 "flex": 1,
               },
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": Array [
@@ -5690,7 +5702,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -5763,7 +5775,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -5837,7 +5849,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -5916,7 +5928,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -5974,7 +5986,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -6033,7 +6045,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Update Address
                         <pure(HomeIcon)
@@ -6111,7 +6123,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -6202,7 +6214,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -6276,7 +6288,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -6351,7 +6363,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Change Email
                         <pure(EmailIcon)
@@ -6445,7 +6457,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -6537,7 +6549,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -6612,7 +6624,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -6688,7 +6700,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Change Password
                         <pure(LockOpenIcon)
@@ -6783,7 +6795,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -6863,12 +6875,13 @@ ShallowWrapper {
           className="user-header"
         >
           <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             
             's Profile
@@ -6980,7 +6993,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Update Address
                   <pure(HomeIcon)
@@ -7053,7 +7066,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Change Email
                   <pure(EmailIcon)
@@ -7127,7 +7140,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Change Password
                   <pure(LockOpenIcon)
@@ -7164,12 +7177,13 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             
             's Profile
@@ -7208,10 +7222,11 @@ ShallowWrapper {
                 Back
               </WithStyles(Button)>,
             ],
+            "component": "h2",
             "style": Object {
               "flex": 1,
             },
-            "variant": "display2",
+            "variant": "h3",
           },
           "ref": null,
           "rendered": Array [
@@ -7416,7 +7431,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -7489,7 +7504,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -7563,7 +7578,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -7642,7 +7657,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -7700,7 +7715,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -7759,7 +7774,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -7837,7 +7852,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -7928,7 +7943,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -8002,7 +8017,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -8077,7 +8092,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -8171,7 +8186,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -8263,7 +8278,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -8338,7 +8353,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -8414,7 +8429,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -8509,7 +8524,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -8555,12 +8570,13 @@ ShallowWrapper {
             className="user-header"
           >
             <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               
               's Profile
@@ -8672,7 +8688,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -8745,7 +8761,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -8819,7 +8835,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -8856,12 +8872,13 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               
               's Profile
@@ -8900,10 +8917,11 @@ ShallowWrapper {
                   Back
                 </WithStyles(Button)>,
               ],
+              "component": "h2",
               "style": Object {
                 "flex": 1,
               },
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": Array [
@@ -9108,7 +9126,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -9181,7 +9199,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -9255,7 +9273,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -9334,7 +9352,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -9392,7 +9410,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -9451,7 +9469,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Update Address
                         <pure(HomeIcon)
@@ -9529,7 +9547,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -9620,7 +9638,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -9694,7 +9712,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -9769,7 +9787,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Change Email
                         <pure(EmailIcon)
@@ -9863,7 +9881,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -9955,7 +9973,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -10030,7 +10048,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -10106,7 +10124,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Change Password
                         <pure(LockOpenIcon)
@@ -10201,7 +10219,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -10279,12 +10297,13 @@ ShallowWrapper {
           className="user-header"
         >
           <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             
             's Profile
@@ -10396,7 +10415,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Update Address
                   <pure(HomeIcon)
@@ -10469,7 +10488,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Change Email
                   <pure(EmailIcon)
@@ -10543,7 +10562,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     }
                   }
-                  variant="raised"
+                  variant="contained"
                 >
                   Change Password
                   <pure(LockOpenIcon)
@@ -10580,12 +10599,13 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             
             's Profile
@@ -10624,10 +10644,11 @@ ShallowWrapper {
                 Back
               </WithStyles(Button)>,
             ],
+            "component": "h2",
             "style": Object {
               "flex": 1,
             },
-            "variant": "display2",
+            "variant": "h3",
           },
           "ref": null,
           "rendered": Array [
@@ -10832,7 +10853,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -10905,7 +10926,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -10979,7 +11000,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -11058,7 +11079,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -11116,7 +11137,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -11175,7 +11196,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -11253,7 +11274,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -11344,7 +11365,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -11418,7 +11439,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -11493,7 +11514,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -11587,7 +11608,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -11679,7 +11700,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -11754,7 +11775,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -11830,7 +11851,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -11925,7 +11946,7 @@ ShallowWrapper {
                         "float": "right",
                         "marginTop": 10,
                       },
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -11971,12 +11992,13 @@ ShallowWrapper {
             className="user-header"
           >
             <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               
               's Profile
@@ -12088,7 +12110,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Update Address
                     <pure(HomeIcon)
@@ -12161,7 +12183,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Email
                     <pure(EmailIcon)
@@ -12235,7 +12257,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       }
                     }
-                    variant="raised"
+                    variant="contained"
                   >
                     Change Password
                     <pure(LockOpenIcon)
@@ -12272,12 +12294,13 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               
               's Profile
@@ -12316,10 +12339,11 @@ ShallowWrapper {
                   Back
                 </WithStyles(Button)>,
               ],
+              "component": "h2",
               "style": Object {
                 "flex": 1,
               },
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": Array [
@@ -12524,7 +12548,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -12597,7 +12621,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -12671,7 +12695,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -12750,7 +12774,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -12808,7 +12832,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Update Address
                       <pure(HomeIcon)
@@ -12867,7 +12891,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Update Address
                         <pure(HomeIcon)
@@ -12945,7 +12969,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -13036,7 +13060,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -13110,7 +13134,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Email
                       <pure(EmailIcon)
@@ -13185,7 +13209,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Change Email
                         <pure(EmailIcon)
@@ -13279,7 +13303,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -13371,7 +13395,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -13446,7 +13470,7 @@ ShallowWrapper {
                           "marginTop": 10,
                         }
                       }
-                      variant="raised"
+                      variant="contained"
                     >
                       Change Password
                       <pure(LockOpenIcon)
@@ -13522,7 +13546,7 @@ ShallowWrapper {
                             "marginTop": 10,
                           }
                         }
-                        variant="raised"
+                        variant="contained"
                       >
                         Change Password
                         <pure(LockOpenIcon)
@@ -13617,7 +13641,7 @@ ShallowWrapper {
                           "float": "right",
                           "marginTop": 10,
                         },
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [

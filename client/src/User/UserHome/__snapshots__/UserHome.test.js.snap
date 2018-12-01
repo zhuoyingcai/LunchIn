@@ -23,12 +23,13 @@ ShallowWrapper {
           className="user-header"
         >
           <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             Welcome, 
             <WithStyles(Button)
@@ -98,12 +99,13 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <WithStyles(Typography)
+            component="h2"
             style={
               Object {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             Welcome, 
             <WithStyles(Button)
@@ -197,10 +199,11 @@ ShallowWrapper {
                  Zipcode Search
               </WithStyles(Button)>,
             ],
+            "component": "h2",
             "style": Object {
               "flex": 1,
             },
-            "variant": "display2",
+            "variant": "h3",
           },
           "ref": null,
           "rendered": Array [
@@ -343,12 +346,13 @@ ShallowWrapper {
             className="user-header"
           >
             <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               Welcome, 
               <WithStyles(Button)
@@ -418,12 +422,13 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <WithStyles(Typography)
+              component="h2"
               style={
                 Object {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               Welcome, 
               <WithStyles(Button)
@@ -517,10 +522,11 @@ ShallowWrapper {
                    Zipcode Search
                 </WithStyles(Button)>,
               ],
+              "component": "h2",
               "style": Object {
                 "flex": 1,
               },
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": Array [
