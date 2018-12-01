@@ -53,7 +53,16 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
     </WithStyles(Button)>
     <div
       className="random-food-section"
-    />
+    >
+      <WithStyles(Typography)
+        variant="subtitle1"
+      >
+        <BusinessCardList
+          address=""
+          randomFoodName=""
+        />
+      </WithStyles(Typography)>
+    </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
 `;
@@ -113,7 +122,16 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
     </WithStyles(Button)>
     <div
       className="random-food-section"
-    />
+    >
+      <WithStyles(Typography)
+        variant="subtitle1"
+      >
+        <BusinessCardList
+          address=""
+          randomFoodName=""
+        />
+      </WithStyles(Typography)>
+    </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
 `;
@@ -171,7 +189,16 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
     </WithStyles(Button)>
     <div
       className="random-food-section"
-    />
+    >
+      <WithStyles(Typography)
+        variant="subtitle1"
+      >
+        <BusinessCardList
+          address=""
+          randomFoodName=""
+        />
+      </WithStyles(Typography)>
+    </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
 `;
@@ -229,7 +256,16 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
     </WithStyles(Button)>
     <div
       className="random-food-section"
-    />
+    >
+      <WithStyles(Typography)
+        variant="subtitle1"
+      >
+        <BusinessCardList
+          address=""
+          randomFoodName=""
+        />
+      </WithStyles(Typography)>
+    </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
 `;
