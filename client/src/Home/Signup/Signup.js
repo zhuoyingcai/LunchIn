@@ -161,8 +161,10 @@ export default class Signup extends Component {
           message={this.state.notifyMsg}
         />
         <div className="signup-title-bar">
-          <Typography variant="h3">LunchIn | Sign-Up</Typography>
-          <Typography variant="subtitle1">
+          <Typography component="h2" variant="h3">
+            LunchIn | Sign-Up
+          </Typography>
+          <Typography component="h2" variant="subtitle1">
             Fill out the form below to sign-up for an account.
           </Typography>
         </div>

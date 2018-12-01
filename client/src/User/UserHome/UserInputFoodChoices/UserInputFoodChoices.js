@@ -352,7 +352,7 @@ class UserInputFoodChoices extends Component {
             </Button>
           ) : null}
           <div className="random-food-section">
-            <Typography variant="subtitle1">
+            <Typography component="h2" variant="subtitle1">
               {this.state.randomFoodName ? (
                 <span>
                   The food selected is:{" "}

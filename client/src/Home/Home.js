@@ -80,13 +80,19 @@ class Home extends Component {
 
         <div className="title-bar" data-aos="fade-up">
           <Typography
+            component="h2"
             variant="h1"
             className="title"
             style={{ color: "#000000" }}
           >
             <strong>LunchIn</strong>
           </Typography>
-          <Typography variant="h3" className="tag-line" data-aos="fade-up">
+          <Typography
+            component="h2"
+            variant="h3"
+            className="tag-line"
+            data-aos="fade-up"
+          >
             Automatically Choose a Lunch Option For You
           </Typography>
         </div>
@@ -162,6 +168,7 @@ class Home extends Component {
                 Sign-In
               </Button>
               <Typography
+                component="h2"
                 style={{ marginTop: 5, marginBottom: 5 }}
                 variant="subtitle1"
                 className="signup-line"

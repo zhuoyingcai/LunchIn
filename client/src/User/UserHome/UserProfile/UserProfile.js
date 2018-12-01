@@ -30,7 +30,7 @@ import Geocode from "react-geocode";
 
 function TabContainer({ children, dir }) {
   return (
-    <Typography component="div" dir={dir}>
+    <Typography component="h2" dir={dir}>
       {children}
     </Typography>
   );
@@ -299,7 +299,7 @@ class UserProfile extends Component {
         <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">
-          <Typography variant="display2" style={{ flex: 1 }}>
+          <Typography component="h2" variant="h3" style={{ flex: 1 }}>
             {this.state.name}
             's Profile
             <Button

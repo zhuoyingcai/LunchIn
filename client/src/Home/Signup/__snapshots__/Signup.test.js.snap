@@ -29,12 +29,14 @@ ShallowWrapper {
           className="signup-title-bar"
         >
           <WithStyles(Typography)
-            variant="display2"
+            component="h2"
+            variant="h3"
           >
             LunchIn | Sign-Up
           </WithStyles(Typography)>
           <WithStyles(Typography)
-            variant="subheading"
+            component="h2"
+            variant="subtitle1"
           >
             Fill out the form below to sign-up for an account.
           </WithStyles(Typography)>
@@ -129,7 +131,7 @@ ShallowWrapper {
                 disabled={false}
                 fullWidth={true}
                 onClick={[Function]}
-                variant="raised"
+                variant="contained"
               >
                 <pure(CheckCircleIcon)
                   style={
@@ -188,12 +190,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>,
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>,
@@ -208,7 +212,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "LunchIn | Sign-Up",
-              "variant": "display2",
+              "component": "h2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "LunchIn | Sign-Up",
@@ -220,7 +225,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "Fill out the form below to sign-up for an account.",
-              "variant": "subheading",
+              "component": "h2",
+              "variant": "subtitle1",
             },
             "ref": null,
             "rendered": "Fill out the form below to sign-up for an account.",
@@ -332,7 +338,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -445,7 +451,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -568,7 +574,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -711,7 +717,7 @@ ShallowWrapper {
                       "disabled": false,
                       "fullWidth": true,
                       "onClick": [Function],
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -780,12 +786,14 @@ ShallowWrapper {
             className="signup-title-bar"
           >
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>
@@ -880,7 +888,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -939,12 +947,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <WithStyles(Typography)
-                variant="display2"
+                component="h2"
+                variant="h3"
               >
                 LunchIn | Sign-Up
               </WithStyles(Typography)>,
               <WithStyles(Typography)
-                variant="subheading"
+                component="h2"
+                variant="subtitle1"
               >
                 Fill out the form below to sign-up for an account.
               </WithStyles(Typography)>,
@@ -959,7 +969,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "LunchIn | Sign-Up",
-                "variant": "display2",
+                "component": "h2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "LunchIn | Sign-Up",
@@ -971,7 +982,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Fill out the form below to sign-up for an account.",
-                "variant": "subheading",
+                "component": "h2",
+                "variant": "subtitle1",
               },
               "ref": null,
               "rendered": "Fill out the form below to sign-up for an account.",
@@ -1083,7 +1095,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -1196,7 +1208,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -1319,7 +1331,7 @@ ShallowWrapper {
                         disabled={false}
                         fullWidth={true}
                         onClick={[Function]}
-                        variant="raised"
+                        variant="contained"
                       >
                         <pure(CheckCircleIcon)
                           style={
@@ -1462,7 +1474,7 @@ ShallowWrapper {
                         "disabled": false,
                         "fullWidth": true,
                         "onClick": [Function],
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -1568,12 +1580,14 @@ ShallowWrapper {
           className="signup-title-bar"
         >
           <WithStyles(Typography)
-            variant="display2"
+            component="h2"
+            variant="h3"
           >
             LunchIn | Sign-Up
           </WithStyles(Typography)>
           <WithStyles(Typography)
-            variant="subheading"
+            component="h2"
+            variant="subtitle1"
           >
             Fill out the form below to sign-up for an account.
           </WithStyles(Typography)>
@@ -1668,7 +1682,7 @@ ShallowWrapper {
                 disabled={false}
                 fullWidth={true}
                 onClick={[Function]}
-                variant="raised"
+                variant="contained"
               >
                 <pure(CheckCircleIcon)
                   style={
@@ -1727,12 +1741,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>,
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>,
@@ -1747,7 +1763,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "LunchIn | Sign-Up",
-              "variant": "display2",
+              "component": "h2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "LunchIn | Sign-Up",
@@ -1759,7 +1776,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "Fill out the form below to sign-up for an account.",
-              "variant": "subheading",
+              "component": "h2",
+              "variant": "subtitle1",
             },
             "ref": null,
             "rendered": "Fill out the form below to sign-up for an account.",
@@ -1871,7 +1889,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -1984,7 +2002,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -2107,7 +2125,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -2250,7 +2268,7 @@ ShallowWrapper {
                       "disabled": false,
                       "fullWidth": true,
                       "onClick": [Function],
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -2319,12 +2337,14 @@ ShallowWrapper {
             className="signup-title-bar"
           >
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>
@@ -2419,7 +2439,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -2478,12 +2498,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <WithStyles(Typography)
-                variant="display2"
+                component="h2"
+                variant="h3"
               >
                 LunchIn | Sign-Up
               </WithStyles(Typography)>,
               <WithStyles(Typography)
-                variant="subheading"
+                component="h2"
+                variant="subtitle1"
               >
                 Fill out the form below to sign-up for an account.
               </WithStyles(Typography)>,
@@ -2498,7 +2520,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "LunchIn | Sign-Up",
-                "variant": "display2",
+                "component": "h2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "LunchIn | Sign-Up",
@@ -2510,7 +2533,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Fill out the form below to sign-up for an account.",
-                "variant": "subheading",
+                "component": "h2",
+                "variant": "subtitle1",
               },
               "ref": null,
               "rendered": "Fill out the form below to sign-up for an account.",
@@ -2622,7 +2646,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -2735,7 +2759,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -2858,7 +2882,7 @@ ShallowWrapper {
                         disabled={false}
                         fullWidth={true}
                         onClick={[Function]}
-                        variant="raised"
+                        variant="contained"
                       >
                         <pure(CheckCircleIcon)
                           style={
@@ -3001,7 +3025,7 @@ ShallowWrapper {
                         "disabled": false,
                         "fullWidth": true,
                         "onClick": [Function],
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -3107,12 +3131,14 @@ ShallowWrapper {
           className="signup-title-bar"
         >
           <WithStyles(Typography)
-            variant="display2"
+            component="h2"
+            variant="h3"
           >
             LunchIn | Sign-Up
           </WithStyles(Typography)>
           <WithStyles(Typography)
-            variant="subheading"
+            component="h2"
+            variant="subtitle1"
           >
             Fill out the form below to sign-up for an account.
           </WithStyles(Typography)>
@@ -3207,7 +3233,7 @@ ShallowWrapper {
                 disabled={false}
                 fullWidth={true}
                 onClick={[Function]}
-                variant="raised"
+                variant="contained"
               >
                 <pure(CheckCircleIcon)
                   style={
@@ -3266,12 +3292,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>,
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>,
@@ -3286,7 +3314,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "LunchIn | Sign-Up",
-              "variant": "display2",
+              "component": "h2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "LunchIn | Sign-Up",
@@ -3298,7 +3327,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "Fill out the form below to sign-up for an account.",
-              "variant": "subheading",
+              "component": "h2",
+              "variant": "subtitle1",
             },
             "ref": null,
             "rendered": "Fill out the form below to sign-up for an account.",
@@ -3410,7 +3440,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -3523,7 +3553,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -3646,7 +3676,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -3789,7 +3819,7 @@ ShallowWrapper {
                       "disabled": false,
                       "fullWidth": true,
                       "onClick": [Function],
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -3858,12 +3888,14 @@ ShallowWrapper {
             className="signup-title-bar"
           >
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>
@@ -3958,7 +3990,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -4017,12 +4049,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <WithStyles(Typography)
-                variant="display2"
+                component="h2"
+                variant="h3"
               >
                 LunchIn | Sign-Up
               </WithStyles(Typography)>,
               <WithStyles(Typography)
-                variant="subheading"
+                component="h2"
+                variant="subtitle1"
               >
                 Fill out the form below to sign-up for an account.
               </WithStyles(Typography)>,
@@ -4037,7 +4071,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "LunchIn | Sign-Up",
-                "variant": "display2",
+                "component": "h2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "LunchIn | Sign-Up",
@@ -4049,7 +4084,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Fill out the form below to sign-up for an account.",
-                "variant": "subheading",
+                "component": "h2",
+                "variant": "subtitle1",
               },
               "ref": null,
               "rendered": "Fill out the form below to sign-up for an account.",
@@ -4161,7 +4197,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -4274,7 +4310,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -4397,7 +4433,7 @@ ShallowWrapper {
                         disabled={false}
                         fullWidth={true}
                         onClick={[Function]}
-                        variant="raised"
+                        variant="contained"
                       >
                         <pure(CheckCircleIcon)
                           style={
@@ -4540,7 +4576,7 @@ ShallowWrapper {
                         "disabled": false,
                         "fullWidth": true,
                         "onClick": [Function],
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -4648,12 +4684,14 @@ ShallowWrapper {
           className="signup-title-bar"
         >
           <WithStyles(Typography)
-            variant="display2"
+            component="h2"
+            variant="h3"
           >
             LunchIn | Sign-Up
           </WithStyles(Typography)>
           <WithStyles(Typography)
-            variant="subheading"
+            component="h2"
+            variant="subtitle1"
           >
             Fill out the form below to sign-up for an account.
           </WithStyles(Typography)>
@@ -4748,7 +4786,7 @@ ShallowWrapper {
                 disabled={false}
                 fullWidth={true}
                 onClick={[Function]}
-                variant="raised"
+                variant="contained"
               >
                 <pure(CheckCircleIcon)
                   style={
@@ -4807,12 +4845,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>,
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>,
@@ -4827,7 +4867,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "LunchIn | Sign-Up",
-              "variant": "display2",
+              "component": "h2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "LunchIn | Sign-Up",
@@ -4839,7 +4880,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "Fill out the form below to sign-up for an account.",
-              "variant": "subheading",
+              "component": "h2",
+              "variant": "subtitle1",
             },
             "ref": null,
             "rendered": "Fill out the form below to sign-up for an account.",
@@ -4951,7 +4993,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -5064,7 +5106,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -5187,7 +5229,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -5330,7 +5372,7 @@ ShallowWrapper {
                       "disabled": false,
                       "fullWidth": true,
                       "onClick": [Function],
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -5399,12 +5441,14 @@ ShallowWrapper {
             className="signup-title-bar"
           >
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>
@@ -5499,7 +5543,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -5558,12 +5602,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <WithStyles(Typography)
-                variant="display2"
+                component="h2"
+                variant="h3"
               >
                 LunchIn | Sign-Up
               </WithStyles(Typography)>,
               <WithStyles(Typography)
-                variant="subheading"
+                component="h2"
+                variant="subtitle1"
               >
                 Fill out the form below to sign-up for an account.
               </WithStyles(Typography)>,
@@ -5578,7 +5624,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "LunchIn | Sign-Up",
-                "variant": "display2",
+                "component": "h2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "LunchIn | Sign-Up",
@@ -5590,7 +5637,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Fill out the form below to sign-up for an account.",
-                "variant": "subheading",
+                "component": "h2",
+                "variant": "subtitle1",
               },
               "ref": null,
               "rendered": "Fill out the form below to sign-up for an account.",
@@ -5702,7 +5750,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -5815,7 +5863,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -5938,7 +5986,7 @@ ShallowWrapper {
                         disabled={false}
                         fullWidth={true}
                         onClick={[Function]}
-                        variant="raised"
+                        variant="contained"
                       >
                         <pure(CheckCircleIcon)
                           style={
@@ -6081,7 +6129,7 @@ ShallowWrapper {
                         "disabled": false,
                         "fullWidth": true,
                         "onClick": [Function],
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
@@ -6189,12 +6237,14 @@ ShallowWrapper {
           className="signup-title-bar"
         >
           <WithStyles(Typography)
-            variant="display2"
+            component="h2"
+            variant="h3"
           >
             LunchIn | Sign-Up
           </WithStyles(Typography)>
           <WithStyles(Typography)
-            variant="subheading"
+            component="h2"
+            variant="subtitle1"
           >
             Fill out the form below to sign-up for an account.
           </WithStyles(Typography)>
@@ -6289,7 +6339,7 @@ ShallowWrapper {
                 disabled={false}
                 fullWidth={true}
                 onClick={[Function]}
-                variant="raised"
+                variant="contained"
               >
                 <pure(CheckCircleIcon)
                   style={
@@ -6348,12 +6398,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>,
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>,
@@ -6368,7 +6420,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "LunchIn | Sign-Up",
-              "variant": "display2",
+              "component": "h2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": "LunchIn | Sign-Up",
@@ -6380,7 +6433,8 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "Fill out the form below to sign-up for an account.",
-              "variant": "subheading",
+              "component": "h2",
+              "variant": "subtitle1",
             },
             "ref": null,
             "rendered": "Fill out the form below to sign-up for an account.",
@@ -6492,7 +6546,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -6605,7 +6659,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -6728,7 +6782,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -6871,7 +6925,7 @@ ShallowWrapper {
                       "disabled": false,
                       "fullWidth": true,
                       "onClick": [Function],
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": Array [
@@ -6940,12 +6994,14 @@ ShallowWrapper {
             className="signup-title-bar"
           >
             <WithStyles(Typography)
-              variant="display2"
+              component="h2"
+              variant="h3"
             >
               LunchIn | Sign-Up
             </WithStyles(Typography)>
             <WithStyles(Typography)
-              variant="subheading"
+              component="h2"
+              variant="subtitle1"
             >
               Fill out the form below to sign-up for an account.
             </WithStyles(Typography)>
@@ -7040,7 +7096,7 @@ ShallowWrapper {
                   disabled={false}
                   fullWidth={true}
                   onClick={[Function]}
-                  variant="raised"
+                  variant="contained"
                 >
                   <pure(CheckCircleIcon)
                     style={
@@ -7099,12 +7155,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <WithStyles(Typography)
-                variant="display2"
+                component="h2"
+                variant="h3"
               >
                 LunchIn | Sign-Up
               </WithStyles(Typography)>,
               <WithStyles(Typography)
-                variant="subheading"
+                component="h2"
+                variant="subtitle1"
               >
                 Fill out the form below to sign-up for an account.
               </WithStyles(Typography)>,
@@ -7119,7 +7177,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "LunchIn | Sign-Up",
-                "variant": "display2",
+                "component": "h2",
+                "variant": "h3",
               },
               "ref": null,
               "rendered": "LunchIn | Sign-Up",
@@ -7131,7 +7190,8 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Fill out the form below to sign-up for an account.",
-                "variant": "subheading",
+                "component": "h2",
+                "variant": "subtitle1",
               },
               "ref": null,
               "rendered": "Fill out the form below to sign-up for an account.",
@@ -7243,7 +7303,7 @@ ShallowWrapper {
                     disabled={false}
                     fullWidth={true}
                     onClick={[Function]}
-                    variant="raised"
+                    variant="contained"
                   >
                     <pure(CheckCircleIcon)
                       style={
@@ -7356,7 +7416,7 @@ ShallowWrapper {
                       disabled={false}
                       fullWidth={true}
                       onClick={[Function]}
-                      variant="raised"
+                      variant="contained"
                     >
                       <pure(CheckCircleIcon)
                         style={
@@ -7479,7 +7539,7 @@ ShallowWrapper {
                         disabled={false}
                         fullWidth={true}
                         onClick={[Function]}
-                        variant="raised"
+                        variant="contained"
                       >
                         <pure(CheckCircleIcon)
                           style={
@@ -7622,7 +7682,7 @@ ShallowWrapper {
                         "disabled": false,
                         "fullWidth": true,
                         "onClick": [Function],
-                        "variant": "raised",
+                        "variant": "contained",
                       },
                       "ref": null,
                       "rendered": Array [
