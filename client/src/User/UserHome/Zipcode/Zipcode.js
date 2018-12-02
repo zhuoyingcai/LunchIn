@@ -161,7 +161,7 @@ class Zipcode extends Component {
         />
         <CssBaseline />
         <div className="header">
-          <Typography variant="display2" style={{ flex: 1 }}>
+          <Typography variant="h3" style={{ flex: 1 }}>
             Search Restaurants by Zipcode
             <Button
               style={{ float: "right" }}
@@ -199,7 +199,7 @@ class Zipcode extends Component {
                   marginLeft: 5,
                   fontSize: 11
                 }}
-                variant="raised"
+                variant="contained"
                 color="primary"
                 className="input-button"
                 value=""

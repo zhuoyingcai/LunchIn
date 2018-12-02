@@ -34,7 +34,7 @@ ShallowWrapper {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             Search Restaurants by Zipcode
             <WithStyles(Button)
@@ -92,7 +92,7 @@ ShallowWrapper {
                   }
                 }
                 value=""
-                variant="raised"
+                variant="contained"
               >
                 Search Entered Zip Code
               </WithStyles(Button)>
@@ -147,7 +147,7 @@ ShallowWrapper {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             Search Restaurants by Zipcode
             <WithStyles(Button)
@@ -187,7 +187,7 @@ ShallowWrapper {
             "style": Object {
               "flex": 1,
             },
-            "variant": "display2",
+            "variant": "h3",
           },
           "ref": null,
           "rendered": Array [
@@ -278,7 +278,7 @@ ShallowWrapper {
                     }
                   }
                   value=""
-                  variant="raised"
+                  variant="contained"
                 >
                   Search Entered Zip Code
                 </WithStyles(Button)>
@@ -347,7 +347,7 @@ ShallowWrapper {
                       }
                     }
                     value=""
-                    variant="raised"
+                    variant="contained"
                   >
                     Search Entered Zip Code
                   </WithStyles(Button)>
@@ -406,7 +406,7 @@ ShallowWrapper {
                       }
                     }
                     value=""
-                    variant="raised"
+                    variant="contained"
                   >
                     Search Entered Zip Code
                   </WithStyles(Button)>,
@@ -428,7 +428,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     },
                     "value": "",
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Search Entered Zip Code",
@@ -493,7 +493,7 @@ ShallowWrapper {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               Search Restaurants by Zipcode
               <WithStyles(Button)
@@ -551,7 +551,7 @@ ShallowWrapper {
                     }
                   }
                   value=""
-                  variant="raised"
+                  variant="contained"
                 >
                   Search Entered Zip Code
                 </WithStyles(Button)>
@@ -606,7 +606,7 @@ ShallowWrapper {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               Search Restaurants by Zipcode
               <WithStyles(Button)
@@ -646,7 +646,7 @@ ShallowWrapper {
               "style": Object {
                 "flex": 1,
               },
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": Array [
@@ -737,7 +737,7 @@ ShallowWrapper {
                       }
                     }
                     value=""
-                    variant="raised"
+                    variant="contained"
                   >
                     Search Entered Zip Code
                   </WithStyles(Button)>
@@ -806,7 +806,7 @@ ShallowWrapper {
                         }
                       }
                       value=""
-                      variant="raised"
+                      variant="contained"
                     >
                       Search Entered Zip Code
                     </WithStyles(Button)>
@@ -865,7 +865,7 @@ ShallowWrapper {
                         }
                       }
                       value=""
-                      variant="raised"
+                      variant="contained"
                     >
                       Search Entered Zip Code
                     </WithStyles(Button)>,
@@ -887,7 +887,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       },
                       "value": "",
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Search Entered Zip Code",
@@ -986,7 +986,7 @@ ShallowWrapper {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             Search Restaurants by Zipcode
             <WithStyles(Button)
@@ -1044,7 +1044,7 @@ ShallowWrapper {
                   }
                 }
                 value=""
-                variant="raised"
+                variant="contained"
               >
                 Search Entered Zip Code
               </WithStyles(Button)>
@@ -1099,7 +1099,7 @@ ShallowWrapper {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             Search Restaurants by Zipcode
             <WithStyles(Button)
@@ -1139,7 +1139,7 @@ ShallowWrapper {
             "style": Object {
               "flex": 1,
             },
-            "variant": "display2",
+            "variant": "h3",
           },
           "ref": null,
           "rendered": Array [
@@ -1230,7 +1230,7 @@ ShallowWrapper {
                     }
                   }
                   value=""
-                  variant="raised"
+                  variant="contained"
                 >
                   Search Entered Zip Code
                 </WithStyles(Button)>
@@ -1299,7 +1299,7 @@ ShallowWrapper {
                       }
                     }
                     value=""
-                    variant="raised"
+                    variant="contained"
                   >
                     Search Entered Zip Code
                   </WithStyles(Button)>
@@ -1358,7 +1358,7 @@ ShallowWrapper {
                       }
                     }
                     value=""
-                    variant="raised"
+                    variant="contained"
                   >
                     Search Entered Zip Code
                   </WithStyles(Button)>,
@@ -1380,7 +1380,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     },
                     "value": "",
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Search Entered Zip Code",
@@ -1445,7 +1445,7 @@ ShallowWrapper {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               Search Restaurants by Zipcode
               <WithStyles(Button)
@@ -1503,7 +1503,7 @@ ShallowWrapper {
                     }
                   }
                   value=""
-                  variant="raised"
+                  variant="contained"
                 >
                   Search Entered Zip Code
                 </WithStyles(Button)>
@@ -1558,7 +1558,7 @@ ShallowWrapper {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               Search Restaurants by Zipcode
               <WithStyles(Button)
@@ -1598,7 +1598,7 @@ ShallowWrapper {
               "style": Object {
                 "flex": 1,
               },
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": Array [
@@ -1689,7 +1689,7 @@ ShallowWrapper {
                       }
                     }
                     value=""
-                    variant="raised"
+                    variant="contained"
                   >
                     Search Entered Zip Code
                   </WithStyles(Button)>
@@ -1758,7 +1758,7 @@ ShallowWrapper {
                         }
                       }
                       value=""
-                      variant="raised"
+                      variant="contained"
                     >
                       Search Entered Zip Code
                     </WithStyles(Button)>
@@ -1817,7 +1817,7 @@ ShallowWrapper {
                         }
                       }
                       value=""
-                      variant="raised"
+                      variant="contained"
                     >
                       Search Entered Zip Code
                     </WithStyles(Button)>,
@@ -1839,7 +1839,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       },
                       "value": "",
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Search Entered Zip Code",
@@ -1938,7 +1938,7 @@ ShallowWrapper {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             Search Restaurants by Zipcode
             <WithStyles(Button)
@@ -1996,7 +1996,7 @@ ShallowWrapper {
                   }
                 }
                 value=""
-                variant="raised"
+                variant="contained"
               >
                 Search Entered Zip Code
               </WithStyles(Button)>
@@ -2051,7 +2051,7 @@ ShallowWrapper {
                 "flex": 1,
               }
             }
-            variant="display2"
+            variant="h3"
           >
             Search Restaurants by Zipcode
             <WithStyles(Button)
@@ -2091,7 +2091,7 @@ ShallowWrapper {
             "style": Object {
               "flex": 1,
             },
-            "variant": "display2",
+            "variant": "h3",
           },
           "ref": null,
           "rendered": Array [
@@ -2182,7 +2182,7 @@ ShallowWrapper {
                     }
                   }
                   value=""
-                  variant="raised"
+                  variant="contained"
                 >
                   Search Entered Zip Code
                 </WithStyles(Button)>
@@ -2251,7 +2251,7 @@ ShallowWrapper {
                       }
                     }
                     value=""
-                    variant="raised"
+                    variant="contained"
                   >
                     Search Entered Zip Code
                   </WithStyles(Button)>
@@ -2310,7 +2310,7 @@ ShallowWrapper {
                       }
                     }
                     value=""
-                    variant="raised"
+                    variant="contained"
                   >
                     Search Entered Zip Code
                   </WithStyles(Button)>,
@@ -2332,7 +2332,7 @@ ShallowWrapper {
                       "marginTop": 10,
                     },
                     "value": "",
-                    "variant": "raised",
+                    "variant": "contained",
                   },
                   "ref": null,
                   "rendered": "Search Entered Zip Code",
@@ -2397,7 +2397,7 @@ ShallowWrapper {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               Search Restaurants by Zipcode
               <WithStyles(Button)
@@ -2455,7 +2455,7 @@ ShallowWrapper {
                     }
                   }
                   value=""
-                  variant="raised"
+                  variant="contained"
                 >
                   Search Entered Zip Code
                 </WithStyles(Button)>
@@ -2510,7 +2510,7 @@ ShallowWrapper {
                   "flex": 1,
                 }
               }
-              variant="display2"
+              variant="h3"
             >
               Search Restaurants by Zipcode
               <WithStyles(Button)
@@ -2550,7 +2550,7 @@ ShallowWrapper {
               "style": Object {
                 "flex": 1,
               },
-              "variant": "display2",
+              "variant": "h3",
             },
             "ref": null,
             "rendered": Array [
@@ -2641,7 +2641,7 @@ ShallowWrapper {
                       }
                     }
                     value=""
-                    variant="raised"
+                    variant="contained"
                   >
                     Search Entered Zip Code
                   </WithStyles(Button)>
@@ -2710,7 +2710,7 @@ ShallowWrapper {
                         }
                       }
                       value=""
-                      variant="raised"
+                      variant="contained"
                     >
                       Search Entered Zip Code
                     </WithStyles(Button)>
@@ -2769,7 +2769,7 @@ ShallowWrapper {
                         }
                       }
                       value=""
-                      variant="raised"
+                      variant="contained"
                     >
                       Search Entered Zip Code
                     </WithStyles(Button)>,
@@ -2791,7 +2791,7 @@ ShallowWrapper {
                         "marginTop": 10,
                       },
                       "value": "",
-                      "variant": "raised",
+                      "variant": "contained",
                     },
                     "ref": null,
                     "rendered": "Search Entered Zip Code",
