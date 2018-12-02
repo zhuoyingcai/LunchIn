@@ -60,15 +60,16 @@ class Zipcode extends Component {
     e.preventDefault();
     this.setState({
       ziplat: 0,
-      ziplng: 0
+      ziplng: 0,
+      displayZipMap: false,
+      searchZip: ""
     })
     let zipcode = this.state.zipCode;
     // Prevent negative numbers
     if (zipcode[0] === "-") {
       this.setState({
         notify: true,
-        notifyMsg: "Input cannot be negative",
-        displayZipMap: false
+        notifyMsg: "Input cannot be negative"
       })
     }
 
@@ -91,7 +92,6 @@ class Zipcode extends Component {
                 ziplng: lng,
                 displayZipMap: true,
                 searchZip: this.state.zipCode,
-                zipCode: ""
               });
             },
             error => {
@@ -100,20 +100,14 @@ class Zipcode extends Component {
                 this.setState({
                   processing: false,
                   notify: true,
-                  notifyMsg: "Invalid zipcode. Please enter a valid zipcode",
-                  ziplat: 0,
-                  ziplng: 0,
-                  displayZipMap: false
+                  notifyMsg: "Invalid zipcode. Please enter a valid zipcode"
                 });
               }
               if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
                 this.setState({
                   processing: false,
                   notify: true,
-                  notifyMsg: "Please try agian later",
-                  ziplat: 0,
-                  ziplng: 0,
-                  displayZipMap: false
+                  notifyMsg: "Please try again later"
                 });
               }
             }
@@ -121,15 +115,13 @@ class Zipcode extends Component {
         } else {
           this.setState({
             notify: true,
-            notifyMsg: "Zip Code must be a number",
-            displayZipMap: false
+            notifyMsg: "Zip Code must be a number"
           })
         }
       } else {
         this.setState({
           notify: true,
-          notifyMsg: "Zip Code must be 5 digits",
-          displayZipMap: false
+          notifyMsg: "Zip Code must be 5 digits"
         })
       }
     }
