@@ -139,9 +139,13 @@ class UserInputFoodChoices extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    const newList = this.state.foodNames
+    newList.splice(0, 0, this.state.inputFoodName)
+    
     if (this.state.inputFoodName) {
       this.setState({
-        foodNames: this.state.foodNames.concat(this.state.inputFoodName),
+        foodNames: newList,
         inputFoodName: "",
         processing: true
       });
@@ -149,7 +153,7 @@ class UserInputFoodChoices extends Component {
         .database()
         .ref(`Users/${firebase.auth().currentUser.uid}/foodNames`);
       foodNamesRef
-        .set(this.state.foodNames.concat(this.state.inputFoodName))
+        .set(newList)
         .then(() => {
           this.setState({ processing: false });
         })
@@ -195,12 +199,9 @@ class UserInputFoodChoices extends Component {
   handleDelete(e) {
     e.preventDefault();
     const x = e.currentTarget.value;
-    console.log(x);
-
     const foodList = this.state.foodNames;
     const foodIndex = foodList.indexOf(x);
     foodList.splice(foodIndex, 1);
-    console.log(foodList);
 
     this.setState({
       processing: true
