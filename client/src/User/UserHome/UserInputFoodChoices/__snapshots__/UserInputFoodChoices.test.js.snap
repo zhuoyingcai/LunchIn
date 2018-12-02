@@ -51,6 +51,25 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
     >
       Add Food
     </WithStyles(Button)>
+    <div>
+      <WithStyles(Grid)
+        container={true}
+        item={true}
+        spacing={0}
+        xs={12}
+      >
+        <WithStyles(Grid)
+          item={true}
+          xs={3}
+        />
+        <WithStyles(Grid)
+          item={true}
+          xs={9}
+        >
+          <WithStyles(Paper) />
+        </WithStyles(Grid)>
+      </WithStyles(Grid)>
+    </div>
     <div
       className="random-food-section"
     >
@@ -121,6 +140,25 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
     >
       Add Food
     </WithStyles(Button)>
+    <div>
+      <WithStyles(Grid)
+        container={true}
+        item={true}
+        spacing={0}
+        xs={12}
+      >
+        <WithStyles(Grid)
+          item={true}
+          xs={3}
+        />
+        <WithStyles(Grid)
+          item={true}
+          xs={9}
+        >
+          <WithStyles(Paper) />
+        </WithStyles(Grid)>
+      </WithStyles(Grid)>
+    </div>
     <div
       className="random-food-section"
     >
@@ -189,6 +227,25 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
     >
       Add Food
     </WithStyles(Button)>
+    <div>
+      <WithStyles(Grid)
+        container={true}
+        item={true}
+        spacing={0}
+        xs={12}
+      >
+        <WithStyles(Grid)
+          item={true}
+          xs={3}
+        />
+        <WithStyles(Grid)
+          item={true}
+          xs={9}
+        >
+          <WithStyles(Paper) />
+        </WithStyles(Grid)>
+      </WithStyles(Grid)>
+    </div>
     <div
       className="random-food-section"
     >
@@ -257,6 +314,25 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
     >
       Add Food
     </WithStyles(Button)>
+    <div>
+      <WithStyles(Grid)
+        container={true}
+        item={true}
+        spacing={0}
+        xs={12}
+      >
+        <WithStyles(Grid)
+          item={true}
+          xs={3}
+        />
+        <WithStyles(Grid)
+          item={true}
+          xs={9}
+        >
+          <WithStyles(Paper) />
+        </WithStyles(Grid)>
+      </WithStyles(Grid)>
+    </div>
     <div
       className="random-food-section"
     >
