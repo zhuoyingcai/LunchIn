@@ -92,6 +92,7 @@ class Zipcode extends Component {
                 ziplng: lng,
                 displayZipMap: true,
                 searchZip: this.state.zipCode,
+                zipCode: ""
               });
             },
             error => {
