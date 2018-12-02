@@ -4,7 +4,11 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "typeface-roboto";
+import AOS from "aos";
+import "../node_modules/aos/dist/aos.css";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+AOS.init();
 
 const theme = createMuiTheme({
   typography: {

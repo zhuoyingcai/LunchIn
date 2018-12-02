@@ -47,7 +47,10 @@ class UserHome extends Component {
           error => {
             console.log("Error: " + error.code);
           }
-        );
+        )
+        .catch(error => {
+          console.log("Error: " + error.message);
+        });
     });
   }
 
