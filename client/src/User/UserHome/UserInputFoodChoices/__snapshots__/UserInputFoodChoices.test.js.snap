@@ -61,7 +61,33 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
         <WithStyles(Grid)
           item={true}
           xs={3}
-        />
+        >
+          <WithStyles(Paper)
+            className="food-list"
+          >
+            <WithStyles(List)
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "height": 450,
+                  "overflow": "auto",
+                  "padding": 0,
+                  "position": "relative",
+                }
+              }
+            >
+              <WithStyles(ListSubheader)
+                style={
+                  Object {
+                    "backgroundColor": "inherit",
+                  }
+                }
+              >
+                Food Name
+              </WithStyles(ListSubheader)>
+            </WithStyles(List)>
+          </WithStyles(Paper)>
+        </WithStyles(Grid)>
         <WithStyles(Grid)
           item={true}
           xs={9}
@@ -150,7 +176,33 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
         <WithStyles(Grid)
           item={true}
           xs={3}
-        />
+        >
+          <WithStyles(Paper)
+            className="food-list"
+          >
+            <WithStyles(List)
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "height": 450,
+                  "overflow": "auto",
+                  "padding": 0,
+                  "position": "relative",
+                }
+              }
+            >
+              <WithStyles(ListSubheader)
+                style={
+                  Object {
+                    "backgroundColor": "inherit",
+                  }
+                }
+              >
+                Food Name
+              </WithStyles(ListSubheader)>
+            </WithStyles(List)>
+          </WithStyles(Paper)>
+        </WithStyles(Grid)>
         <WithStyles(Grid)
           item={true}
           xs={9}
@@ -237,7 +289,33 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
         <WithStyles(Grid)
           item={true}
           xs={3}
-        />
+        >
+          <WithStyles(Paper)
+            className="food-list"
+          >
+            <WithStyles(List)
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "height": 450,
+                  "overflow": "auto",
+                  "padding": 0,
+                  "position": "relative",
+                }
+              }
+            >
+              <WithStyles(ListSubheader)
+                style={
+                  Object {
+                    "backgroundColor": "inherit",
+                  }
+                }
+              >
+                Food Name
+              </WithStyles(ListSubheader)>
+            </WithStyles(List)>
+          </WithStyles(Paper)>
+        </WithStyles(Grid)>
         <WithStyles(Grid)
           item={true}
           xs={9}
@@ -324,7 +402,33 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
         <WithStyles(Grid)
           item={true}
           xs={3}
-        />
+        >
+          <WithStyles(Paper)
+            className="food-list"
+          >
+            <WithStyles(List)
+              style={
+                Object {
+                  "backgroundColor": "white",
+                  "height": 450,
+                  "overflow": "auto",
+                  "padding": 0,
+                  "position": "relative",
+                }
+              }
+            >
+              <WithStyles(ListSubheader)
+                style={
+                  Object {
+                    "backgroundColor": "inherit",
+                  }
+                }
+              >
+                Food Name
+              </WithStyles(ListSubheader)>
+            </WithStyles(List)>
+          </WithStyles(Paper)>
+        </WithStyles(Grid)>
         <WithStyles(Grid)
           item={true}
           xs={9}

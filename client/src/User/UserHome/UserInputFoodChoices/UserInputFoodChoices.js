@@ -297,7 +297,7 @@ class UserInputFoodChoices extends Component {
         <div>
         <Grid container item xs={12} spacing={0}>
           <Grid item xs={3}>
-          {this.state.foodNames.length > 0 ? (
+          {this.state.foodNames.length >= 0 ? (
             <Paper className="food-list">
               <List style={{height: 450, 
                             overflow: "auto", 
