@@ -14,7 +14,8 @@ import {
   TableRow,
   Typography,
   Chip,
-  IconButton
+  IconButton,
+  Divider
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
@@ -23,6 +24,12 @@ import Geocode from "react-geocode";
 import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
+import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 class UserInputFoodChoices extends Component {
   constructor(props) {
@@ -250,7 +257,7 @@ class UserInputFoodChoices extends Component {
       <Card className="input-paper" data-aos="zoom-in-up">
         <CardHeader title="Please enter your food choices:" />
         <CardContent>
-          <Snackbar
+        <Snackbar
             onClose={() => {
               this.setState({ notify: false, notifyMsg: "" });
             }}
@@ -286,32 +293,26 @@ class UserInputFoodChoices extends Component {
           >
             Add Food
           </Button>
+        <div>
+        <Grid container item xs={12} spacing={0}>
+          <Grid item xs={3}>
           {this.state.foodNames.length > 0 ? (
-            <Paper>
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    <TableCell style={{ textAlign: "left", fontSize: 25 }}>
-                      Food Name
-                    </TableCell>
-                    <TableCell />
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {this.state.foodNames.map(food => (
-                    <TableRow key={food}>
-                      <TableCell
-                        component="th"
-                        scope="row"
-                        style={{ fontSize: 15 }}
-                      >
-                        {food}
-                      </TableCell>
-                      <TableCell>
+            <Paper className="food-list">
+              <List style={{height: 450, 
+                            overflow: "auto", 
+                            position: 'relative', 
+                            backgroundColor: "white", 
+                            padding:0}}>
+                <ListSubheader style={{backgroundColor: "inherit"}}>Food Name</ListSubheader>
+                {this.state.foodNames.map(food => (
+                    <ListItem key={food} style={{height:50}}>
+                      <ListItemText> {food} </ListItemText>
+
+                      <ListItemSecondaryAction style={{paddingRight: 10}}>
                         <IconButton
                           id="delete"
                           aria-label="Delete"
-                          style={{ float: "right" }}
+                          style={{ float: "right", padding: 5  }}
                           value={food}
                           onClick={e => this.handleDelete(e)}
                         >
@@ -324,19 +325,26 @@ class UserInputFoodChoices extends Component {
                           style={{
                             color: "#66bb6a",
                             float: "right",
-                            fontSize: 12
+                            padding: 5
                           }}
                         >
-                          <Restaurant /> SELECT
+                          <Restaurant /> 
                         </IconButton>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+                        </ListItemSecondaryAction>
+
+                    </ListItem>
+              ))}
+              </List>
             </Paper>
           ) : null}
-          {this.state.foodNames.length > 0 ? (
+          </Grid>
+          <Grid item xs={9}>
+            <Paper>{this.renderMaps()}</Paper>
+          </Grid>
+        </Grid>
+    </div>
+
+         {this.state.foodNames.length > 0 ? (
             <Button
               style={{
                 marginTop: 10,
@@ -359,7 +367,7 @@ class UserInputFoodChoices extends Component {
                   <Chip label={this.state.randomFoodName} />
                 </span>
               ) : null}
-              {this.renderMaps()}
+              {/* {this.renderMaps()} */}
               <BusinessCardList
                 address={this.state.address}
                 randomFoodName={this.state.sanitizedRandomFood}
