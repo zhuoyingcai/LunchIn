@@ -6,7 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <UserRoutes
     match={
       Object {
-        "path": "/user",
+        "path": "/user/home",
       }
     }
   />,
@@ -26,23 +26,33 @@ ShallowWrapper {
       "children": Array [
         <Route
           exact={true}
-          path="/user"
+          path="/user/home"
           render={[Function]}
         />,
         <Route
           component={[Function]}
+          exact={true}
+          path="/user/home/home"
+        />,
+        <Route
           exact={true}
           path="/user/home"
-        />,
-        <Route
-          exact={true}
-          path="/user"
           render={[Function]}
         />,
         <Route
           component={[Function]}
           exact={true}
-          path="/user/profile"
+          path="/user/home/profile"
+        />,
+        <Route
+          exact={true}
+          path="/user/home"
+          render={[Function]}
+        />,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/user/home/zipcode"
         />,
       ],
       "style": Object {
@@ -58,7 +68,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "exact": true,
-          "path": "/user",
+          "path": "/user/home",
           "render": [Function],
         },
         "ref": null,
@@ -71,20 +81,20 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "component": [Function],
+          "exact": true,
+          "path": "/user/home/home",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
           "exact": true,
           "path": "/user/home",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "exact": true,
-          "path": "/user",
           "render": [Function],
         },
         "ref": null,
@@ -98,7 +108,33 @@ ShallowWrapper {
         "props": Object {
           "component": [Function],
           "exact": true,
-          "path": "/user/profile",
+          "path": "/user/home/profile",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/user/home",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/user/home/zipcode",
         },
         "ref": null,
         "rendered": null,
@@ -116,23 +152,33 @@ ShallowWrapper {
         "children": Array [
           <Route
             exact={true}
-            path="/user"
+            path="/user/home"
             render={[Function]}
           />,
           <Route
             component={[Function]}
+            exact={true}
+            path="/user/home/home"
+          />,
+          <Route
             exact={true}
             path="/user/home"
-          />,
-          <Route
-            exact={true}
-            path="/user"
             render={[Function]}
           />,
           <Route
             component={[Function]}
             exact={true}
-            path="/user/profile"
+            path="/user/home/profile"
+          />,
+          <Route
+            exact={true}
+            path="/user/home"
+            render={[Function]}
+          />,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/user/home/zipcode"
           />,
         ],
         "style": Object {
@@ -148,7 +194,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "exact": true,
-            "path": "/user",
+            "path": "/user/home",
             "render": [Function],
           },
           "ref": null,
@@ -161,20 +207,20 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
+            "exact": true,
+            "path": "/user/home/home",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
             "exact": true,
             "path": "/user/home",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/user",
             "render": [Function],
           },
           "ref": null,
@@ -188,7 +234,33 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
-            "path": "/user/profile",
+            "path": "/user/home/profile",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/user/home",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/user/home/zipcode",
           },
           "ref": null,
           "rendered": null,

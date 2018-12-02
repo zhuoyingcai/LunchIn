@@ -6,6 +6,7 @@ import Logout from "@material-ui/icons/ExitToApp";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import UserInputFoodChoices from "./UserInputFoodChoices/UserInputFoodChoices.js";
 import Profile from "@material-ui/icons/Person";
+import Zipcode from "@material-ui/icons/SwapCalls";
 
 class UserHome extends Component {
   constructor(props) {
@@ -46,7 +47,10 @@ class UserHome extends Component {
           error => {
             console.log("Error: " + error.code);
           }
-        );
+        )
+        .catch(error => {
+          console.log("Error: " + error.message);
+        });
     });
   }
 
@@ -78,6 +82,14 @@ class UserHome extends Component {
               }}
             >
               <Profile /> Profile
+            </Button>
+            <Button
+              style={{ float: "right" }}
+              onClick={() => {
+                this.props.history.push(`/user/zipcode`);
+              }}
+            >
+              <Zipcode /> Zipcode Search
             </Button>
           </Typography>
         </div>
