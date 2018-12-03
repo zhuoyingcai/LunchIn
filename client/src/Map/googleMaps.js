@@ -4,6 +4,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from "react
 import Card from '@material-ui/core/Card';
 import './map.css';
 import CssBaseline from "@material-ui/core/CssBaseline";
+import BusinessCard from "../BusinessCard/BusinessCard";
 
 // const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 const _ = require("lodash");
@@ -75,7 +76,6 @@ const MapComponent = compose(
                     };
                 service.nearbySearch(request, (results, status) => {
                     if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-                        console.log(results);
                         updatePlaces(results);
                     }
                 })
@@ -89,6 +89,7 @@ const MapComponent = compose(
     }),
 
 )((props) => {
+  if(props.food){
     return (
       <div>
       {/* // Displays Gmap with specific user location and restaurant based on randomly selected food. */}
@@ -100,7 +101,7 @@ const MapComponent = compose(
 
             {props.places && props.places.map((place, i) =>
                 <Marker
-                  onClick={() => props.onToggleOpen(i)}
+                  onClick={(event) => {props.onToggleOpen(i);}}
                   key={i}
                   position={{ lat: place.geometry.location.lat(),
                               lng: place.geometry.location.lng() }} >
@@ -109,18 +110,33 @@ const MapComponent = compose(
                     <div>
                         {props.places[props.selectedPlace].name}
                         <br/>
-                        {props.places[props.selectedPlace].formatted_address}
+                        {props.places[props.selectedPlace].vicinity}
+                        <br/>
+                        {props.updateMarker(props.places[props.selectedPlace].vicinity, props.places[props.selectedPlace].geometry.location.lat(props.places[props.selectedPlace].vicinity), props.places[props.selectedPlace].geometry.location.lng(props.places[props.selectedPlace].vicinity),props.places[props.selectedPlace].name)}
                       </div>
                   </InfoWindow>
+
                }
                 </Marker>
             )}
           </GoogleMap>
-        </div>
+          </div>
     )
+  }else{
+      return(
+          <div>
+              <GoogleMap
+                  onTilesLoaded={props.fetchPlaces}
+                  ref={props.onMapMounted}
+                  defaultZoom={15}
+                  defaultCenter={{ lat: props.lat, lng: props.lng }} >
+              </GoogleMap>
+          </div>
+        )
+}
 })
 
-export default class GoogleMapComponent extends React.PureComponent { 
+export default class GoogleMapComponent extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -130,6 +146,11 @@ export default class GoogleMapComponent extends React.PureComponent {
             lng: props.lng,
         };
         this.renderMaps = this.renderMaps.bind(this);
+        this.renderYelp = this.renderYelp.bind(this);
+    }
+
+    updateMarker = (storeL, storeLat , storeLng , storeN) => {
+      this.setState({ storeLocation: storeL ,storeName: storeN, storeLatitude: storeLat, storeLongitude: storeLng });
     }
 
     renderMaps() {
@@ -141,6 +162,34 @@ export default class GoogleMapComponent extends React.PureComponent {
                 lng={this.state.lng}
                 lat={this.state.lat}
                 key={this.state.randomFoodName}
+                updateMarker = {this.updateMarker}
+                />
+            </Card>
+
+        );
+      }
+      renderYelp(){
+          return(
+              <Card>
+                  <CssBaseline/>
+                  <BusinessCard
+                    address={this.state.storeLocation}
+                    storeLat={this.state.storeLatitude}
+                    storeLng={this.state.storeLongitude}
+                    storeName={this.state.storeName}
+                    key = {this.state.storeName}
+                    />
+              </Card>
+          );
+      }
+      renderMapsNoFood(){
+        return (
+            <Card>
+                <CssBaseline />
+                <MapComponent
+                address={this.state.addressName}
+                lng={this.state.lng}
+                lat={this.state.lat}
                 />
             </Card>
 
@@ -152,8 +201,9 @@ export default class GoogleMapComponent extends React.PureComponent {
               <CssBaseline />
               {!!this.props.food
                 ? (this.renderMaps(this.props.food))
-                : null
+                : (this.renderMapsNoFood())
               }
+              {this.renderYelp(this.props.food)}
           </div>
         )
     }

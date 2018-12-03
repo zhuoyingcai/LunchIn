@@ -17,20 +17,17 @@ class BusinessCard extends Component {
       businessesMemo: [],
       loading: false
     };
-  }
-  componentDidUpdate(prevProps, prevState) {
-    if(this.props.randomFoodName
-      && (this.props.randomFoodName !== prevProps.randomFoodName
-        || this.props.address !== prevProps.address)){
-      this.setState({ businesses: [] });
-      this.setState({ loading: true });
+    if(this.props.storeName){
       this.fetchBusinessesFromYelp();
     }
   }
+
   retrieveData(){
     const data = {
-      term: this.props.randomFoodName,
-      location: this.props.address
+      term: this.props.storeName,
+      latitude:this.props.storeLat,
+      longitude:this.props.storeLng,
+      location: this.props.address,
     };
     return data;
   }

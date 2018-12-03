@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import "./Zipcode.css";
 import "firebase/auth";
-import { 
-  Button, 
-  Typography, 
-  Divider, 
-  Snackbar, 
-  Card, 
-  CardHeader, 
-  CardContent, 
+import {
+  Button,
+  Typography,
+  Divider,
+  Snackbar,
+  Card,
+  CardHeader,
+  CardContent,
   Chip,
-  TextField 
+  TextField
 } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Back from "@material-ui/icons/ArrowBack";
 import GoogleM from "../../../Map/googleMaps.js";
 import Geocode from 'react-geocode';
-import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
+import BusinessCard from "../../../BusinessCard/BusinessCard";
 
 class Zipcode extends Component {
   constructor(props) {
@@ -183,7 +183,7 @@ class Zipcode extends Component {
               placeholder="Enter 5 Digit Zip Code"
               name="zipCode"
               required
-            />            
+            />
             <div>
               <Button
                 style={{
@@ -209,14 +209,10 @@ class Zipcode extends Component {
                       Showing all restaurants in: <Chip label={this.state.searchZip} />
                     </span>
                     {this.renderMaps()}
-                    <BusinessCardList
-                      address={this.state.searchZip}
-                      randomFoodName={this.state.searchTerm}
-                    />
                   </div>
-                  : null} 
+                  : null}
               </Typography>
-            </div>   
+            </div>
           </CardContent>
         </Card>
       </div>

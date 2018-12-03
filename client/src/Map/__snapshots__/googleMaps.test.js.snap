@@ -31,7 +31,12 @@ ShallowWrapper {
             food="Pizza"
             lat={40.8216144}
             lng={-73.9479427}
+            updateMarker={[Function]}
           />
+        </WithStyles(Card)>,
+        <WithStyles(Card)>
+          <WithStyles(CssBaseline) />
+          <BusinessCard />
         </WithStyles(Card)>,
       ],
     },
@@ -58,6 +63,7 @@ ShallowWrapper {
               food="Pizza"
               lat={40.8216144}
               lng={-73.9479427}
+              updateMarker={[Function]}
             />,
           ],
         },
@@ -81,6 +87,45 @@ ShallowWrapper {
               "food": "Pizza",
               "lat": 40.8216144,
               "lng": -73.9479427,
+              "updateMarker": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <WithStyles(CssBaseline) />,
+            <BusinessCard />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "address": undefined,
+              "storeLat": undefined,
+              "storeLng": undefined,
+              "storeName": undefined,
             },
             "ref": null,
             "rendered": null,
@@ -107,7 +152,12 @@ ShallowWrapper {
               food="Pizza"
               lat={40.8216144}
               lng={-73.9479427}
+              updateMarker={[Function]}
             />
+          </WithStyles(Card)>,
+          <WithStyles(Card)>
+            <WithStyles(CssBaseline) />
+            <BusinessCard />
           </WithStyles(Card)>,
         ],
       },
@@ -134,6 +184,7 @@ ShallowWrapper {
                 food="Pizza"
                 lat={40.8216144}
                 lng={-73.9479427}
+                updateMarker={[Function]}
               />,
             ],
           },
@@ -157,6 +208,45 @@ ShallowWrapper {
                 "food": "Pizza",
                 "lat": 40.8216144,
                 "lng": -73.9479427,
+                "updateMarker": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <WithStyles(CssBaseline) />,
+              <BusinessCard />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "address": undefined,
+                "storeLat": undefined,
+                "storeLng": undefined,
+                "storeName": undefined,
               },
               "ref": null,
               "rendered": null,
@@ -208,7 +298,14 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <WithStyles(CssBaseline) />,
-        null,
+        <WithStyles(Card)>
+          <WithStyles(CssBaseline) />
+          <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component)))))))) />
+        </WithStyles(Card)>,
+        <WithStyles(Card)>
+          <WithStyles(CssBaseline) />
+          <BusinessCard />
+        </WithStyles(Card)>,
       ],
     },
     "ref": null,
@@ -222,7 +319,81 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      null,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <WithStyles(CssBaseline) />,
+            <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component)))))))) />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "address": undefined,
+              "lat": undefined,
+              "lng": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <WithStyles(CssBaseline) />,
+            <BusinessCard />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "address": undefined,
+              "storeLat": undefined,
+              "storeLng": undefined,
+              "storeName": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -234,7 +405,14 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <WithStyles(CssBaseline) />,
-          null,
+          <WithStyles(Card)>
+            <WithStyles(CssBaseline) />
+            <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component)))))))) />
+          </WithStyles(Card)>,
+          <WithStyles(Card)>
+            <WithStyles(CssBaseline) />
+            <BusinessCard />
+          </WithStyles(Card)>,
         ],
       },
       "ref": null,
@@ -248,7 +426,81 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <WithStyles(CssBaseline) />,
+              <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component)))))))) />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "address": undefined,
+                "lat": undefined,
+                "lng": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <WithStyles(CssBaseline) />,
+              <BusinessCard />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "address": undefined,
+                "storeLat": undefined,
+                "storeLng": undefined,
+                "storeName": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
       ],
       "type": "div",
     },
