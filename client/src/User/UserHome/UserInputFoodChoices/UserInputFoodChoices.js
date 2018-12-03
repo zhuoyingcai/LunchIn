@@ -360,10 +360,6 @@ class UserInputFoodChoices extends Component {
                 </span>
               ) : null}
               {this.renderMaps()}
-              <BusinessCardList
-                address={this.state.address}
-                randomFoodName={this.state.sanitizedRandomFood}
-              />
             </Typography>
           </div>
         </CardContent>
