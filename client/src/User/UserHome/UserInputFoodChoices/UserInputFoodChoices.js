@@ -20,7 +20,6 @@ import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
 import Geocode from 'react-geocode';
-import BusinessCard from "../../../BusinessCard/BusinessCard";
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
 
@@ -279,7 +278,6 @@ class UserInputFoodChoices extends Component {
             }}
             variant="contained"
             id="foodSubmit"
-            variant="contained"
             color="primary"
             className="input-button"
             onClick={this.handleSubmit}

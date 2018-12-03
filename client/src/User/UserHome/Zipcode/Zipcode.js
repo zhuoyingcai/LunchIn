@@ -16,7 +16,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Back from "@material-ui/icons/ArrowBack";
 import GoogleM from "../../../Map/googleMaps.js";
 import Geocode from 'react-geocode';
-import BusinessCard from "../../../BusinessCard/BusinessCard";
 
 class Zipcode extends Component {
   constructor(props) {

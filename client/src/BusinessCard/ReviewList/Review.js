@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Card from '@material-ui/core/Card';
-// import CardActionArea from '@material-ui/core/CardActionArea';
 import Grid from '@material-ui/core/Grid';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import "./Review.css";
@@ -18,7 +16,7 @@ class Review extends Component {
                 <img
                   className="review-card-media"
                   src={r.user.image_url}
-                  title={r.user.image_url}
+                  alt="Failed to load review URL."
                 />
               </Grid>
               <Grid item xs={8} sm={8} md={8} lg={8} xl={8}
