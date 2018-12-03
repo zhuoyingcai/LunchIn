@@ -8,6 +8,8 @@ ShallowWrapper {
     food="Pizza"
     lat={40.8216144}
     lng={-73.9479427}
+    storeL="1596 Amsterdam Ave, New York"
+    storeN="Uncle Tony's Pizza"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
