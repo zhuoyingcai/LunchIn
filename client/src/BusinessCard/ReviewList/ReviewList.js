@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 // import Card from '@material-ui/core/Card';
 // import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardContent from '@material-ui/core/CardContent';
+import CardContent from '@material-ui/core/CardContent';
 // import CardMedia from '@material-ui/core/CardMedia';
 // import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Review from './Review';
 import "./ReviewList.css";
@@ -34,20 +36,22 @@ class ReviewList extends Component {
   }
   renderReview(review) {
     return (
-      <Review review={review} key={review.id} />
+      <ListItem className="review-item">
+        <Review review={review} key={review.id} />
+      </ListItem>
     );
   }
   render() {
     return (
-      <div className="review-card-list">
-      { this.state.reviewList
-        ? this.state.reviewList.map(this.renderReview)
-        : ( this.state.loading
-            ? (<CircularProgress />)
-            : (null)
-        )
-      }
-      </div>
+      <List component="nav" className="review-list">
+        { this.state.reviewList
+          ? this.state.reviewList.map(this.renderReview)
+          : ( this.state.loading
+              ? (<CircularProgress />)
+              : (null)
+          )
+        }
+      </List>
     );
   }
 }

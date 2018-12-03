@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from '@material-ui/core/Card';
 // import CardActionArea from '@material-ui/core/CardActionArea';
+import Grid from '@material-ui/core/Grid';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -9,19 +10,29 @@ import "./Review.css";
 class Review extends Component {
   render() {
     if(this.props.review){
+      const r = this.props.review;
       return (
         <Card className="review-card">
-            <CardMedia
-              className="review-card-media"
-              image={this.props.review.user.image_url}
-              title={this.props.review.user.image_url}
-            />
-            <Typography component="p">
-              {this.props.review.user.name} <br />
-              {this.props.review.time_created} <br />
-              {this.props.review.rating} <br />
-              {this.props.review.text} <br />
-            </Typography>
+            <Grid container>
+              <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
+                <img
+                  className="review-card-media"
+                  src={r.user.image_url}
+                  title={r.user.image_url}
+                />
+              </Grid>
+              <Grid item xs={8} sm={8} md={8} lg={8} xl={8}
+                className="review-content"
+                >
+                <Typography variant="h6" component="h6">
+                  {r.user.name}
+                </Typography>
+                <Typography component="p">
+                  {r.time_created.split(' ')[0]} Rating: {r.rating} <br />
+                  {r.text}
+                </Typography>
+              </Grid>
+            </Grid>
         </Card>
       );
     }

@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Grid from '@material-ui/core/Grid';
 // import ExpandMore from "@material-ui/icons/ExpandMore";
 import ReviewList from './ReviewList/ReviewList';
 import "./BusinessCard.css";
@@ -52,26 +53,32 @@ class BusinessCard extends Component {
   render() {
     let b = this.state.mainBusiness;
     return (
-      <Card className="business-card">
+      <div>
         {this.state.mainBusiness
           ? (
             <Card className="business-card">
-              <CardMedia
-                className="business-card-media"
-                image={b.image_url}
-                title={b.image_url}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {b.name}
-                </Typography>
-                <Typography component="p">
-                  Price: {b.price} <br />
-                  Rating: {b.rating} <br />
-                  Review Counts: {b.review_count}
-                </Typography>
-              </CardContent>
-              <ReviewList selectedBusinessId={ b.id } />
+              <Grid container>
+                <Grid item xs={6} sm={6} md={3} lg={3} xl={3}
+                  className="grid-item">
+                  <img src={b.image_url} className="business-card-media"/>
+                </Grid>
+                <Grid item xs={6} sm={6} md={3} lg={3} xl={3}
+                  className="grid-item"
+                  className="business-info-content">
+                  <Typography variant="h5" component="h2">
+                    {b.name}
+                  </Typography>
+                  <Typography component="p">
+                    Rating: {b.rating} <br />
+                    {b.review_count} reviews <br />
+                    Price: {b.price}
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6} lg={6} xl={6}
+                  className="grid-item">
+                  <ReviewList selectedBusinessId={ b.id } />
+                </Grid>
+              </Grid>
             </Card>
             )
             : ( this.state.loading
@@ -79,7 +86,7 @@ class BusinessCard extends Component {
                 : (null)
             )
           }
-      </Card>
+      </div>
     );
   }
 }
