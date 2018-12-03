@@ -33,7 +33,7 @@ class ReviewList extends Component {
       console.log(e);
     });
   }
-
+  
   componentWillUnmount() {
     this._isMounted = false;
   }

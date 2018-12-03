@@ -24,7 +24,17 @@ class BusinessCard extends Component {
       this.fetchBusinessesFromYelp();
     }
   }
-
+  componentDidUpdate(prevProps){
+    if( this.props.storeName !== prevProps.storeName ||
+        this.props.address !== prevProps.address ||
+        this.props.storeLat !== prevProps.storeLat ||
+        this.props.storeLng !== prevProps.storeLng
+    ){
+      if(this.props.storeName){
+        this.fetchBusinessesFromYelp();
+      }
+    }
+  }
   componentWillUnmount() {
     this._isMounted = false;
   }
@@ -32,9 +42,10 @@ class BusinessCard extends Component {
   retrieveData(){
     const data = {
       term: this.props.storeName,
-      latitude:this.props.storeLat,
-      longitude:this.props.storeLng,
+      latitude: this.props.storeLat,
+      longitude: this.props.storeLng,
       location: this.props.address,
+      radius: 20
     };
     return data;
   }
