@@ -61,7 +61,7 @@ class UserHome extends Component {
 
   render() {
     return (
-      <div style={{ margin: "5%" }}>
+      <div style={{ marginTop: "5%", marginBottom: "5%", marginLeft: "10%", marginRight: "10%" }}>
         <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">
