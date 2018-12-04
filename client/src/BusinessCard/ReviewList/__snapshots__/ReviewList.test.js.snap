@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewList Component When provided with no info Should render correctly 1`] = `
+<WithStyles(List)
+  className="review-list"
+  component="nav"
+>
+  <WithStyles(CircularProgress) />
+</WithStyles(List)>
+`;
+
+exports[`ReviewList Component When provided with selectedBusinessId Should render correctly 1`] = `
+<WithStyles(List)
+  className="review-list"
+  component="nav"
+>
+  <WithStyles(CircularProgress) />
+</WithStyles(List)>
+`;

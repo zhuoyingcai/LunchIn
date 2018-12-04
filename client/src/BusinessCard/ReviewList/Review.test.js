@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
 import Review from "./Review";
+import toJson, { shallowToJson, mountToJson, renderToJson } from 'enzyme-to-json';
 
 describe("Review Component", () => {
   describe("When provided with no info", () => {
@@ -9,7 +10,7 @@ describe("Review Component", () => {
       const reviewInstance = shallow(
         <Review />
       );
-      expect(reviewInstance).toMatchSnapshot();
+      expect(shallowToJson(reviewInstance)).toMatchSnapshot();
     });
   });
   describe("When provided with review info", () => {
@@ -31,7 +32,7 @@ describe("Review Component", () => {
       const reviewInstance = shallow(
         <Review review={review} />
       );
-      expect(reviewInstance).toMatchSnapshot();
+      expect(shallowToJson(reviewInstance)).toMatchSnapshot();
     });
   });
 });

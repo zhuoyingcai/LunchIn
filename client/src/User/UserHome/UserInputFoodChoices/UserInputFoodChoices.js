@@ -20,8 +20,7 @@ import {
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
-import Geocode from "react-geocode";
-import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
+import Geocode from 'react-geocode';
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
 import Grid from '@material-ui/core/Grid';
@@ -285,8 +284,8 @@ class UserInputFoodChoices extends Component {
               marginTop: 10,
               marginBottom: 5
             }}
-            id="foodSubmit"
             variant="contained"
+            id="foodSubmit"
             color="primary"
             className="input-button"
             onClick={this.handleSubmit}
@@ -299,7 +298,7 @@ class UserInputFoodChoices extends Component {
           <Grid item xs={3}>
           {this.state.foodNames.length >= 0 ? (
             <Paper className="food-list">
-              <List style={{height: 450, 
+              <List style={{height: '70vh', 
                             overflow: "auto", 
                             position: 'relative', 
                             backgroundColor: "white", 
@@ -368,11 +367,7 @@ class UserInputFoodChoices extends Component {
                   <Chip label={this.state.randomFoodName} />
                 </span>
               ) : null}
-              {/* {this.renderMaps()} */}
-              <BusinessCardList
-                address={this.state.address}
-                randomFoodName={this.state.sanitizedRandomFood}
-              />
+
             </Typography>
           </div>
         </CardContent>
