@@ -295,7 +295,7 @@ class UserProfile extends Component {
 
   render() {
     return (
-      <div style={{ padding: "50px 200px" }}>
+      <div style={{ marginTop: "5%", marginBottom: "5%", marginLeft: "10%", marginRight: "10%" }}>
         <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">
@@ -323,6 +323,7 @@ class UserProfile extends Component {
           autoHideDuration={3000}
           message={this.state.notifyMsg}
         />
+        <div style={{ marginLeft: "15%", marginRight: "15%" }}>
         <AppBar
           className="bar"
           data-aos="zoom-in-up"
@@ -526,6 +527,7 @@ class UserProfile extends Component {
             </Card>
           </TabContainer>
         </SwipeableViews>
+      </div>
       </div>
     );
   }
