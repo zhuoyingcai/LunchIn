@@ -8,7 +8,8 @@ import BusinessCard from "../BusinessCard/BusinessCard";
 
 // const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 const _ = require("lodash");
-
+let num = 1;
+let foodType;
 const MapComponent = compose(
     withProps({
         googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
@@ -75,7 +76,13 @@ const MapComponent = compose(
                       type: 'restaurant',
                     };
                 service.nearbySearch(request, (results, status) => {
-                    if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+                    if(foodType !== props.food || foodType === "restaurant" || foodType === "restaurant " ){
+                      foodType = props.food;
+                      num = 1;
+                      console.log("The food changed!");
+                    }
+                    if (status === window.google.maps.places.PlacesServiceStatus.OK && num === 1 ) {
+                        num++;
                         updatePlaces(results);
                     }
                 })
@@ -101,7 +108,7 @@ const MapComponent = compose(
 
             {props.places && props.places.map((place, i) =>
                 <Marker
-                  onClick={(event) => {props.onToggleOpen(i);}}
+                  onClick={(event) => {props.onToggleOpen(i)}}
                   key={i}
                   position={{ lat: place.geometry.location.lat(),
                               lng: place.geometry.location.lng() }} >
@@ -115,9 +122,9 @@ const MapComponent = compose(
                         {props.updateMarker(props.places[props.selectedPlace].vicinity, props.places[props.selectedPlace].geometry.location.lat(props.places[props.selectedPlace].vicinity), props.places[props.selectedPlace].geometry.location.lng(props.places[props.selectedPlace].vicinity),props.places[props.selectedPlace].name)}
                       </div>
                   </InfoWindow>
-
                }
                 </Marker>
+
             )}
           </GoogleMap>
           </div>
