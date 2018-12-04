@@ -7,15 +7,9 @@ import {
   TextField,
   Snackbar,
   Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
   Typography,
   Chip,
   IconButton,
-  Divider
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
@@ -84,6 +78,38 @@ class UserInputFoodChoices extends Component {
               if (snapshot.val() != null) {
                 this.setState({
                   address: snapshot.val()
+                });
+              }
+            },
+            error => {
+              console.log("Error: " + error.code);
+            }
+          );
+          firebase
+          .database()
+          .ref(`Users/${user.uid}/lat`)
+          .once(
+            "value",
+            snapshot => {
+              if (snapshot.val() != null) {
+                this.setState({
+                  lat: snapshot.val()
+                });
+              }
+            },
+            error => {
+              console.log("Error: " + error.code);
+            }
+          );
+          firebase
+          .database()
+          .ref(`Users/${user.uid}/lng`)
+          .once(
+            "value",
+            snapshot => {
+              if (snapshot.val() != null) {
+                this.setState({
+                  lng: snapshot.val()
                 });
               }
             },
@@ -238,6 +264,15 @@ class UserInputFoodChoices extends Component {
         />
       );
     }
+    else if (this.state.lat !== 0 && this.state.lng !== 0) {
+      return (
+        <GoogleM
+          address={this.state.addressName}
+          lat={this.state.lat}
+          lng={this.state.lng}
+        />
+      );
+    }
   }
   sanitizeInput(string) {
     const map = {
@@ -331,30 +366,23 @@ class UserInputFoodChoices extends Component {
                           <Restaurant /> 
                         </IconButton>
                         </ListItemSecondaryAction>
-
                     </ListItem>
               ))}
               </List>
             </Paper>
           ) : null}
-          </Grid>
-          <Grid item xs={9}>
-            <Paper>{this.renderMaps()}</Paper>
-          </Grid>
-        </Grid>
-    </div>
-
-         {this.state.foodNames.length > 0 ? (
+          {this.state.foodNames.length >= 0 ? (
             <Button
               style={{
                 marginTop: 10,
-                marginBottom: 5
+                marginBottom: 5,
               }}
               variant="contained"
               color="secondary"
-              className="input-button"
+              className="input-button-2"
               value=""
               onClick={e => this.handleRandomFood(e, true)}
+              disabled={this.state.foodNames.length === 0}
             >
               Generate Random Food
             </Button>
@@ -370,6 +398,13 @@ class UserInputFoodChoices extends Component {
 
             </Typography>
           </div>
+          </Grid>
+          <Grid item xs={9}>
+            <Paper>{this.renderMaps()}</Paper>
+          </Grid>
+        </Grid>
+    </div>
+
         </CardContent>
       </Card>
     );
