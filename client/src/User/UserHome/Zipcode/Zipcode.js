@@ -16,7 +16,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Back from "@material-ui/icons/ArrowBack";
 import GoogleM from "../../../Map/googleMaps.js";
 import Geocode from "react-geocode";
-import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
 
 class Zipcode extends Component {
   constructor(props) {
@@ -212,10 +211,6 @@ class Zipcode extends Component {
                       <Chip label={this.state.searchZip} />
                     </span>
                     {this.renderMaps()}
-                    <BusinessCardList
-                      address={this.state.searchZip}
-                      randomFoodName={this.state.searchTerm}
-                    />
                   </div>
                 ) : null}
               </Typography>

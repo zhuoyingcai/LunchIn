@@ -19,8 +19,7 @@ import {
 import "./UserInputFoodChoices.css";
 import { firebase } from "../../../Config";
 import GoogleM from "../../../Map/googleMaps.js";
-import Geocode from "react-geocode";
-import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
+import Geocode from 'react-geocode';
 import Delete from "@material-ui/icons/DeleteForever";
 import Restaurant from "@material-ui/icons/Restaurant";
 
@@ -277,8 +276,8 @@ class UserInputFoodChoices extends Component {
               marginTop: 10,
               marginBottom: 5
             }}
-            id="foodSubmit"
             variant="contained"
+            id="foodSubmit"
             color="primary"
             className="input-button"
             onClick={this.handleSubmit}
@@ -360,10 +359,6 @@ class UserInputFoodChoices extends Component {
                 </span>
               ) : null}
               {this.renderMaps()}
-              <BusinessCardList
-                address={this.state.address}
-                randomFoodName={this.state.sanitizedRandomFood}
-              />
             </Typography>
           </div>
         </CardContent>
