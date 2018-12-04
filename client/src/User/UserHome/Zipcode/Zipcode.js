@@ -142,7 +142,7 @@ class Zipcode extends Component {
   }
   render() {
     return (
-      <div style={{ padding: "50px 200px" }}>
+      <div style={{ marginTop: "5%", marginBottom: "5%", marginLeft: "10%", marginRight: "10%" }}>
         <Snackbar
           onClose={() => {
             this.setState({ notify: false, notifyMsg: "" });
