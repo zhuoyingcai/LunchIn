@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
 import BusinessCard from "./BusinessCard";
+import toJson, { shallowToJson, mountToJson, renderToJson } from 'enzyme-to-json';
 
 describe("BusinessCard Component", () => {
   describe("When provided with no info", () => {
@@ -9,7 +10,7 @@ describe("BusinessCard Component", () => {
       const businessInstance = shallow(
         <BusinessCard />
       );
-      expect(businessInstance).toMatchSnapshot();
+      expect(shallowToJson(businessInstance)).toMatchSnapshot();
     });
   });
   describe("When provided with randomFoodName and address", () => {
@@ -19,7 +20,7 @@ describe("BusinessCard Component", () => {
       const businessInstance = shallow(
         <BusinessCard randomFoodName={randomFoodName} address={address} />
       );
-      expect(businessInstance).toMatchSnapshot();
+      expect(shallowToJson(businessInstance)).toMatchSnapshot();
     });
   });
 });

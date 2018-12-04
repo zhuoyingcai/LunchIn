@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
 import ReviewList from "./ReviewList";
+import toJson, { shallowToJson, mountToJson, renderToJson } from 'enzyme-to-json';
 
 describe("ReviewList Component", () => {
   describe("When provided with no info", () => {
@@ -9,7 +10,7 @@ describe("ReviewList Component", () => {
       const businessListInstance = shallow(
         <ReviewList />
       );
-      expect(businessListInstance).toMatchSnapshot();
+      expect(shallowToJson(businessListInstance)).toMatchSnapshot();
     });
   });
   describe("When provided with selectedBusinessId", () => {
@@ -18,7 +19,7 @@ describe("ReviewList Component", () => {
       const businessListInstance = shallow(
         <ReviewList selectedBusinessId={selectedBusinessId} />
       );
-      expect(businessListInstance).toMatchSnapshot();
+      expect(shallowToJson(businessListInstance)).toMatchSnapshot();
     });
   });
 });
