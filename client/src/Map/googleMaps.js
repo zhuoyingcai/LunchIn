@@ -79,7 +79,6 @@ const MapComponent = compose(
                     if(foodType !== props.food || foodType === "restaurant" || foodType === "restaurant " ){
                       foodType = props.food;
                       num = 1;
-                      console.log("The food changed!");
                     }
                     if (status === window.google.maps.places.PlacesServiceStatus.OK && num === 1 ) {
                         num++;
@@ -151,6 +150,12 @@ export default class GoogleMapComponent extends React.PureComponent {
             addressName: props.address,
             lat: props.lat,
             lng: props.lng,
+            storeLocation: props.storeL,
+            storeName: props.storeN,
+            storeLatitude: props.storeLat,
+            storeLongitude: props.storeLng,
+            processing: false,
+
         };
         this.renderMaps = this.renderMaps.bind(this);
         this.renderYelp = this.renderYelp.bind(this);
@@ -210,7 +215,10 @@ export default class GoogleMapComponent extends React.PureComponent {
                 ? (this.renderMaps(this.props.food))
                 : (this.renderMapsNoFood())
               }
-              {this.renderYelp(this.props.food)}
+              {!!this.state.storeName
+                ? (this.renderYelp())
+                : null
+              }
           </div>
         )
     }
