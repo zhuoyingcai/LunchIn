@@ -340,7 +340,7 @@ class UserInputFoodChoices extends Component {
                             padding:0}}>
                 <ListSubheader style={{backgroundColor: "inherit"}}>Food Name</ListSubheader>
                 {this.state.foodNames.map(food => (
-                    <ListItem key={food} style={{height:50}}>
+                    <ListItem key={food} style={{height:50, width: "70%", overflowWrap: "break-word"}}>
                       <ListItemText> {food} </ListItemText>
 
                       <ListItemSecondaryAction style={{paddingRight: 10}}>
