@@ -18,7 +18,7 @@ exports[`Review Component When provided with review info Should render correctly
       xs={4}
     >
       <img
-        alt="Failed to load review URL."
+        alt="Failed to load URL."
         className="review-card-media"
         src="https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg"
       />

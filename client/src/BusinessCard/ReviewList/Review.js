@@ -13,11 +13,22 @@ class Review extends Component {
         <Card className="review-card">
             <Grid container>
               <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
-                <img
-                  className="review-card-media"
-                  src={r.user.image_url}
-                  alt="Failed to load review URL."
-                />
+                {r.user.image_url
+                  ? (
+                    <img
+                      className="review-card-media"
+                      src={r.user.image_url}
+                      alt="Failed to load URL."
+                    />
+                  )
+                  : (
+                    <img
+                      className="review-card-media"
+                      src="http://zebconference.com/wp-content/uploads/2018/07/Blank-Person-Image.png"
+                      alt="Blank" 
+                    />
+                  )
+                }
               </Grid>
               <Grid item xs={8} sm={8} md={8} lg={8} xl={8}
                 className="review-content"
