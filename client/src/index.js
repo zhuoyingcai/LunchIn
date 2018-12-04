@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import * as serviceWorker from "./serviceWorker";
 import "typeface-roboto";
 import AOS from "aos";
@@ -18,6 +19,7 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
+    <CssBaseline />
     <App />
   </MuiThemeProvider>,
   document.getElementById("root")

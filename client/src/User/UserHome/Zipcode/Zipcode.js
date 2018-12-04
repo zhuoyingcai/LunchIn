@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import "./Zipcode.css";
 import "firebase/auth";
-import { 
-  Button, 
-  Typography, 
-  Divider, 
-  Snackbar, 
-  Card, 
-  CardHeader, 
-  CardContent, 
+import {
+  Button,
+  Typography,
+  Divider,
+  Snackbar,
+  Card,
+  CardHeader,
+  CardContent,
   Chip,
-  TextField 
+  TextField
 } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Back from "@material-ui/icons/ArrowBack";
 import GoogleM from "../../../Map/googleMaps.js";
-import Geocode from 'react-geocode';
+import Geocode from "react-geocode";
 import BusinessCardList from "../../../BusinessCardList/BusinessCardList";
 
 class Zipcode extends Component {
@@ -38,15 +38,15 @@ class Zipcode extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
   componentDidUpdate(prevProps, prevState) {
-    if(prevState.searchZip !== this.state.searchZip){
+    if (prevState.searchZip !== this.state.searchZip) {
       if (this.state.searchTerm === "restaurant") {
         this.setState({
           searchTerm: "restaurant "
-        })
+        });
       } else {
         this.setState({
           searchTerm: "restaurant"
-        })
+        });
       }
     }
   }
@@ -63,22 +63,20 @@ class Zipcode extends Component {
       ziplng: 0,
       displayZipMap: false,
       searchZip: ""
-    })
+    });
     let zipcode = this.state.zipCode;
     // Prevent negative numbers
     if (zipcode[0] === "-") {
       this.setState({
         notify: true,
         notifyMsg: "Input cannot be negative"
-      })
+      });
     }
 
     // General input checks
     else {
-
       // Make sure length of input is 5
       if (zipcode.length === 5) {
-
         // Check if the input is a number
         if (!isNaN(zipcode)) {
           // console.log(zipcode);
@@ -97,14 +95,18 @@ class Zipcode extends Component {
             },
             error => {
               // Zip code does not exist
-              if (error.message === "Server returned status code ZERO_RESULTS") {
+              if (
+                error.message === "Server returned status code ZERO_RESULTS"
+              ) {
                 this.setState({
                   processing: false,
                   notify: true,
                   notifyMsg: "Invalid zipcode. Please enter a valid zipcode"
                 });
               }
-              if (error.message === "Server returned status code OVER_QUERY_LIMIT") {
+              if (
+                error.message === "Server returned status code OVER_QUERY_LIMIT"
+              ) {
                 this.setState({
                   processing: false,
                   notify: true,
@@ -117,13 +119,13 @@ class Zipcode extends Component {
           this.setState({
             notify: true,
             notifyMsg: "Zip Code must be a number"
-          })
+          });
         }
       } else {
         this.setState({
           notify: true,
           notifyMsg: "Zip Code must be 5 digits"
-        })
+        });
       }
     }
   }
@@ -143,7 +145,7 @@ class Zipcode extends Component {
   }
   render() {
     return (
-      <div style={{ padding: "50px 200px" }}>
+      <div style={{ padding: "3.5% 13.5%" }}>
         <Snackbar
           onClose={() => {
             this.setState({ notify: false, notifyMsg: "" });
@@ -162,7 +164,7 @@ class Zipcode extends Component {
                 this.props.history.push(`/user/home`);
               }}
             >
-            <Back />
+              <Back />
               Back
             </Button>
           </Typography>
@@ -183,7 +185,7 @@ class Zipcode extends Component {
               placeholder="Enter 5 Digit Zip Code"
               name="zipCode"
               required
-            />            
+            />
             <div>
               <Button
                 style={{
@@ -203,10 +205,11 @@ class Zipcode extends Component {
             </div>
             <div className="zip-section">
               <Typography variant="subtitle1">
-                {this.state.displayZipMap ?
+                {this.state.displayZipMap ? (
                   <div>
                     <span>
-                      Showing all restaurants in: <Chip label={this.state.searchZip} />
+                      Showing all restaurants in:{" "}
+                      <Chip label={this.state.searchZip} />
                     </span>
                     {this.renderMaps()}
                     <BusinessCardList
@@ -214,9 +217,9 @@ class Zipcode extends Component {
                       randomFoodName={this.state.searchTerm}
                     />
                   </div>
-                  : null} 
+                ) : null}
               </Typography>
-            </div>   
+            </div>
           </CardContent>
         </Card>
       </div>

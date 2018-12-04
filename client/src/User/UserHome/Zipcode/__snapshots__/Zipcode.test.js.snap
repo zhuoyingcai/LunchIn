@@ -108,7 +108,7 @@ ShallowWrapper {
         </WithStyles(Card)>,
       ],
       "style": Object {
-        "padding": "50px 200px",
+        "padding": "3.5% 13.5%",
       },
     },
     "ref": null,
@@ -567,7 +567,7 @@ ShallowWrapper {
           </WithStyles(Card)>,
         ],
         "style": Object {
-          "padding": "50px 200px",
+          "padding": "3.5% 13.5%",
         },
       },
       "ref": null,
@@ -1060,7 +1060,7 @@ ShallowWrapper {
         </WithStyles(Card)>,
       ],
       "style": Object {
-        "padding": "50px 200px",
+        "padding": "3.5% 13.5%",
       },
     },
     "ref": null,
@@ -1519,7 +1519,7 @@ ShallowWrapper {
           </WithStyles(Card)>,
         ],
         "style": Object {
-          "padding": "50px 200px",
+          "padding": "3.5% 13.5%",
         },
       },
       "ref": null,
@@ -2012,7 +2012,7 @@ ShallowWrapper {
         </WithStyles(Card)>,
       ],
       "style": Object {
-        "padding": "50px 200px",
+        "padding": "3.5% 13.5%",
       },
     },
     "ref": null,
@@ -2471,7 +2471,7 @@ ShallowWrapper {
           </WithStyles(Card)>,
         ],
         "style": Object {
-          "padding": "50px 200px",
+          "padding": "3.5% 13.5%",
         },
       },
       "ref": null,
