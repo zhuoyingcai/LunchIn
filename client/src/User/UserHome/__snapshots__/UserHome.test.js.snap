@@ -79,7 +79,7 @@ ShallowWrapper {
         />,
       ],
       "style": Object {
-        "padding": "3.5% 18.5%",
+        "padding": "3.5% 10.5%",
       },
     },
     "ref": null,
@@ -402,7 +402,7 @@ ShallowWrapper {
           />,
         ],
         "style": Object {
-          "padding": "3.5% 18.5%",
+          "padding": "3.5% 10.5%",
         },
       },
       "ref": null,
