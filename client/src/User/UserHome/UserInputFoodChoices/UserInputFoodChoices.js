@@ -20,6 +20,8 @@ import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import Chip from '@material-ui/core/Chip';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 class UserInputFoodChoices extends Component {
@@ -355,10 +357,15 @@ class UserInputFoodChoices extends Component {
               {this.state.foodNames ? (
                 <Paper className="food-list-paper">
                   <div className="food-choices">
-                    <Typography variant="h5" className="food-choices-title">
-                      Food Names
-                    </Typography>
-                    <List className="food-choices-list">
+                    <List className="food-choices-list" 
+                      style={{height: '70vh', 
+                              backgroundColor: "white",   
+                              overflow: 'auto',
+                              position: 'relative',
+                              padding: 0}}>
+                    <ListSubheader style={{backgroundColor: "inherit"}}>
+                      <Typography variant="h6">Food Name</Typography>
+                    </ListSubheader>
                       {this.state.foodNames.map(food => (
                         <ListItem key={food} style={{width: "75%"}}>
                           <ListItemText >
@@ -397,6 +404,8 @@ class UserInputFoodChoices extends Component {
                     style={{
                       marginTop: 10,
                       marginBottom: 5,
+                      marginLeft: '5%',
+                      marginRight: '5%'
                     }}
                     variant="contained"
                     color="secondary"
@@ -411,10 +420,12 @@ class UserInputFoodChoices extends Component {
             ) : null}
             { this.state.randomFoodName && this.state.foodNames.length > 0
               ? (
-                <Typography variant="h5">
+                <Typography variant="h6">
                   <Paper className="random-food-section">
-                      <span>Food Selected: </span>
-                      <span>{this.state.randomFoodName}</span>
+                  <span>
+                    The food selected is:{" "}
+                    <Chip style={{fontSize: 18}} label={this.state.randomFoodName} />
+                  </span>
                   </Paper>
                 </Typography>
               ) : (null)

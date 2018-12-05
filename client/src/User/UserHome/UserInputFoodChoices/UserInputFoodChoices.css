@@ -4,22 +4,15 @@
   border-radius: 25px !important;
   width: 100%;
 }
+
 .food-choices-title{
   padding: 1%;
-}
-.food-choices-list{
-  overflow: auto;
-  position: relative;
-  backgroundColor: white;
-  padding: 0;
 }
 
 .input-button {
   width: 30%;
 }
-.input-button-2 {
-  width: 95%;
-}
+
 .table-btn {
   right: 8%;
 }
