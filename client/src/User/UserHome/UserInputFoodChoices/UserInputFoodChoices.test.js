@@ -45,7 +45,8 @@ describe('UserInputFoodChoices Component', () => {
         const wrapper = shallow(<UserInputFoodChoices />);
         const instance = wrapper.instance();
         instance.setState({
-            inputFoodName: 'halal'
+            inputFoodName: 'halal',
+            addressName: '160 Convent Avenue'
         });
         await firebase
             .database()
@@ -66,7 +67,8 @@ describe('UserInputFoodChoices Component', () => {
         const wrapper = shallow(<UserInputFoodChoices />);
         const instance = wrapper.instance();
         instance.setState({
-            randomFoodName: 'halal'
+            randomFoodName: 'halal',
+            addressName: '160 Convent Avenue'
         });
         await firebase
             .database()
@@ -86,7 +88,8 @@ describe('UserInputFoodChoices Component', () => {
         const wrapper = shallow(<UserInputFoodChoices />);
         const instance = wrapper.instance();
         instance.setState({
-            sanitizedRandomFood: 'halal'
+            sanitizedRandomFood: 'halal',
+            addressName: '160 Convent Avenue'
         });
         await firebase
             .database()
