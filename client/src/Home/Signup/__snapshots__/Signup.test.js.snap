@@ -45,91 +45,93 @@ exports[`Signup Component When provided with empty address info Should render co
         title="Essentials"
       />
       <WithStyles(CardContent)>
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="name"
-          label="Full Name"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          value=""
-          variant="standard"
-        />
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-Mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="address"
-          label="Full Address"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
-                >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
-                  >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
-            }
-          }
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="push-down"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          variant="contained"
-        >
-          <pure(CheckCircleIcon)
-            style={
+        <form>
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="name"
+            label="Full Name"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            value=""
+            variant="standard"
+          />
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-Mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="address"
+            label="Full Address"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
               Object {
-                "marginRight": "10px",
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
+                >
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
+                  >
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
               }
             }
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
           />
-          Sign Up
-        </WithStyles(Button)>
+          <WithStyles(Button)
+            className="push-down"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            variant="contained"
+          >
+            <pure(CheckCircleIcon)
+              style={
+                Object {
+                  "marginRight": "10px",
+                }
+              }
+            />
+            Sign Up
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Button)
           className="push-down"
           color="default"
@@ -189,91 +191,93 @@ exports[`Signup Component When provided with invalid address info Should render 
         title="Essentials"
       />
       <WithStyles(CardContent)>
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="name"
-          label="Full Name"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          value=""
-          variant="standard"
-        />
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-Mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="address"
-          label="Full Address"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
-                >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
-                  >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
-            }
-          }
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="push-down"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          variant="contained"
-        >
-          <pure(CheckCircleIcon)
-            style={
+        <form>
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="name"
+            label="Full Name"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            value=""
+            variant="standard"
+          />
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-Mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="address"
+            label="Full Address"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
               Object {
-                "marginRight": "10px",
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
+                >
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
+                  >
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
               }
             }
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
           />
-          Sign Up
-        </WithStyles(Button)>
+          <WithStyles(Button)
+            className="push-down"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            variant="contained"
+          >
+            <pure(CheckCircleIcon)
+              style={
+                Object {
+                  "marginRight": "10px",
+                }
+              }
+            />
+            Sign Up
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Button)
           className="push-down"
           color="default"
@@ -333,91 +337,93 @@ exports[`Signup Component When provided with missing user info Should render cor
         title="Essentials"
       />
       <WithStyles(CardContent)>
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="name"
-          label="Full Name"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          value=""
-          variant="standard"
-        />
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-Mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="address"
-          label="Full Address"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
-                >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
-                  >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
-            }
-          }
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="push-down"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          variant="contained"
-        >
-          <pure(CheckCircleIcon)
-            style={
+        <form>
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="name"
+            label="Full Name"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            value=""
+            variant="standard"
+          />
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-Mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="address"
+            label="Full Address"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
               Object {
-                "marginRight": "10px",
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
+                >
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
+                  >
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
               }
             }
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
           />
-          Sign Up
-        </WithStyles(Button)>
+          <WithStyles(Button)
+            className="push-down"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            variant="contained"
+          >
+            <pure(CheckCircleIcon)
+              style={
+                Object {
+                  "marginRight": "10px",
+                }
+              }
+            />
+            Sign Up
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Button)
           className="push-down"
           color="default"
@@ -477,91 +483,93 @@ exports[`Signup Component When provided with user info Should render correctly 1
         title="Essentials"
       />
       <WithStyles(CardContent)>
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="name"
-          label="Full Name"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          value=""
-          variant="standard"
-        />
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-Mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="address"
-          label="Full Address"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
-                >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
-                  >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
-            }
-          }
-          className="push-down"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="push-down"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          variant="contained"
-        >
-          <pure(CheckCircleIcon)
-            style={
+        <form>
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="name"
+            label="Full Name"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            value=""
+            variant="standard"
+          />
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-Mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="address"
+            label="Full Address"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
               Object {
-                "marginRight": "10px",
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
+                >
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
+                  >
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
               }
             }
+            className="push-down"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
           />
-          Sign Up
-        </WithStyles(Button)>
+          <WithStyles(Button)
+            className="push-down"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            variant="contained"
+          >
+            <pure(CheckCircleIcon)
+              style={
+                Object {
+                  "marginRight": "10px",
+                }
+              }
+            />
+            Sign Up
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Button)
           className="push-down"
           color="default"

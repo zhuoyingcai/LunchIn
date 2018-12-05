@@ -309,7 +309,7 @@ ShallowWrapper {
         </ReactSwipableView>,
       ],
       "style": Object {
-        "padding": "50px 200px",
+        "padding": "3.5% 18.5%",
       },
     },
     "ref": null,
@@ -2004,7 +2004,7 @@ ShallowWrapper {
           </ReactSwipableView>,
         ],
         "style": Object {
-          "padding": "50px 200px",
+          "padding": "3.5% 18.5%",
         },
       },
       "ref": null,
@@ -3733,7 +3733,7 @@ ShallowWrapper {
         </ReactSwipableView>,
       ],
       "style": Object {
-        "padding": "50px 200px",
+        "padding": "3.5% 18.5%",
       },
     },
     "ref": null,
@@ -5428,7 +5428,7 @@ ShallowWrapper {
           </ReactSwipableView>,
         ],
         "style": Object {
-          "padding": "50px 200px",
+          "padding": "3.5% 18.5%",
         },
       },
       "ref": null,
@@ -7157,7 +7157,7 @@ ShallowWrapper {
         </ReactSwipableView>,
       ],
       "style": Object {
-        "padding": "50px 200px",
+        "padding": "3.5% 18.5%",
       },
     },
     "ref": null,
@@ -8852,7 +8852,7 @@ ShallowWrapper {
           </ReactSwipableView>,
         ],
         "style": Object {
-          "padding": "50px 200px",
+          "padding": "3.5% 18.5%",
         },
       },
       "ref": null,
@@ -10579,7 +10579,7 @@ ShallowWrapper {
         </ReactSwipableView>,
       ],
       "style": Object {
-        "padding": "50px 200px",
+        "padding": "3.5% 18.5%",
       },
     },
     "ref": null,
@@ -12274,7 +12274,7 @@ ShallowWrapper {
           </ReactSwipableView>,
         ],
         "style": Object {
-          "padding": "50px 200px",
+          "padding": "3.5% 18.5%",
         },
       },
       "ref": null,
