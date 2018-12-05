@@ -8,8 +8,6 @@ import BusinessCard from "../BusinessCard/BusinessCard";
 
 // const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
 const _ = require("lodash");
-let num = 1;
-let foodType;
 const MapComponent = compose(
     withProps({
         googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
@@ -24,6 +22,8 @@ const MapComponent = compose(
     withState('center', '', ''),
     withState('selectedPlace', 'updateSelectedPlace', null),
     withHandlers((props) => {
+            let num = 1;
+            let foodType;
 
             const refs = {
                 map: undefined,
@@ -76,7 +76,7 @@ const MapComponent = compose(
                       type: 'restaurant',
                     };
                 service.nearbySearch(request, (results, status) => {
-                    if(foodType !== props.food || foodType === "restaurant" || foodType === "restaurant " ){
+                    if(foodType !== props.food){
                       foodType = props.food;
                       num = 1;
                     }
