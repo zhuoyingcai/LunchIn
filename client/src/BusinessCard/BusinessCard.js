@@ -55,6 +55,7 @@ class BusinessCard extends Component {
     let data = this.retrieveData();
     let urlParams = Object.entries(data).map(e => e.join('=')).join('&');
     this.setState({ loading: true });
+    this.setState({ mainBusiness: null });
     fetch(url + urlParams)
       .then(response => response.json())
       .then(data => {
@@ -62,9 +63,6 @@ class BusinessCard extends Component {
           this.setState({ businessesMemo: data.jsonBody.businesses });
           if(this.state.businessesMemo.length > 0){
             this.setState({ mainBusiness: this.state.businessesMemo[0]});
-          }
-          else{
-            this.setState({ mainBusiness: null });
           }
           this.setState({ loading: false });
         }
@@ -109,7 +107,15 @@ class BusinessCard extends Component {
             )
             : ( this.state.loading === true
                 ? (<CircularProgress />)
-                : (null)
+                : ( this.props.storeName
+                    ? ( <Card style={{ padding: "1%"}}>
+                          <Typography variant="h5" component="h2">
+                            Sorry! We do not have a review for {this.props.storeName}!
+                          </Typography>
+                        </Card>
+                      )
+                    : (null)
+                )
             )
           }
       </div>
