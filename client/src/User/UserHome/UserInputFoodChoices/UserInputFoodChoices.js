@@ -363,10 +363,10 @@ class UserInputFoodChoices extends Component {
                             padding:0}}>
                 <ListSubheader style={{backgroundColor: "inherit"}}>Food Name</ListSubheader>
                 {this.state.foodNames.map(food => (
-                    <ListItem key={food} style={{width: "75%", overflowWrap: "break-word"}}>
-                      <ListItemText> {food} </ListItemText>
+                    <ListItem key={food} style={{width: "75%"}}>
+                      <ListItemText > {food} </ListItemText>
 
-                      <ListItemSecondaryAction style={{paddingRight: 10}}>
+                      <ListItemSecondaryAction style={{paddingRight: 10, width: '50%'}}>
                         <IconButton
                           id="delete"
                           aria-label="Delete"
@@ -394,7 +394,7 @@ class UserInputFoodChoices extends Component {
               </List>
             </Paper>
           ) : null}
-          {this.state.foodNames.length >= 0 ? (
+          {this.state.foodNames.length > 0 ? (
             <Button
               style={{
                 marginTop: 10,
@@ -405,14 +405,13 @@ class UserInputFoodChoices extends Component {
               className="input-button-2"
               value=""
               onClick={e => this.handleRandomFood(e, true)}
-              disabled={this.state.foodNames.length === 0}
             >
               Generate Random Food
             </Button>
           ) : null}
           <div className="random-food-section">
             <Typography component="h2" variant="subtitle1">
-              {this.state.randomFoodName ? (
+              {this.state.randomFoodName && this.state.foodNames.length > 0 ? (
                 <span>
                   The food selected is:{" "}
                   <Chip label={this.state.randomFoodName} />

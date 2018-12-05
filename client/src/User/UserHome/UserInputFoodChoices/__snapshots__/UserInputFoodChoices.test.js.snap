@@ -87,22 +87,6 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
               </WithStyles(ListSubheader)>
             </WithStyles(List)>
           </WithStyles(Paper)>
-          <WithStyles(Button)
-            className="input-button-2"
-            color="secondary"
-            disabled={true}
-            onClick={[Function]}
-            style={
-              Object {
-                "marginBottom": 5,
-                "marginTop": 10,
-              }
-            }
-            value=""
-            variant="contained"
-          >
-            Generate Random Food
-          </WithStyles(Button)>
           <div
             className="random-food-section"
           >
@@ -213,22 +197,6 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
               </WithStyles(ListSubheader)>
             </WithStyles(List)>
           </WithStyles(Paper)>
-          <WithStyles(Button)
-            className="input-button-2"
-            color="secondary"
-            disabled={true}
-            onClick={[Function]}
-            style={
-              Object {
-                "marginBottom": 5,
-                "marginTop": 10,
-              }
-            }
-            value=""
-            variant="contained"
-          >
-            Generate Random Food
-          </WithStyles(Button)>
           <div
             className="random-food-section"
           >
@@ -337,22 +305,6 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
               </WithStyles(ListSubheader)>
             </WithStyles(List)>
           </WithStyles(Paper)>
-          <WithStyles(Button)
-            className="input-button-2"
-            color="secondary"
-            disabled={true}
-            onClick={[Function]}
-            style={
-              Object {
-                "marginBottom": 5,
-                "marginTop": 10,
-              }
-            }
-            value=""
-            variant="contained"
-          >
-            Generate Random Food
-          </WithStyles(Button)>
           <div
             className="random-food-section"
           >
@@ -461,22 +413,6 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
               </WithStyles(ListSubheader)>
             </WithStyles(List)>
           </WithStyles(Paper)>
-          <WithStyles(Button)
-            className="input-button-2"
-            color="secondary"
-            disabled={true}
-            onClick={[Function]}
-            style={
-              Object {
-                "marginBottom": 5,
-                "marginTop": 10,
-              }
-            }
-            value=""
-            variant="contained"
-          >
-            Generate Random Food
-          </WithStyles(Button)>
           <div
             className="random-food-section"
           >
