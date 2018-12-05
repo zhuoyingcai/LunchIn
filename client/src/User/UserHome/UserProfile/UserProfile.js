@@ -295,10 +295,10 @@ class UserProfile extends Component {
 
   render() {
     return (
-      <div style={{ padding: "3.5% 18.5%" }}>
+      <div style={{ padding: "3.5% 10.5%" }}>
         <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
-        <div className="user-header">
+        <div className="user-header" style={{ paddingLeft: "15%", paddingRight: "15%"}}>
           <Typography component="h2" variant="h3" style={{ flex: 1 }}>
             {this.state.name}
             's Profile
@@ -313,7 +313,7 @@ class UserProfile extends Component {
             </Button>
           </Typography>
         </div>
-        <Divider />
+        <Divider style={{ marginLeft: "15%", marginRight: "15%" }} />
 
         <Snackbar
           onClose={() => {

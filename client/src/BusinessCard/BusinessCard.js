@@ -88,7 +88,7 @@ class BusinessCard extends Component {
                   <Grid item xs={6} sm={6} md={3} lg={3} xl={3}
                     className="grid-item business-info-content"
                     >
-                    <Typography variant="h5" component="h2">
+                    <Typography variant="h6" component="h2">
                       {b.name}
                     </Typography>
                     <Typography component="p">

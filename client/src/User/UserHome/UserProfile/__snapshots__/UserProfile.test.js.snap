@@ -4,13 +4,19 @@ exports[`UserProfile Component When provided with address info Should render cor
 <div
   style={
     Object {
-      "padding": "3.5% 18.5%",
+      "padding": "3.5% 10.5%",
     }
   }
 >
   <WithStyles(CssBaseline) />
   <div
     className="user-header"
+    style={
+      Object {
+        "paddingLeft": "15%",
+        "paddingRight": "15%",
+      }
+    }
   >
     <WithStyles(Typography)
       component="h2"
@@ -35,7 +41,14 @@ exports[`UserProfile Component When provided with address info Should render cor
       </WithStyles(Button)>
     </WithStyles(Typography)>
   </div>
-  <WithStyles(Divider) />
+  <WithStyles(Divider)
+    style={
+      Object {
+        "marginLeft": "15%",
+        "marginRight": "15%",
+      }
+    }
+  />
   <WithStyles(Snackbar)
     autoHideDuration={3000}
     message=""
@@ -308,13 +321,19 @@ exports[`UserProfile Component When provided with correct current password and n
 <div
   style={
     Object {
-      "padding": "3.5% 18.5%",
+      "padding": "3.5% 10.5%",
     }
   }
 >
   <WithStyles(CssBaseline) />
   <div
     className="user-header"
+    style={
+      Object {
+        "paddingLeft": "15%",
+        "paddingRight": "15%",
+      }
+    }
   >
     <WithStyles(Typography)
       component="h2"
@@ -339,7 +358,14 @@ exports[`UserProfile Component When provided with correct current password and n
       </WithStyles(Button)>
     </WithStyles(Typography)>
   </div>
-  <WithStyles(Divider) />
+  <WithStyles(Divider)
+    style={
+      Object {
+        "marginLeft": "15%",
+        "marginRight": "15%",
+      }
+    }
+  />
   <WithStyles(Snackbar)
     autoHideDuration={3000}
     message=""
@@ -612,13 +638,19 @@ exports[`UserProfile Component When provided with correct email and new email Sh
 <div
   style={
     Object {
-      "padding": "3.5% 18.5%",
+      "padding": "3.5% 10.5%",
     }
   }
 >
   <WithStyles(CssBaseline) />
   <div
     className="user-header"
+    style={
+      Object {
+        "paddingLeft": "15%",
+        "paddingRight": "15%",
+      }
+    }
   >
     <WithStyles(Typography)
       component="h2"
@@ -643,7 +675,14 @@ exports[`UserProfile Component When provided with correct email and new email Sh
       </WithStyles(Button)>
     </WithStyles(Typography)>
   </div>
-  <WithStyles(Divider) />
+  <WithStyles(Divider)
+    style={
+      Object {
+        "marginLeft": "15%",
+        "marginRight": "15%",
+      }
+    }
+  />
   <WithStyles(Snackbar)
     autoHideDuration={3000}
     message=""
@@ -916,13 +955,19 @@ exports[`UserProfile Component When provided with empty address info Should rend
 <div
   style={
     Object {
-      "padding": "3.5% 18.5%",
+      "padding": "3.5% 10.5%",
     }
   }
 >
   <WithStyles(CssBaseline) />
   <div
     className="user-header"
+    style={
+      Object {
+        "paddingLeft": "15%",
+        "paddingRight": "15%",
+      }
+    }
   >
     <WithStyles(Typography)
       component="h2"
@@ -947,7 +992,14 @@ exports[`UserProfile Component When provided with empty address info Should rend
       </WithStyles(Button)>
     </WithStyles(Typography)>
   </div>
-  <WithStyles(Divider) />
+  <WithStyles(Divider)
+    style={
+      Object {
+        "marginLeft": "15%",
+        "marginRight": "15%",
+      }
+    }
+  />
   <WithStyles(Snackbar)
     autoHideDuration={3000}
     message=""
@@ -1220,13 +1272,19 @@ exports[`UserProfile Component When provided with incorrect email and new email 
 <div
   style={
     Object {
-      "padding": "3.5% 18.5%",
+      "padding": "3.5% 10.5%",
     }
   }
 >
   <WithStyles(CssBaseline) />
   <div
     className="user-header"
+    style={
+      Object {
+        "paddingLeft": "15%",
+        "paddingRight": "15%",
+      }
+    }
   >
     <WithStyles(Typography)
       component="h2"
@@ -1251,7 +1309,14 @@ exports[`UserProfile Component When provided with incorrect email and new email 
       </WithStyles(Button)>
     </WithStyles(Typography)>
   </div>
-  <WithStyles(Divider) />
+  <WithStyles(Divider)
+    style={
+      Object {
+        "marginLeft": "15%",
+        "marginRight": "15%",
+      }
+    }
+  />
   <WithStyles(Snackbar)
     autoHideDuration={3000}
     message=""
@@ -1524,13 +1589,19 @@ exports[`UserProfile Component When provided with invalid address info Should re
 <div
   style={
     Object {
-      "padding": "3.5% 18.5%",
+      "padding": "3.5% 10.5%",
     }
   }
 >
   <WithStyles(CssBaseline) />
   <div
     className="user-header"
+    style={
+      Object {
+        "paddingLeft": "15%",
+        "paddingRight": "15%",
+      }
+    }
   >
     <WithStyles(Typography)
       component="h2"
@@ -1555,7 +1626,14 @@ exports[`UserProfile Component When provided with invalid address info Should re
       </WithStyles(Button)>
     </WithStyles(Typography)>
   </div>
-  <WithStyles(Divider) />
+  <WithStyles(Divider)
+    style={
+      Object {
+        "marginLeft": "15%",
+        "marginRight": "15%",
+      }
+    }
+  />
   <WithStyles(Snackbar)
     autoHideDuration={3000}
     message=""
@@ -1828,13 +1906,19 @@ exports[`UserProfile Component When provided with no props Should render correct
 <div
   style={
     Object {
-      "padding": "3.5% 18.5%",
+      "padding": "3.5% 10.5%",
     }
   }
 >
   <WithStyles(CssBaseline) />
   <div
     className="user-header"
+    style={
+      Object {
+        "paddingLeft": "15%",
+        "paddingRight": "15%",
+      }
+    }
   >
     <WithStyles(Typography)
       component="h2"
@@ -1859,7 +1943,14 @@ exports[`UserProfile Component When provided with no props Should render correct
       </WithStyles(Button)>
     </WithStyles(Typography)>
   </div>
-  <WithStyles(Divider) />
+  <WithStyles(Divider)
+    style={
+      Object {
+        "marginLeft": "15%",
+        "marginRight": "15%",
+      }
+    }
+  />
   <WithStyles(Snackbar)
     autoHideDuration={3000}
     message=""
@@ -2132,13 +2223,19 @@ exports[`UserProfile Component When provided with wrong current password and no 
 <div
   style={
     Object {
-      "padding": "3.5% 18.5%",
+      "padding": "3.5% 10.5%",
     }
   }
 >
   <WithStyles(CssBaseline) />
   <div
     className="user-header"
+    style={
+      Object {
+        "paddingLeft": "15%",
+        "paddingRight": "15%",
+      }
+    }
   >
     <WithStyles(Typography)
       component="h2"
@@ -2163,7 +2260,14 @@ exports[`UserProfile Component When provided with wrong current password and no 
       </WithStyles(Button)>
     </WithStyles(Typography)>
   </div>
-  <WithStyles(Divider) />
+  <WithStyles(Divider)
+    style={
+      Object {
+        "marginLeft": "15%",
+        "marginRight": "15%",
+      }
+    }
+  />
   <WithStyles(Snackbar)
     autoHideDuration={3000}
     message=""

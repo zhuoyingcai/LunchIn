@@ -70,15 +70,33 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
               <div
                 className="food-choices"
               >
-                <WithStyles(Typography)
-                  className="food-choices-title"
-                  variant="h5"
-                >
-                  Food Names
-                </WithStyles(Typography)>
                 <WithStyles(List)
                   className="food-choices-list"
-                />
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "height": "70vh",
+                      "overflow": "auto",
+                      "padding": 0,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <WithStyles(ListSubheader)
+                    style={
+                      Object {
+                        "backgroundColor": "relative",
+                      }
+                    }
+                  >
+                    <WithStyles(Typography)
+                      className="food-choices-title"
+                      variant="h6"
+                    >
+                      Food Names
+                    </WithStyles(Typography)>
+                  </WithStyles(ListSubheader)>
+                </WithStyles(List)>
               </div>
             </WithStyles(Paper)>
           </WithStyles(Grid)>
@@ -171,15 +189,33 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
               <div
                 className="food-choices"
               >
-                <WithStyles(Typography)
-                  className="food-choices-title"
-                  variant="h5"
-                >
-                  Food Names
-                </WithStyles(Typography)>
                 <WithStyles(List)
                   className="food-choices-list"
-                />
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "height": "70vh",
+                      "overflow": "auto",
+                      "padding": 0,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <WithStyles(ListSubheader)
+                    style={
+                      Object {
+                        "backgroundColor": "relative",
+                      }
+                    }
+                  >
+                    <WithStyles(Typography)
+                      className="food-choices-title"
+                      variant="h6"
+                    >
+                      Food Names
+                    </WithStyles(Typography)>
+                  </WithStyles(ListSubheader)>
+                </WithStyles(List)>
               </div>
             </WithStyles(Paper)>
           </WithStyles(Grid)>
@@ -270,15 +306,33 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
               <div
                 className="food-choices"
               >
-                <WithStyles(Typography)
-                  className="food-choices-title"
-                  variant="h5"
-                >
-                  Food Names
-                </WithStyles(Typography)>
                 <WithStyles(List)
                   className="food-choices-list"
-                />
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "height": "70vh",
+                      "overflow": "auto",
+                      "padding": 0,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <WithStyles(ListSubheader)
+                    style={
+                      Object {
+                        "backgroundColor": "relative",
+                      }
+                    }
+                  >
+                    <WithStyles(Typography)
+                      className="food-choices-title"
+                      variant="h6"
+                    >
+                      Food Names
+                    </WithStyles(Typography)>
+                  </WithStyles(ListSubheader)>
+                </WithStyles(List)>
               </div>
             </WithStyles(Paper)>
           </WithStyles(Grid)>
@@ -369,15 +423,33 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
               <div
                 className="food-choices"
               >
-                <WithStyles(Typography)
-                  className="food-choices-title"
-                  variant="h5"
-                >
-                  Food Names
-                </WithStyles(Typography)>
                 <WithStyles(List)
                   className="food-choices-list"
-                />
+                  style={
+                    Object {
+                      "backgroundColor": "white",
+                      "height": "70vh",
+                      "overflow": "auto",
+                      "padding": 0,
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <WithStyles(ListSubheader)
+                    style={
+                      Object {
+                        "backgroundColor": "relative",
+                      }
+                    }
+                  >
+                    <WithStyles(Typography)
+                      className="food-choices-title"
+                      variant="h6"
+                    >
+                      Food Names
+                    </WithStyles(Typography)>
+                  </WithStyles(ListSubheader)>
+                </WithStyles(List)>
               </div>
             </WithStyles(Paper)>
           </WithStyles(Grid)>
