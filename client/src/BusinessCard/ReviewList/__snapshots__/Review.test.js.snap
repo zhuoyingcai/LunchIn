@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Review Component When provided with no info Should render correctly 1`] = `<WithStyles(CircularProgress) />`;
+
+exports[`Review Component When provided with review info Should render correctly 1`] = `
+<WithStyles(Card)
+  className="review-card"
+>
+  <WithStyles(Grid)
+    container={true}
+  >
+    <WithStyles(Grid)
+      item={true}
+      lg={4}
+      md={4}
+      sm={4}
+      xl={4}
+      xs={4}
+    >
+      <img
+        alt="Failed to load URL."
+        className="review-card-media"
+        src="https://s3-media3.fl.yelpcdn.com/photo/iwoAD12zkONZxJ94ChAaMg/o.jpg"
+      />
+    </WithStyles(Grid)>
+    <WithStyles(Grid)
+      className="review-content"
+      item={true}
+      lg={8}
+      md={8}
+      sm={8}
+      xl={8}
+      xs={8}
+    >
+      <WithStyles(Typography)
+        component="h6"
+        variant="h6"
+      >
+        Ella A.
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        component="p"
+      >
+        2016-08-29
+         Rating: 
+        5
+         
+        <br />
+        Went back again to this place since the last time i visited the bay area 5 months ago, and nothing has changed. Still the sketchy Mission, Still the cashier...
+      </WithStyles(Typography)>
+    </WithStyles(Grid)>
+  </WithStyles(Grid)>
+</WithStyles(Card)>
+`;

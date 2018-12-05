@@ -57,12 +57,7 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
       <WithStyles(Typography)
         component="h2"
         variant="subtitle1"
-      >
-        <BusinessCardList
-          address=""
-          randomFoodName=""
-        />
-      </WithStyles(Typography)>
+      />
     </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
@@ -127,12 +122,7 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
       <WithStyles(Typography)
         component="h2"
         variant="subtitle1"
-      >
-        <BusinessCardList
-          address=""
-          randomFoodName=""
-        />
-      </WithStyles(Typography)>
+      />
     </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
@@ -195,12 +185,7 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
       <WithStyles(Typography)
         component="h2"
         variant="subtitle1"
-      >
-        <BusinessCardList
-          address=""
-          randomFoodName=""
-        />
-      </WithStyles(Typography)>
+      />
     </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>
@@ -263,12 +248,7 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
       <WithStyles(Typography)
         component="h2"
         variant="subtitle1"
-      >
-        <BusinessCardList
-          address=""
-          randomFoodName=""
-        />
-      </WithStyles(Typography)>
+      />
     </div>
   </WithStyles(CardContent)>
 </WithStyles(Card)>

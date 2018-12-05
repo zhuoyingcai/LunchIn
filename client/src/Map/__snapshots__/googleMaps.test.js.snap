@@ -1,5 +1,191 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Maps Component When provided only lat and lng and address Should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GoogleMapComponent
+    address="160 Convent Ave, New York, NY 10031"
+    lat={40.8216144}
+    lng={-73.9479427}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <WithStyles(CssBaseline) />,
+        <WithStyles(Card)>
+          <WithStyles(CssBaseline) />
+          <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component))))))))
+            address="160 Convent Ave, New York, NY 10031"
+            lat={40.8216144}
+            lng={-73.9479427}
+          />
+        </WithStyles(Card)>,
+        null,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <WithStyles(CssBaseline) />,
+            <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component))))))))
+              address="160 Convent Ave, New York, NY 10031"
+              lat={40.8216144}
+              lng={-73.9479427}
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "address": "160 Convent Ave, New York, NY 10031",
+              "lat": 40.8216144,
+              "lng": -73.9479427,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      null,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <WithStyles(CssBaseline) />,
+          <WithStyles(Card)>
+            <WithStyles(CssBaseline) />
+            <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component))))))))
+              address="160 Convent Ave, New York, NY 10031"
+              lat={40.8216144}
+              lng={-73.9479427}
+            />
+          </WithStyles(Card)>,
+          null,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <WithStyles(CssBaseline) />,
+              <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component))))))))
+                address="160 Convent Ave, New York, NY 10031"
+                lat={40.8216144}
+                lng={-73.9479427}
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "address": "160 Convent Ave, New York, NY 10031",
+                "lat": 40.8216144,
+                "lng": -73.9479427,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        null,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
 exports[`Maps Component When provided with food and address info Should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
@@ -8,6 +194,8 @@ ShallowWrapper {
     food="Pizza"
     lat={40.8216144}
     lng={-73.9479427}
+    storeL="1596 Amsterdam Ave, New York"
+    storeN="Uncle Tony's Pizza"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -31,6 +219,14 @@ ShallowWrapper {
             food="Pizza"
             lat={40.8216144}
             lng={-73.9479427}
+            updateMarker={[Function]}
+          />
+        </WithStyles(Card)>,
+        <WithStyles(Card)>
+          <WithStyles(CssBaseline) />
+          <BusinessCard
+            address="1596 Amsterdam Ave, New York"
+            storeName="Uncle Tony's Pizza"
           />
         </WithStyles(Card)>,
       ],
@@ -58,6 +254,7 @@ ShallowWrapper {
               food="Pizza"
               lat={40.8216144}
               lng={-73.9479427}
+              updateMarker={[Function]}
             />,
           ],
         },
@@ -81,6 +278,48 @@ ShallowWrapper {
               "food": "Pizza",
               "lat": 40.8216144,
               "lng": -73.9479427,
+              "updateMarker": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <WithStyles(CssBaseline) />,
+            <BusinessCard
+              address="1596 Amsterdam Ave, New York"
+              storeName="Uncle Tony's Pizza"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "Uncle Tony's Pizza",
+            "nodeType": "class",
+            "props": Object {
+              "address": "1596 Amsterdam Ave, New York",
+              "storeLat": undefined,
+              "storeLng": undefined,
+              "storeName": "Uncle Tony's Pizza",
             },
             "ref": null,
             "rendered": null,
@@ -107,6 +346,14 @@ ShallowWrapper {
               food="Pizza"
               lat={40.8216144}
               lng={-73.9479427}
+              updateMarker={[Function]}
+            />
+          </WithStyles(Card)>,
+          <WithStyles(Card)>
+            <WithStyles(CssBaseline) />
+            <BusinessCard
+              address="1596 Amsterdam Ave, New York"
+              storeName="Uncle Tony's Pizza"
             />
           </WithStyles(Card)>,
         ],
@@ -134,6 +381,7 @@ ShallowWrapper {
                 food="Pizza"
                 lat={40.8216144}
                 lng={-73.9479427}
+                updateMarker={[Function]}
               />,
             ],
           },
@@ -157,6 +405,48 @@ ShallowWrapper {
                 "food": "Pizza",
                 "lat": 40.8216144,
                 "lng": -73.9479427,
+                "updateMarker": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <WithStyles(CssBaseline) />,
+              <BusinessCard
+                address="1596 Amsterdam Ave, New York"
+                storeName="Uncle Tony's Pizza"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "Uncle Tony's Pizza",
+              "nodeType": "class",
+              "props": Object {
+                "address": "1596 Amsterdam Ave, New York",
+                "storeLat": undefined,
+                "storeLng": undefined,
+                "storeName": "Uncle Tony's Pizza",
               },
               "ref": null,
               "rendered": null,
@@ -208,6 +498,10 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <WithStyles(CssBaseline) />,
+        <WithStyles(Card)>
+          <WithStyles(CssBaseline) />
+          <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component)))))))) />
+        </WithStyles(Card)>,
         null,
       ],
     },
@@ -222,6 +516,43 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <WithStyles(CssBaseline) />,
+            <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component)))))))) />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "address": undefined,
+              "lat": undefined,
+              "lng": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
       null,
     ],
     "type": "div",
@@ -234,6 +565,10 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <WithStyles(CssBaseline) />,
+          <WithStyles(Card)>
+            <WithStyles(CssBaseline) />
+            <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component)))))))) />
+          </WithStyles(Card)>,
           null,
         ],
       },
@@ -246,6 +581,43 @@ ShallowWrapper {
           "props": Object {},
           "ref": null,
           "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <WithStyles(CssBaseline) />,
+              <withProps(withScriptjs(withGoogleMap(withState(withState(withState(withState(withHandlers(Component)))))))) />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "address": undefined,
+                "lat": undefined,
+                "lng": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
         null,
