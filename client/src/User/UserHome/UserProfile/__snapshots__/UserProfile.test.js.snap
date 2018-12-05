@@ -50,7 +50,14 @@ ShallowWrapper {
             </WithStyles(Button)>
           </WithStyles(Typography)>
         </div>,
-        <WithStyles(Divider) />,
+        <WithStyles(Divider)
+          style={
+            Object {
+              "marginLeft": "15%",
+              "marginRight": "15%",
+            }
+          }
+        />,
         <WithStyles(Snackbar)
           autoHideDuration={3000}
           message=""
@@ -431,7 +438,12 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "style": Object {
+            "marginLeft": "15%",
+            "marginRight": "15%",
+          },
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -2021,7 +2033,14 @@ ShallowWrapper {
               </WithStyles(Button)>
             </WithStyles(Typography)>
           </div>,
-          <WithStyles(Divider) />,
+          <WithStyles(Divider)
+            style={
+              Object {
+                "marginLeft": "15%",
+                "marginRight": "15%",
+              }
+            }
+          />,
           <WithStyles(Snackbar)
             autoHideDuration={3000}
             message=""
@@ -2402,7 +2421,12 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "style": Object {
+              "marginLeft": "15%",
+              "marginRight": "15%",
+            },
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -4026,7 +4050,14 @@ ShallowWrapper {
             </WithStyles(Button)>
           </WithStyles(Typography)>
         </div>,
-        <WithStyles(Divider) />,
+        <WithStyles(Divider)
+          style={
+            Object {
+              "marginLeft": "15%",
+              "marginRight": "15%",
+            }
+          }
+        />,
         <WithStyles(Snackbar)
           autoHideDuration={3000}
           message=""
@@ -4407,7 +4438,12 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "style": Object {
+            "marginLeft": "15%",
+            "marginRight": "15%",
+          },
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -5997,7 +6033,14 @@ ShallowWrapper {
               </WithStyles(Button)>
             </WithStyles(Typography)>
           </div>,
-          <WithStyles(Divider) />,
+          <WithStyles(Divider)
+            style={
+              Object {
+                "marginLeft": "15%",
+                "marginRight": "15%",
+              }
+            }
+          />,
           <WithStyles(Snackbar)
             autoHideDuration={3000}
             message=""
@@ -6378,7 +6421,12 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "style": Object {
+              "marginLeft": "15%",
+              "marginRight": "15%",
+            },
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -8002,7 +8050,14 @@ ShallowWrapper {
             </WithStyles(Button)>
           </WithStyles(Typography)>
         </div>,
-        <WithStyles(Divider) />,
+        <WithStyles(Divider)
+          style={
+            Object {
+              "marginLeft": "15%",
+              "marginRight": "15%",
+            }
+          }
+        />,
         <WithStyles(Snackbar)
           autoHideDuration={3000}
           message=""
@@ -8383,7 +8438,12 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "style": Object {
+            "marginLeft": "15%",
+            "marginRight": "15%",
+          },
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -9973,7 +10033,14 @@ ShallowWrapper {
               </WithStyles(Button)>
             </WithStyles(Typography)>
           </div>,
-          <WithStyles(Divider) />,
+          <WithStyles(Divider)
+            style={
+              Object {
+                "marginLeft": "15%",
+                "marginRight": "15%",
+              }
+            }
+          />,
           <WithStyles(Snackbar)
             autoHideDuration={3000}
             message=""
@@ -10354,7 +10421,12 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "style": Object {
+              "marginLeft": "15%",
+              "marginRight": "15%",
+            },
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -11976,7 +12048,14 @@ ShallowWrapper {
             </WithStyles(Button)>
           </WithStyles(Typography)>
         </div>,
-        <WithStyles(Divider) />,
+        <WithStyles(Divider)
+          style={
+            Object {
+              "marginLeft": "15%",
+              "marginRight": "15%",
+            }
+          }
+        />,
         <WithStyles(Snackbar)
           autoHideDuration={3000}
           message=""
@@ -12357,7 +12436,12 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "style": Object {
+            "marginLeft": "15%",
+            "marginRight": "15%",
+          },
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -13947,7 +14031,14 @@ ShallowWrapper {
               </WithStyles(Button)>
             </WithStyles(Typography)>
           </div>,
-          <WithStyles(Divider) />,
+          <WithStyles(Divider)
+            style={
+              Object {
+                "marginLeft": "15%",
+                "marginRight": "15%",
+              }
+            }
+          />,
           <WithStyles(Snackbar)
             autoHideDuration={3000}
             message=""
@@ -14328,7 +14419,12 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "style": Object {
+              "marginLeft": "15%",
+              "marginRight": "15%",
+            },
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

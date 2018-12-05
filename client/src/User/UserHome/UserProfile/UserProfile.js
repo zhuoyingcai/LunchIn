@@ -313,7 +313,7 @@ class UserProfile extends Component {
             </Button>
           </Typography>
         </div>
-        <Divider />
+        <Divider style={{ marginLeft: "15%", marginRight: "15%" }} />
 
         <Snackbar
           onClose={() => {
