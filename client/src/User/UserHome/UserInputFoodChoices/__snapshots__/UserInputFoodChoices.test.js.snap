@@ -54,51 +54,40 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
     <div>
       <WithStyles(Grid)
         container={true}
-        item={true}
-        spacing={0}
-        xs={12}
       >
         <WithStyles(Grid)
           item={true}
-          xs={3}
+          lg={3}
+          md={3}
+          sm={12}
+          xl={3}
+          xs={12}
         >
           <WithStyles(Paper)
-            className="food-list"
+            className="food-list-paper"
           >
-            <WithStyles(List)
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "height": "70vh",
-                  "overflow": "auto",
-                  "padding": 0,
-                  "position": "relative",
-                }
-              }
+            <div
+              className="food-choices"
             >
-              <WithStyles(ListSubheader)
-                style={
-                  Object {
-                    "backgroundColor": "inherit",
-                  }
-                }
+              <WithStyles(Typography)
+                className="food-choices-title"
+                variant="h5"
               >
-                Food Name
-              </WithStyles(ListSubheader)>
-            </WithStyles(List)>
+                Food Names
+              </WithStyles(Typography)>
+              <WithStyles(List)
+                className="food-choices-list"
+              />
+            </div>
           </WithStyles(Paper)>
-          <div
-            className="random-food-section"
-          >
-            <WithStyles(Typography)
-              component="h2"
-              variant="subtitle1"
-            />
-          </div>
         </WithStyles(Grid)>
         <WithStyles(Grid)
           item={true}
-          xs={9}
+          lg={9}
+          md={9}
+          sm={12}
+          xl={9}
+          xs={12}
         >
           <WithStyles(Paper) />
         </WithStyles(Grid)>
@@ -164,51 +153,40 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
     <div>
       <WithStyles(Grid)
         container={true}
-        item={true}
-        spacing={0}
-        xs={12}
       >
         <WithStyles(Grid)
           item={true}
-          xs={3}
+          lg={3}
+          md={3}
+          sm={12}
+          xl={3}
+          xs={12}
         >
           <WithStyles(Paper)
-            className="food-list"
+            className="food-list-paper"
           >
-            <WithStyles(List)
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "height": "70vh",
-                  "overflow": "auto",
-                  "padding": 0,
-                  "position": "relative",
-                }
-              }
+            <div
+              className="food-choices"
             >
-              <WithStyles(ListSubheader)
-                style={
-                  Object {
-                    "backgroundColor": "inherit",
-                  }
-                }
+              <WithStyles(Typography)
+                className="food-choices-title"
+                variant="h5"
               >
-                Food Name
-              </WithStyles(ListSubheader)>
-            </WithStyles(List)>
+                Food Names
+              </WithStyles(Typography)>
+              <WithStyles(List)
+                className="food-choices-list"
+              />
+            </div>
           </WithStyles(Paper)>
-          <div
-            className="random-food-section"
-          >
-            <WithStyles(Typography)
-              component="h2"
-              variant="subtitle1"
-            />
-          </div>
         </WithStyles(Grid)>
         <WithStyles(Grid)
           item={true}
-          xs={9}
+          lg={9}
+          md={9}
+          sm={12}
+          xl={9}
+          xs={12}
         >
           <WithStyles(Paper) />
         </WithStyles(Grid)>
@@ -272,51 +250,40 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
     <div>
       <WithStyles(Grid)
         container={true}
-        item={true}
-        spacing={0}
-        xs={12}
       >
         <WithStyles(Grid)
           item={true}
-          xs={3}
+          lg={3}
+          md={3}
+          sm={12}
+          xl={3}
+          xs={12}
         >
           <WithStyles(Paper)
-            className="food-list"
+            className="food-list-paper"
           >
-            <WithStyles(List)
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "height": "70vh",
-                  "overflow": "auto",
-                  "padding": 0,
-                  "position": "relative",
-                }
-              }
+            <div
+              className="food-choices"
             >
-              <WithStyles(ListSubheader)
-                style={
-                  Object {
-                    "backgroundColor": "inherit",
-                  }
-                }
+              <WithStyles(Typography)
+                className="food-choices-title"
+                variant="h5"
               >
-                Food Name
-              </WithStyles(ListSubheader)>
-            </WithStyles(List)>
+                Food Names
+              </WithStyles(Typography)>
+              <WithStyles(List)
+                className="food-choices-list"
+              />
+            </div>
           </WithStyles(Paper)>
-          <div
-            className="random-food-section"
-          >
-            <WithStyles(Typography)
-              component="h2"
-              variant="subtitle1"
-            />
-          </div>
         </WithStyles(Grid)>
         <WithStyles(Grid)
           item={true}
-          xs={9}
+          lg={9}
+          md={9}
+          sm={12}
+          xl={9}
+          xs={12}
         >
           <WithStyles(Paper) />
         </WithStyles(Grid)>
@@ -380,51 +347,40 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
     <div>
       <WithStyles(Grid)
         container={true}
-        item={true}
-        spacing={0}
-        xs={12}
       >
         <WithStyles(Grid)
           item={true}
-          xs={3}
+          lg={3}
+          md={3}
+          sm={12}
+          xl={3}
+          xs={12}
         >
           <WithStyles(Paper)
-            className="food-list"
+            className="food-list-paper"
           >
-            <WithStyles(List)
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "height": "70vh",
-                  "overflow": "auto",
-                  "padding": 0,
-                  "position": "relative",
-                }
-              }
+            <div
+              className="food-choices"
             >
-              <WithStyles(ListSubheader)
-                style={
-                  Object {
-                    "backgroundColor": "inherit",
-                  }
-                }
+              <WithStyles(Typography)
+                className="food-choices-title"
+                variant="h5"
               >
-                Food Name
-              </WithStyles(ListSubheader)>
-            </WithStyles(List)>
+                Food Names
+              </WithStyles(Typography)>
+              <WithStyles(List)
+                className="food-choices-list"
+              />
+            </div>
           </WithStyles(Paper)>
-          <div
-            className="random-food-section"
-          >
-            <WithStyles(Typography)
-              component="h2"
-              variant="subtitle1"
-            />
-          </div>
         </WithStyles(Grid)>
         <WithStyles(Grid)
           item={true}
-          xs={9}
+          lg={9}
+          md={9}
+          sm={12}
+          xl={9}
+          xs={12}
         >
           <WithStyles(Paper) />
         </WithStyles(Grid)>
