@@ -53,66 +53,68 @@ exports[`Home Component Should render correctly with correct path 1`] = `
       <WithStyles(CardContent)
         className="login-form-content"
       >
-        <TextField
-          className="email"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
+        <form>
+          <TextField
+            className="email"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
+              Object {
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
                 >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
                   >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
+              }
             }
-          }
-          className="password"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="login"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          style={
-            Object {
-              "marginBottom": 5,
-              "marginTop": 5,
+            className="password"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
+          />
+          <WithStyles(Button)
+            className="login"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 5,
+                "marginTop": 5,
+              }
             }
-          }
-          variant="contained"
-        >
-          Sign-In
-        </WithStyles(Button)>
+            variant="contained"
+          >
+            Sign-In
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Typography)
           className="signup-line"
           component="h2"
@@ -201,66 +203,68 @@ exports[`Home Component When provided with incorrect credential for login Should
       <WithStyles(CardContent)
         className="login-form-content"
       >
-        <TextField
-          className="email"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
+        <form>
+          <TextField
+            className="email"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
+              Object {
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
                 >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
                   >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
+              }
             }
-          }
-          className="password"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="login"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          style={
-            Object {
-              "marginBottom": 5,
-              "marginTop": 5,
+            className="password"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
+          />
+          <WithStyles(Button)
+            className="login"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 5,
+                "marginTop": 5,
+              }
             }
-          }
-          variant="contained"
-        >
-          Sign-In
-        </WithStyles(Button)>
+            variant="contained"
+          >
+            Sign-In
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Typography)
           className="signup-line"
           component="h2"
@@ -349,66 +353,68 @@ exports[`Home Component When provided with no email for login Should render corr
       <WithStyles(CardContent)
         className="login-form-content"
       >
-        <TextField
-          className="email"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
+        <form>
+          <TextField
+            className="email"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
+              Object {
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
                 >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
                   >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
+              }
             }
-          }
-          className="password"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="login"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          style={
-            Object {
-              "marginBottom": 5,
-              "marginTop": 5,
+            className="password"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
+          />
+          <WithStyles(Button)
+            className="login"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 5,
+                "marginTop": 5,
+              }
             }
-          }
-          variant="contained"
-        >
-          Sign-In
-        </WithStyles(Button)>
+            variant="contained"
+          >
+            Sign-In
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Typography)
           className="signup-line"
           component="h2"
@@ -497,66 +503,68 @@ exports[`Home Component When provided with no email or password for login Should
       <WithStyles(CardContent)
         className="login-form-content"
       >
-        <TextField
-          className="email"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
+        <form>
+          <TextField
+            className="email"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
+              Object {
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
                 >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
                   >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
+              }
             }
-          }
-          className="password"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="login"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          style={
-            Object {
-              "marginBottom": 5,
-              "marginTop": 5,
+            className="password"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
+          />
+          <WithStyles(Button)
+            className="login"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 5,
+                "marginTop": 5,
+              }
             }
-          }
-          variant="contained"
-        >
-          Sign-In
-        </WithStyles(Button)>
+            variant="contained"
+          >
+            Sign-In
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Typography)
           className="signup-line"
           component="h2"
@@ -645,66 +653,68 @@ exports[`Home Component When provided with no password for login Should render c
       <WithStyles(CardContent)
         className="login-form-content"
       >
-        <TextField
-          className="email"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
+        <form>
+          <TextField
+            className="email"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
+              Object {
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
                 >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
                   >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
+              }
             }
-          }
-          className="password"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="login"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          style={
-            Object {
-              "marginBottom": 5,
-              "marginTop": 5,
+            className="password"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
+          />
+          <WithStyles(Button)
+            className="login"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 5,
+                "marginTop": 5,
+              }
             }
-          }
-          variant="contained"
-        >
-          Sign-In
-        </WithStyles(Button)>
+            variant="contained"
+          >
+            Sign-In
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Typography)
           className="signup-line"
           component="h2"
@@ -793,66 +803,68 @@ exports[`Home Component When provided with user login info Should render correct
       <WithStyles(CardContent)
         className="login-form-content"
       >
-        <TextField
-          className="email"
-          disabled={false}
-          fullWidth={true}
-          id="email"
-          label="E-mail"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="email"
-          value=""
-          variant="standard"
-        />
-        <TextField
-          InputProps={
-            Object {
-              "endAdornment": <WithStyles(InputAdornment)
-                position="end"
-              >
-                <WithStyles(Tooltip)
-                  placement="top"
-                  title="Show Password"
+        <form>
+          <TextField
+            className="email"
+            disabled={false}
+            fullWidth={true}
+            id="email"
+            label="E-mail"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="email"
+            value=""
+            variant="standard"
+          />
+          <TextField
+            InputProps={
+              Object {
+                "endAdornment": <WithStyles(InputAdornment)
+                  position="end"
                 >
-                  <WithStyles(IconButton)
-                    onClick={[Function]}
+                  <WithStyles(Tooltip)
+                    placement="top"
+                    title="Show Password"
                   >
-                    <pure(VisibilityOffIcon) />
-                  </WithStyles(IconButton)>
-                </WithStyles(Tooltip)>
-              </WithStyles(InputAdornment)>,
+                    <WithStyles(IconButton)
+                      onClick={[Function]}
+                    >
+                      <pure(VisibilityOffIcon) />
+                    </WithStyles(IconButton)>
+                  </WithStyles(Tooltip)>
+                </WithStyles(InputAdornment)>,
+              }
             }
-          }
-          className="password"
-          disabled={false}
-          fullWidth={true}
-          id="password"
-          label="Password"
-          onChange={[Function]}
-          required={true}
-          select={false}
-          type="password"
-          value=""
-          variant="standard"
-        />
-        <WithStyles(Button)
-          className="login"
-          color="primary"
-          disabled={false}
-          fullWidth={true}
-          onClick={[Function]}
-          style={
-            Object {
-              "marginBottom": 5,
-              "marginTop": 5,
+            className="password"
+            disabled={false}
+            fullWidth={true}
+            id="password"
+            label="Password"
+            onChange={[Function]}
+            required={true}
+            select={false}
+            type="password"
+            value=""
+            variant="standard"
+          />
+          <WithStyles(Button)
+            className="login"
+            color="primary"
+            disabled={false}
+            fullWidth={true}
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 5,
+                "marginTop": 5,
+              }
             }
-          }
-          variant="contained"
-        >
-          Sign-In
-        </WithStyles(Button)>
+            variant="contained"
+          >
+            Sign-In
+          </WithStyles(Button)>
+        </form>
         <WithStyles(Typography)
           className="signup-line"
           component="h2"

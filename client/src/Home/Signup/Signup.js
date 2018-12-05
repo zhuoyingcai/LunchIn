@@ -178,86 +178,90 @@ export default class Signup extends Component {
               subheader="What we need to get started"
             />
             <CardContent>
-              <TextField
-                onChange={this.handleChange("name")}
-                id="name"
-                label="Full Name"
-                required
-                value={this.state.name}
-                fullWidth
-                className="push-down"
-                disabled={this.state.step1complete || this.state.processing}
-              />
-              <TextField
-                onChange={this.handleChange("email")}
-                label="E-Mail"
-                type="email"
-                id="email"
-                required
-                value={this.state.email}
-                fullWidth
-                className="push-down"
-                disabled={this.state.step1complete || this.state.processing}
-              />
-              <TextField
-                onChange={this.handleChange("address")}
-                id="address"
-                label="Full Address"
-                required
-                value={this.state.address}
-                fullWidth
-                className="push-down"
-                disabled={this.state.step1complete || this.state.processing}
-              />
-              <TextField
-                disabled={this.state.step1complete || this.state.processing}
-                id="password"
-                label="Password"
-                value={this.state.password}
-                onChange={this.handleChange("password")}
-                fullWidth
-                required
-                type={this.state.showPassword ? "text" : "password"}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <Tooltip title={this.state.message} placement="top">
-                        <IconButton
-                          onClick={() => {
-                            if (this.state.message === "Show Password") {
-                              this.setState({
-                                showPassword: !this.state.showPassword,
-                                message: "Hide Password"
-                              });
-                            } else if (this.state.message === "Hide Password") {
-                              this.setState({
-                                showPassword: !this.state.showPassword,
-                                message: "Show Password"
-                              });
-                            }
-                          }}
-                        >
-                          {this.state.showPassword ? <Visible /> : <Hidden />}
-                        </IconButton>
-                      </Tooltip>
-                    </InputAdornment>
-                  )
-                }}
-                className="push-down"
-              />
-              <Button
-                onClick={() => {
-                  this.createUser();
-                }}
-                fullWidth
-                variant="contained"
-                color="primary"
-                className="push-down"
-                disabled={this.state.step1complete || this.state.processing}
-              >
-                <Check style={{ marginRight: "10px" }} />
-                Sign Up
-              </Button>
+              <form>
+                <TextField
+                  onChange={this.handleChange("name")}
+                  id="name"
+                  label="Full Name"
+                  required
+                  value={this.state.name}
+                  fullWidth
+                  className="push-down"
+                  disabled={this.state.step1complete || this.state.processing}
+                />
+                <TextField
+                  onChange={this.handleChange("email")}
+                  label="E-Mail"
+                  type="email"
+                  id="email"
+                  required
+                  value={this.state.email}
+                  fullWidth
+                  className="push-down"
+                  disabled={this.state.step1complete || this.state.processing}
+                />
+                <TextField
+                  onChange={this.handleChange("address")}
+                  id="address"
+                  label="Full Address"
+                  required
+                  value={this.state.address}
+                  fullWidth
+                  className="push-down"
+                  disabled={this.state.step1complete || this.state.processing}
+                />
+                <TextField
+                  disabled={this.state.step1complete || this.state.processing}
+                  id="password"
+                  label="Password"
+                  value={this.state.password}
+                  onChange={this.handleChange("password")}
+                  fullWidth
+                  required
+                  type={this.state.showPassword ? "text" : "password"}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <Tooltip title={this.state.message} placement="top">
+                          <IconButton
+                            onClick={() => {
+                              if (this.state.message === "Show Password") {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Hide Password"
+                                });
+                              } else if (
+                                this.state.message === "Hide Password"
+                              ) {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Show Password"
+                                });
+                              }
+                            }}
+                          >
+                            {this.state.showPassword ? <Visible /> : <Hidden />}
+                          </IconButton>
+                        </Tooltip>
+                      </InputAdornment>
+                    )
+                  }}
+                  className="push-down"
+                />
+                <Button
+                  onClick={() => {
+                    this.createUser();
+                  }}
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className="push-down"
+                  disabled={this.state.step1complete || this.state.processing}
+                >
+                  <Check style={{ marginRight: "10px" }} />
+                  Sign Up
+                </Button>
+              </form>
               <Button
                 onClick={() => {
                   this.props.history.push(`/`);
