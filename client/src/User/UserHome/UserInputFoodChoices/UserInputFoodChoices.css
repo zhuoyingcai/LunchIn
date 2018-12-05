@@ -4,9 +4,21 @@
   border-radius: 25px !important;
   width: 100%;
 }
+.food-choices-title {
+  padding: 1%;
+}
+.food-choices-list {
+  overflow: auto;
+  position: relative;
+  background-color: white;
+  padding: 0;
+}
 
 .input-button {
   width: 30%;
+}
+.input-button-2 {
+  width: 95%;
 }
 .table-btn {
   right: 8%;
@@ -15,4 +27,26 @@
 .random-food-section {
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (min-width: 960px) {
+  .food-list-paper {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .food-choices {
+    overflow: auto;
+  }
+  .input-button-2 {
+    margin-bottom: auto;
+  }
+  .random-food-section {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3%;
+  }
 }
