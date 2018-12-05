@@ -1,5 +1,5 @@
 * {
-  user-select: none !important;
+  user-select: text !important;
 }
 .home-page {
   display: flex;
