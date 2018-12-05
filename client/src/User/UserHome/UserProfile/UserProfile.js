@@ -298,7 +298,7 @@ class UserProfile extends Component {
       <div style={{ padding: "3.5% 10.5%" }}>
         <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
-        <div className="user-header">
+        <div className="user-header" style={{ paddingLeft: "15%", paddingRight: "15%"}}>
           <Typography component="h2" variant="h3" style={{ flex: 1 }}>
             {this.state.name}
             's Profile

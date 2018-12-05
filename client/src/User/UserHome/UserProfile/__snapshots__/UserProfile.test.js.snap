@@ -25,6 +25,12 @@ ShallowWrapper {
         <WithStyles(CssBaseline) />,
         <div
           className="user-header"
+          style={
+            Object {
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
         >
           <WithStyles(Typography)
             component="h2"
@@ -368,6 +374,10 @@ ShallowWrapper {
             </WithStyles(Button)>
           </WithStyles(Typography)>,
           "className": "user-header",
+          "style": Object {
+            "paddingLeft": "15%",
+            "paddingRight": "15%",
+          },
         },
         "ref": null,
         "rendered": Object {
@@ -2008,6 +2018,12 @@ ShallowWrapper {
           <WithStyles(CssBaseline) />,
           <div
             className="user-header"
+            style={
+              Object {
+                "paddingLeft": "15%",
+                "paddingRight": "15%",
+              }
+            }
           >
             <WithStyles(Typography)
               component="h2"
@@ -2351,6 +2367,10 @@ ShallowWrapper {
               </WithStyles(Button)>
             </WithStyles(Typography)>,
             "className": "user-header",
+            "style": Object {
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            },
           },
           "ref": null,
           "rendered": Object {
@@ -4025,6 +4045,12 @@ ShallowWrapper {
         <WithStyles(CssBaseline) />,
         <div
           className="user-header"
+          style={
+            Object {
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
         >
           <WithStyles(Typography)
             component="h2"
@@ -4368,6 +4394,10 @@ ShallowWrapper {
             </WithStyles(Button)>
           </WithStyles(Typography)>,
           "className": "user-header",
+          "style": Object {
+            "paddingLeft": "15%",
+            "paddingRight": "15%",
+          },
         },
         "ref": null,
         "rendered": Object {
@@ -6008,6 +6038,12 @@ ShallowWrapper {
           <WithStyles(CssBaseline) />,
           <div
             className="user-header"
+            style={
+              Object {
+                "paddingLeft": "15%",
+                "paddingRight": "15%",
+              }
+            }
           >
             <WithStyles(Typography)
               component="h2"
@@ -6351,6 +6387,10 @@ ShallowWrapper {
               </WithStyles(Button)>
             </WithStyles(Typography)>,
             "className": "user-header",
+            "style": Object {
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            },
           },
           "ref": null,
           "rendered": Object {
@@ -8025,6 +8065,12 @@ ShallowWrapper {
         <WithStyles(CssBaseline) />,
         <div
           className="user-header"
+          style={
+            Object {
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
         >
           <WithStyles(Typography)
             component="h2"
@@ -8368,6 +8414,10 @@ ShallowWrapper {
             </WithStyles(Button)>
           </WithStyles(Typography)>,
           "className": "user-header",
+          "style": Object {
+            "paddingLeft": "15%",
+            "paddingRight": "15%",
+          },
         },
         "ref": null,
         "rendered": Object {
@@ -10008,6 +10058,12 @@ ShallowWrapper {
           <WithStyles(CssBaseline) />,
           <div
             className="user-header"
+            style={
+              Object {
+                "paddingLeft": "15%",
+                "paddingRight": "15%",
+              }
+            }
           >
             <WithStyles(Typography)
               component="h2"
@@ -10351,6 +10407,10 @@ ShallowWrapper {
               </WithStyles(Button)>
             </WithStyles(Typography)>,
             "className": "user-header",
+            "style": Object {
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            },
           },
           "ref": null,
           "rendered": Object {
@@ -12023,6 +12083,12 @@ ShallowWrapper {
         <WithStyles(CssBaseline) />,
         <div
           className="user-header"
+          style={
+            Object {
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            }
+          }
         >
           <WithStyles(Typography)
             component="h2"
@@ -12366,6 +12432,10 @@ ShallowWrapper {
             </WithStyles(Button)>
           </WithStyles(Typography)>,
           "className": "user-header",
+          "style": Object {
+            "paddingLeft": "15%",
+            "paddingRight": "15%",
+          },
         },
         "ref": null,
         "rendered": Object {
@@ -14006,6 +14076,12 @@ ShallowWrapper {
           <WithStyles(CssBaseline) />,
           <div
             className="user-header"
+            style={
+              Object {
+                "paddingLeft": "15%",
+                "paddingRight": "15%",
+              }
+            }
           >
             <WithStyles(Typography)
               component="h2"
@@ -14349,6 +14425,10 @@ ShallowWrapper {
               </WithStyles(Button)>
             </WithStyles(Typography)>,
             "className": "user-header",
+            "style": Object {
+              "paddingLeft": "15%",
+              "paddingRight": "15%",
+            },
           },
           "ref": null,
           "rendered": Object {
