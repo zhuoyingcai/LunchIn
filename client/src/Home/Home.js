@@ -107,66 +107,70 @@ class Home extends Component {
               subheader="Your Lunch Option Awaits"
             />
             <CardContent className="login-form-content">
-              <TextField
-                disabled={this.state.processing}
-                className="email"
-                id="email"
-                label="E-mail"
-                value={this.state.email}
-                onChange={this.handleChange("email")}
-                fullWidth
-                required
-                type="email"
-              />
-              <TextField
-                disabled={this.state.processing}
-                className="password"
-                id="password"
-                label="Password"
-                value={this.state.password}
-                onChange={this.handleChange("password")}
-                fullWidth
-                required
-                type={this.state.showPassword ? "text" : "password"}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <Tooltip title={this.state.message} placement="top">
-                        <IconButton
-                          onClick={() => {
-                            if (this.state.message === "Show Password") {
-                              this.setState({
-                                showPassword: !this.state.showPassword,
-                                message: "Hide Password"
-                              });
-                            } else if (this.state.message === "Hide Password") {
-                              this.setState({
-                                showPassword: !this.state.showPassword,
-                                message: "Show Password"
-                              });
-                            }
-                          }}
-                        >
-                          {this.state.showPassword ? <Visible /> : <Hidden />}
-                        </IconButton>
-                      </Tooltip>
-                    </InputAdornment>
-                  )
-                }}
-              />
-              <Button
-                style={{ marginTop: 5, marginBottom: 5 }}
-                disabled={this.state.processing}
-                variant="contained"
-                color="primary"
-                fullWidth
-                onClick={() => {
-                  this.login();
-                }}
-                className="login"
-              >
-                Sign-In
-              </Button>
+              <form>
+                <TextField
+                  disabled={this.state.processing}
+                  className="email"
+                  id="email"
+                  label="E-mail"
+                  value={this.state.email}
+                  onChange={this.handleChange("email")}
+                  fullWidth
+                  required
+                  type="email"
+                />
+                <TextField
+                  disabled={this.state.processing}
+                  className="password"
+                  id="password"
+                  label="Password"
+                  value={this.state.password}
+                  onChange={this.handleChange("password")}
+                  fullWidth
+                  required
+                  type={this.state.showPassword ? "text" : "password"}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <Tooltip title={this.state.message} placement="top">
+                          <IconButton
+                            onClick={() => {
+                              if (this.state.message === "Show Password") {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Hide Password"
+                                });
+                              } else if (
+                                this.state.message === "Hide Password"
+                              ) {
+                                this.setState({
+                                  showPassword: !this.state.showPassword,
+                                  message: "Show Password"
+                                });
+                              }
+                            }}
+                          >
+                            {this.state.showPassword ? <Visible /> : <Hidden />}
+                          </IconButton>
+                        </Tooltip>
+                      </InputAdornment>
+                    )
+                  }}
+                />
+                <Button
+                  style={{ marginTop: 5, marginBottom: 5 }}
+                  disabled={this.state.processing}
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  onClick={() => {
+                    this.login();
+                  }}
+                  className="login"
+                >
+                  Sign-In
+                </Button>
+              </form>
               <Typography
                 component="h2"
                 style={{ marginTop: 5, marginBottom: 5 }}

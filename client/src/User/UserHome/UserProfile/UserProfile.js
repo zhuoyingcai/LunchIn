@@ -295,7 +295,7 @@ class UserProfile extends Component {
 
   render() {
     return (
-      <div style={{ marginTop: "5%", marginBottom: "5%", marginLeft: "10%", marginRight: "10%" }}>
+      <div style={{ padding: "3.5% 18.5%" }}>
         <CssBaseline />
         {/*=============WELCOME USER HEADER=============*/}
         <div className="user-header">

@@ -23,19 +23,19 @@
 }
 
 @media only screen and (min-width: 960px) {
-  .food-list-paper{
+  .food-list-paper {
     height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  .food-choices{
+  .food-choices {
     overflow: auto;
   }
-  .input-button-2{
+  .input-button-2 {
     margin-bottom: auto;
   }
-  .random-food-section{
+  .random-food-section {
     height: 30vh;
     display: flex;
     flex-direction: column;

@@ -1,73 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
-<WithStyles(Card)
-  className="input-paper"
-  data-aos="zoom-in-up"
->
-  <WithStyles(CardHeader)
-    title="Please enter your food choices:"
+<div>
+  <WithStyles(Snackbar)
+    autoHideDuration={6000}
+    message=""
+    onClose={[Function]}
+    open={false}
   />
-  <WithStyles(CardContent)>
-    <WithStyles(Snackbar)
-      autoHideDuration={6000}
-      message=""
-      onClose={[Function]}
-      open={false}
+  <WithStyles(Card)
+    className="input-paper"
+    data-aos="zoom-in-up"
+  >
+    <WithStyles(CardHeader)
+      title="Please enter your food choices:"
     />
-    <TextField
-      className="addFoodChoice"
-      fullWidth={true}
-      inputProps={
-        Object {
-          "id": "input-food-choices",
-          "maxLength": 20,
-          "style": Object {
-            "textAlign": "center",
-          },
+    <WithStyles(CardContent)>
+      <TextField
+        className="addFoodChoice"
+        fullWidth={true}
+        inputProps={
+          Object {
+            "id": "input-food-choices",
+            "maxLength": 20,
+            "style": Object {
+              "textAlign": "center",
+            },
+          }
         }
-      }
-      name="inputFoodName"
-      onChange={[Function]}
-      placeholder="Food name"
-      required={true}
-      select={false}
-      value=""
-      variant="standard"
-    />
-    <WithStyles(Button)
-      className="input-button"
-      color="primary"
-      disabled={true}
-      id="foodSubmit"
-      onClick={[Function]}
-      style={
-        Object {
-          "marginBottom": 5,
-          "marginTop": 10,
+        name="inputFoodName"
+        onChange={[Function]}
+        placeholder="Food name"
+        required={true}
+        select={false}
+        value=""
+        variant="standard"
+      />
+      <WithStyles(Button)
+        className="input-button"
+        color="primary"
+        disabled={true}
+        id="foodSubmit"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": 5,
+            "marginTop": 10,
+          }
         }
-      }
-      variant="contained"
-    >
-      Add Food
-    </WithStyles(Button)>
-    <div>
-      <WithStyles(Grid)
-        container={true}
+        variant="contained"
       >
+        Add Food
+      </WithStyles(Button)>
+      <div>
         <WithStyles(Grid)
-          item={true}
-          lg={3}
-          md={3}
-          sm={12}
-          xl={3}
-          xs={12}
+          container={true}
         >
-          <WithStyles(Paper)
-            className="food-list-paper"
+          <WithStyles(Grid)
+            item={true}
+            lg={3}
+            md={3}
+            sm={12}
+            xl={3}
+            xs={12}
           >
-            <div
-              className="food-choices"
+            <WithStyles(Paper)
+              className="food-list-paper"
             >
               <WithStyles(List)
                 className="food-choices-list"
@@ -108,83 +106,82 @@ exports[`UserInputFoodChoices Component converts mount wrapper correctly 1`] = `
         >
           <WithStyles(Paper) />
         </WithStyles(Grid)>
-      </WithStyles(Grid)>
-    </div>
-  </WithStyles(CardContent)>
-</WithStyles(Card)>
+      </div>
+    </WithStyles(CardContent)>
+  </WithStyles(Card)>
+</div>
 `;
 
 exports[`UserInputFoodChoices Component converts render wrapper correctly 1`] = `null`;
 
 exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] = `
-<WithStyles(Card)
-  className="input-paper"
-  data-aos="zoom-in-up"
->
-  <WithStyles(CardHeader)
-    title="Please enter your food choices:"
+<div>
+  <WithStyles(Snackbar)
+    autoHideDuration={6000}
+    message=""
+    onClose={[Function]}
+    open={false}
   />
-  <WithStyles(CardContent)>
-    <WithStyles(Snackbar)
-      autoHideDuration={6000}
-      message=""
-      onClose={[Function]}
-      open={false}
+  <WithStyles(Card)
+    className="input-paper"
+    data-aos="zoom-in-up"
+  >
+    <WithStyles(CardHeader)
+      title="Please enter your food choices:"
     />
-    <TextField
-      className="addFoodChoice"
-      fullWidth={true}
-      inputProps={
-        Object {
-          "id": "input-food-choices",
-          "maxLength": 20,
-          "style": Object {
-            "textAlign": "center",
-          },
+    <WithStyles(CardContent)>
+      <TextField
+        className="addFoodChoice"
+        fullWidth={true}
+        inputProps={
+          Object {
+            "id": "input-food-choices",
+            "maxLength": 20,
+            "style": Object {
+              "textAlign": "center",
+            },
+          }
         }
-      }
-      name="inputFoodName"
-      onChange={[Function]}
-      placeholder="Food name"
-      required={true}
-      select={false}
-      value=""
-      variant="standard"
-    />
-    <WithStyles(Button)
-      className="input-button"
-      color="primary"
-      disabled={true}
-      id="foodSubmit"
-      onClick={[Function]}
-      style={
-        Object {
-          "marginBottom": 5,
-          "marginTop": 10,
+        name="inputFoodName"
+        onChange={[Function]}
+        placeholder="Food name"
+        required={true}
+        select={false}
+        value=""
+        variant="standard"
+      />
+      <WithStyles(Button)
+        className="input-button"
+        color="primary"
+        disabled={true}
+        id="foodSubmit"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": 5,
+            "marginTop": 10,
+          }
         }
-      }
-      variant="contained"
-    >
-      Add Food
-    </WithStyles(Button)>
-    <div>
-      <WithStyles(Grid)
-        container={true}
+        variant="contained"
       >
+        Add Food
+      </WithStyles(Button)>
+      <div>
         <WithStyles(Grid)
-          item={true}
-          lg={3}
-          md={3}
-          sm={12}
-          xl={3}
-          xs={12}
+          container={true}
         >
-          <WithStyles(Paper)
-            className="food-list-paper"
+          <WithStyles(Grid)
+            item={true}
+            lg={3}
+            md={3}
+            sm={12}
+            xl={3}
+            xs={12}
           >
-            <div
-              className="food-choices"
+            <WithStyles(Paper)
+              className="food-list-paper"
             >
+<<<<<<< HEAD
               <WithStyles(List)
                 className="food-choices-list"
                 style={
@@ -223,82 +220,108 @@ exports[`UserInputFoodChoices Component converts shallow wrapper correctly 1`] =
           xs={12}
         >
           <WithStyles(Paper) />
+=======
+              <div
+                className="food-choices"
+              >
+                <WithStyles(Typography)
+                  className="food-choices-title"
+                  variant="h5"
+                >
+                  Food Names
+                </WithStyles(Typography)>
+                <WithStyles(List)
+                  className="food-choices-list"
+                />
+              </div>
+            </WithStyles(Paper)>
+          </WithStyles(Grid)>
+          <WithStyles(Grid)
+            item={true}
+            lg={9}
+            md={9}
+            sm={12}
+            xl={9}
+            xs={12}
+          >
+            <WithStyles(Paper) />
+          </WithStyles(Grid)>
+>>>>>>> 8b3fe608faae0b9779a2b1d1598df1a87372338e
         </WithStyles(Grid)>
-      </WithStyles(Grid)>
-    </div>
-  </WithStyles(CardContent)>
-</WithStyles(Card)>
+      </div>
+    </WithStyles(CardContent)>
+  </WithStyles(Card)>
+</div>
 `;
 
 exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component correctly 1`] = `
-<WithStyles(Card)
-  className="input-paper"
-  data-aos="zoom-in-up"
->
-  <WithStyles(CardHeader)
-    title="Please enter your food choices:"
+<div>
+  <WithStyles(Snackbar)
+    autoHideDuration={6000}
+    message=""
+    onClose={[Function]}
+    open={false}
   />
-  <WithStyles(CardContent)>
-    <WithStyles(Snackbar)
-      autoHideDuration={6000}
-      message=""
-      onClose={[Function]}
-      open={false}
+  <WithStyles(Card)
+    className="input-paper"
+    data-aos="zoom-in-up"
+  >
+    <WithStyles(CardHeader)
+      title="Please enter your food choices:"
     />
-    <TextField
-      className="addFoodChoice"
-      fullWidth={true}
-      inputProps={
-        Object {
-          "id": "input-food-choices",
-          "maxLength": 20,
-          "style": Object {
-            "textAlign": "center",
-          },
+    <WithStyles(CardContent)>
+      <TextField
+        className="addFoodChoice"
+        fullWidth={true}
+        inputProps={
+          Object {
+            "id": "input-food-choices",
+            "maxLength": 20,
+            "style": Object {
+              "textAlign": "center",
+            },
+          }
         }
-      }
-      name="inputFoodName"
-      onChange={[Function]}
-      placeholder="Food name"
-      required={true}
-      select={false}
-      value=""
-      variant="standard"
-    />
-    <WithStyles(Button)
-      className="input-button"
-      color="primary"
-      disabled={true}
-      id="foodSubmit"
-      onClick={[Function]}
-      style={
-        Object {
-          "marginBottom": 5,
-          "marginTop": 10,
+        name="inputFoodName"
+        onChange={[Function]}
+        placeholder="Food name"
+        required={true}
+        select={false}
+        value=""
+        variant="standard"
+      />
+      <WithStyles(Button)
+        className="input-button"
+        color="primary"
+        disabled={true}
+        id="foodSubmit"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": 5,
+            "marginTop": 10,
+          }
         }
-      }
-      variant="contained"
-    >
-      Add Food
-    </WithStyles(Button)>
-    <div>
-      <WithStyles(Grid)
-        container={true}
+        variant="contained"
       >
+        Add Food
+      </WithStyles(Button)>
+      <div>
         <WithStyles(Grid)
-          item={true}
-          lg={3}
-          md={3}
-          sm={12}
-          xl={3}
-          xs={12}
+          container={true}
         >
-          <WithStyles(Paper)
-            className="food-list-paper"
+          <WithStyles(Grid)
+            item={true}
+            lg={3}
+            md={3}
+            sm={12}
+            xl={3}
+            xs={12}
           >
-            <div
-              className="food-choices"
+            <WithStyles(Paper)
+              className="food-list-paper"
             >
+<<<<<<< HEAD
               <WithStyles(List)
                 className="food-choices-list"
                 style={
@@ -337,82 +360,108 @@ exports[`UserInputFoodChoices Component renders UserInputFoodChoices Component c
           xs={12}
         >
           <WithStyles(Paper) />
+=======
+              <div
+                className="food-choices"
+              >
+                <WithStyles(Typography)
+                  className="food-choices-title"
+                  variant="h5"
+                >
+                  Food Names
+                </WithStyles(Typography)>
+                <WithStyles(List)
+                  className="food-choices-list"
+                />
+              </div>
+            </WithStyles(Paper)>
+          </WithStyles(Grid)>
+          <WithStyles(Grid)
+            item={true}
+            lg={9}
+            md={9}
+            sm={12}
+            xl={9}
+            xs={12}
+          >
+            <WithStyles(Paper) />
+          </WithStyles(Grid)>
+>>>>>>> 8b3fe608faae0b9779a2b1d1598df1a87372338e
         </WithStyles(Grid)>
-      </WithStyles(Grid)>
-    </div>
-  </WithStyles(CardContent)>
-</WithStyles(Card)>
+      </div>
+    </WithStyles(CardContent)>
+  </WithStyles(Card)>
+</div>
 `;
 
 exports[`UserInputFoodChoices Component should render UserInputFoodChoices with inputs food. 1`] = `
-<WithStyles(Card)
-  className="input-paper"
-  data-aos="zoom-in-up"
->
-  <WithStyles(CardHeader)
-    title="Please enter your food choices:"
+<div>
+  <WithStyles(Snackbar)
+    autoHideDuration={6000}
+    message=""
+    onClose={[Function]}
+    open={false}
   />
-  <WithStyles(CardContent)>
-    <WithStyles(Snackbar)
-      autoHideDuration={6000}
-      message=""
-      onClose={[Function]}
-      open={false}
+  <WithStyles(Card)
+    className="input-paper"
+    data-aos="zoom-in-up"
+  >
+    <WithStyles(CardHeader)
+      title="Please enter your food choices:"
     />
-    <TextField
-      className="addFoodChoice"
-      fullWidth={true}
-      inputProps={
-        Object {
-          "id": "input-food-choices",
-          "maxLength": 20,
-          "style": Object {
-            "textAlign": "center",
-          },
+    <WithStyles(CardContent)>
+      <TextField
+        className="addFoodChoice"
+        fullWidth={true}
+        inputProps={
+          Object {
+            "id": "input-food-choices",
+            "maxLength": 20,
+            "style": Object {
+              "textAlign": "center",
+            },
+          }
         }
-      }
-      name="inputFoodName"
-      onChange={[Function]}
-      placeholder="Food name"
-      required={true}
-      select={false}
-      value=""
-      variant="standard"
-    />
-    <WithStyles(Button)
-      className="input-button"
-      color="primary"
-      disabled={true}
-      id="foodSubmit"
-      onClick={[Function]}
-      style={
-        Object {
-          "marginBottom": 5,
-          "marginTop": 10,
+        name="inputFoodName"
+        onChange={[Function]}
+        placeholder="Food name"
+        required={true}
+        select={false}
+        value=""
+        variant="standard"
+      />
+      <WithStyles(Button)
+        className="input-button"
+        color="primary"
+        disabled={true}
+        id="foodSubmit"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": 5,
+            "marginTop": 10,
+          }
         }
-      }
-      variant="contained"
-    >
-      Add Food
-    </WithStyles(Button)>
-    <div>
-      <WithStyles(Grid)
-        container={true}
+        variant="contained"
       >
+        Add Food
+      </WithStyles(Button)>
+      <div>
         <WithStyles(Grid)
-          item={true}
-          lg={3}
-          md={3}
-          sm={12}
-          xl={3}
-          xs={12}
+          container={true}
         >
-          <WithStyles(Paper)
-            className="food-list-paper"
+          <WithStyles(Grid)
+            item={true}
+            lg={3}
+            md={3}
+            sm={12}
+            xl={3}
+            xs={12}
           >
-            <div
-              className="food-choices"
+            <WithStyles(Paper)
+              className="food-list-paper"
             >
+<<<<<<< HEAD
               <WithStyles(List)
                 className="food-choices-list"
                 style={
@@ -451,9 +500,36 @@ exports[`UserInputFoodChoices Component should render UserInputFoodChoices with 
           xs={12}
         >
           <WithStyles(Paper) />
+=======
+              <div
+                className="food-choices"
+              >
+                <WithStyles(Typography)
+                  className="food-choices-title"
+                  variant="h5"
+                >
+                  Food Names
+                </WithStyles(Typography)>
+                <WithStyles(List)
+                  className="food-choices-list"
+                />
+              </div>
+            </WithStyles(Paper)>
+          </WithStyles(Grid)>
+          <WithStyles(Grid)
+            item={true}
+            lg={9}
+            md={9}
+            sm={12}
+            xl={9}
+            xs={12}
+          >
+            <WithStyles(Paper) />
+          </WithStyles(Grid)>
+>>>>>>> 8b3fe608faae0b9779a2b1d1598df1a87372338e
         </WithStyles(Grid)>
-      </WithStyles(Grid)>
-    </div>
-  </WithStyles(CardContent)>
-</WithStyles(Card)>
+      </div>
+    </WithStyles(CardContent)>
+  </WithStyles(Card)>
+</div>
 `;
