@@ -21,6 +21,7 @@ import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 class UserInputFoodChoices extends Component {
@@ -355,12 +356,20 @@ class UserInputFoodChoices extends Component {
                   {this.state.foodNames ? (
                     <Paper className="food-list-paper">
                       <div className="food-choices">
-                        <Typography variant="h5" className="food-choices-title">
-                          Food Names
-                        </Typography>
-                        <List className="food-choices-list">
+                        <List className="food-choices-list"
+                          style={{  height: '70vh',
+                                    overflow: 'auto',
+                                    position: 'relative',
+                                    backgroundColor: 'white',
+                                    padding: 0 }}>
+                        <ListSubheader style={{backgroundColor: "relative"}}>
+                          <Typography variant="h6" className="food-choices-title">
+                            Food Names
+                            </Typography>
+                          </ListSubheader>
                           {this.state.foodNames.map(food => (
                             <ListItem key={food} style={{ width: "75%" }}>
+                            
                               <ListItemText>{food}</ListItemText>
 
                               <ListItemSecondaryAction
@@ -397,7 +406,8 @@ class UserInputFoodChoices extends Component {
                           style={{
                             marginTop: 10,
                             marginBottom: 5,
-                            marginLeft: 5
+                            marginLeft: '5%',
+                            marginRight: '5%'
                           }}
                           variant="contained"
                           color="secondary"
@@ -412,13 +422,11 @@ class UserInputFoodChoices extends Component {
                   ) : null}
                   {this.state.randomFoodName &&
                   this.state.foodNames.length > 0 ? (
-                    <Typography variant="h5">
-                      <Paper className="random-food-section">
+                    <Typography variant="h6" style={{paddingTop: '5%', paddingBottom: '5%' }}>                  
                         <span>Food Selected: </span>
                         <span>
-                          <Chip label={this.state.randomFoodName} />
+                          <Chip style={{fontSize: 15}}label={this.state.randomFoodName} />
                         </span>
-                      </Paper>
                     </Typography>
                   ) : null}
                 </Grid>

@@ -5,21 +5,12 @@
   width: 100%;
 }
 
-.food-choices-title{
-  padding: 1%;
-}
-
 .input-button {
   width: 30%;
 }
 
 .table-btn {
   right: 8%;
-}
-
-.random-food-section {
-  display: flex;
-  flex-direction: column;
 }
 
 @media only screen and (min-width: 960px) {
