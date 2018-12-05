@@ -8,7 +8,6 @@ import {
   Snackbar,
   Paper,
   Typography,
-  Chip,
   IconButton,
 } from "@material-ui/core";
 import "./UserInputFoodChoices.css";
@@ -21,7 +20,6 @@ import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 class UserInputFoodChoices extends Component {
@@ -164,12 +162,12 @@ class UserInputFoodChoices extends Component {
 
   checkFoodExist(e) {
     var food = e.toLowerCase()
-     
+
     for (var i = 0; i < this.state.foodNames.length; i++) {
       var tmp = this.state.foodNames[i].toLowerCase()
       if (food === tmp) {
         return true
-      } 
+      }
     }
 
     return false
@@ -186,7 +184,7 @@ class UserInputFoodChoices extends Component {
           notifyMsg: "Food already exist",
           inputFoodName: ""
         })
-      } 
+      }
       else {
         const newList = this.state.foodNames
         newList.splice(0, 0, this.state.inputFoodName)
@@ -316,117 +314,117 @@ class UserInputFoodChoices extends Component {
         <CardHeader title="Please enter your food choices:" />
         <CardContent>
         <Snackbar
-            onClose={() => {
-              this.setState({ notify: false, notifyMsg: "" });
-            }}
-            open={this.state.notify}
-            autoHideDuration={6000}
-            message={this.state.notifyMsg}
-          />
-          <TextField
-            fullWidth
-            inputProps={{
-              id: "input-food-choices",
-              maxLength: 20,
-              style: { textAlign: "center" }
-            }}
-            value={this.state.inputFoodName}
-            className="addFoodChoice"
-            onChange={this.handleInputChange}
-            placeholder="Food name"
-            name="inputFoodName"
-            required
-          />
-          <Button
-            style={{
-              marginTop: 10,
-              marginBottom: 5
-            }}
-            variant="contained"
-            id="foodSubmit"
-            color="primary"
-            className="input-button"
-            onClick={this.handleSubmit}
-            disabled={!this.state.inputFoodName}
-          >
-            Add Food
-          </Button>
+          onClose={() => {
+            this.setState({ notify: false, notifyMsg: "" });
+          }}
+          open={this.state.notify}
+          autoHideDuration={6000}
+          message={this.state.notifyMsg}
+        />
+        <TextField
+          fullWidth
+          inputProps={{
+            id: "input-food-choices",
+            maxLength: 20,
+            style: { textAlign: "center" }
+          }}
+          value={this.state.inputFoodName}
+          className="addFoodChoice"
+          onChange={this.handleInputChange}
+          placeholder="Food name"
+          name="inputFoodName"
+          required
+        />
+        <Button
+          style={{
+            marginTop: 10,
+            marginBottom: 5
+          }}
+          variant="contained"
+          id="foodSubmit"
+          color="primary"
+          className="input-button"
+          onClick={this.handleSubmit}
+          disabled={!this.state.inputFoodName}
+        >
+          Add Food
+        </Button>
         <div>
-        <Grid container item xs={12} spacing={0}>
-          <Grid item xs={3}>
-          {this.state.foodNames.length >= 0 ? (
-            <Paper className="food-list">
-              <List style={{height: '70vh', 
-                            overflow: "auto", 
-                            position: 'relative', 
-                            backgroundColor: "white", 
-                            padding:0}}>
-                <ListSubheader style={{backgroundColor: "inherit"}}>Food Name</ListSubheader>
-                {this.state.foodNames.map(food => (
-                    <ListItem key={food} style={{width: "75%"}}>
-                      <ListItemText > {food} </ListItemText>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
+              {this.state.foodNames ? (
+                <Paper className="food-list-paper">
+                  <div className="food-choices">
+                    <Typography variant="h5" className="food-choices-title">
+                      Food Names
+                    </Typography>
+                    <List className="food-choices-list">
+                      {this.state.foodNames.map(food => (
+                        <ListItem key={food} style={{width: "75%"}}>
+                          <ListItemText >
+                            {food}
+                          </ListItemText>
 
-                      <ListItemSecondaryAction style={{paddingRight: 10, width: '50%'}}>
-                        <IconButton
-                          id="delete"
-                          aria-label="Delete"
-                          style={{ float: "right", padding: 5  }}
-                          value={food}
-                          onClick={e => this.handleDelete(e)}
-                        >
-                          <Delete />
-                        </IconButton>
-                        <IconButton
-                          value={food}
-                          onClick={e => this.handleRandomFood(e, false)}
-                          className="table-btn"
-                          style={{
-                            color: "#66bb6a",
-                            float: "right",
-                            padding: 5
-                          }}
-                        >
-                          <Restaurant /> 
-                        </IconButton>
-                        </ListItemSecondaryAction>
-                    </ListItem>
-              ))}
-              </List>
-            </Paper>
-          ) : null}
-          {this.state.foodNames.length > 0 ? (
-            <Button
-              style={{
-                marginTop: 10,
-                marginBottom: 5,
-              }}
-              variant="contained"
-              color="secondary"
-              className="input-button-2"
-              value=""
-              onClick={e => this.handleRandomFood(e, true)}
-            >
-              Generate Random Food
-            </Button>
-          ) : null}
-          <div className="random-food-section">
-            <Typography component="h2" variant="subtitle1">
-              {this.state.randomFoodName && this.state.foodNames.length > 0 ? (
-                <span>
-                  The food selected is:{" "}
-                  <Chip label={this.state.randomFoodName} />
-                </span>
-              ) : null}
-
-            </Typography>
-          </div>
+                          <ListItemSecondaryAction style={{paddingRight: 10, width: '50%'}}>
+                            <IconButton
+                              id="delete"
+                              aria-label="Delete"
+                              style={{ float: "right", padding: 5  }}
+                              value={food}
+                              onClick={e => this.handleDelete(e)}
+                            >
+                              <Delete />
+                            </IconButton>
+                            <IconButton
+                              value={food}
+                              onClick={e => this.handleRandomFood(e, false)}
+                              className="table-btn"
+                              style={{
+                                color: "#66bb6a",
+                                float: "right",
+                                padding: 5
+                              }}
+                            >
+                              <Restaurant />
+                            </IconButton>
+                            </ListItemSecondaryAction>
+                        </ListItem>
+                      ))}
+                  </List>
+                </div>
+                {this.state.foodNames.length > 0 ? (
+                  <Button
+                    style={{
+                      marginTop: 10,
+                      marginBottom: 5,
+                    }}
+                    variant="contained"
+                    color="secondary"
+                    className="input-button-2"
+                    value=""
+                    onClick={e => this.handleRandomFood(e, true)}
+                  >
+                    Generate Random Food
+                  </Button>
+                ) : null}
+              </Paper>
+            ) : null}
+            { this.state.randomFoodName && this.state.foodNames.length > 0
+              ? (
+                <Typography variant="h5">
+                  <Paper className="random-food-section">
+                      <span>Food Selected: </span>
+                      <span>{this.state.randomFoodName}</span>
+                  </Paper>
+                </Typography>
+              ) : (null)
+            }
+            </Grid>
+            <Grid item xs={12} sm={12} md={9} lg={9} xl={9}>
+              <Paper>{this.renderMaps()}</Paper>
+            </Grid>
           </Grid>
-          <Grid item xs={9}>
-            <Paper>{this.renderMaps()}</Paper>
-          </Grid>
-        </Grid>
-    </div>
-
+        </div>
         </CardContent>
       </Card>
     );
