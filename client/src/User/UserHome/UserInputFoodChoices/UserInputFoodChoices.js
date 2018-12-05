@@ -162,33 +162,56 @@ class UserInputFoodChoices extends Component {
     }
   }
 
+  checkFoodExist(e) {
+    var food = e.toLowerCase()
+     
+    for (var i = 0; i < this.state.foodNames.length; i++) {
+      var tmp = this.state.foodNames[i].toLowerCase()
+      if (food === tmp) {
+        return true
+      } 
+    }
+
+    return false
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
-    const newList = this.state.foodNames
-    newList.splice(0, 0, this.state.inputFoodName)
-    
     if (this.state.inputFoodName) {
-      this.setState({
-        foodNames: newList,
-        inputFoodName: "",
-        processing: true
-      });
-      const foodNamesRef = firebase
-        .database()
-        .ref(`Users/${firebase.auth().currentUser.uid}/foodNames`);
-      foodNamesRef
-        .set(newList)
-        .then(() => {
-          this.setState({ processing: false });
+      if (this.checkFoodExist(this.state.inputFoodName)) {
+        this.setState({
+          notify: true,
+          processing: false,
+          notifyMsg: "Food already exist",
+          inputFoodName: ""
         })
-        .catch(error => {
-          this.setState({
-            notify: true,
-            notifyMsg: error.message,
-            processing: false
-          });
+      } 
+      else {
+        const newList = this.state.foodNames
+        newList.splice(0, 0, this.state.inputFoodName)
+
+        this.setState({
+          foodNames: newList,
+          inputFoodName: "",
+          processing: true
         });
+        const foodNamesRef = firebase
+          .database()
+          .ref(`Users/${firebase.auth().currentUser.uid}/foodNames`);
+        foodNamesRef
+          .set(newList)
+          .then(() => {
+            this.setState({ processing: false });
+          })
+          .catch(error => {
+            this.setState({
+              notify: true,
+              notifyMsg: error.message,
+              processing: false
+            });
+          });
+        }
     }
   }
   handleRandomFood(e, isRand) {
