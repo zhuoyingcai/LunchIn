@@ -54,8 +54,7 @@ class BusinessCard extends Component {
     const url = "/api/yelp/search?";
     let data = this.retrieveData();
     let urlParams = Object.entries(data).map(e => e.join('=')).join('&');
-    this.setState({ loading: true });
-    this.setState({ mainBusiness: null });
+    this.setState({ loading: true, mainBusiness: null });
     fetch(url + urlParams)
       .then(response => response.json())
       .then(data => {
