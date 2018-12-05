@@ -10,5 +10,5 @@
 }
 .review-content{
   padding: 1%;
-
+  overflow: auto;
 }
