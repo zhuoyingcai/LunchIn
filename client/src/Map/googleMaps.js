@@ -76,7 +76,7 @@ const MapComponent = compose(
                       type: 'restaurant',
                     };
                 service.nearbySearch(request, (results, status) => {
-                    if(foodType !== props.food || foodType === "restaurant" || foodType === "restaurant " ){
+                    if(foodType !== props.food){
                       foodType = props.food;
                       num = 1;
                     }
